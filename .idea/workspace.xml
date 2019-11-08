@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/QuickSortTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Exercises1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/Exercise1Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/MergeSortTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/QuickSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/QuickSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/QuickSortTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +44,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -64,7 +67,31 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.All">
+    <configuration name="All" type="JUnit" factoryName="JUnit">
+      <module name="uebungen" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <option name="PARAMETERS" value="" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MergeSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="adopt-openjdk" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.MergeSortTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QuickSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
@@ -75,8 +102,8 @@
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="adopt-openjdk" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="QuickSortTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.QuickSortTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
@@ -84,8 +111,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.All" />
+      <item itemvalue="JUnit.QuickSortTest" />
+      <item itemvalue="JUnit.MergeSortTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MergeSortTest" />
         <item itemvalue="JUnit.QuickSortTest" />
       </list>
     </recent_temporary>
@@ -108,7 +141,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -27,10 +27,6 @@
                         <version>2.22.0</version>
                     </dependency>
                 </dependencies>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
             </plugin>
         </plugins>
     </build>

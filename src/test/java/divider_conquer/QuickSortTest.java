@@ -1,3 +1,5 @@
+package divider_conquer;
+
 import divide_conquer.QuickSort;
 import org.junit.jupiter.api.Test;
 
