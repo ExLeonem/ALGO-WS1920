@@ -85,7 +85,6 @@ public class Exercises1 {
                 team++;
             }
 
-            System.out.println(players[i]);
             int j = team == 1? i - singleTeamLength : i;
             twoTeams[team][j] = players[i];
         }
@@ -103,13 +102,27 @@ public class Exercises1 {
      */
     public int[] maximizeUnsortedPair(int[] numbers) {
 
-        return new int[]{3, 2};
+        if ( numbers.length < 2 ) {
+            throw new IllegalArgumentException("Can't find pairs of minimal size in array with less than two elements.");
+        }
+
+        // Linear search for max value in unsorted array
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for ( int i = 0; i < numbers.length; i++) {
+
+            if ( numbers[i] < min ) {
+                min = numbers[i];
+            }
+
+            if ( numbers[i] > max ) {
+                max = numbers[i];
+            }
+        }
+
+        return new int[]{min, max};
     }
 
-    public int[] maximizeSortedPair(int[] numbers) {
-
-        return new int[]{1, 5};
-    }
 
     public int[] minimizeUnsortedPairs(int[] numbers) {
 
