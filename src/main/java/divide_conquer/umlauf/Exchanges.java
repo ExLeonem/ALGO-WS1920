@@ -9,6 +9,7 @@ public class Exchanges {
 
     private Random rand;
     private int changeCounts;
+    private int[] sorted;
 
 
     public Exchanges() {
@@ -25,6 +26,7 @@ public class Exchanges {
         }
 
         this.recurse(unsortedNumbers, 0, size);
+        this.sorted = unsortedNumbers;
         return this.getCount();
     }
 
@@ -51,21 +53,21 @@ public class Exchanges {
      */
     public int partition(int[] numbers, int left, int right) {
 
-        // Set pivot
-        int pivotIndx = rand.nextInt(numbers.length);
-        this.swap(numbers, pivotIndx, numbers.length-1);
-
         // Sort in place
-        int pivotNumber = numbers[numbers.length-1];
-        int swapIndx = -1;
-        for (int i = left; i < right; i++) {
+        int pivotNumber = numbers[right-1];
+        int swapIndx = left-1;
+        for (int i = left; i < right-1; i++) {
 
             if (numbers[i] < pivotNumber) {
-                swap(numbers, i, swapIndx++);
+                swapIndx++;
+                swap(numbers, i, swapIndx);
             }
         }
 
-        swap(numbers, swapIndx++, numbers.length-1);
+        swapIndx++;
+        swap(numbers, swapIndx, right-1);
+        this.incrementCounter();
+
         return swapIndx;
     }
 
@@ -80,7 +82,18 @@ public class Exchanges {
     public void swap(int[] numbers, int from, int to) {
         int tmp = numbers[from];
         numbers[from] = numbers[to];
-        numbers[to] = numbers[tmp];
+        numbers[to] = tmp;
+    }
+
+    public void incrementCounter() {
+        this.changeCounts++;
+    }
+
+    public void printArray(int[] numbers) {
+        System.out.print("| ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " | ");
+        }
     }
 
 
@@ -92,8 +105,7 @@ public class Exchanges {
         return this.changeCounts;
     }
 
-
-    public int getRandomInt(int border) {
-        return this.rand.nextInt(border);
+    public int[] getSorted() {
+        return this.sorted;
     }
 }

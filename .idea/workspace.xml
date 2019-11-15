@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/TuermeHanoi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/Exchanges.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/NoneNegative.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ExchangesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/NoneNegativeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/FFT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/FFTTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Exercises1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/algorithm_design_manual/Exercises1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/GGT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/Exercise1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/algorithm_design_manual/Exercise1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/GGTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/GGTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Exercises1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test$GrinchPart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test$SortedMaxPair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test$UnsortedMaxPair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/Exchanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/Exchanges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ExchangesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ExchangesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/NoneNegativeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/NoneNegativeTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,8 +166,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ExchangesTest" />
-        <item itemvalue="JUnit.NoneNegativeTest" />
         <item itemvalue="JUnit.Exercise1Test$UnsortedMaxPair.allEqual" />
+        <item itemvalue="JUnit.NoneNegativeTest" />
         <item itemvalue="JUnit.Exercise1Test$UnsortedMaxPair.equalValues" />
         <item itemvalue="JUnit.Exercise1Test" />
       </list>
