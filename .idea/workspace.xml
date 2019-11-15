@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/GGTTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/TuermeHanoi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/Exchanges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/NoneNegative.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ExchangesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/NoneNegativeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Exercises1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Exercises1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/Exercise1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/Exercise1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Exercises1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Exercises1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/MergeSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/MergeSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Exercises1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/algorithm_design_manual/Exercises1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/GGT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/Exercise1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/algorithm_design_manual/Exercise1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/GGTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/GGTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Exercises1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test$GrinchPart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test$SortedMaxPair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test$UnsortedMaxPair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/Exercise1Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +57,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="coverage" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -68,7 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GGTTest.invalidNumber">
+  <component name="RunManager" selected="JUnit.ExchangesTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -80,100 +88,98 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GGTTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExchangesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.umlauf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.GGTTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ExchangesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GGTTest.arrayOfThree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Exercise1Test$UnsortedMaxPair.allEqual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.algorithm_design_manual.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.GGTTest" />
-      <option name="METHOD_NAME" value="arrayOfThree" />
+      <option name="PACKAGE_NAME" value="divider_conquer.algorithm_design_manual" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.algorithm_design_manual.Exercise1Test$UnsortedMaxPair" />
+      <option name="METHOD_NAME" value="allEqual" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GGTTest.arrayOfTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Exercise1Test$UnsortedMaxPair.equalValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.algorithm_design_manual.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.GGTTest" />
-      <option name="METHOD_NAME" value="arrayOfTwo" />
+      <option name="PACKAGE_NAME" value="divider_conquer.algorithm_design_manual" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.algorithm_design_manual.Exercise1Test$UnsortedMaxPair" />
+      <option name="METHOD_NAME" value="equalValues" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GGTTest.invalidNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Exercise1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.algorithm_design_manual.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.GGTTest" />
-      <option name="METHOD_NAME" value="invalidNumber" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="divider_conquer.algorithm_design_manual" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.algorithm_design_manual.Exercise1Test" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GGTTest.onlyUnEvenNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NoneNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.umlauf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.GGTTest" />
-      <option name="METHOD_NAME" value="onlyUnEvenNumbers" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.NoneNegativeTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.GGTTest" />
-      <item itemvalue="JUnit.GGTTest.onlyUnEvenNumbers" />
-      <item itemvalue="JUnit.GGTTest.arrayOfTwo" />
-      <item itemvalue="JUnit.GGTTest.arrayOfThree" />
-      <item itemvalue="JUnit.GGTTest.invalidNumber" />
+      <item itemvalue="JUnit.Exercise1Test" />
+      <item itemvalue="JUnit.Exercise1Test$UnsortedMaxPair.equalValues" />
+      <item itemvalue="JUnit.Exercise1Test$UnsortedMaxPair.allEqual" />
+      <item itemvalue="JUnit.NoneNegativeTest" />
+      <item itemvalue="JUnit.ExchangesTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GGTTest.invalidNumber" />
-        <item itemvalue="JUnit.GGTTest.arrayOfThree" />
-        <item itemvalue="JUnit.GGTTest.arrayOfTwo" />
-        <item itemvalue="JUnit.GGTTest" />
-        <item itemvalue="JUnit.GGTTest.onlyUnEvenNumbers" />
+        <item itemvalue="JUnit.ExchangesTest" />
+        <item itemvalue="JUnit.NoneNegativeTest" />
+        <item itemvalue="JUnit.Exercise1Test$UnsortedMaxPair.allEqual" />
+        <item itemvalue="JUnit.Exercise1Test$UnsortedMaxPair.equalValues" />
+        <item itemvalue="JUnit.Exercise1Test" />
       </list>
     </recent_temporary>
   </component>

@@ -1,4 +1,4 @@
-package divide_conquer;
+package divide_conquer.umlauf;
 
 /**
  * Größter gemeinsamer teiler

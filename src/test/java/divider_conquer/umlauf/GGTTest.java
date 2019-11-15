@@ -1,6 +1,6 @@
-package divider_conquer;
+package divider_conquer.umlauf;
 
-import divide_conquer.GGT;
+import divide_conquer.umlauf.GGT;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
