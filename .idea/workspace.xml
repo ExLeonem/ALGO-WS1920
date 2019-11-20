@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/IntroSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/KBiggestElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/NearestPointPair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structures/DistanceMetric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/KBiggestElementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/PointDistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ArrayUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/FFTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/FFTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/NearestPointPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/MaxConsecutive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/DistanceMetric.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/Point.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
