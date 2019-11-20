@@ -1,4 +1,4 @@
-package utils;
+package supplementary.utils;
 
 public class ArrayUtils {
 

@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/FFT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/FFTTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/IntroSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/KBiggestElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/NearestPointPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structures/DistanceMetric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/KBiggestElementTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/Exchanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/Exchanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ExchangesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ExchangesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/NoneNegativeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/NoneNegativeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ArrayUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/FFTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/FFTTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
