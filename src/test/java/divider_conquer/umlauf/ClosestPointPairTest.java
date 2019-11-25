@@ -1,7 +1,7 @@
 package divider_conquer.umlauf;
 
 import org.junit.jupiter.api.Test;
-import supplementary.structures.pointcloud.Point;
+import supplementary.structures.points.Point;
 
 import java.util.Random;
 

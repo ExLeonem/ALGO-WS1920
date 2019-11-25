@@ -1,5 +1,7 @@
 package supplementary.structures.graph;
 
+import java.util.Objects;
+
 /**
  * Represents the weight of an edge.
  *
@@ -8,13 +10,13 @@ package supplementary.structures.graph;
  */
 public class Edge {
 
-    private Vertice toVertice;
-    private Vertice fromVertice;
+    private Vertex toVertex;
+    private Vertex fromVertex;
     private double value;
 
-    public Edge(Vertice fromVertice, Vertice toVertice, double value) {
-        this.toVertice = toVertice;
-        this.fromVertice = fromVertice;
+    public Edge(Vertex fromVertex, Vertex toVertex, double value) {
+        this.toVertex = toVertex;
+        this.fromVertex = fromVertex;
         this.value = value;
     }
 
@@ -23,27 +25,48 @@ public class Edge {
     // Setter/-Getter
     // --------------------------
 
-    public void setToVertice(Vertice toVertice) {
-        this.toVertice = toVertice;
+    public void setToVertex(Vertex toVertex) {
+        this.toVertex = toVertex;
     }
 
-    public void setFromVertice(Vertice fromVertice) {
-        this.fromVertice = fromVertice;
+    public void setFromVertex(Vertex fromVertex) {
+        this.fromVertex = fromVertex;
     }
 
     public void setValue(double value) {
         this.value = value;
     }
 
-    public Vertice getToVertice() {
-        return toVertice;
+    public Vertex getToVertex() {
+        return toVertex;
     }
 
-    public Vertice getFromVertice() {
-        return fromVertice;
+    public Vertex getFromVertex() {
+        return fromVertex;
     }
 
     public double getValue() {
         return value;
+    }
+
+
+
+    // --------------------------
+    // HashCode/-Equals
+    // --------------------------
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Edge edge = (Edge) o;
+        return Double.compare(edge.value, value) == 0 &&
+                toVertex.equals(edge.toVertex) &&
+                fromVertex.equals(edge.fromVertex);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(toVertex, fromVertex, value);
     }
 }

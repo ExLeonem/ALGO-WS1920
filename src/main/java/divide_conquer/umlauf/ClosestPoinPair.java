@@ -1,6 +1,6 @@
 package divide_conquer.umlauf;
 
-import supplementary.structures.pointcloud.Point;
+import supplementary.structures.points.Point;
 
 /**
  * Algorithm to calculate the closest point pair.

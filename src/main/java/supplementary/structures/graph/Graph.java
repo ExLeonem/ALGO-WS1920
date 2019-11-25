@@ -1,37 +1,38 @@
 package supplementary.structures.graph;
 
-import java.util.Comparator;
-import java.util.Hashtable;
-import java.util.PriorityQueue;
+import java.util.*;
+
 
 /**
  * Implementation of a simple graph structure.
+ * If set to false the directed attribute adds an additional edge to keep the graph undirected.
  *
  * @author Maksim Sandybekov
  * @date 2019-11-25
  */
 public class Graph {
 
-    private Hashtable<Vertice, PriorityQueue<Edge>> graphRepresentation;
+    private Hashtable<Vertex, HashSet<Edge>> graphRepresentation;
+    private LinkedHashMap<Vertex, Integer> vertexMap;
     private double[][] adjacencyMatrix;
     private boolean directed;
     private boolean reGenerate; // adjacency matrix needs to be recalculated
-    private Comparator<Edge> comparator;
+    private int vertexCounter;
+
+    public Graph() {
+        this.graphRepresentation = new Hashtable<Vertex, HashSet<Edge>>();
+        this.directed = false;
+        this.reGenerate = true;
+        this.vertexMap = new LinkedHashMap<Vertex, Integer>(); // used for generation of the adjacency matrix
+        this.vertexCounter = 0;
+    }
 
     public Graph(boolean directed) {
-        graphRepresentation = new Hashtable<Vertice, PriorityQueue<Edge>>();
+        this.graphRepresentation = new Hashtable<Vertex, HashSet<Edge>>();
         this.directed = directed;
         this.reGenerate = true;
-        this.comparator = new Comparator<Edge>(){
-            @Override
-            public int compare(Edge first, Edge second) {
-
-                double firstValue = first.getValue();
-                double secondValue = second.getValue();
-
-                return firstValue < secondValue? -1 : 1;
-            }
-        };
+        this.vertexMap = new LinkedHashMap<Vertex, Integer>();
+        this.vertexCounter = 0;
     }
 
 
@@ -40,49 +41,88 @@ public class Graph {
     // --------------------------------
 
     /**
-     * Adding a new vertices to the graph structure.
+     * Adding a new Vertexs to the graph structure.
      *
-     * @param vertice
+     * @param vertex - vertex to add.
      */
-    public void addVertice(Vertice vertice) {
-        Hashtable<Vertice, PriorityQueue<Edge>> graphRepresentation = this.getGraphRepresentation();
+    public void addVertex(Vertex vertex) {
+        Hashtable<Vertex, HashSet<Edge>> graphRepresentation = this.getGraphRepresentation();
 
-        // Exit method if vertice already existts
-        boolean verticeAlreadyExists = graphRepresentation.contains(vertice);
-        if (verticeAlreadyExists) {
+        // Exit method if vertex already exists
+        boolean vertexAlreadyExists = graphRepresentation.contains(vertex);
+        if (vertexAlreadyExists) {
             return;
         }
 
         // Add a new vertice to the table
-        Comparator<Edge> comparator = this.getComparator();
-        PriorityQueue<Edge> priorityQueue = new PriorityQueue<>(comparator);
-        graphRepresentation.put(vertice, priorityQueue);
+        HashSet<Edge> edgeSet = new HashSet<Edge>();
+        graphRepresentation.put(vertex, edgeSet);
     }
+
 
     /**
      * Add an edge between two vertices of an graph.
      *
-     * @param edge
+     * @param edge - edge between two vertices.
      */
     public void addEdge(Edge edge) {
-        Hashtable<Vertice, PriorityQueue<Edge>> table = this.getGraphRepresentation();
 
-        Vertice fromVertice = edge.getFromVertice();
-        Vertice toVertice = edge.getFromVertice();
+        Vertex fromVertex = edge.getFromVertex();
+        Vertex toVertex = edge.getToVertex();
 
-        PriorityQueue priorityQueue = table.get(fromVertice);
-        priorityQueue.add(edge);
+        Hashtable<Vertex, HashSet<Edge>> table = this.getGraphRepresentation();
+        HashSet<Edge> edgeSet = table.get(fromVertex);
+        edgeSet.add(edge);
 
-        // Undirected graphs need to track the other direction also
+        // Track every used vertex
+        this.updateVertexSet(fromVertex);
+        this.updateVertexSet(toVertex);
+
+        // Additional insertes for undirected graphs
         boolean undirected = !this.isDirected();
         if (undirected) {
-            boolean toVerticeExists = table.contains(toVertice);
-            if (!toVerticeExists) {
-                // Add non existing vertice
+            boolean toVerticeExists = table.contains(toVertex);
 
+            // Add non existing vertice
+            if (!toVerticeExists) {
+                table.put(toVertex, new HashSet<Edge>());
+            }
+
+            // Append the reversed edge
+            double value = edge.getValue();
+            HashSet toEdgeSet = table.get(toVertex);
+            toEdgeSet.add(new Edge(toVertex, fromVertex, value));
+        }
+    }
+
+
+    /**
+     * Get's an direct edge between two vertices if it is existent.
+     *
+     * @param fromVertex - start vertex.
+     * @param toVertex - end vertex
+     * @return - the edge between two vertices.
+     */
+    public double getEdge(Vertex fromVertex, Vertex toVertex) {
+        Hashtable<Vertex, HashSet<Edge>> table = this.getGraphRepresentation();
+        HashSet<Edge> edgeSet = table.get(fromVertex);
+
+        // Key not-existing
+        if (edgeSet == null) {
+            throw new NullPointerException("There is no edge between these two vertices.");
+        }
+
+        // Search for edge with destination vertex
+        Iterator<Edge> edgeIterator = edgeSet.iterator();
+        while(edgeIterator.hasNext()) {
+            Edge edge = edgeIterator.next();
+            if (edge.getToVertex().equals(toVertex)) {
+                return edge.getValue();
             }
         }
 
+        // Destinatinon vertex not found in priority list
+        throw new NullPointerException("There's no edge between these two vertices.");
     }
 
 
@@ -90,15 +130,80 @@ public class Graph {
     // Utility functions
     // --------------------------------
 
-
     /**
-     * Uses the graph definition to generate an adjancency matrix.
+     * Uses the graph definition to generate an adjacency matrix.
      *
      * @return - the graph defined as adjacency matrix.
      */
-    public double[][] getAdjancencyMatrix() {
+    public double[][] createAdjacencyMatrix() {
 
-        return new double[][]{{1.0}};
+        LinkedHashMap<Vertex, Integer> allVertices = this.getVertexMap();
+
+        int numVertices = allVertices.size();
+        double[][] adjMatrix = new double[numVertices][numVertices];
+
+        Hashtable<Vertex, HashSet<Edge>> graph = this.getGraphRepresentation();
+        Enumeration<Vertex> vertexEnum = graph.keys();
+
+        // Fill adjacency matrix
+        Iterator<Vertex> vertexIterator = vertexEnum.asIterator();
+        Vertex fromVertex;
+        Vertex toVertex;
+        Edge currentEdge;
+        int verticalIndx = 0;
+        int horizontalIndx = 0;
+        while (vertexIterator.hasNext()) {
+            fromVertex = vertexIterator.next();
+            verticalIndx = allVertices.get(fromVertex);
+
+            // Iterate over edges
+            HashSet<Edge> edges = graph.get(fromVertex);
+            Iterator<Edge> edgeIterator = edges.iterator();
+            while(edgeIterator.hasNext()) {
+                currentEdge = edgeIterator.next();
+                toVertex = currentEdge.getToVertex();
+                horizontalIndx = allVertices.get(toVertex);
+                double value = currentEdge.getValue();
+
+                adjMatrix[verticalIndx][horizontalIndx] = value;
+            }
+        }
+
+
+        return adjMatrix;
+    }
+
+
+    /**
+     * Keep a list of unique vertices used inside the graph.
+     *
+     * @param vertex
+     */
+    private void updateVertexSet(Vertex vertex) {
+        LinkedHashMap<Vertex, Integer> vertexMap = this.getVertexMap();
+        int vertexCounter = this.getVertexCounter();
+        if (vertexMap.get(vertex) == null) {
+            vertexMap.put(vertex, vertexCounter++);
+            this.setVertexCounter(vertexCounter);
+        }
+    }
+
+    /**
+     *
+     * @return - An array of vertices used in the graph.
+     */
+    public Vertex[] getVertices() {
+        Hashtable<Vertex, HashSet<Edge>> table = this.getGraphRepresentation();
+        Enumeration<Vertex> verticeEnum = table.keys();
+        Iterator<Vertex> verticeIt = verticeEnum.asIterator();
+
+        List<Vertex> verticeList = new ArrayList<Vertex>();
+        verticeIt.forEachRemaining(verticeList::add);
+
+        Vertex[] vertices = new Vertex[verticeList.size()];
+        vertices = verticeList.toArray(vertices);
+
+        return vertices;
     }
 
 
@@ -107,7 +212,7 @@ public class Graph {
     // ----------------------------------
 
 
-    public void setGraphRepresentation(Hashtable<Vertice, PriorityQueue<Edge>> graphRepresentation) {
+    public void setGraphRepresentation(Hashtable<Vertex, HashSet<Edge>> graphRepresentation) {
         this.graphRepresentation = graphRepresentation;
     }
 
@@ -123,11 +228,15 @@ public class Graph {
         this.reGenerate = reGenerate;
     }
 
-    public void setComparator(Comparator<Edge> comparator) {
-        this.comparator = comparator;
+    public void setVertexmap(LinkedHashMap<Vertex, Integer> vertexMap) {
+        this.vertexMap = vertexMap;
     }
 
-    public Hashtable<Vertice, PriorityQueue<Edge>> getGraphRepresentation() {
+    public void setVertexCounter(int vertexCounter) {
+        this.vertexCounter = vertexCounter;
+    }
+
+    public Hashtable<Vertex, HashSet<Edge>> getGraphRepresentation() {
         return graphRepresentation;
     }
 
@@ -143,7 +252,24 @@ public class Graph {
         return reGenerate;
     }
 
-    public Comparator<Edge> getComparator() {
-        return this.comparator;
+    public Comparator<Edge> getDefaultComparator() {
+        return new Comparator<Edge>(){
+            @Override
+            public int compare(Edge first, Edge second) {
+
+                double firstValue = first.getValue();
+                double secondValue = second.getValue();
+
+                return firstValue < secondValue? -1 : 1;
+            }
+        };
+    }
+
+    public LinkedHashMap<Vertex, Integer> getVertexMap() {
+        return this.vertexMap;
+    }
+
+    public int getVertexCounter() {
+        return this.vertexCounter;
     }
 }

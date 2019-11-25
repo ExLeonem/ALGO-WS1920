@@ -1,4 +1,4 @@
-package supplementary.structures.pointcloud;
+package supplementary.structures.points;
 
 /**
  * Supplementary structure to work with points of arbitary dimensions.

@@ -1,6 +1,4 @@
-package supplementary.structures.pointcloud;
-
-import java.util.function.Function;
+package supplementary.structures.points;
 
 /**
  *
