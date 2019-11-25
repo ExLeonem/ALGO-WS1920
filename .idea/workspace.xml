@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/DirectedGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Edge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/BreadthSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/Dijkstra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/supplementary/graph/GraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/DirectedGraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertice.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

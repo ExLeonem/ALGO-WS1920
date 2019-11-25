@@ -6,10 +6,11 @@ package supplementary.structures.graph;
  * @author Maksim Sandykeov
  * @date 2019-11-25
  *
- * @param <T> -
+ * @param <T> - Type representing an vertice definition.
  */
 public class Vertice<T> {
 
+    private T verticeDefinition;
 
     public Vertice(T value) {
 
