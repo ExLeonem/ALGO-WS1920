@@ -1,6 +1,6 @@
 package divide_conquer.umlauf;
 
-import supplementary.structures.Point;
+import supplementary.structures.pointcloud.Point;
 
 /**
  * Algorithm to calculate the closest point pair.
@@ -9,7 +9,6 @@ import supplementary.structures.Point;
  * @date 2019-20-11
  */
 public class ClosestPoinPair {
-
 
     public Point[] calcuate(Point[] pointsInSpace) {
 
@@ -60,5 +59,5 @@ public class ClosestPoinPair {
 
         return minPoints;
     }
-    
+
 }
