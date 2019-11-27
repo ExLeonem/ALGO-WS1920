@@ -1,11 +1,10 @@
 package supplementary.structures.graph;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Objects;
-import java.util.PriorityQueue;
 
 /**
- * Vertices of an graph.
+ * Representing the vertex of an graph.
  *
  * @param <T> - Type representing an vertice definition.
  * @author Maksim Sandykeov
@@ -15,24 +14,50 @@ public class Vertex<T> {
 
     private T definition;
     private boolean visited;
+    private HashMap<Vertex, Vertex> neighbours;
 
     public Vertex(T definition) {
         this.definition = definition;
         this.visited = false;
+        this.neighbours = new HashMap<Vertex, Vertex>();
+    }
+
+
+    /**
+     * Adding a neighbour to node neighbours
+     *
+     * @param vertex - A vertex to add to the neighbours
+     */
+    public void addNeighbour(Vertex vertex) {
+
+        HashMap<Vertex, Vertex> currentNeighbours = this.getNeighbours();
+        if (!currentNeighbours.containsKey(vertex)) {
+            currentNeighbours.put(vertex, vertex);
+        }
+    }
+
+
+    /**
+     * Remove and return a neighbour.
+     *
+     * @param vertex - A vertex to search for in neighbours.
+     * @return Neighbour vertex
+     */
+    public Vertex removeNeighbour(Vertex vertex) {
+
+        HashMap<Vertex, Vertex> currentNeighbours = this.getNeighbours();
+        Vertex neighbour = null;
+        if (currentNeighbours.containsKey(vertex)) {
+            neighbour = currentNeighbours.remove(vertex);
+        }
+
+        return neighbour;
     }
 
 
     // -----------------------------
     // Setter/-Getter
     // -----------------------------
-
-    public T getDefinition() {
-        return definition;
-    }
-
-    public boolean wasVisited() {
-        return this.visited;
-    }
 
     public void setDefinition(T definition) {
         this.definition = definition;
@@ -42,7 +67,19 @@ public class Vertex<T> {
         this.visited = visited;
     }
 
+    public void setNeighbours(HashMap<Vertex, Vertex> neighbours) { this.neighbours = neighbours; }
 
+    public T getDefinition() {
+        return definition;
+    }
+
+    public boolean wasVisited() {
+        return this.visited;
+    }
+
+    public HashMap<Vertex, Vertex> getNeighbours() {
+        return this.neighbours;
+    }
 
 
     // -----------------------------

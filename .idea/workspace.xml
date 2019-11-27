@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/QuickSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/BreadthSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greedy/BreadthSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Edge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/pointcloud/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/points/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/pointcloud/PointDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/points/PointDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/points/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/points/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/supplementary/graph/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/supplementary/graph/GraphTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/Exchanges.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/Exchanges.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/ArrayUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/greedy/BreadthSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greedy/BreadthSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Vertex.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +75,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GraphTest">
+  <component name="RunManager" selected="JUnit.ClosestPointPairTest.twoPoints">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -85,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExchangesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClosestPointPairTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -94,8 +96,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ExchangesTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClosestPointPairTest.twoPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.umlauf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
+      <option name="METHOD_NAME" value="twoPoints" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,22 +129,6 @@
       <option name="PACKAGE_NAME" value="supplementary.graph" />
       <option name="MAIN_CLASS_NAME" value="supplementary.graph.GraphTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphTest.addVerticeOperation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="supplementary.graph.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="supplementary.graph" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.graph.GraphTest" />
-      <option name="METHOD_NAME" value="addVerticeOperation" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,19 +167,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.ExchangesTest" />
       <item itemvalue="JUnit.GraphTest" />
-      <item itemvalue="JUnit.GraphTest.addVerticeOperation" />
       <item itemvalue="JUnit.GraphTest.checkBasic" />
       <item itemvalue="JUnit.GraphTest.checkAdjacencyDirected" />
+      <item itemvalue="JUnit.ClosestPointPairTest" />
+      <item itemvalue="JUnit.ClosestPointPairTest.twoPoints" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClosestPointPairTest.twoPoints" />
+        <item itemvalue="JUnit.ClosestPointPairTest" />
         <item itemvalue="JUnit.GraphTest" />
         <item itemvalue="JUnit.GraphTest.checkAdjacencyDirected" />
         <item itemvalue="JUnit.GraphTest.checkBasic" />
-        <item itemvalue="JUnit.GraphTest.addVerticeOperation" />
-        <item itemvalue="JUnit.ExchangesTest" />
       </list>
     </recent_temporary>
   </component>

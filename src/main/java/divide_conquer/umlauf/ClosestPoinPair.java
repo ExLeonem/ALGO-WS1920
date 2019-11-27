@@ -16,7 +16,7 @@ public class ClosestPoinPair {
             throw new IllegalArgumentException("Can't closest pair of points for less than 2 Points.");
         }
 
-        return this.recurse(pointsInSpace, 0, pointsInSpace.length);
+        return this.recurse(pointsInSpace, 0, pointsInSpace.length-1);
     }
 
 
@@ -37,6 +37,7 @@ public class ClosestPoinPair {
         // Conquer (Merge)
         double rightDistance = rightPointPair[0].distanceTo(rightPointPair[1]);
         double leftDistance = leftPointPair[0].distanceTo(leftPointPair[1]);
+
 
         double minDistance = leftDistance < rightDistance? leftDistance : rightDistance;
         Point[] minPoints = leftDistance < rightDistance? leftPointPair : rightPointPair;

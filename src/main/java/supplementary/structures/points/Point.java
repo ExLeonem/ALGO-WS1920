@@ -1,5 +1,8 @@
 package supplementary.structures.points;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * Supplementary structure to work with points of arbitary dimensions.
  *
@@ -30,7 +33,7 @@ public class Point {
     /**
      * Calculate distance between two points use euclidean distance as default metric
      *
-     * @param point -
+     * @param point - the other point
      * @return
      */
     public double distanceTo(Point point) {
@@ -42,6 +45,14 @@ public class Point {
         return this.distanceTo(point, this.defaultMetric);
     }
 
+
+    /**
+     * Similar to above method with additional parameter for a specific distance metric.
+     *
+     * @param point - the other point
+     * @param distanceMetric - the distance metric to use for distance calcculation
+     * @return
+     */
     public double distanceTo(Point point, PointDistance distanceMetric) {
 
         if (point == null) {
@@ -60,6 +71,7 @@ public class Point {
     // --------------------------
     // Utility functions
     // -------------------------
+
     public double valueAt(int index) {
         return this.coordinates[index];
     }
@@ -73,6 +85,7 @@ public class Point {
     // --------------------------
     // Setter/-Getter
     // -------------------------
+
     public double[] getCoordinates() {
         return coordinates;
     }
@@ -80,4 +93,41 @@ public class Point {
     public void setCoordinates(double[] coordinates) {
         this.coordinates = coordinates;
     }
+
+
+
+    // --------------------------
+    // Equal/Hashcode
+    // -------------------------
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return dim == point.dim &&
+                Arrays.equals(coordinates, point.coordinates) &&
+                defaultMetric == point.defaultMetric;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(dim, defaultMetric);
+        result = 31 * result + Arrays.hashCode(coordinates);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        String pointDef =  "Point: (Dim: ";
+
+        double[] coords = this.getCoordinates();
+        pointDef += coords.length;
+        for (int i = 0; i < coords.length; i++) {
+
+        }
+
+        return pointDef;
+    }
+
 }

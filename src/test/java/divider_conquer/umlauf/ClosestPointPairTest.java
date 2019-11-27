@@ -2,12 +2,16 @@ package divider_conquer.umlauf;
 
 import org.junit.jupiter.api.Test;
 import supplementary.structures.points.Point;
+import divide_conquer.umlauf.ClosestPoinPair;
 
+import java.util.Arrays;
 import java.util.Random;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ClosestPointPairTest {
 
-    ClosestPointPairTest closesPair = new ClosestPointPairTest();
+    ClosestPoinPair closestPair = new ClosestPoinPair();
 
 
     @Test
@@ -15,9 +19,9 @@ public class ClosestPointPairTest {
         Point pointA = new Point(5.5, 3.3);
         Point pointB = new Point(7, 3);
         Point[] points = new Point[]{pointA, pointB};
+        Point[] result = closestPair.calcuate(points);
 
-
-
+        assertArrayEquals(points, result);
     }
 
 
@@ -26,6 +30,7 @@ public class ClosestPointPairTest {
         Point pointA = new Point();
         Point pointB = new Point();
 
+        assertEquals(1, 1);
     }
 
 

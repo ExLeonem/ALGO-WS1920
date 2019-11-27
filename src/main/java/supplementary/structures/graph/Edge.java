@@ -18,6 +18,9 @@ public class Edge {
         this.toVertex = toVertex;
         this.fromVertex = fromVertex;
         this.value = value;
+
+        toVertex.addNeighbour(fromVertex);
+        fromVertex.addNeighbour(toVertex);
     }
 
 

@@ -25,19 +25,19 @@ public class QuickSort {
     // Recurse quicksort
     private static int[] sort(int[] elements, int left, int right) {
 
+        // Base case
         if (left >= right) {
             return elements;
         }
 
-        // Set parameters
-        int center = QuickSort.partition(elements, left, right);
-
         // Recursion
+        int center = QuickSort.partition(elements, left, right);
         QuickSort.sort(elements, left, center); // sort left side
         QuickSort.sort(elements, center+1, right); // sort right side
 
         return elements;
     }
+
 
     public static int partition(int[] elements, int left, int right) {
         int pivotElement = elements[right-1];
@@ -55,6 +55,7 @@ public class QuickSort {
         swapElements(elements, ex_var+1, right-1);
         return ex_var+1;
     }
+
 
     public static void swapElements(int[] elements, int from, int to) {
         int temp = elements[to];
