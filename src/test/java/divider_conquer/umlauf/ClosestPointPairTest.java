@@ -25,7 +25,7 @@ public class ClosestPointPairTest {
 
 
     @Test
-    void threePoints() {
+    void fourPoints() {
         Point pointA = new Point(5, 3);
         Point pointB = new Point(12, 6);
         Point pointC = new Point(2, 6);
@@ -36,7 +36,42 @@ public class ClosestPointPairTest {
 
         closestPair.printPoints(result);
 
-        assertArrayEquals(result, points);
+        assertArrayEquals(new Point[]{pointC, pointD}, result);
+    }
+
+
+    @Test
+    void threePoints() {
+        Point pointA = new Point(5, 3);
+        Point pointB = new Point(12, 6);
+        Point pointC = new Point(2, 6);
+
+        Point[] points = new Point[]{pointA, pointB, pointC};
+        Point[] result = closestPair.calcuate(points);
+
+        closestPair.printPoints(result);
+
+        assertArrayEquals(new Point[]{pointA, pointC}, result);
+    }
+
+
+    @Test
+    void largePointSpace() {
+
+        Point pointA = new Point(5, 2, 1, 3, 2);
+        Point pointB = new Point(2, 1, 2, 2, 2);
+        Point pointC = new Point(12, 19, 2, 33, 12);
+        Point pointD = new Point(15, 12, 2, 1, 2);
+        Point pointE = new Point(2, 1, 2, 1, 2);
+        Point pointF = new Point(5, 3, 2, 1, 18);
+        Point pointX = new Point(12, 22, 12, 22, 888);
+
+        Point[] points = new Point[]{pointA, pointB, pointC, pointD, pointE, pointF, pointX};
+        Point[] result = closestPair.calcuate(points);
+
+        Point[] exptected = new Point[]{pointE, pointB};
+
+        assertArrayEquals(result, exptected);
     }
 
 

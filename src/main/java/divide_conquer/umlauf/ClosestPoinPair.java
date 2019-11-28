@@ -10,6 +10,7 @@ import supplementary.structures.points.Point;
  */
 public class ClosestPoinPair {
 
+
     /**
      *  Calculate the closest point pair.
      *
@@ -22,7 +23,7 @@ public class ClosestPoinPair {
             throw new IllegalArgumentException("Can't closest pair of points for less than 2 Points.");
         }
 
-        return this.recurse(pointsInSpace, 0, pointsInSpace.length);
+        return this.recurse(pointsInSpace, 0, pointsInSpace.length-1);
     }
 
 
@@ -37,24 +38,22 @@ public class ClosestPoinPair {
     private Point[] recurse(Point[] pointsInSpace, int left, int right) {
 
         // Base Case (two points), return Points with distance 0
-        if (right - left == 2) {
-            return new Point[]{pointsInSpace[left], pointsInSpace[right-1]};
+        if ((right-left) == 1) {
+            return new Point[]{pointsInSpace[left], pointsInSpace[left+1]};
         }
 
         // Divide (each recursion returns always pair of length 2 and first element always != null)
         int center = (left + right) / 2;
         Point[] leftPointPair = this.recurse(pointsInSpace, left, center);
-        Point[] rightPointPair = this.recurse(pointsInSpace, center+1, right);
+        Point[] rightPointPair = this.recurse(pointsInSpace, center, right);
 
         // Conquer (Merge)
         double rightDistance = rightPointPair[0].distanceTo(rightPointPair[1]);
         double leftDistance = leftPointPair[0].distanceTo(leftPointPair[1]);
 
-        System.out.println("Left Distance: " + leftDistance);
-        System.out.println("Right Distance: " + rightDistance);
-
         double minDistance = leftDistance < rightDistance? leftDistance : rightDistance;
         Point[] minPoints = leftDistance < rightDistance? leftPointPair : rightPointPair;
+
         int crossIndx = 0;
         for (int i = 0; i < leftPointPair.length; i++) {
             crossIndx = (1 + i) % 2; // 0 -> 1 && 1 -> 0
@@ -63,11 +62,11 @@ public class ClosestPoinPair {
                 continue;
             }
 
-            if (leftPointPair[i].distanceTo(rightPointPair[crossIndx]) < minDistance) {
+            if (leftPointPair[i].distanceTo(rightPointPair[crossIndx]) < minDistance && !leftPointPair[i].equals(rightPointPair[crossIndx])) {
                 minPoints[crossIndx] = rightPointPair[crossIndx];
             }
 
-            if (leftPointPair[i].distanceTo(rightPointPair[i]) < minDistance) {
+            if (leftPointPair[i].distanceTo(rightPointPair[i]) < minDistance && !leftPointPair[i].equals(rightPointPair[i])) {
                 minPoints[crossIndx] = rightPointPair[i];
             }
         }
@@ -83,7 +82,11 @@ public class ClosestPoinPair {
      */
     public void printPoints(Point[] points) {
 
-        for (Point point: points) {
+        for (Point point : points) {
+            if (point == null) {
+                System.out.println("Null point");
+                continue;
+            }
             System.out.println(point.toString());
         }
     }

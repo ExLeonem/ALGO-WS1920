@@ -4,10 +4,8 @@
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/points/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/points/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/ClosestPoinPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/ClosestPoinPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/points/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/points/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/ClosestPointPairTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/ClosestPointPairTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClosestPointPairTest.threePoints">
+  <component name="RunManager" selected="JUnit.ClosestPointPairTest.largePointSpace">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -91,6 +89,38 @@
       <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
       <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClosestPointPairTest.fourPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.umlauf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
+      <option name="METHOD_NAME" value="fourPoints" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClosestPointPairTest.largePointSpace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.umlauf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
+      <option name="METHOD_NAME" value="largePointSpace" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,52 +157,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="supplementary.graph.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="supplementary.graph" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.graph.GraphTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphTest.checkAdjacencyDirected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="supplementary.graph.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="supplementary.graph" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.graph.GraphTest" />
-      <option name="METHOD_NAME" value="checkAdjacencyDirected" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.GraphTest" />
-      <item itemvalue="JUnit.GraphTest.checkAdjacencyDirected" />
       <item itemvalue="JUnit.ClosestPointPairTest" />
       <item itemvalue="JUnit.ClosestPointPairTest.twoPoints" />
       <item itemvalue="JUnit.ClosestPointPairTest.threePoints" />
+      <item itemvalue="JUnit.ClosestPointPairTest.fourPoints" />
+      <item itemvalue="JUnit.ClosestPointPairTest.largePointSpace" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClosestPointPairTest.largePointSpace" />
+        <item itemvalue="JUnit.ClosestPointPairTest" />
         <item itemvalue="JUnit.ClosestPointPairTest.threePoints" />
         <item itemvalue="JUnit.ClosestPointPairTest.twoPoints" />
-        <item itemvalue="JUnit.ClosestPointPairTest" />
-        <item itemvalue="JUnit.GraphTest" />
-        <item itemvalue="JUnit.GraphTest.checkAdjacencyDirected" />
+        <item itemvalue="JUnit.ClosestPointPairTest.fourPoints" />
       </list>
     </recent_temporary>
   </component>
