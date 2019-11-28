@@ -122,9 +122,14 @@ public class Point {
         String pointDef =  "Point: (Dim: ";
 
         double[] coords = this.getCoordinates();
-        pointDef += coords.length;
+        pointDef += coords.length + "| ";
         for (int i = 0; i < coords.length; i++) {
 
+            if (i == coords.length -1) {
+                pointDef += coords[i] + ");";
+                break;
+            }
+            pointDef += coords[i] + ", ";
         }
 
         return pointDef;
