@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TuermeTest {
 
+
     @Test
     void standardField() {
         TuermeHanoi hanoi = new TuermeHanoi();
@@ -14,10 +15,10 @@ public class TuermeTest {
         assertEquals(12, totalRounds);
     }
 
+
     @Test
     void singleField() {
 
     }
-
 
 }

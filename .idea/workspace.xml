@@ -2,11 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/MaxConsecutiveTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/ClosestPoinPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/ClosestPoinPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/ClosestPointPairTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/ClosestPointPairTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Strassen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Strassen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/ClosestPoinPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/ClosestPoinPair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/Exchanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Exchanges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/FFT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/FFT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/GGT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/IntroSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/IntroSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/KBiggestElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/KBiggestElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/MaxConsecutive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/umlauf/NoneNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/NoneNegative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/MergeSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/MergeSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/QuickSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/QuickSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/TuermeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/TuermeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/algorithm_design_manual/Exercise1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/abstract_exercises/Exercise1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ClosestPointPairTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/ClosestPointPairTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/ExchangesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/ExchangesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/FFTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/FFTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/GGTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/GGTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/KBiggestElementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/KBiggestElementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/umlauf/NoneNegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/NoneNegativeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/MergeSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/QuickSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/ClosestPoinPair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/Exchanges.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/FFT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/GGT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/IntroSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/KBiggestElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/MaxConsecutive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/umlauf/NoneNegative.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/MergeSortTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/QuickSortTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/ClosestPointPairTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/ExchangesTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/FFTTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/GGTTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/KBiggestElementTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/umlauf/NoneNegativeTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClosestPointPairTest.largePointSpace">
+  <component name="RunManager" selected="JUnit.GGTTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -82,29 +121,13 @@
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.umlauf.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.ClosestPointPairTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClosestPointPairTest.fourPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.umlauf.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
-      <option name="METHOD_NAME" value="fourPoints" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,12 +136,12 @@
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.umlauf.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.ClosestPointPairTest" />
       <option name="METHOD_NAME" value="largePointSpace" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -129,30 +152,44 @@
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.umlauf.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.ClosestPointPairTest" />
       <option name="METHOD_NAME" value="threePoints" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClosestPointPairTest.twoPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GGTTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.umlauf.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.umlauf" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.umlauf.ClosestPointPairTest" />
-      <option name="METHOD_NAME" value="twoPoints" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.GGTTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MaxConsecutiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,18 +197,18 @@
     <list>
       <item itemvalue="JUnit.All" />
       <item itemvalue="JUnit.ClosestPointPairTest" />
-      <item itemvalue="JUnit.ClosestPointPairTest.twoPoints" />
       <item itemvalue="JUnit.ClosestPointPairTest.threePoints" />
-      <item itemvalue="JUnit.ClosestPointPairTest.fourPoints" />
       <item itemvalue="JUnit.ClosestPointPairTest.largePointSpace" />
+      <item itemvalue="JUnit.MaxConsecutiveTest" />
+      <item itemvalue="JUnit.GGTTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClosestPointPairTest.largePointSpace" />
+        <item itemvalue="JUnit.GGTTest" />
+        <item itemvalue="JUnit.MaxConsecutiveTest" />
         <item itemvalue="JUnit.ClosestPointPairTest" />
+        <item itemvalue="JUnit.ClosestPointPairTest.largePointSpace" />
         <item itemvalue="JUnit.ClosestPointPairTest.threePoints" />
-        <item itemvalue="JUnit.ClosestPointPairTest.twoPoints" />
-        <item itemvalue="JUnit.ClosestPointPairTest.fourPoints" />
       </list>
     </recent_temporary>
   </component>
