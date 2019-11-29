@@ -2,7 +2,7 @@
 # Algorithmentechnik WS19/20 Wiederholungsklausur
 
 
-- [Offene Fragestellungen](#Offene Fragestellungen)
+- [Offene Fragestellungen](#Offene-Fragestellungen)
 - [Algorithmen](#Algorithmen)
 
 
