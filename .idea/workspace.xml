@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/BinSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/BinSearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PowerTest">
+  <component name="RunManager" selected="JUnit.BinSearchTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -74,49 +77,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxConsecutiveTest.checkPreviouslyFailedOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="METHOD_NAME" value="checkPreviouslyFailedOne" />
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.BinSearchTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinSearchTest.searchCenterValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.BinSearchTest" />
+      <option name="METHOD_NAME" value="searchCenterValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxConsecutiveTest.maxOrderArrayLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinSearchTest.searchOutterRightValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="METHOD_NAME" value="maxOrderArrayLength" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaxConsecutiveTest.random" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="METHOD_NAME" value="random" />
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.BinSearchTest" />
+      <option name="METHOD_NAME" value="searchOutterRightValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,19 +156,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.MaxConsecutiveTest.random" />
-      <item itemvalue="JUnit.MaxConsecutiveTest.maxOrderArrayLength" />
-      <item itemvalue="JUnit.MaxConsecutiveTest.checkPreviouslyFailedOne" />
       <item itemvalue="JUnit.MaximumTest" />
       <item itemvalue="JUnit.PowerTest" />
+      <item itemvalue="JUnit.BinSearchTest" />
+      <item itemvalue="JUnit.BinSearchTest.searchOutterRightValue" />
+      <item itemvalue="JUnit.BinSearchTest.searchCenterValue" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinSearchTest" />
+        <item itemvalue="JUnit.BinSearchTest.searchCenterValue" />
+        <item itemvalue="JUnit.BinSearchTest.searchOutterRightValue" />
         <item itemvalue="JUnit.PowerTest" />
         <item itemvalue="JUnit.MaximumTest" />
-        <item itemvalue="JUnit.MaxConsecutiveTest.checkPreviouslyFailedOne" />
-        <item itemvalue="JUnit.MaxConsecutiveTest.random" />
-        <item itemvalue="JUnit.MaxConsecutiveTest.maxOrderArrayLength" />
       </list>
     </recent_temporary>
   </component>
