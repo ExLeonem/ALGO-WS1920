@@ -8,8 +8,8 @@
 
 ## Offene Fragestellungen
 
-- [ ]  Wird spezielles Master Theorem Abgefragt? (Probleme werden um Konstanten wert subtrahiert und nicht dividiert) Evtl. Proberechnung?
-- [ ] 
+1. Wird spezielles Master Theorem Abgefragt? (Probleme werden um Konstanten wert subtrahiert und nicht dividiert) Evtl. Proberechnung? 
+
 
 ## Algorithmen
 Verschiedene implementierungen von algorithmen.

@@ -4,15 +4,28 @@ public class ArrayUtils {
 
 
     /**
-     *  Prints the elements of an integer array.
+     *  Prints the elements of an integer array verticaly with element index.
      *
-     * @param elements
+     * @param array
      */
-    public void printArray(int[] elements) {
+    public static void printVertical(int[] array) {
         int counter = 0;
-        for (int element : elements) {
+        for (int element : array) {
             counter++;
-            System.out.println(counter + ": " + element);
+            System.out.print(counter + ": " + element);
+        }
+    }
+
+
+    /**
+     * Print elements of an integer array horizontally divided by a vertical divider.
+     *
+     * @param array
+     */
+    public static void printHorizontal(int[] array) {
+        System.out.print("| ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " | ");
         }
     }
 

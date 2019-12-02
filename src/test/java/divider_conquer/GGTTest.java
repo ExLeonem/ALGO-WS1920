@@ -73,6 +73,13 @@ public class GGTTest {
     }
 
 
+    @Test
+    void comapre() {
+        int[] numbers = {10, 15, 35, 40};
+        int divider = ggt.calculate(numbers);
+        assertEquals(5, divider);
+    }
+
     // --- Test Edge cases
     @Test
     void invalidNumber() {

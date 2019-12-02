@@ -1,6 +1,8 @@
 package divide_conquer;
 
-import java.util.Arrays;
+import supplementary.utils.ArrayUtils;
+
+import java.lang.reflect.Array;
 
 /**
  * D&Q algorithm to calculate max. consecutive order of elements
@@ -26,16 +28,18 @@ public class MaxConsecutive {
             return elementCount == 0? 0 : 1;
         }
 
-        int[] maxOrder = this.recurse(elements, 0, elementCount);
-        return maxOrder.length;
+        int[] maxOrder = this.recurse(elements, 0, elementCount-1);
+        return maxOrder[1] - maxOrder[0] + 1;
     }
 
 
     /**
+     * Divide and conquer the problem
      *
      * @param elements - array of elements to search maximum consecutive order in
      * @param left -
      * @param right -
+     *
      * @return array of length 2, containing the left and right border of the maximum consecutive order.
      */
     public int[] recurse(int[] elements, int left, int right) {
@@ -52,18 +56,17 @@ public class MaxConsecutive {
 
 
         // Conquer
-        int leftCount = Arrays.stream(leftPart).sum();
-        int rightCount = Arrays.stream(rightPart).sum();
-        if (leftCount == 1) {
-
+        if (leftPart[1] == rightPart[0] - 1 && elements[leftPart[1]] < elements[rightPart[0]]) {
+            // The parts are
+            leftPart[1] = rightPart[0];
+            return new int[]{leftPart[0], rightPart[1]};
         }
 
+        // Return
+        int maxOrderLeft = leftPart[1] - leftPart[0] + 1;
+        int maxOrderRight = rightPart[1] - rightPart[0] + 1;
 
-
-        return new int[]{1};
+        return maxOrderLeft > maxOrderRight? leftPart : rightPart;
     }
-
-
-
 
 }
