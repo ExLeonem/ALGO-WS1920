@@ -1,7 +1,7 @@
-package divide_conquer.search_sort;
+package divide_conquer;
 
+public class Search {
 
-public class BinSearch {
 
     /**
      * Searches the sorted array for a specific value and returns index if value is found.

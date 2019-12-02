@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/BinSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/BinSearchTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/SumNoneNegative.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/SumOfEntries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/SumNoneNegativeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/SumOfEntriesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/NoneNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/CountNoneNegative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/BinSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/BinSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/NoneNegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/CountNoneNegativeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/NoneNegative.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/BinSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/BinSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/NoneNegativeTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BinSearchTest">
+  <component name="RunManager" selected="JUnit.SumOfEntriesTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -124,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaximumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SumNoneNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -133,13 +142,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaximumTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SumNoneNegativeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PowerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SumOfEntriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -148,7 +157,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.PowerTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SumOfEntriesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,19 +165,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.MaximumTest" />
-      <item itemvalue="JUnit.PowerTest" />
       <item itemvalue="JUnit.BinSearchTest" />
       <item itemvalue="JUnit.BinSearchTest.searchOutterRightValue" />
       <item itemvalue="JUnit.BinSearchTest.searchCenterValue" />
+      <item itemvalue="JUnit.SumNoneNegativeTest" />
+      <item itemvalue="JUnit.SumOfEntriesTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SumOfEntriesTest" />
+        <item itemvalue="JUnit.SumNoneNegativeTest" />
         <item itemvalue="JUnit.BinSearchTest" />
         <item itemvalue="JUnit.BinSearchTest.searchCenterValue" />
         <item itemvalue="JUnit.BinSearchTest.searchOutterRightValue" />
-        <item itemvalue="JUnit.PowerTest" />
-        <item itemvalue="JUnit.MaximumTest" />
       </list>
     </recent_temporary>
   </component>

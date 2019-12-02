@@ -2,8 +2,15 @@
 # Algorithmentechnik WS19/20 Wiederholungsklausur
 
 
-- [Offene Fragestellungen](#Offene-Fragestellungen)
-- [Algorithmen](#Algorithmen)
+
+
+1. [Offene Fragestellungen](#Offene-Fragestellungen)
+2. [Algorithmen, Herr Umlauf](#Algorithmen,-Herr-Umlauf)
+    1. [Divide & Conquer](#Divide-&-Conquer)
+    2. [Greedy Algorithmen](#Greedy-Algorithmen)
+    3. [Dynamic Programming](#Dynamic-Programming)
+3. [Komplexitiätsberechnung]
+
 
 
 ## Offene Fragestellungen
@@ -11,9 +18,8 @@
 1. Wird spezielles Master Theorem Abgefragt? (Probleme werden um Konstanten wert subtrahiert und nicht dividiert) Evtl. Proberechnung? 
 2. Bei Algorithmen die eine sortierung benötigen, kann eine sortierung angenommen werden? (Diese muss/wird dann wohl entsprechend bei der Komplexitätsrechnung des Algorithmus mit betrachtet)
 
-## Algorithmen
+## Algorithmenliste, Herr Umlauf
 Verschiedene implementierungen von algorithmen.
-
 
 
 ### Divide & Conquer
@@ -44,8 +50,8 @@ Verschiedene implementierungen von algorithmen.
     - [ ] Intro-Sort
 - [ ]  Trivials
     - [x] Count none-negatives in array
-    - [ ] Summe der Beträge (nicht-negativ)
-    - [ ] Summe der Einträge
+    - [x] Summe der Beträge (nicht-negativ)
+    - [x] Summe der Einträge
     - [x] GGT
     - [x] Maximum value
     - [x] Potenzieren
@@ -103,8 +109,17 @@ Verschiedene implementierungen von algorithmen.
 - [ ] Summe von Produkten
 - [ ] Zahlen-Dreieck
 
-
 ### Backtracking
 
  
 
+## Zusätzliche Alogorithmen
+Weitere Algorithmen die nicht in der Liste stehen und die implementiert wurden.
+
+### Divide and Conquer
+
+### Greedy
+
+### Dynamic Programming
+
+### Backtracking
