@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Maximum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Power.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/MaximumTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/PowerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/algorithm_design_manual/Exercises1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/abstract_exercises/Exercises1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/MaxConsecutiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/MaxConsecutiveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/abstract_exercises/Exercise1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/abstract_exercises/Exercise1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/MaxConsecutive.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/MaxConsecutive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/algorithm_design_manual/Exercises1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/MaxConsecutiveTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/MaxConsecutiveTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$GrinchPart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$GrinchPart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$UnsortedMaxPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$UnsortedMaxPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
