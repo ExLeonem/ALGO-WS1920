@@ -1,4 +1,4 @@
-package divide_conquer.algorithm_design_manual;
+package divide_conquer.abstract_exercises;
 import java.util.Random;
 
 /**

@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Maximum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Power.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/MaximumTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/PowerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/utils/ArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/utils/ArrayUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/GGTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/GGTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/algorithm_design_manual/Exercises1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/abstract_exercises/Exercises1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/MaxConsecutiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/MaxConsecutiveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/abstract_exercises/Exercise1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/abstract_exercises/Exercise1Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/MaxConsecutive.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/MaxConsecutive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/utils/ArrayUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/utils/ArrayUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/GGTTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/algorithm_design_manual/Exercises1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/MaxConsecutiveTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/MaxConsecutiveTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$GrinchPart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$GrinchPart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$UnsortedMaxPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test$UnsortedMaxPair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/abstract_exercises/Exercise1Test.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MaxConsecutiveTest.random">
+  <component name="RunManager" selected="JUnit.PowerTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -84,22 +89,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GGTTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.GGTTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaxConsecutiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MaxConsecutiveTest.checkPreviouslyFailedOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -109,7 +99,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
       <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="checkPreviouslyFailedOne" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,7 +137,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxConsecutiveTest.singleElementEven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MaximumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -155,28 +146,42 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="METHOD_NAME" value="singleElementEven" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaximumTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PowerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.PowerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.MaxConsecutiveTest" />
-      <item itemvalue="JUnit.GGTTest" />
-      <item itemvalue="JUnit.MaxConsecutiveTest.singleElementEven" />
       <item itemvalue="JUnit.MaxConsecutiveTest.random" />
       <item itemvalue="JUnit.MaxConsecutiveTest.maxOrderArrayLength" />
+      <item itemvalue="JUnit.MaxConsecutiveTest.checkPreviouslyFailedOne" />
+      <item itemvalue="JUnit.MaximumTest" />
+      <item itemvalue="JUnit.PowerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PowerTest" />
+        <item itemvalue="JUnit.MaximumTest" />
+        <item itemvalue="JUnit.MaxConsecutiveTest.checkPreviouslyFailedOne" />
         <item itemvalue="JUnit.MaxConsecutiveTest.random" />
         <item itemvalue="JUnit.MaxConsecutiveTest.maxOrderArrayLength" />
-        <item itemvalue="JUnit.MaxConsecutiveTest" />
-        <item itemvalue="JUnit.MaxConsecutiveTest.singleElementEven" />
-        <item itemvalue="JUnit.GGTTest" />
       </list>
     </recent_temporary>
   </component>

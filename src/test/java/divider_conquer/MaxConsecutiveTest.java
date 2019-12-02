@@ -52,6 +52,16 @@ public class MaxConsecutiveTest {
 
 
     @Test
+    void checkPreviouslyFailedOne() {
+        int[] failed = {13, 8, 29, 19, -4, 31, 24, 26, 34, 22};
+        int maxOrder = maxConsecutive.search(failed);
+        int expected = 3;
+
+        assertEquals(expected, maxOrder);
+    }
+
+
+    @Test
     void maxOrderArrayLength() {
         Random rand = new Random();
         final int MAX_ARRAY_LENGTH = 20;
@@ -97,7 +107,7 @@ public class MaxConsecutiveTest {
             if (elements[i] > elements[i-1]) {
                 if ((i - lastIndx) > maxOrder ) {
                     maxOrder = (i - lastIndx);
-                    maxOrderIndxStart = (i - lastIndx);
+                    maxOrderIndxStart = lastIndx;
                     System.out.println("Start: " + lastIndx);
                     System.out.println("End: " + i);
                 }

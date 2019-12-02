@@ -28,7 +28,10 @@ public class MaxConsecutive {
             return elementCount == 0? 0 : 1;
         }
 
-        int[] maxOrder = this.recurse(elements, 0, elementCount-1);
+        System.out.println("Elements: ");
+        ArrayUtils.printHorizontal(elements);
+
+        int[] maxOrder = this.recurse(elements, 0, elementCount-1, 1);
         return maxOrder[1] - maxOrder[0] + 1;
     }
 
@@ -42,7 +45,7 @@ public class MaxConsecutive {
      *
      * @return array of length 2, containing the left and right border of the maximum consecutive order.
      */
-    public int[] recurse(int[] elements, int left, int right) {
+    public int[] recurse(int[] elements, int left, int right, int maxOrder) {
 
         // Base-Case
         if (left >= right) {
@@ -51,16 +54,34 @@ public class MaxConsecutive {
 
         // Divide
         int center = (left + right) / 2;
-        int[] leftPart = this.recurse(elements, left, center);
-        int[] rightPart = this.recurse(elements, center + 1, right);
+        int[] leftPart = this.recurse(elements, left, center, maxOrder);
+        int[] rightPart = this.recurse(elements, center + 1, right, maxOrder);
 
 
         // Conquer
         if (leftPart[1] == rightPart[0] - 1 && elements[leftPart[1]] < elements[rightPart[0]]) {
             // The parts are
+            System.out.println("\n-----------------------");
+            System.out.println("\nLeft: ");
+            System.out.println("0: " + leftPart[0]);
+            System.out.println("1: " + leftPart[1]);
+            System.out.println("\nRight: ");
+            System.out.println("0: " + rightPart[0]);
+            System.out.println("1: " + rightPart[1]);
+
             leftPart[1] = rightPart[0];
             return new int[]{leftPart[0], rightPart[1]};
         }
+
+
+        System.out.println("\n#########################");
+        System.out.println("Left: ");
+        System.out.println("0: " + leftPart[0]);
+        System.out.println("1: " + leftPart[1]);
+        System.out.println("Right: ");
+        System.out.println("0: " + rightPart[0]);
+        System.out.println("1: " + rightPart[1]);
+
 
         // Return
         int maxOrderLeft = leftPart[1] - leftPart[0] + 1;

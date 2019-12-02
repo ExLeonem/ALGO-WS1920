@@ -4,7 +4,7 @@ import org.junit.Rule;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import divide_conquer.algorithm_design_manual.Exercises1;
+import divide_conquer.abstract_exercises.Exercises1;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertArrayEquals;
