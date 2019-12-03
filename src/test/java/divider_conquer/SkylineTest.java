@@ -82,8 +82,8 @@ public class SkylineTest {
 
         @Test
         void simpleTest() {
-            int[] shape = {2, 2, 10};
-            int[][] expected = {{2,10}, {2,0}};
+            int[] shape = {2,2,10};
+            int[][] expected = {{2,10},{2,0}};
             int[][] actual = sky.genCornerCoordinates(shape);
 
             assertArrayEquals(expected, actual);
@@ -127,8 +127,54 @@ public class SkylineTest {
     class TestCoordinateMerge {
 
         @Test
-        void mergeStatic() {
+        @DisplayName("Left upper corner of right and bottom right corner of left building are inside of each other")
+        void mergeFirstBaseCase() {
+            int[][] buildingShapeA = new int[][]{{2,5},{8,0}};
+            int[][] buildingShapeB = new int[][]{{3,2},{10,0}};
 
+            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
+            int[][] expected = new int[][]{{2,5},{8,5},{10,0}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+
+        @Test
+        @DisplayName("Two distinc building shapes, no crossovers.")
+        void mergeSecondBaseCase() {
+            int[][] buildingShapeA = new int[][]{{1,10},{3,0}};
+            int[][] buildingShapeB = new int[][]{{4,2},{10,0}};
+
+            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
+            int[][] expected = new int[][]{{1,10},{3,0},{4,2},{10,0}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+
+        @Test
+        @DisplayName("Only bottom right corner of left building inside the other")
+        void mergeThirdBaseCase() {
+            int[][] buildingShapeA = new int[][]{{0,5},{5,0}};
+            int[][] buildingShapeB = new int[][]{{3,10},{10,0}};
+
+            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
+            int[][] expected = new int[][]{{0,5},{3,10},{10,0}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+
+        @Test
+        @DisplayName("Bottom right corner of right building shape inside the left one.")
+        void mergeFourthBaseCase() {
+            int[][] buildingShapeA = new int[][]{{2,9},{10,0}};
+            int[][] buildingShapeB = new int[][]{{4,20},{8,0}};
+
+            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
+            int[][] expected = new int[][]{{2,9},{3,10},{5,9},{10,0}};
+
+            assertArrayEquals(expected, actual);
         }
 
 

@@ -90,21 +90,72 @@ public class Skyline {
      */
     public int[][] mergeCoordinates(int[][] leftSub, int[][] rightSub) {
 
-        LinkedList<Integer[]> skylineCoords = new LinkedList<Integer[]>();
+        LinkedList<int[]> skylineCoords = new LinkedList<int[]>();
 
+        // Check all coordinates and merge into coord list
         int leftIndx = 0;
         int rightIndx = 0;
-        for (int i = 0; i < (leftSub.length + rightSub.length); i++) {
+        int[] previouslyAdd;
+        int[] coordToAdd;
+        int toAddIndx;
+        boolean leftSmaller; // which side was taken? left: true, right: false
 
-            if (leftIndx < leftSub.length && rightIndx < rightSub.length) {
 
-                if (leftSub[leftIndx][0] < rightSub[rightIndx][0]) {
+        while (leftIndx < leftSub.length && rightIndx < rightSub.length) {
 
-                }
+
+
+            if (leftSub[leftIndx][0] < rightSub[rightIndx][0]) {
+                leftSmaller = true;
+                coordToAdd = leftSub[leftIndx];
             }
+
+
+            leftSmaller = leftSub[leftIndx][0] < rightSub[rightIndx][0]? true : false;
+            coordToAdd = leftSmaller? leftSub[leftIndx] : rightSub[rightIndx];
+            toAddIndx = leftSmaller? leftIndx : rightIndx;
+
+            // Add first element to the list
+            if (skylineCoords.isEmpty()) {
+                if (leftSub[leftIndx][0] < rightSub[rightIndx][0]) {
+                    skylineCoords.add(leftSub[leftIndx]);
+                    leftIndx++;
+                    continue;
+                }
+
+                // Building shapes begin at the same indx.
+                skylineCoords.add(leftSub[leftIndx][1] < rightSub[rightIndx][1]? rightSub[rightIndx] : leftSub[leftIndx]);
+                leftIndx++;
+                rightIndx++;
+            }
+
+            previouslyAdd = skylineCoords.peek(); // previous coordinate
+
+
+
         }
 
 
-        return (int[][]) skylineCoords.toArray();
+
+        return this.listToArray(skylineCoords);
+    }
+
+
+    /**
+     * Transform list of points from a skyline shape into
+     *
+     * @param elements
+     * @return
+     */
+    private int[][] listToArray(LinkedList<int[]> elements) {
+        // Copy collected elements into an array
+        int listLength = elements.size();
+        int[][] arrayElements = new int[listLength][2];
+        for (int i = 0; i < arrayElements.length; i++) {
+            arrayElements[i] = elements.get(i);
+            elements.pop();
+        }
+
+        return arrayElements;
     }
 }

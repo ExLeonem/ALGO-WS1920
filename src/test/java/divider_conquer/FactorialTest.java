@@ -24,7 +24,7 @@ public class FactorialTest {
         @Test
         void factorialOfTwo() {
             int actual = Factorial.classic(2);
-            int expected = 5;
+            int expected = 2;
 
             assertEquals(expected, actual);
         }
@@ -33,7 +33,7 @@ public class FactorialTest {
         @Test
         void bigNumber() {
             int actual = Factorial.classic(5);
-            int expected = 20;
+            int expected = 120;
 
             assertEquals(expected, actual);
         }
@@ -46,7 +46,23 @@ public class FactorialTest {
         @Test
         void zeroFactorial() {
             int actual = Factorial.alternative(0);
+            int expected = 1;
+
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        void factorialOfTwo() {
+            int actual = Factorial.classic(2);
             int expected = 2;
+
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        void bigNumber() {
+            int actual = Factorial.classic(5);
+            int expected = 120;
 
             assertEquals(expected, actual);
         }

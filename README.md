@@ -36,7 +36,6 @@ Verschiedene implementierungen von algorithmen.
 - [ ] Karatsuba (Langazahl-Mult)
 - [ ] Konvex-Hüll (via common tangents)
 - [ ] max. consecutive subarray
-- [ ] Max-search unimodal array
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
@@ -56,6 +55,7 @@ Verschiedene implementierungen von algorithmen.
     - [x] Maximum value
     - [x] Potenzieren
     - [ ] Median
+    - [ ] Max-search unimodal array
     
 
 ### Greedy Algorithm
@@ -117,6 +117,7 @@ Verschiedene implementierungen von algorithmen.
 Weitere Algorithmen die nicht in der Liste stehen und die implementiert wurden.
 
 ### Divide and Conquer
+- [x] Factorial (verschiedene lösungsansätze)
 
 ### Greedy
 

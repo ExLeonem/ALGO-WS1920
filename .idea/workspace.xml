@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Factorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dynamic_programming/BinomialCoefficient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/FactorialTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/SkylineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/UnimodalMaxTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/FactorialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/FactorialTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/SkylineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/SkylineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/SkylineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/SkylineTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SkylineTest$GenerateShapeCorners.randomTest">
+  <component name="RunManager" selected="JUnit.UnimodalMaxTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -79,22 +82,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactorialTest$FactorialAlternative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.BinSearchTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest$FactorialAlternative" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkylineTest$GenerateShapeCorners" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactorialTest$FactorialClassic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -103,13 +106,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$GenerateShapeCorners" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest$FactorialClassic" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkylineTest$GenerateShapeCorners.randomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -118,29 +121,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$GenerateShapeCorners" />
-      <option name="METHOD_NAME" value="randomTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SumNoneNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.SumNoneNegativeTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SumOfEntriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SkylineTest$TestCoordinateMerge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -149,7 +136,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.SumOfEntriesTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$TestCoordinateMerge" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnimodalMaxTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.UnimodalMaxTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,19 +159,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.BinSearchTest" />
-      <item itemvalue="JUnit.SumNoneNegativeTest" />
-      <item itemvalue="JUnit.SumOfEntriesTest" />
-      <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners" />
-      <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.randomTest" />
+      <item itemvalue="JUnit.FactorialTest$FactorialClassic" />
+      <item itemvalue="JUnit.FactorialTest" />
+      <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
+      <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
+      <item itemvalue="JUnit.UnimodalMaxTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.randomTest" />
-        <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners" />
-        <item itemvalue="JUnit.SumOfEntriesTest" />
-        <item itemvalue="JUnit.SumNoneNegativeTest" />
-        <item itemvalue="JUnit.BinSearchTest" />
+        <item itemvalue="JUnit.UnimodalMaxTest" />
+        <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
+        <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
+        <item itemvalue="JUnit.FactorialTest" />
+        <item itemvalue="JUnit.FactorialTest$FactorialClassic" />
       </list>
     </recent_temporary>
   </component>
