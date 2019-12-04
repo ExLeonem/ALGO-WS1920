@@ -8,7 +8,7 @@
     1. [Divide & Conquer](#Divide-&-Conquer)
     2. [Greedy Algorithmen](#Greedy-Algorithmen)
     3. [Dynamic Programming](#Dynamic-Programming)
-3. [Komplexitiätsberechnung]
+3. [Komplexitiätsberechnung](#Komplexitiätsberechnung)
 
 
 
@@ -129,3 +129,15 @@ Weitere Algorithmen die nicht in der Liste stehen und die implementiert wurden.
 ### Dynamic Programming
 
 ### Backtracking
+
+
+
+## Komplexitiätsberechnung
+
+### Divide & Conquer
+
+
+### Greedy
+
+
+### Dynamic Programming

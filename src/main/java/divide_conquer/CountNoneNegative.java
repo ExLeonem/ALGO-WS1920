@@ -1,5 +1,9 @@
 package divide_conquer;
 
+/**
+ *
+ * @author Maksim Sandybekov
+ */
 public class CountNoneNegative {
 
     public int count(int[] numbers) {

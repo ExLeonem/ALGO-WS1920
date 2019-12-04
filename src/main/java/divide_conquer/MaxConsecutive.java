@@ -40,8 +40,8 @@ public class MaxConsecutive {
      * Divide and conquer the problem
      *
      * @param elements - array of elements to search maximum consecutive order in
-     * @param left -
-     * @param right -
+     * @param left - right border
+     * @param right - left border
      *
      * @return array of length 2, containing the left and right border of the maximum consecutive order.
      */

@@ -1,5 +1,8 @@
 package divide_conquer;
 
+/**
+ * @author Maksim Sandybekov
+ */
 public class Power {
 
     /**

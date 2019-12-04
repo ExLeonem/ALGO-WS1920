@@ -2,6 +2,8 @@ package divide_conquer;
 
 /**
  * Größter gemeinsamer teiler
+ *
+ * @author Maksim Sandybekov
  */
 public class GGT {
 

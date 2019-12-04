@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="" />
+    <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/CountNoneNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/CountNoneNegative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Exchanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Exchanges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/KBiggestElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/KBiggestElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Power.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/TuermeHanoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/TuermeHanoi.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
