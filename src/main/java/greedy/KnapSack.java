@@ -11,7 +11,7 @@ import java.util.LinkedList;
  * @author Maksim Sandybekov
  * @date 2019-12-4
  */
-public class KnappSack {
+public class KnapSack {
 
     private int size;
     private int currentSize;
@@ -19,13 +19,13 @@ public class KnappSack {
     private int optim;
 
 
-    public KnappSack() {
+    public KnapSack() {
         this.size = 5;
         this.currentSize = 0;
         this.optim = 0;
     }
 
-    public KnappSack(int size) {
+    public KnapSack(int size) {
         this.size = size;
         this.currentSize = 0;
         this.optim = 0;
@@ -40,18 +40,18 @@ public class KnappSack {
      * @return - array with indices of items to use
      */
     public int[] minValues(int[][] itemValues) {
-        return this.calculat(itemValues, Order.DESC);
+        return this.calculat(itemValues, Order.ASC);
     }
 
     public int[] maxValues(int[][] itemValues) {
-        return this.calculat(itemValues, Order.ASC);
+        return this.calculat(itemValues, Order.DESC);
     }
 
 
     private int[] calculat(int[][] elements, Order order) {
 
-        // Presort item values O(n log n)
-        int[][] sortedItemValues = QuickSort.sort(elements, 0, order);
+        // Presort items on benefit O(n log n)
+        int[][] sortedItemValues = QuickSort.sort(elements, 1, order);
 
         // Greedy condition: Select items with max value
         LinkedList<Integer> knappsack = new LinkedList<Integer>();
@@ -64,13 +64,18 @@ public class KnappSack {
 
             // Keep track of items and current weight
             currentElement = elements[itemIndx];
-            knappsack.add(currentElement[1]);
-            items.add(currentElement);
-            currentSize += currentElement[0];
+
+            // Item fits into knapsack
+            if (currentElement[0]+currentSize <= sackSize) {
+                knappsack.add(currentElement[1]);
+                items.add(currentElement);
+                currentSize += currentElement[0];
+            }
 
             itemIndx++;
         }
 
+        // Save result into class-attributes
         int[] knappsackValues = ArrayUtils.listToArray(knappsack);
         int[][] knappsackItems = ArrayUtils.nestedIntListToArray(items);
         int optim = knappsack.stream().reduce(0, (subtotal, element) -> subtotal + element);

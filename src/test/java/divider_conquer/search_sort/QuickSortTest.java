@@ -78,4 +78,85 @@ public class QuickSortTest {
        }
    }
 
+    @Nested
+    class NestedTest {
+
+        @Test
+        void singleElement() {
+            int[][] values = new int[][]{{1, 1}};
+            int[][] actual = QuickSort.sort(values);
+
+            assertArrayEquals(values, actual);
+        }
+
+
+        @Test
+        void twoElementFirstIndex() {
+            int[][] values = new int[][]{{2, 1}, {1, 2}};
+            int[][] actual = QuickSort.sort(values);
+            int[][] expected = new int[][]{{1, 2}, {2, 1}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+
+        @Test
+        void twoElementSecondIndex() {
+            int[][] values = new int[][]{{2, 1}, {1, 2}};
+            int[][] actual = QuickSort.sort(values, 1, Order.ASC);
+            int[][] expected = new int[][]{{1, 2}, {2, 1}};
+
+            assertArrayEquals(values, actual);
+        }
+
+
+        @Test
+        void threeElementsReverse() {
+            int[][] values = new int[][]{{3,80},{2,1},{1,2}};
+            int[][] actual = QuickSort.sort(values);
+            int[][] expected = new int[][]{{1,2},{2,1},{3,80}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+
+        @Test
+        void threeElementFirstTwo() {
+            int[][] values = new int[][]{{2,1},{1,2},{3,80}};
+            int[][] actual = QuickSort.sort(values, 0, Order.ASC);
+            int[][] expected = new int[][]{{1,2},{2,1},{3,80}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+
+        @Test
+        void threeElementLastTwo() {
+            int[][] values = new int[][]{{1,2},{2,1},{3,80}};
+            int[][] actual = QuickSort.sort(values);
+            int[][] expected = new int[][]{{1,2},{2,1},{3,80}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+        @Test
+        void threeElementOutter() {
+            int[][] values = new int[][]{{3,80},{2,1},{1,2}};
+            int[][] actual = QuickSort.sort(values);
+            int[][] expected = new int[][]{{1,2},{2,1},{3,80}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+        @Test
+        void threeElementSecondIndex() {
+            int[][] values = new int[][]{{2,1},{3,80},{1,2}};
+            int[][] actual = QuickSort.sort(values, 1, Order.ASC);
+            int[][] expected = new int[][]{{2,1},{1,2},{3,80}};
+
+            assertArrayEquals(expected, actual);
+        }
+
+    }
+
 }

@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/PolyMult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/KnappSack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/greedy/KnapSackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/utils/ArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/utils/ArrayUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/UnimodalMaxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/UnimodalMaxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/KnappSack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greedy/KnapSack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/QuickSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/QuickSortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/UnimodalMaxTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/UnimodalMaxTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/Order$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/Order$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/Order$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/Order$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/QuickSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/QuickSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/greedy/KnappSack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/QuickSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/QuickSortTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QuickSortTest">
+  <component name="RunManager" selected="JUnit.KnapSackTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -84,37 +84,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactorialTest$FactorialAlternative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KnapSackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="greedy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest$FactorialAlternative" />
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.KnapSackTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuickSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSortTest$NestedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -123,57 +108,75 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkylineTest$TestCoordinateMerge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSortTest$NestedTest.threeElementOutter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$TestCoordinateMerge" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
+      <option name="METHOD_NAME" value="threeElementOutter" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnimodalMaxTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSortTest$NestedTest.threeElementSecondIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.UnimodalMaxTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
+      <option name="METHOD_NAME" value="threeElementSecondIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuickSortTest$NestedTest.twoElementFirstIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
+      <option name="METHOD_NAME" value="twoElementFirstIndex" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.FactorialTest" />
-      <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
-      <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
-      <item itemvalue="JUnit.UnimodalMaxTest" />
-      <item itemvalue="JUnit.QuickSortTest" />
+      <item itemvalue="JUnit.QuickSortTest$NestedTest" />
+      <item itemvalue="JUnit.QuickSortTest$NestedTest.twoElementFirstIndex" />
+      <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementOutter" />
+      <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementSecondIndex" />
+      <item itemvalue="JUnit.KnapSackTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.QuickSortTest" />
-        <item itemvalue="JUnit.UnimodalMaxTest" />
-        <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
-        <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
-        <item itemvalue="JUnit.FactorialTest" />
+        <item itemvalue="JUnit.KnapSackTest" />
+        <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementSecondIndex" />
+        <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementOutter" />
+        <item itemvalue="JUnit.QuickSortTest$NestedTest.twoElementFirstIndex" />
+        <item itemvalue="JUnit.QuickSortTest$NestedTest" />
       </list>
     </recent_temporary>
   </component>
