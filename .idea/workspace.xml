@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/UnimodalMaxTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/FactorialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/FactorialTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/SkylineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/SkylineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/SkylineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/SkylineTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
