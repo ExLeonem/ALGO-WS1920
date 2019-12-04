@@ -1,6 +1,6 @@
 package divide_conquer;
 
-public class NoneNegative {
+public class CountNoneNegative {
 
     public int count(int[] numbers) {
 

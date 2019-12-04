@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PowerTest">
+  <component name="RunManager" selected="JUnit.UnimodalMaxTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -74,7 +75,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxConsecutiveTest.checkPreviouslyFailedOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactorialTest$FactorialAlternative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -83,61 +84,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="METHOD_NAME" value="checkPreviouslyFailedOne" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaxConsecutiveTest.maxOrderArrayLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="METHOD_NAME" value="maxOrderArrayLength" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaxConsecutiveTest.random" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaxConsecutiveTest" />
-      <option name="METHOD_NAME" value="random" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaximumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.MaximumTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest$FactorialAlternative" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PowerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactorialTest$FactorialClassic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -146,7 +99,52 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.PowerTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest$FactorialClassic" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FactorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SkylineTest$TestCoordinateMerge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$TestCoordinateMerge" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnimodalMaxTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.UnimodalMaxTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,19 +152,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.MaxConsecutiveTest.random" />
-      <item itemvalue="JUnit.MaxConsecutiveTest.maxOrderArrayLength" />
-      <item itemvalue="JUnit.MaxConsecutiveTest.checkPreviouslyFailedOne" />
-      <item itemvalue="JUnit.MaximumTest" />
-      <item itemvalue="JUnit.PowerTest" />
+      <item itemvalue="JUnit.FactorialTest$FactorialClassic" />
+      <item itemvalue="JUnit.FactorialTest" />
+      <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
+      <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
+      <item itemvalue="JUnit.UnimodalMaxTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PowerTest" />
-        <item itemvalue="JUnit.MaximumTest" />
-        <item itemvalue="JUnit.MaxConsecutiveTest.checkPreviouslyFailedOne" />
-        <item itemvalue="JUnit.MaxConsecutiveTest.random" />
-        <item itemvalue="JUnit.MaxConsecutiveTest.maxOrderArrayLength" />
+        <item itemvalue="JUnit.UnimodalMaxTest" />
+        <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
+        <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
+        <item itemvalue="JUnit.FactorialTest" />
+        <item itemvalue="JUnit.FactorialTest$FactorialClassic" />
       </list>
     </recent_temporary>
   </component>

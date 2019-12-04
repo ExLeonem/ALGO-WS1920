@@ -1,15 +1,15 @@
 package divider_conquer;
 
-import divide_conquer.NoneNegative;
+import divide_conquer.CountNoneNegative;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NoneNegativeTest {
+public class CountNoneNegativeTest {
 
-    NoneNegative nnCounter = new NoneNegative();
+    CountNoneNegative nnCounter = new CountNoneNegative();
 
 
     @Test
