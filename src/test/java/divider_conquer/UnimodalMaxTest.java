@@ -3,6 +3,8 @@ package divider_conquer;
 import divide_conquer.UnimodalMax;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UnimodalMaxTest {
@@ -103,5 +105,41 @@ public class UnimodalMaxTest {
     @Test
     void random() {
 
+        final int MAX_VALUE = 50;
+        final int MIN_VALUE = 50;
+
+        Random rand = new Random();
+        int[] values = new int[5]; // At least length 2
+        values[0] = rand.nextInt(MAX_VALUE) - rand.nextInt(MIN_VALUE);
+        int expected = values[0];
+        int temp;
+        boolean unimodalBreak = false;
+        for (int i = 1; i < values.length;i++) {
+
+            temp = rand.nextInt(MAX_VALUE) - rand.nextInt(MIN_VALUE);
+            if((!unimodalBreak && values[i-1] >= temp) || (unimodalBreak && values[i-1] <= temp) || temp == 0) {
+                // array doesen't fullfill unimodal array criterion
+                i--;
+                continue;
+            }
+
+            values[i] = temp;
+            if (!unimodalBreak) {
+                unimodalBreak = rand.nextGaussian() > 0.5? true : false;
+            }
+
+            // Set new max value
+            if (temp > expected) {
+                expected = temp;
+            }
+        }
+
+        System.out.print("+++++++++++++++++++\n| ");
+        for (int i = 0; i < values.length; i++) {
+            System.out.print(values[i] + " | ");
+        }
+
+        int actual = uniMax.search(values);
+        assertEquals(expected, actual);
     }
 }
