@@ -3,7 +3,6 @@
 
 
 
-
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
 2. [Algorithmen, Herr Umlauf](#Algorithmen,-Herr-Umlauf)
     1. [Divide & Conquer](#Divide-&-Conquer)
@@ -55,7 +54,7 @@ Verschiedene implementierungen von algorithmen.
     - [x] Maximum value
     - [x] Potenzieren
     - [ ] Median
-    - [ ] Max-search unimodal array
+    - [x] Max-search unimodal array
     
 
 ### Greedy Algorithm

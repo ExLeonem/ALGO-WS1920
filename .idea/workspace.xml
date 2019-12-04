@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/PolyMult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/KnappSack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/UnimodalMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/utils/ArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/utils/ArrayUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/UnimodalMaxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/UnimodalMaxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/QuickSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/QuickSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/UnimodalMaxTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/UnimodalMaxTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -63,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UnimodalMaxTest">
+  <component name="RunManager" selected="JUnit.QuickSortTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -90,21 +99,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactorialTest$FactorialClassic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest$FactorialClassic" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FactorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
@@ -115,6 +109,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer" />
       <option name="MAIN_CLASS_NAME" value="divider_conquer.FactorialTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuickSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,19 +161,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.FactorialTest$FactorialClassic" />
       <item itemvalue="JUnit.FactorialTest" />
       <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
       <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
       <item itemvalue="JUnit.UnimodalMaxTest" />
+      <item itemvalue="JUnit.QuickSortTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QuickSortTest" />
         <item itemvalue="JUnit.UnimodalMaxTest" />
         <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge" />
         <item itemvalue="JUnit.FactorialTest$FactorialAlternative" />
         <item itemvalue="JUnit.FactorialTest" />
-        <item itemvalue="JUnit.FactorialTest$FactorialClassic" />
       </list>
     </recent_temporary>
   </component>

@@ -1,6 +1,30 @@
 package supplementary.utils;
 
+import java.util.LinkedList;
+
 public class ArrayUtils {
+
+
+    public static int[] listToArray(LinkedList<Integer> elements) {
+
+        int[] elementsArray = new int[elements.size()];
+        for (int i = 0; i < elementsArray.length; i++) {
+            elementsArray[i] = elements.pop();
+        }
+
+        return elementsArray;
+    }
+
+
+    public static int[][] nestedIntListToArray(LinkedList<int[]> elements) {
+
+        int[][] elementsArray = new int[elements.size()][];
+        for (int i = 0; i < elementsArray.length; i++) {
+            elementsArray[i] = elements.pop();
+        }
+
+        return elementsArray;
+    }
 
 
     /**
