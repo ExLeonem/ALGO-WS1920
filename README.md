@@ -58,28 +58,33 @@ Verschiedene implementierungen von algorithmen.
     
 
 ### Greedy Algorithm
+
 - [ ] A*-Algorithm
 - [ ] Approximate bin packing
 - [ ] Clustering (based-on MST)
 - [ ] Delaunay via Lawson
-- [ ] Dijkstra (all shortest-path, positive)
-- [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
-- [ ] Breadth-first-search
-- [ ] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
 - [ ] Horn-Formeln
 - [ ] Huffmann-Coding
 - [ ] Job-Scheduling
 - [ ] Kartenfärbung (finde Kartenfärbung mit u.U. nicht minimaler Farbenanzahl)
-- [ ] Kruksal (minimal aufspannender Baum)
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
 - [ ] Moore/Ford /alle kürzesten WEge von s aus, negative Gewichte)
-- [ ] Partition Problem (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
-- [ ] Prim (minimal aufspannener Baum)
-- [ ] Set cover (not optimal) (np-complete)
-- [ ] Shortest common superstring (np-complete)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
-- [ ] Wechselgeld 
+
+- [ ] Graphs
+    - [ ] Dijkstra (all shortest-path, positive)
+    - [ ] Prim (minimal aufspannener Baum)
+    - [ ] Breadth-first-search
+    - [ ] Kruksal (minimal aufspannender Baum)
+    - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
+- [ ] NP-Complete
+    - [ ] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
+    - [ ] Set cover (not optimal) (np-complete)
+    - [ ] Shortest common superstring (np-complete)
+    - [ ] Partition Problem (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
+- [ ] Trivia
+    - [ ] Wechselgeld
 
 ### Dynamic Programming
 - [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
@@ -119,6 +124,7 @@ Weitere Algorithmen die nicht in der Liste stehen und die implementiert wurden.
 - [x] Factorial (verschiedene lösungsansätze)
 
 ### Greedy
+- [x] Knapsack Problem
 
 ### Dynamic Programming
 
