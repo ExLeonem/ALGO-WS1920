@@ -8,6 +8,7 @@
     1. [Divide & Conquer](#Divide-&-Conquer)
     2. [Greedy Algorithmen](#Greedy-Algorithmen)
     3. [Dynamic Programming](#Dynamic-Programming)
+3. [Zusätzliche](#Zusätzliche)
 3. [Komplexitiätsberechnung]
 
 
@@ -96,7 +97,7 @@ Verschiedene implementierungen von algorithmen.
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
 - [ ] deCastljau
-- [ ] Editierabstand
+- [ ] Editierabstand (Levenshtein-Distance)
 - [ ] Fibonacci-Zahlen
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
@@ -127,5 +128,7 @@ Weitere Algorithmen die nicht in der Liste stehen und die implementiert wurden.
 - [x] Knapsack Problem
 
 ### Dynamic Programming
+- Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
+- Längster gemeinsamer Teilstring
 
 ### Backtracking
