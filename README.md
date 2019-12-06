@@ -63,9 +63,9 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [ ] Median
     - [x] Max-search unimodal array
     - [x] Factorial (verschiedene lösungsansätze)
-    
 
-### Greedy Algorithm
+
+### Greedy Algorithmen
 
 - [ ] A*-Algorithm
 - [ ] Approximate bin packing
@@ -79,7 +79,6 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Min-Cut (Max-Flow)
 - [ ] Moore/Ford /alle kürzesten WEge von s aus, negative Gewichte)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
-
 - [ ] Graphs
     - [ ] Dijkstra (all shortest-path, positive)
     - [ ] Prim (minimal aufspannener Baum)
