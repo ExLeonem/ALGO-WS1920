@@ -5,9 +5,20 @@ import java.util.LinkedList;
 public class ArrayUtils {
 
 
-    public static int[] listToArray(LinkedList<Integer> elements) {
+    public static int[] intListToArray(LinkedList<Integer> elements) {
 
         int[] elementsArray = new int[elements.size()];
+        for (int i = 0; i < elementsArray.length; i++) {
+            elementsArray[i] = elements.pop();
+        }
+
+        return elementsArray;
+    }
+
+
+    public static double[] doubleListToArray(LinkedList<Double> elements) {
+
+        double[] elementsArray = new double[elements.size()];
         for (int i = 0; i < elementsArray.length; i++) {
             elementsArray[i] = elements.pop();
         }
@@ -19,6 +30,17 @@ public class ArrayUtils {
     public static int[][] nestedIntListToArray(LinkedList<int[]> elements) {
 
         int[][] elementsArray = new int[elements.size()][];
+        for (int i = 0; i < elementsArray.length; i++) {
+            elementsArray[i] = elements.pop();
+        }
+
+        return elementsArray;
+    }
+
+
+    public static double[][] nestedDoubleListToArray(LinkedList<double[]> elements) {
+
+        double[][] elementsArray = new double[elements.size()][];
         for (int i = 0; i < elementsArray.length; i++) {
             elementsArray[i] = elements.pop();
         }

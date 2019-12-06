@@ -4,11 +4,14 @@
 
 
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
-2. [Algorithmen, Herr Umlauf](#Algorithmen,-Herr-Umlauf)
+2. [Algorithmen](#Algorithmenlisten)
     1. [Divide & Conquer](#Divide-&-Conquer)
     2. [Greedy Algorithmen](#Greedy-Algorithmen)
     3. [Dynamic Programming](#Dynamic-Programming)
-3. [Komplexitiätsberechnung]
+    4. [Backtracking](#Backtracking)
+3. [Laufzeiten](#Laufzeiten)
+4. [Datenstrukturen](#Datenstrukturen)
+
 
 
 
@@ -16,9 +19,13 @@
 
 1. Wird spezielles Master Theorem Abgefragt? (Probleme werden um Konstanten wert subtrahiert und nicht dividiert) Evtl. Proberechnung? 
 2. Bei Algorithmen die eine sortierung benötigen, kann eine sortierung angenommen werden? (Diese muss/wird dann wohl entsprechend bei der Komplexitätsrechnung des Algorithmus mit betrachtet)
+3. Wie pseudo darf pseudo code sein. Beispiele von pseudo code zeigen.
+4. Wie viele informationen werden uns zu den spezifischen Algorithmen gegeben
+    1. Bsp. Huffmann codierung (wird erklärt was huffmann codierung ist bzw. aufgebaut wird)
+5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
 
-## Algorithmenliste, Herr Umlauf
-Verschiedene implementierungen von algorithmen.
+## Algorithmenliste
+Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere algorithmen/datenstrukten.
 
 
 ### Divide & Conquer
@@ -55,6 +62,7 @@ Verschiedene implementierungen von algorithmen.
     - [x] Potenzieren
     - [ ] Median
     - [x] Max-search unimodal array
+    - [x] Factorial (verschiedene lösungsansätze)
     
 
 ### Greedy Algorithm
@@ -79,12 +87,13 @@ Verschiedene implementierungen von algorithmen.
     - [ ] Kruksal (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
-    - [ ] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
+    - [x] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
     - [ ] Set cover (not optimal) (np-complete)
     - [ ] Shortest common superstring (np-complete)
     - [ ] Partition Problem (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
 - [ ] Trivia
-    - [ ] Wechselgeld
+    - [x] Wechselgeld
+    - [x] Knapsack Problem
 
 ### Dynamic Programming
 - [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
@@ -96,7 +105,7 @@ Verschiedene implementierungen von algorithmen.
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
 - [ ] deCastljau
-- [ ] Editierabstand
+- [ ] Editierabstand (Levenshtein-Distance)
 - [ ] Fibonacci-Zahlen
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
@@ -112,20 +121,13 @@ Verschiedene implementierungen von algorithmen.
 - [ ] Subset-sum (np-complete, pseudo-polynomial)
 - [ ] Summe von Produkten
 - [ ] Zahlen-Dreieck
+- [ ] Additionals
+    - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
+    - [ ] Längster gemeinsamer Teilstring
 
 ### Backtracking
 
- 
 
-## Zusätzliche Alogorithmen
-Weitere Algorithmen die nicht in der Liste stehen und die implementiert wurden.
+## Laufzeiten
 
-### Divide and Conquer
-- [x] Factorial (verschiedene lösungsansätze)
-
-### Greedy
-- [x] Knapsack Problem
-
-### Dynamic Programming
-
-### Backtracking
+## Datenstrukturen
