@@ -85,7 +85,7 @@ Verschiedene implementierungen von algorithmen.
     - [ ] Shortest common superstring (np-complete)
     - [ ] Partition Problem (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
 - [ ] Trivia
-    - [ ] Wechselgeld
+    - [x] Wechselgeld
 
 ### Dynamic Programming
 - [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)

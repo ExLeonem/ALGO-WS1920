@@ -51,7 +51,8 @@ public class KnapSack {
     private int[] calculat(int[][] elements, Order order) {
 
         // Presort items on benefit O(n log n)
-        int[][] sortedItemValues = QuickSort.sort(elements, 1, order);
+        QuickSort quick = new QuickSort(order);
+        int[][] sortedItemValues = quick.sort(elements, 1);
 
         // Greedy condition: Select items with max value
         LinkedList<Integer> knappsack = new LinkedList<Integer>();
