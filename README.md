@@ -6,11 +6,14 @@
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
 2. [Algorithmen](#Algorithmenlisten)
     1. [Divide & Conquer](#Divide-&-Conquer)
-    2. [Greedy Algorithmen](#Greedy-Algorithmen)
+    2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
     4. [Backtracking](#Backtracking)
 3. [Laufzeiten](#Laufzeiten)
-4. [Datenstrukturen](#Datenstrukturen)
+4. [Pseudo-Code](#Pseudo-Code)
+    1. Divide & Conquer
+        1. Huffmann
+5. [Datenstrukturen](#Datenstrukturen)
 
 
 
@@ -21,7 +24,8 @@
 2. Bei Algorithmen die eine sortierung benötigen, kann eine sortierung angenommen werden? (Diese muss/wird dann wohl entsprechend bei der Komplexitätsrechnung des Algorithmus mit betrachtet)
 3. Wie pseudo darf pseudo code sein. Beispiele von pseudo code zeigen.
 4. Wie viele informationen werden uns zu den spezifischen Algorithmen gegeben
-    1. Bsp. Huffmann codierung (wird erklärt was huffmann codierung ist bzw. aufgebaut wird)
+
+    `
 5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
 
 ## Algorithmenliste
@@ -65,7 +69,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Factorial (verschiedene lösungsansätze)
 
 
-### Greedy Algorithmen
+### Greedy
 
 - [ ] A*-Algorithm
 - [ ] Approximate bin packing
@@ -128,5 +132,37 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 
 
 ## Laufzeiten
+
+## Pseudo-Code
+. 
+### Huffmann
+    `
+        def bin_baum_erstellen():
+            1. Vorkommen von zeichen eines alphabetes in einem text zählen
+            2. Zeichen nach anzahl des vorkommens sortieren und diese als knoten annehmen
+
+            while (mehr als >= 2 knote vorhanden):
+                
+                1. Die zwei Knoten auswählen die am wenigsten im text vorkommen // greedy condition
+                2. Knoten unter einem einem gemeinsamen knoten vereinen (sub-tree erstellen)
+                3. Neues gewicht des knotens berechen (Summe vorkommen linker und rechter knoten)
+
+            
+            return binaer_baum
+
+        // Rekursives zusammensetzten der kodierung
+        def encode(string, binärbaum):
+
+            // Base case
+            if (nur noch 1 zeichen im string):
+                return suche im binärbaum
+
+
+            linkes teilproblem lösen
+            rechtes teilproblem lösen
+
+            return zusammengefügte kodierung linke und rechte seite.
+
+
 
 ## Datenstrukturen

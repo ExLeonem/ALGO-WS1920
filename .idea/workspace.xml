@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/JobScheduling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/tree/BinaryTreeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/greedy/Huffmann$EncodeUnit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/ArithmeticOperation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/BinaryTree.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/CartesianTree.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/greedy/HuffmannTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/tree/BinaryTreeTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/greedy/HuffmannTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/greedy/HuffmannTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/supplementary/graph/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/graph/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/greedy/Huffmann.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greedy/Huffmann.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/supplementary/graph/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/graph/GraphTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,6 +63,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="supplementary.structures" />
       <recent name="greedy" />
       <recent name="" />
     </key>
@@ -64,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.KnapSackTest">
+  <component name="RunManager" selected="JUnit.HuffmannTest.checkAll">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -76,7 +92,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KnapSackTest$FractionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HuffmannTest$EncodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -85,13 +101,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.KnapSackTest$FractionTest" />
+      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest$EncodeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KnapSackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HuffmannTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -100,13 +116,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.KnapSackTest" />
+      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WechselGeldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HuffmannTest.checkAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -115,29 +131,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.WechselGeldTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WechselGeldTest.borderCaseSecondSmallest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.WechselGeldTest" />
-      <option name="METHOD_NAME" value="borderCaseSecondSmallest" />
+      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
+      <option name="METHOD_NAME" value="checkAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WechselGeldTest.testLowestPlusOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HuffmannTest.elementHello" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -146,8 +147,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.WechselGeldTest" />
-      <option name="METHOD_NAME" value="testLowestPlusOne" />
+      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
+      <option name="METHOD_NAME" value="elementHello" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuffmannTest.elementWorld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
+      <option name="METHOD_NAME" value="elementWorld" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,19 +172,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.WechselGeldTest" />
-      <item itemvalue="JUnit.WechselGeldTest.borderCaseSecondSmallest" />
-      <item itemvalue="JUnit.WechselGeldTest.testLowestPlusOne" />
-      <item itemvalue="JUnit.KnapSackTest$FractionTest" />
-      <item itemvalue="JUnit.KnapSackTest" />
+      <item itemvalue="JUnit.HuffmannTest.elementHello" />
+      <item itemvalue="JUnit.HuffmannTest.elementWorld" />
+      <item itemvalue="JUnit.HuffmannTest.checkAll" />
+      <item itemvalue="JUnit.HuffmannTest$EncodeTest" />
+      <item itemvalue="JUnit.HuffmannTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KnapSackTest" />
-        <item itemvalue="JUnit.KnapSackTest$FractionTest" />
-        <item itemvalue="JUnit.WechselGeldTest.testLowestPlusOne" />
-        <item itemvalue="JUnit.WechselGeldTest.borderCaseSecondSmallest" />
-        <item itemvalue="JUnit.WechselGeldTest" />
+        <item itemvalue="JUnit.HuffmannTest.checkAll" />
+        <item itemvalue="JUnit.HuffmannTest" />
+        <item itemvalue="JUnit.HuffmannTest$EncodeTest" />
+        <item itemvalue="JUnit.HuffmannTest.elementWorld" />
+        <item itemvalue="JUnit.HuffmannTest.elementHello" />
       </list>
     </recent_temporary>
   </component>
