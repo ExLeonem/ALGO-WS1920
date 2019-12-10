@@ -14,13 +14,22 @@ public class Edge {
     private Vertex fromVertex;
     private double value;
 
-    public Edge(Vertex fromVertex, Vertex toVertex, double value) {
-        this.toVertex = toVertex;
+    public Edge(Vertex fromVertex, Vertex toVertex) {
         this.fromVertex = fromVertex;
+        this.toVertex = toVertex;
+        this.value = 0;
+
+        fromVertex.addNeighbour(toVertex);
+        toVertex.addNeighbour(fromVertex);
+    }
+
+    public Edge(Vertex fromVertex, Vertex toVertex, double value) {
+        this.fromVertex = fromVertex;
+        this.toVertex = toVertex;
         this.value = value;
 
-        toVertex.addNeighbour(fromVertex);
         fromVertex.addNeighbour(toVertex);
+        toVertex.addNeighbour(fromVertex);
     }
 
 

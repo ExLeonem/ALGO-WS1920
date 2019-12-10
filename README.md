@@ -6,11 +6,14 @@
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
 2. [Algorithmen](#Algorithmenlisten)
     1. [Divide & Conquer](#Divide-&-Conquer)
-    2. [Greedy Algorithmen](#Greedy-Algorithmen)
+    2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
     4. [Backtracking](#Backtracking)
 3. [Laufzeiten](#Laufzeiten)
-4. [Datenstrukturen](#Datenstrukturen)
+4. [Pseudo-Code](#Pseudo-Code)
+    1. Divide & Conquer
+        1. Huffmann
+5. [Datenstrukturen](#Datenstrukturen)
 
 
 
@@ -21,8 +24,8 @@
 2. Bei Algorithmen die eine sortierung benötigen, kann eine sortierung angenommen werden? (Diese muss/wird dann wohl entsprechend bei der Komplexitätsrechnung des Algorithmus mit betrachtet)
 3. Wie pseudo darf pseudo code sein. Beispiele von pseudo code zeigen.
 4. Wie viele informationen werden uns zu den spezifischen Algorithmen gegeben
-    1. Bsp. Huffmann codierung (wird erklärt was huffmann codierung ist bzw. aufgebaut wird)
 5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
+6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
 
 ## Algorithmenliste
 Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere algorithmen/datenstrukten.
@@ -41,7 +44,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Eigenvalue algorithm
 - [ ] Karatsuba (Langazahl-Mult)
 - [ ] Konvex-Hüll (via common tangents)
-- [ ] max. consecutive subarray
+- [ ] Max. consecutive subarray
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
@@ -63,30 +66,27 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [ ] Median
     - [x] Max-search unimodal array
     - [x] Factorial (verschiedene lösungsansätze)
-    
 
-### Greedy Algorithm
+
+### Greedy
 
 - [ ] A*-Algorithm
-- [ ] Approximate bin packing
 - [ ] Clustering (based-on MST)
 - [ ] Delaunay via Lawson
 - [ ] Horn-Formeln
-- [ ] Huffmann-Coding
-- [ ] Job-Scheduling
+- [x] Huffmann-Coding
 - [ ] Kartenfärbung (finde Kartenfärbung mit u.U. nicht minimaler Farbenanzahl)
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
-- [ ] Moore/Ford /alle kürzesten WEge von s aus, negative Gewichte)
+- [ ] Moore/Ford (alle kürzesten wege von s aus, negative Gewichte)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
-
 - [ ] Graphs
     - [ ] Dijkstra (all shortest-path, positive)
     - [ ] Prim (minimal aufspannener Baum)
-    - [ ] Breadth-first-search
     - [ ] Kruksal (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
+    - [x] Approximate bin packing
     - [x] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
     - [ ] Set cover (not optimal) (np-complete)
     - [ ] Shortest common superstring (np-complete)
@@ -94,6 +94,9 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Trivia
     - [x] Wechselgeld
     - [x] Knapsack Problem
+    - [x] Job-Scheduling
+- [ ]  Additional
+    - [x] Breadth-first-search
 
 ### Dynamic Programming
 - [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
@@ -129,5 +132,51 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 
 
 ## Laufzeiten
+
+## Pseudo-Code
+
+### Approximation Bin-Packing
+
+
+Musterlösung (laut wikipedia)
+`
+Sortiere die Objekte nach absteigendem Gewicht
+Füge die Objekte der Reihe nach ein,
+ sodass jedes in den ersten Behälter gegeben wird, in dem noch genug Platz ist.
+ Falls in keinem der bereits geöffneten Behälter genügend Platz ist, öffne einen neuen.
+`
+
+### Huffmann
+    
+    `
+    def bin_baum_erstellen():
+        1. Vorkommen von zeichen eines alphabetes in einem text zählen
+        2. Zeichen nach anzahl des vorkommens sortieren und diese als knoten annehmen
+
+        while (mehr als >= 2 knote vorhanden):
+            
+            1. Die zwei Knoten auswählen die am wenigsten im text vorkommen // greedy condition
+            2. Knoten unter einem einem gemeinsamen knoten vereinen (sub-tree erstellen)
+            3. Neues gewicht des knotens berechen (Summe vorkommen linker und rechter knoten)
+
+        
+        return binaer_baum
+
+    // Rekursives zusammensetzten der kodierung
+    def encode(string, binärbaum):
+
+        // Base case
+        if (nur noch 1 zeichen im string):
+            return suche im binärbaum
+
+
+        linkes teilproblem lösen
+        rechtes teilproblem lösen
+
+        return zusammengefügte kodierung linke und rechte seite.
+    `
+
+
+
 
 ## Datenstrukturen
