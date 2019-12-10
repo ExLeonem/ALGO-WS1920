@@ -25,6 +25,7 @@
 3. Wie pseudo darf pseudo code sein. Beispiele von pseudo code zeigen.
 4. Wie viele informationen werden uns zu den spezifischen Algorithmen gegeben
 5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
+6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
 
 ## Algorithmenliste
 Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere algorithmen/datenstrukten.
@@ -43,7 +44,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Eigenvalue algorithm
 - [ ] Karatsuba (Langazahl-Mult)
 - [ ] Konvex-Hüll (via common tangents)
-- [ ] max. consecutive subarray
+- [ ] Max. consecutive subarray
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
@@ -70,7 +71,6 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 ### Greedy
 
 - [ ] A*-Algorithm
-- [ ] Approximate bin packing
 - [ ] Clustering (based-on MST)
 - [ ] Delaunay via Lawson
 - [ ] Horn-Formeln
@@ -86,6 +86,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [ ] Kruksal (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
+    - [x] Approximate bin packing
     - [x] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
     - [ ] Set cover (not optimal) (np-complete)
     - [ ] Shortest common superstring (np-complete)
@@ -133,6 +134,17 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 ## Laufzeiten
 
 ## Pseudo-Code
+
+### Approximation Bin-Packing
+
+
+Musterlösung (laut wikipedia)
+`
+Sortiere die Objekte nach absteigendem Gewicht
+Füge die Objekte der Reihe nach ein,
+ sodass jedes in den ersten Behälter gegeben wird, in dem noch genug Platz ist.
+ Falls in keinem der bereits geöffneten Behälter genügend Platz ist, öffne einen neuen.
+`
 
 ### Huffmann
     
