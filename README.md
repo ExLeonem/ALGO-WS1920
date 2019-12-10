@@ -24,8 +24,6 @@
 2. Bei Algorithmen die eine sortierung benötigen, kann eine sortierung angenommen werden? (Diese muss/wird dann wohl entsprechend bei der Komplexitätsrechnung des Algorithmus mit betrachtet)
 3. Wie pseudo darf pseudo code sein. Beispiele von pseudo code zeigen.
 4. Wie viele informationen werden uns zu den spezifischen Algorithmen gegeben
-
-    `
 5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
 
 ## Algorithmenliste
@@ -85,7 +83,6 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Graphs
     - [ ] Dijkstra (all shortest-path, positive)
     - [ ] Prim (minimal aufspannener Baum)
-    - [ ] Breadth-first-search
     - [ ] Kruksal (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
@@ -97,6 +94,8 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Wechselgeld
     - [x] Knapsack Problem
     - [x] Job-Scheduling
+- [ ]  Additional
+    - [x] Breadth-first-search
 
 ### Dynamic Programming
 - [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
@@ -134,34 +133,37 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 ## Laufzeiten
 
 ## Pseudo-Code
-. 
+
 ### Huffmann
+    
     `
-        def bin_baum_erstellen():
-            1. Vorkommen von zeichen eines alphabetes in einem text zählen
-            2. Zeichen nach anzahl des vorkommens sortieren und diese als knoten annehmen
+    def bin_baum_erstellen():
+        1. Vorkommen von zeichen eines alphabetes in einem text zählen
+        2. Zeichen nach anzahl des vorkommens sortieren und diese als knoten annehmen
 
-            while (mehr als >= 2 knote vorhanden):
-                
-                1. Die zwei Knoten auswählen die am wenigsten im text vorkommen // greedy condition
-                2. Knoten unter einem einem gemeinsamen knoten vereinen (sub-tree erstellen)
-                3. Neues gewicht des knotens berechen (Summe vorkommen linker und rechter knoten)
-
+        while (mehr als >= 2 knote vorhanden):
             
-            return binaer_baum
+            1. Die zwei Knoten auswählen die am wenigsten im text vorkommen // greedy condition
+            2. Knoten unter einem einem gemeinsamen knoten vereinen (sub-tree erstellen)
+            3. Neues gewicht des knotens berechen (Summe vorkommen linker und rechter knoten)
 
-        // Rekursives zusammensetzten der kodierung
-        def encode(string, binärbaum):
+        
+        return binaer_baum
 
-            // Base case
-            if (nur noch 1 zeichen im string):
-                return suche im binärbaum
+    // Rekursives zusammensetzten der kodierung
+    def encode(string, binärbaum):
+
+        // Base case
+        if (nur noch 1 zeichen im string):
+            return suche im binärbaum
 
 
-            linkes teilproblem lösen
-            rechtes teilproblem lösen
+        linkes teilproblem lösen
+        rechtes teilproblem lösen
 
-            return zusammengefügte kodierung linke und rechte seite.
+        return zusammengefügte kodierung linke und rechte seite.
+    `
+
 
 
 

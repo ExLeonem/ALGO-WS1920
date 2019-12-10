@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/greedy/JobSchedulingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/BreadthFirst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/greedy/BreadthFirstTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/greedy/BreadthFirst.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/greedy/BreadthFirstTest$BinaryTreeSearch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/greedy/BreadthFirstTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/JobScheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greedy/JobScheduling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/greedy/HuffmannTest$SmallAlphabetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/greedy/HuffmannTest$SmallAlphabetTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/BreadthSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/greedy/BreadthSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/greedy/JobScheduling.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greedy/JobScheduling.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JobSchedulingTest">
+  <component name="RunManager" selected="JUnit.BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -81,7 +85,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmannTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest$BinaryTreeSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -90,13 +94,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$BinaryTreeSearch" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmannTest.checkUniquenessOfEach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -105,14 +109,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
-      <option name="METHOD_NAME" value="checkUniquenessOfEach" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$BinaryTreeSearch" />
+      <option name="METHOD_NAME" value="multiDepthDeeper" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmannTest.elementWorld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest$BinaryTreeSearch.singleElementFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -121,14 +125,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
-      <option name="METHOD_NAME" value="elementWorld" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$BinaryTreeSearch" />
+      <option name="METHOD_NAME" value="singleElementFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmannTest.twoElementEncoding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -137,9 +141,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
-      <option name="METHOD_NAME" value="twoElementEncoding" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,19 +164,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.HuffmannTest" />
-      <item itemvalue="JUnit.HuffmannTest.twoElementEncoding" />
-      <item itemvalue="JUnit.HuffmannTest.elementWorld" />
-      <item itemvalue="JUnit.HuffmannTest.checkUniquenessOfEach" />
       <item itemvalue="JUnit.JobSchedulingTest" />
+      <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch" />
+      <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.singleElementFound" />
+      <item itemvalue="JUnit.BreadthFirstTest" />
+      <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper" />
+        <item itemvalue="JUnit.BreadthFirstTest" />
+        <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch" />
+        <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.singleElementFound" />
         <item itemvalue="JUnit.JobSchedulingTest" />
-        <item itemvalue="JUnit.HuffmannTest" />
-        <item itemvalue="JUnit.HuffmannTest.checkUniquenessOfEach" />
-        <item itemvalue="JUnit.HuffmannTest.elementWorld" />
-        <item itemvalue="JUnit.HuffmannTest.twoElementEncoding" />
       </list>
     </recent_temporary>
   </component>
