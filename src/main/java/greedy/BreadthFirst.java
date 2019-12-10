@@ -14,49 +14,86 @@ import java.util.*;
  */
 public class BreadthFirst<T extends Comparable> {
 
-    private Graph graph;
-    private int lastPath;
-
-    public BreadthFirst() {}
-    public BreadthFirst(Graph graph) {
-        this.graph = graph;
-        this.lastPath = 0;
-    }
-
 
     /**
      * Performs a breadthsearch on an graph.
      *
      * Greedy-Condition:
-     * - Select nearest neighbours
+     * - Select nearest neighbour that was not visited already
      *
      * @param fromVertex - Vertex from which to start
      * @param toVertex - Destination vertex
      *
      * @return the smallest amount of edges to move over to get to the destination vertex
      */
-    public int search(Vertex fromVertex, Vertex toVertex) {
+    public int search(Graph g, Vertex fromVertex, Vertex toVertex) {
 
-        HashMap<Vertex, Vertex> neighbours = fromVertex.getNeighbours();
+        // Can't calculate rank, because at least one is null
+        if (g  == null || fromVertex == null || toVertex == null) {
+            return -1;
+        }
 
+        // Could be rewritten to use adjacency matrix
         HashSet<Vertex> visited = new HashSet<Vertex>();
-        LinkedList<Vertex> puffer = new LinkedList<Vertex>();
+        LinkedList<Vertex> nextToVisit = new LinkedList<Vertex>();
+        nextToVisit.add(fromVertex);
 
         int rank = 0;
-        int childrenNextRank = 0; // Keeps track of the amount of children to check in nextRank
+        int childrenCurrentRank = 1; // Keep track of vertices to check currently
+        int childrenNextRank = 0; // Keep track of the amount of children added to nextToVisit
+        Collection neighbours;
+        Vertex vertex;
+        while (!nextToVisit.isEmpty()) {
 
-//        HashMap<Edge, Edge> edgeMap = graphRepresentation.get(fromVertex);
-//        Collection<Edge> edgeCol = edgeMap.values();
-//        Iterator<Edge> edgeIterator = edgeCol.iterator();
-//        edgeIterator.
-//        int toCheck = edgeCol.size();
-//        while (edgeIterator.hasNext()) {
-//
-//
-//        }
+            vertex = nextToVisit.remove();
+            childrenCurrentRank--;
+
+            // Vertex was already visited
+            visited.add(vertex);
+
+            if (vertex != null && vertex.equals(toVertex)) {
+                return rank;
+            }
+
+            // Queue further children
+            childrenNextRank += this.addNotVisitedVertices(vertex, visited, nextToVisit);
+
+            // Worked through children in current rank, update rank depth and go to next children
+            if (childrenCurrentRank == 0) {
+                rank++;
+                childrenCurrentRank = childrenNextRank;
+                childrenNextRank = 0;
+            }
+        }
 
 
-        return this.getLastPath();
+        return -1;
+    }
+
+    /**
+     * Copy vertices not visited already into the linked list & counter number of occurences.
+     *
+     * @param vertex
+     * @param visited
+     * @param toVisit
+     * @return number of unique vertices.
+     */
+    private int addNotVisitedVertices(Vertex vertex, HashSet<Vertex> visited, LinkedList<Vertex> toVisit) {
+
+        Iterator<Vertex> vertIterator = vertex.getNeighbours().values().iterator();
+        Vertex tmp;
+        int countUnique = 0;
+        while (vertIterator.hasNext()) {
+
+            tmp = vertIterator.next();
+
+            if (!visited.contains(tmp)) {
+                countUnique++;
+                toVisit.add(tmp);
+            }
+        }
+
+        return countUnique;
     }
 
 
@@ -116,26 +153,5 @@ public class BreadthFirst<T extends Comparable> {
 
 
         return -1; // element not found
-    }
-
-
-    // ---------------------------
-    // Setter/-Getter
-    // ---------------------------
-
-    public void setGraph(Graph graph) {
-        this.graph = graph;
-    }
-
-    public void setLastPath(int lastPath) {
-        this.lastPath = lastPath;
-    }
-
-    public Graph getGraph() {
-        return graph;
-    }
-
-    public int getLastPath() {
-        return lastPath;
     }
 }

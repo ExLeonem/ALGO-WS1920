@@ -78,7 +78,7 @@ Eine Liste verschiedener Algorithmen. Liste 체bernommen von Herr Umlauf und erg�
 - [ ] Kartenf채rbung (finde Kartenf채rbung mit u.U. nicht minimaler Farbenanzahl)
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
-- [ ] Moore/Ford /alle k체rzesten WEge von s aus, negative Gewichte)
+- [ ] Moore/Ford (alle k체rzesten wege von s aus, negative Gewichte)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
 - [ ] Graphs
     - [ ] Dijkstra (all shortest-path, positive)

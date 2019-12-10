@@ -16,18 +16,20 @@ import java.util.*;
  */
 public class Graph {
 
+
     private Hashtable<Vertex, HashMap<Edge, Edge>> graphRepresentation;
-    private LinkedHashMap<Vertex, Integer> vertexMap;
+    private LinkedHashMap<Vertex, Integer> vertexMap; // Should be replaced with LinkedList (Integer is index of the vertex, that is used for adjacency matrix generation)
     private double[][] adjacencyMatrix;
-    private boolean directed;
+    private boolean directed; // is Graph directed, no loops?
     private boolean reGenerate; // adjacency matrix needs to be recalculated
     private int vertexCounter;
+
 
     public Graph() {
         this.graphRepresentation = new Hashtable<Vertex, HashMap<Edge, Edge>>();
         this.directed = false;
         this.reGenerate = true;
-        this.vertexMap = new LinkedHashMap<Vertex, Integer>(); // used for generation of the adjacency matrix
+        this.vertexMap = new LinkedHashMap<Vertex, Integer>();
         this.vertexCounter = 0;
     }
 
@@ -61,6 +63,18 @@ public class Graph {
         // Add a new vertice to the table
         HashMap<Edge, Edge> edgeSet = new HashMap<Edge, Edge>();
         graphRepresentation.put(vertex, edgeSet);
+    }
+
+
+    /**
+     * Add multiple vertices at once to the current graph.
+     *
+     * @param vertices
+     */
+    public void addVertices(Vertex ...vertices) {
+        for (Vertex vertex : vertices) {
+            this.addVertex(vertex);
+        }
     }
 
 

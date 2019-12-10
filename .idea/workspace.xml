@@ -2,16 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/BreadthFirst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/greedy/BreadthFirstTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/greedy/BreadthFirst.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/greedy/BreadthFirstTest$BinaryTreeSearch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/greedy/BreadthFirstTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/BreadthSearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/greedy/BreadthSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/greedy/JobScheduling.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greedy/JobScheduling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/greedy/BreadthFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greedy/BreadthFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/graph/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/greedy/BreadthFirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/greedy/BreadthFirstTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/greedy/BreadthFirst.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greedy/BreadthFirst.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/graph/Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/greedy/BreadthFirstTest$BinaryTreeSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/greedy/BreadthFirstTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/greedy/BreadthFirstTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/supplementary/structures/graph/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/graph/GraphTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper">
+  <component name="RunManager" selected="JUnit.BreadthFirstTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -85,7 +90,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BreadthFirstTest$BinaryTreeSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest$GraphSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +99,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$BinaryTreeSearch" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$GraphSearchTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest$GraphSearchTest.graphWithLoop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -109,14 +114,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$BinaryTreeSearch" />
-      <option name="METHOD_NAME" value="multiDepthDeeper" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$GraphSearchTest" />
+      <option name="METHOD_NAME" value="graphWithLoop" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BreadthFirstTest$BinaryTreeSearch.singleElementFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest$GraphSearchTest.multiEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -125,8 +130,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$BinaryTreeSearch" />
-      <option name="METHOD_NAME" value="singleElementFound" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$GraphSearchTest" />
+      <option name="METHOD_NAME" value="multiEdge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BreadthFirstTest$GraphSearchTest.singleEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest$GraphSearchTest" />
+      <option name="METHOD_NAME" value="singleEdge" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,36 +168,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JobSchedulingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.JobSchedulingTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.JobSchedulingTest" />
-      <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch" />
-      <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.singleElementFound" />
+      <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest" />
+      <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest.singleEdge" />
+      <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest.multiEdge" />
       <item itemvalue="JUnit.BreadthFirstTest" />
-      <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper" />
+      <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest.graphWithLoop" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.multiDepthDeeper" />
         <item itemvalue="JUnit.BreadthFirstTest" />
-        <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch" />
-        <item itemvalue="JUnit.BreadthFirstTest$BinaryTreeSearch.singleElementFound" />
-        <item itemvalue="JUnit.JobSchedulingTest" />
+        <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest.graphWithLoop" />
+        <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest.multiEdge" />
+        <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest" />
+        <item itemvalue="JUnit.BreadthFirstTest$GraphSearchTest.singleEdge" />
       </list>
     </recent_temporary>
   </component>
