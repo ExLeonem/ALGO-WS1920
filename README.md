@@ -76,8 +76,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Clustering (based-on MST)
 - [ ] Delaunay via Lawson
 - [ ] Horn-Formeln
-- [ ] Huffmann-Coding
-- [ ] Job-Scheduling
+- [x] Huffmann-Coding
 - [ ] Kartenfärbung (finde Kartenfärbung mit u.U. nicht minimaler Farbenanzahl)
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
@@ -97,6 +96,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Trivia
     - [x] Wechselgeld
     - [x] Knapsack Problem
+    - [x] Job-Scheduling
 
 ### Dynamic Programming
 - [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)

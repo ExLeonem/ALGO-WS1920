@@ -95,57 +95,6 @@ public class Huffmann {
         return encoding;
     }
 
-
-    private void checkDepth(BinaryTree<String> tree) {
-        BinaryTree<String> binEncoding = tree;
-        BinaryTree<String> leftEncode = binEncoding.getLeft();
-        BinaryTree<String> rightEncode = binEncoding.getRight();
-
-        System.out.println("Current: " + tree.getCurrentNodeValue());
-
-        if (leftEncode != null) {
-            System.out.println("+++++++++Left");
-            System.out.println(leftEncode.getCurrentNodeValue());
-            BinaryTree<String> leftLeft = leftEncode.getLeft();
-            BinaryTree<String> leftRight = leftEncode.getRight();
-
-            if (leftLeft != null) {
-                System.out.println("+++ Left-Left: " + leftLeft.getCurrentNodeValue());
-            } else {
-                System.out.println("Left null");
-            }
-
-            if (leftRight != null) {
-                System.out.println("+++ Left-Right: " + leftRight.getCurrentNodeValue());
-            } else {
-                System.out.println("Right null");
-            }
-        }
-
-        if (rightEncode != null) {
-            System.out.println("+++++++++Right");
-            System.out.println(rightEncode.getCurrentNodeValue());
-            BinaryTree<String> rightLeft = rightEncode.getLeft();
-            BinaryTree<String> rightRight = rightEncode.getRight();
-
-            if (rightLeft != null) {
-                System.out.println("## Left-Right: " + rightLeft.getCurrentNodeValue());
-            } else {
-                System.out.println("Left null");
-            }
-
-            if (rightRight != null) {
-                System.out.println("## Right-Right: " + rightRight.getCurrentNodeValue());
-            } else {
-                System.out.println("Right null");
-            }
-        }
-
-        System.out.println("-------------------------");
-    }
-
-
-
     /**
      * Builds the initial alphabet of <Word, Count>
      *
