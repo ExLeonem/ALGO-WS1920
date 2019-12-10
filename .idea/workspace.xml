@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/JobScheduling.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/tree/BinaryTreeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/greedy/Huffmann$EncodeUnit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/ArithmeticOperation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/BinaryTree.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/CartesianTree.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/greedy/HuffmannTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/tree/BinaryTreeTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greedy/Huffmann.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/BinaryTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/greedy/HuffmannTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/greedy/HuffmannTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/supplementary/graph/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/graph/GraphTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/greedy/Huffmann.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greedy/Huffmann.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/supplementary/graph/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/graph/GraphTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/greedy/HuffmannTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/greedy/HuffmannTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HuffmannTest.checkAll">
+  <component name="RunManager" selected="JUnit.HuffmannTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -88,21 +76,6 @@
       <option name="TEST_OBJECT" value="directory" />
       <option name="PARAMETERS" value="" />
       <dir value="$PROJECT_DIR$/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HuffmannTest$EncodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest$EncodeTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmannTest.checkAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HuffmannTest.checkUniquenessOfEach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -132,23 +105,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
       <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
-      <option name="METHOD_NAME" value="checkAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HuffmannTest.elementHello" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
-      <option name="METHOD_NAME" value="elementHello" />
+      <option name="METHOD_NAME" value="checkUniquenessOfEach" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,21 +127,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HuffmannTest.singleElementArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
+      <option name="METHOD_NAME" value="singleElementArray" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuffmannTest.twoElementEncoding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.HuffmannTest" />
+      <option name="METHOD_NAME" value="twoElementEncoding" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.HuffmannTest.elementHello" />
-      <item itemvalue="JUnit.HuffmannTest.elementWorld" />
-      <item itemvalue="JUnit.HuffmannTest.checkAll" />
-      <item itemvalue="JUnit.HuffmannTest$EncodeTest" />
       <item itemvalue="JUnit.HuffmannTest" />
+      <item itemvalue="JUnit.HuffmannTest.singleElementArray" />
+      <item itemvalue="JUnit.HuffmannTest.twoElementEncoding" />
+      <item itemvalue="JUnit.HuffmannTest.elementWorld" />
+      <item itemvalue="JUnit.HuffmannTest.checkUniquenessOfEach" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HuffmannTest.checkAll" />
         <item itemvalue="JUnit.HuffmannTest" />
-        <item itemvalue="JUnit.HuffmannTest$EncodeTest" />
+        <item itemvalue="JUnit.HuffmannTest.checkUniquenessOfEach" />
         <item itemvalue="JUnit.HuffmannTest.elementWorld" />
-        <item itemvalue="JUnit.HuffmannTest.elementHello" />
+        <item itemvalue="JUnit.HuffmannTest.twoElementEncoding" />
+        <item itemvalue="JUnit.HuffmannTest.singleElementArray" />
       </list>
     </recent_temporary>
   </component>

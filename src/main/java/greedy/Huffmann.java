@@ -1,7 +1,6 @@
 package greedy;
 
 import divide_conquer.search_sort.Order;
-import divide_conquer.search_sort.QuickSort;
 import supplementary.structures.trees.BinaryTree;
 
 import java.util.*;
@@ -10,17 +9,12 @@ import java.util.*;
 public class Huffmann {
 
     private Map<String, Integer> alphabet;
-//    private EncodeUnit[] encodeUnits;
     private PriorityQueue<BinaryTree<String>> encodeUnits;
-    private QuickSort<EncodeUnit> quick;
     private BinaryTree<String> binEncoding;
 
 
     public Huffmann(String ...values) {
-        this.quick = new QuickSort<EncodeUnit>();
-
         this.alphabet = this.buildTable(values);
-//        this.encodeUnits = this.buildEncoding();
         this.encodeUnits = this.buildEncodeUnits();
         this.binEncoding = this.buildEncodingTree();
     }
@@ -41,12 +35,12 @@ public class Huffmann {
             // Get Encoding for each character
             String encoding = "";
             for (int j = 0; j < values[i].length(); j++) {
-                encoding += this.recurseAndCollect(unitTree, String.valueOf(values[i].toLowerCase().charAt(j)), "");
+                encoding += this.recurseAndCollect(unitTree, String.valueOf(values[i].charAt(j)), "");
             }
             encodings.push(encoding);
         }
 
-        return new String[]{};
+        return encodings.toArray(new String[encodings.size()]);
     }
 
 
@@ -84,7 +78,6 @@ public class Huffmann {
 
         // Sort array of elemnts
         BinaryTree<String> binEncoding = this.getBinEncoding();
-        value = value.toLowerCase();
         String encoding = "";
         String tmp = "";
 
@@ -167,7 +160,6 @@ public class Huffmann {
         for (String value : values) {
 
             // Update key counter
-            value = value.toLowerCase();
             for (int i = 0; i < value.length(); i++) {
 
                 alphaKey = Character.toString(value.charAt(i));
@@ -224,8 +216,18 @@ public class Huffmann {
         BinaryTree<String> tempTree = null;
 
 
+        // Edge case, only single charracter encodeable -> put into a subtree to stay recursivly iterateable
+        if (encoding.size() == 1) {
+            leftTree = encoding.remove();
+            BinaryTree<String> newSubTree = new BinaryTree<String>("", leftTree.getWeight());
+            newSubTree.setLeft(leftTree);
+
+            return newSubTree;
+        }
+
+
         // Select two smallest subtrees append
-        while (!encoding.isEmpty() && encoding.size() > 1) {
+        while (!encoding.isEmpty() && encoding.size() > 0) {
 
             if (leftTree == null) {
                 leftTree = encoding.remove();
@@ -248,7 +250,7 @@ public class Huffmann {
             tempTree = null;
         }
 
-        return encoding.remove();
+        return leftTree;
     }
 
 
@@ -283,7 +285,6 @@ public class Huffmann {
         int wordCounter = 0;
         for (String word: words) {
 
-            word = word.toLowerCase();
             for (int i = 0; i < word.length(); i++) {
 
                 // Update key counter
@@ -303,6 +304,39 @@ public class Huffmann {
         this.setAlphabet(alphabet);
     }
 
+
+    // ------------------------------
+    // Utilities
+    // ------------------------------
+
+    public void printTree() {
+        this.printTree(-1);
+    }
+
+    public void printTree(int depth) {
+        BinaryTree<String> tree = this.getBinEncoding();
+        this.printTree(tree, 0, depth, "");
+    }
+
+
+    public void printTree(BinaryTree<String> subtree, int depth, int inDepth, String prefix) {
+
+        // Recursion stop
+        if (subtree == null || (inDepth >= 0 && depth > inDepth)) {
+            return;
+        }
+
+        // Constraint printing tree structure
+        if (inDepth >= 0 && (inDepth == depth) || inDepth < 0) {
+            // Print information of current tree node
+            System.out.println("#################\n"+ prefix + "| Depth: " + depth + "| Node: " + subtree.toString() + "\n+++++++++++++++++");
+        }
+
+        // Recurse into subtrees
+        depth++;
+        this.printTree(subtree.getLeft(), depth, inDepth,  "Left-Subtree");
+        this.printTree(subtree.getRight(), depth, inDepth, "Right-Subtree");
+    }
 
 
     // -------------------------
@@ -325,10 +359,6 @@ public class Huffmann {
         return this.alphabet;
     }
 
-    public QuickSort<EncodeUnit> getQuick() {
-        return this.quick;
-    }
-
     public PriorityQueue<BinaryTree<String>> getEncodeUnits() {
         return this.encodeUnits;
     }
@@ -338,6 +368,8 @@ public class Huffmann {
     }
 
 
+
+    // Node class encapsulating encoding units fort Sorting
     class EncodeUnit implements Comparable<EncodeUnit>, Cloneable {
 
         private String singleCharacter;

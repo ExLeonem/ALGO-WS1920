@@ -273,6 +273,17 @@ public class BinaryTree<T extends Comparable> implements Cloneable {
     }
 
 
+    // ----------------------
+    // Utilities
+    // ---------------------
+
+
+    @Override
+    public String toString() {
+        return "Node: " + this.getCurrentNodeValue() + "| Weight: " + this.getWeight();
+    }
+
+
 
 
     // ----------------------
