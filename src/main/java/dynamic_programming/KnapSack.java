@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.function.BinaryOperator;
 
 
 /**
@@ -53,6 +54,7 @@ public class KnapSack {
      */
     public int[] fit(int[][] items) {
 
+        this.setItems(items);
         int problemSize = this.calcuateProblemSize();
 
         int[][][] subProblemField = new int[items.length][problemSize][]; // Collect used item dimensions
@@ -184,16 +186,25 @@ public class KnapSack {
 
         int[][][] previousWeightBenefit = this.getPreviousWeightBenefit();
         int[][][] subProblemField = this.getSubProblemField();
+        int[][] items = this.getItems();
 
-        // Iterate from current element to first element
+        // Copy previous optimal items into a list to ease the merge
         int[] previousIndices = subProblemField[itemIndx][leftSpace];
-        LinkedList<Integer> indices = new LinkedList<Integer>();
-
-        for (int i = itemIndx; (i > -1) && (leftSpace >= 0); i--) {
-            previousIndices = this.mergeItemIndices(subProblemField[i][leftSpace], previousIndices, leftSpace);
-//            leftSpace = calculate new left space
+        LinkedList<Integer> originalItems = new LinkedList<Integer>();
+        LinkedList<Integer> totalItems = new LinkedList<Integer>(); // hold all items, more convinient addition
+        for (int indx : previousIndices) {
+            Integer[] currentElement = new Integer[]{indx, items[indx][0], items[indx][1]};
+            originalItems.add(indx);
+            totalItems.add(indx);
         }
 
+        LinkedList<Integer> toAdd = new LinkedList<Integer>();
+        for (int i = itemIndx; (i > -1) && (leftSpace >= 0); i--) {
+            LinkedList<Integer> newItems = this.getNewItems(subProblemField[i][leftSpace], totalItems, leftSpace);
+            int[] aggregated = this.aggregateItemValues(newItems);
+            leftSpace -= aggregated[0];
+            totalItems.addAll(newItems);
+        }
 
 
         return previousIndices;
@@ -203,44 +214,42 @@ public class KnapSack {
     /**
      * Merge two collection of indices of previously calculated sub-solution into a single array representing a new sub-solution.
      *
-     * @param firstIndices
-     * @param secondIndices
+     * @param newItemIndx - array of used items in cell
+     * @param previousItemIndx - list of all items
      * @return updated left space
      */
-    private int[] mergeItemIndices(int[] firstIndices, int[] secondIndices, int leftSpace) {
+    private LinkedList<Integer> getNewItems(int[] newItemIndx, LinkedList<Integer> previousItemIndx, int leftSpace) {
 
         int[][] items = this.getItems();
-        HashSet<Integer> trackDuplicate = new HashSet<Integer>(firstIndices.length + secondIndices.length);
+        HashSet<Integer> trackDuplicate = new HashSet<Integer>(newItemIndx.length + previousItemIndx.size());
+        HashSet<Integer> originalSet = new HashSet<Integer>(previousItemIndx.size());
         LinkedList<Integer[]> elementsToSort = new LinkedList<Integer[]>();
 
         // Put elements from first array into set & linked list
-        for (int element : firstIndices) {
+        for (int element : newItemIndx) {
 
-            if (!trackDuplicate.contains(element)) {
-                int[] itemInformation = items[element];
+            int[] itemInformation = items[element];
+            if (!originalSet.contains(element) ) {
                 elementsToSort.add(new Integer[]{element, itemInformation[0], itemInformation[1]}); // itemIndx, weight, benefit
                 trackDuplicate.add(element);
             }
         }
 
-        // Put elements from second array into set and linkedlist
-        for (int element : secondIndices) {
-
-            if (!trackDuplicate.contains(element)) {
-                int[] itemInformation = items[element];
-                elementsToSort.add(new Integer[]{element, itemInformation[0], itemInformation[1]}); // itemIndx, weight, benefit
-                trackDuplicate.add(element);
-            }
-        }
-
-
+        // Sort unique & new items
         QuickSort quick = new QuickSort();
         int[][] eliminatedDuplicates = elementsToSort.toArray(new int[elementsToSort.size()][]);
         eliminatedDuplicates = quick.sort(eliminatedDuplicates, 2); // Sort by benefit
 
+        // Aggregate new elements to return
+        LinkedList<Integer> elementsToReturn = new LinkedList<Integer>();
+        for (int i = 0; i < eliminatedDuplicates.length; i++) {
 
+            if ((leftSpace - eliminatedDuplicates[i][1]) >= 0) {
+                elementsToReturn.add(eliminatedDuplicates[i][0]);
+            }
+        }
 
-        return 12;
+        return elementsToReturn;
     }
 
 
@@ -258,6 +267,25 @@ public class KnapSack {
         int benefit = Arrays.stream(itemIndices).map(i -> items[i][1]).reduce(0, Integer::sum);
 
         return new int[]{weight, benefit};
+    }
+
+
+    /**
+     * Aggregate list of values into array of length 2.
+     *
+     * @param itemIndices - linked list of array indices
+     * @return array of new int[]{sum weight, sum benefit}
+     */
+    private int[] aggregateItemValues(LinkedList<Integer> itemIndices) {
+
+        int[][] items = this.getItems();
+
+        return itemIndices.stream().map(i -> new int[]{items[i][0], items[i][0]}).reduce(new int[]{0,0}, new BinaryOperator<int[]>() {
+            @Override
+            public int[] apply(int[] ints, int[] ints2) {
+                return new int[]{ints[0]+ints2[0], ints[1]+ints2[1]};
+            }
+        });
     }
 
 
