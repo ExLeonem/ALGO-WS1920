@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/dynamic_programming/KnapSackTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dynamic_programming/LevenstheinDistance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dynamic_programming/KnapSack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dynamic_programming/KnapSack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/greedy/BinPackingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/greedy/BinPackingTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dynamic_programming/KnapSack.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +45,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
