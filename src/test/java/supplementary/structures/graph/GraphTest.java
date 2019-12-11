@@ -1,11 +1,8 @@
-package supplementary.graph;
+package supplementary.structures.graph;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import supplementary.structures.graph.Edge;
-import supplementary.structures.graph.Graph;
-import supplementary.structures.graph.Vertex;
 import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 

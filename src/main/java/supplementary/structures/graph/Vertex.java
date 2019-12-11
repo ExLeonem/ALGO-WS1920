@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author Maksim Sandykeov
  * @date 2019-11-25
  */
-public class Vertex<T> {
+public class Vertex<T extends Comparable> {
 
     private T definition;
     private boolean visited;
@@ -52,6 +52,12 @@ public class Vertex<T> {
         }
 
         return neighbour;
+    }
+
+
+    @Override
+    public String toString() {
+        return this.definition.toString();
     }
 
 

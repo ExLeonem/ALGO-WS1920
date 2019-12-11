@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dynamic_programming/KnapSack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Median.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/BinPacking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/greedy/BinPackingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -44,10 +47,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="supplementary.structures" />
+      <recent name="greedy" />
       <recent name="" />
     </key>
   </component>
@@ -63,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.KnapSackTest">
+  <component name="RunManager" selected="JUnit.BinPackingTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -75,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KnapSackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinPacking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -84,90 +89,89 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.KnapSackTest" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BinPacking" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest$NestedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinPackingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="greedy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BinPackingTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest$NestedTest.threeElementOutter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinPackingTest.multipleBinsFitAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="greedy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
-      <option name="METHOD_NAME" value="threeElementOutter" />
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BinPackingTest" />
+      <option name="METHOD_NAME" value="multipleBinsFitAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest$NestedTest.threeElementSecondIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinPackingTest.singleBinFit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="greedy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
-      <option name="METHOD_NAME" value="threeElementSecondIndex" />
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BinPackingTest" />
+      <option name="METHOD_NAME" value="singleBinFit" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest$NestedTest.twoElementFirstIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BreadthFirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="greedy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
-      <option name="METHOD_NAME" value="twoElementFirstIndex" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="greedy" />
+      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest.twoElementFirstIndex" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementOutter" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementSecondIndex" />
-      <item itemvalue="JUnit.KnapSackTest" />
+      <item itemvalue="JUnit.BreadthFirstTest" />
+      <item itemvalue="JUnit.BinPacking" />
+      <item itemvalue="JUnit.BinPackingTest" />
+      <item itemvalue="JUnit.BinPackingTest.singleBinFit" />
+      <item itemvalue="JUnit.BinPackingTest.multipleBinsFitAll" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KnapSackTest" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementSecondIndex" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementOutter" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest.twoElementFirstIndex" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest" />
+        <item itemvalue="JUnit.BinPackingTest" />
+        <item itemvalue="JUnit.BinPackingTest.multipleBinsFitAll" />
+        <item itemvalue="JUnit.BinPackingTest.singleBinFit" />
+        <item itemvalue="JUnit.BinPacking" />
+        <item itemvalue="JUnit.BreadthFirstTest" />
       </list>
     </recent_temporary>
   </component>

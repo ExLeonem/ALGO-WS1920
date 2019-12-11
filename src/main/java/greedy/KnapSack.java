@@ -37,7 +37,7 @@ public class KnapSack {
      *  Result is saved in instance attributes and will be overwritten on recalculation.
      *
      * @param itemValues - available items of format [weight/size, benefit]
-     * @return - array with indices of items to use
+     * @return - array with item values
      */
     public int[] minValues(int[][] itemValues) {
         return this.calculat(itemValues, Order.ASC);
@@ -51,7 +51,8 @@ public class KnapSack {
     private int[] calculat(int[][] elements, Order order) {
 
         // Presort items on benefit O(n log n)
-        int[][] sortedItemValues = QuickSort.sort(elements, 1, order);
+        QuickSort quick = new QuickSort(order);
+        int[][] sortedItemValues = quick.sort(elements, 1);
 
         // Greedy condition: Select items with max value
         LinkedList<Integer> knappsack = new LinkedList<Integer>();
@@ -76,7 +77,7 @@ public class KnapSack {
         }
 
         // Save result into class-attributes
-        int[] knappsackValues = ArrayUtils.listToArray(knappsack);
+        int[] knappsackValues = ArrayUtils.intListToArray(knappsack);
         int[][] knappsackItems = ArrayUtils.nestedIntListToArray(items);
         int optim = knappsack.stream().reduce(0, (subtotal, element) -> subtotal + element);
 
@@ -85,6 +86,52 @@ public class KnapSack {
         this.setCurrentSize(knappsackValues.length);
 
         return knappsackValues;
+    }
+
+
+    /**
+     * Collect items trying to maximize/minimize something.
+     * Fractions of the items are allowed
+     *
+     * @param items
+     * @return array of new double[items][item-index, fraction]
+     */
+    public double[][]  minFractional(int[][] items) { return this.calculateFraction(items, Order.ASC); }
+    public double[][] maxFractional(int[][] items) { return this.calculateFraction(items, Order.DESC); }
+
+
+    private double[][] calculateFraction(int[][] items, Order order) {
+
+        QuickSort quick = new QuickSort(order);
+        int[][] sorted = quick.sort(items, 1);
+        int maxSize = this.getSize();
+        double currentSize = maxSize;
+
+        LinkedList<double[]> itemFractions = new LinkedList<double[]>();
+        int[] item;
+        for (int i = 0; i < items.length; i++) {
+
+            item = items[i];
+
+            if (currentSize == 0) {
+                break;
+            }
+
+            // Item fits fully into knapsack
+            if(item[0] < currentSize) {
+                currentSize -= item[0];
+                itemFractions.add(new double[]{i, 1});
+                continue;
+            }
+
+            // item has higher weight than current knapsack capacity
+            double fraction = currentSize / (double) item[0];
+            itemFractions.add(new double[]{i, fraction});
+            break;
+        }
+
+        return ArrayUtils.nestedDoubleListToArray(itemFractions);
+
     }
 
 
