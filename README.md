@@ -128,6 +128,25 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
     - [ ] Längster gemeinsamer Teilstring
 
+
+#### Pseudo Code
+
+##### KnapSack
+`
+    1. initialize 2D-matrix to save items (height = amount of items, width = space needed for biggest item)
+    2. 
+`
+
+Alternativ 
+
+`
+    1. Matrix *A* initializieren zum speichern der Ergebnisse (\[*j*\] Höhe = Anzahl der Elemente, \[*i*\] Breite = Größe des Rucksacks)
+    2. Über Matrix iterieren und ausfüllen
+        -  <sub> </sub>
+`
+
+
+
 ### Backtracking
 
 
