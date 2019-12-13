@@ -99,7 +99,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Breadth-first-search
 
 ### Dynamic Programming
-- [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
+- [x] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
 - [ ] Ähnliche Summe
 - [ ] Alle kürzeste Wege (Floyd)
 - [ ] Approximation von Pi mit n-gon
