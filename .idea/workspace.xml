@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Median.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/greedy/BinPacking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/greedy/BinPackingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BinPackingTest">
+  <component name="RunManager" selected="JUnit.KnapSackTest$DefaultSize.singleItemFitsCenter">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -80,78 +77,80 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinPacking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KnapSackTest$DefaultSize.itemsDontFit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="greedy.*" />
+          <option name="PATTERN" value="dynamic_programming.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BinPacking" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinPackingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BinPackingTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinPackingTest.multipleBinsFitAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BinPackingTest" />
-      <option name="METHOD_NAME" value="multipleBinsFitAll" />
+      <option name="PACKAGE_NAME" value="dynamic_programming" />
+      <option name="MAIN_CLASS_NAME" value="dynamic_programming.KnapSackTest$DefaultSize" />
+      <option name="METHOD_NAME" value="itemsDontFit" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinPackingTest.singleBinFit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KnapSackTest$DefaultSize.regularTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="greedy.*" />
+          <option name="PATTERN" value="dynamic_programming.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BinPackingTest" />
-      <option name="METHOD_NAME" value="singleBinFit" />
+      <option name="PACKAGE_NAME" value="dynamic_programming" />
+      <option name="MAIN_CLASS_NAME" value="dynamic_programming.KnapSackTest$DefaultSize" />
+      <option name="METHOD_NAME" value="regularTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BreadthFirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KnapSackTest$DefaultSize.singleItemFitsCenter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="greedy.*" />
+          <option name="PATTERN" value="dynamic_programming.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.BreadthFirstTest" />
+      <option name="PACKAGE_NAME" value="dynamic_programming" />
+      <option name="MAIN_CLASS_NAME" value="dynamic_programming.KnapSackTest$DefaultSize" />
+      <option name="METHOD_NAME" value="singleItemFitsCenter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KnapSackTest$DefaultSize.testAlternative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dynamic_programming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dynamic_programming" />
+      <option name="MAIN_CLASS_NAME" value="dynamic_programming.KnapSackTest$DefaultSize" />
+      <option name="METHOD_NAME" value="testAlternative" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KnapSackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dynamic_programming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dynamic_programming" />
+      <option name="MAIN_CLASS_NAME" value="dynamic_programming.KnapSackTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,19 +158,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.BreadthFirstTest" />
-      <item itemvalue="JUnit.BinPacking" />
-      <item itemvalue="JUnit.BinPackingTest" />
-      <item itemvalue="JUnit.BinPackingTest.singleBinFit" />
-      <item itemvalue="JUnit.BinPackingTest.multipleBinsFitAll" />
+      <item itemvalue="JUnit.KnapSackTest$DefaultSize.singleItemFitsCenter" />
+      <item itemvalue="JUnit.KnapSackTest$DefaultSize.testAlternative" />
+      <item itemvalue="JUnit.KnapSackTest" />
+      <item itemvalue="JUnit.KnapSackTest$DefaultSize.itemsDontFit" />
+      <item itemvalue="JUnit.KnapSackTest$DefaultSize.regularTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BinPackingTest" />
-        <item itemvalue="JUnit.BinPackingTest.multipleBinsFitAll" />
-        <item itemvalue="JUnit.BinPackingTest.singleBinFit" />
-        <item itemvalue="JUnit.BinPacking" />
-        <item itemvalue="JUnit.BreadthFirstTest" />
+        <item itemvalue="JUnit.KnapSackTest$DefaultSize.singleItemFitsCenter" />
+        <item itemvalue="JUnit.KnapSackTest$DefaultSize.regularTest" />
+        <item itemvalue="JUnit.KnapSackTest$DefaultSize.itemsDontFit" />
+        <item itemvalue="JUnit.KnapSackTest" />
+        <item itemvalue="JUnit.KnapSackTest$DefaultSize.testAlternative" />
       </list>
     </recent_temporary>
   </component>
