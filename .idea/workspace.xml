@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/ConvexHull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/PolyMultTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/PolyMultTest$TestEqualsLength.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/PolyMultTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/CountNoneNegative.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/CountNoneNegative.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Exchanges.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Exchanges.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/KBiggestElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/KBiggestElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Power.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Power.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Search.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/PolyMult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/PolyMult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/PolyMult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/PolyMult.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/TuermeHanoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/TuermeHanoi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/greedy/KnapSackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/greedy/KnapSackTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SkylineTest$TestCoordinateMerge.mergeFirstBaseCase">
+  <component name="RunManager" selected="JUnit.PolyMultTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -84,16 +83,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KnapSackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PolyMultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="greedy.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="greedy" />
-      <option name="MAIN_CLASS_NAME" value="greedy.KnapSackTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.PolyMultTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,19 +164,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.KnapSackTest" />
       <item itemvalue="JUnit.SkylineTest.singleBuilding" />
       <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.simpleTest" />
       <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.randomTest" />
       <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge.mergeFirstBaseCase" />
+      <item itemvalue="JUnit.PolyMultTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PolyMultTest" />
         <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge.mergeFirstBaseCase" />
         <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.randomTest" />
         <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.simpleTest" />
         <item itemvalue="JUnit.SkylineTest.singleBuilding" />
-        <item itemvalue="JUnit.KnapSackTest" />
       </list>
     </recent_temporary>
   </component>

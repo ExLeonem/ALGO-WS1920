@@ -30,7 +30,7 @@ Verschiedene implementierungen von algorithmen.
 - [ ] K-th biggest Element
 - [ ] Integration Trapetzregel
 - [ ] Binärdarstellung
-- [ ] Anzahl vertauschungen in unsortierter Liste
+- [ ] Anzahl vertauschungen in unsortierter Liste (ist richtige antwort abhängig vom sortiert-algorithmus?)
 - [ ] Eigenvalue algorithm
 - [ ] Karatsuba (Langazahl-Mult)
 - [ ] Konvex-Hüll (via common tangents)
