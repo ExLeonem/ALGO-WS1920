@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/CountNoneNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/CountNoneNegative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Exchanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Exchanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/GGT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/KBiggestElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/KBiggestElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/MaxConsecutive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Power.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Search.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/TuermeHanoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/TuermeHanoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/Skyline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/CountNoneNegative.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/CountNoneNegative.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Exchanges.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Exchanges.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/GGT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/KBiggestElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/KBiggestElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Power.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Power.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Search.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/Skyline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/TuermeHanoi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/TuermeHanoi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/greedy/KnapSackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/greedy/KnapSackTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.KnapSackTest">
+  <component name="RunManager" selected="JUnit.SkylineTest$TestCoordinateMerge.mergeFirstBaseCase">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -98,64 +99,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest$NestedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SkylineTest$GenerateShapeCorners.randomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuickSortTest$NestedTest.threeElementOutter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
-      <option name="METHOD_NAME" value="threeElementOutter" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$GenerateShapeCorners" />
+      <option name="METHOD_NAME" value="randomTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest$NestedTest.threeElementSecondIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SkylineTest$GenerateShapeCorners.simpleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
-      <option name="METHOD_NAME" value="threeElementSecondIndex" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$GenerateShapeCorners" />
+      <option name="METHOD_NAME" value="simpleTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest$NestedTest.twoElementFirstIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SkylineTest$TestCoordinateMerge.mergeFirstBaseCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divider_conquer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.QuickSortTest$NestedTest" />
-      <option name="METHOD_NAME" value="twoElementFirstIndex" />
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest$TestCoordinateMerge" />
+      <option name="METHOD_NAME" value="mergeFirstBaseCase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SkylineTest.singleBuilding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.SkylineTest" />
+      <option name="METHOD_NAME" value="singleBuilding" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,19 +165,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest.twoElementFirstIndex" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementOutter" />
-      <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementSecondIndex" />
       <item itemvalue="JUnit.KnapSackTest" />
+      <item itemvalue="JUnit.SkylineTest.singleBuilding" />
+      <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.simpleTest" />
+      <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.randomTest" />
+      <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge.mergeFirstBaseCase" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SkylineTest$TestCoordinateMerge.mergeFirstBaseCase" />
+        <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.randomTest" />
+        <item itemvalue="JUnit.SkylineTest$GenerateShapeCorners.simpleTest" />
+        <item itemvalue="JUnit.SkylineTest.singleBuilding" />
         <item itemvalue="JUnit.KnapSackTest" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementSecondIndex" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest.threeElementOutter" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest.twoElementFirstIndex" />
-        <item itemvalue="JUnit.QuickSortTest$NestedTest" />
       </list>
     </recent_temporary>
   </component>
