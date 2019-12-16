@@ -19,6 +19,7 @@ import java.util.Random;
 public class IntroSort<T extends Comparable> {
 
 
+    private InsertionSort insertion;
     private int depthLimit;
     private int partitionSize; // For switching to Insertion-sort
     private int nextPivotIndx; //
@@ -27,6 +28,7 @@ public class IntroSort<T extends Comparable> {
 
     public IntroSort() {
         this.partitionSize = 16;
+        this.insertion = new InsertionSort();
     }
 
     // ----------------------------------
@@ -55,12 +57,18 @@ public class IntroSort<T extends Comparable> {
      */
     private void recurseIntegerSort(int[] items, int left, int right, int depthLimit) {
 
+        // Switch to Insertion-Sort (less than 16-items in sub-problem)
         if ((right - left) <= this.getPartitionSize()) {
-            // Change to Insertion-Sort (less than 16-items in sub-problem)
+            System.out.println("Perform insertion sort");
+            this.getInsertion().sort(items, left, right+1);
+            return;
         }
 
         // Depth Limit reached, switch to HeapSort
         if (depthLimit == 0) {
+
+
+
 
         }
 
@@ -228,6 +236,11 @@ public class IntroSort<T extends Comparable> {
 
     private void setNextPivotIndx(int nextPivotIndx) {
         this.nextPivotIndx = nextPivotIndx;
+    }
+
+
+    private InsertionSort getInsertion() {
+        return this.insertion;
     }
 
     private int getDepthLimit() {

@@ -1,9 +1,13 @@
 package divide_conquer.search_sort;
 
-import java.util.Arrays;
 
+/**
+ * Insertion sort algorithm need for Intro-Sort implementation.
+ *
+ * @author Maksim Sandybekov
+ * @date 2019-12-16
+ */
 public class InsertionSort {
-
 
     private Order order;
 
@@ -15,7 +19,6 @@ public class InsertionSort {
     public InsertionSort() {
         this.order = Order.ASC;
     }
-
 
 
     /**
@@ -31,7 +34,6 @@ public class InsertionSort {
             return items;
         }
 
-        System.out.println("Array: " + Arrays.toString(items));
         this.sort(items, 0, items.length);
         return items;
     }
@@ -53,7 +55,6 @@ public class InsertionSort {
             for (int j = i; j >= 0; j--) {
 
                 // Identify index of item
-//                System.out.println("Shift Item left + [" + items[i] + "] + [" + items[j] + "]");
                 if (this.getOrder().inOrder(items[i], items[j])) {
                     lastIndx = j;
                 }
@@ -61,8 +62,6 @@ public class InsertionSort {
 
             // Shift all items after indx to the right
             this.shiftItems(items, lastIndx, i);
-//            System.out.println("Shifted: " + Arrays.toString(items));
-//            System.out.println("------------------------");
         }
     }
 
@@ -79,14 +78,12 @@ public class InsertionSort {
         // Last element needs to be put to place
         int temp = items[valueIndx];
 
-//        System.out.println("Right: " + rightIndx);
-//        System.out.println("Value-Indx: " + valueIndx);
         // Shift items
         for (int i = valueIndx; i > rightIndx; i--) {
-//            System.out.println("Swap: [" + i + "] mit [" + (i-1) + "]");
             swap(items, i, i-1);
         }
 
+        // Put element at identified position
         items[rightIndx] = temp;
     }
 

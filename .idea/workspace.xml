@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/InsertionSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/InsertionSortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/PolyMult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/PolyMult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/PolyMultTest$TestEqualsLength.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/PolyMultTest$TestEqualsLength.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/PolyMultTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/PolyMultTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/InsertionSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/InsertionSortTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/IntroSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/IntroSortTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InsertionSortTest.random">
+  <component name="RunManager" selected="JUnit.IntroSortTest.singleInsertionSortTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -83,7 +85,7 @@
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divide_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,27 +96,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertionSortTest.middleNotInOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.InsertionSortTest" />
-      <option name="METHOD_NAME" value="middleNotInOrder" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="InsertionSortTest.random" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divide_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,27 +112,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertionSortTest.reverseElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.InsertionSortTest" />
-      <option name="METHOD_NAME" value="reverseElements" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="InsertionSortTest.testTwoElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divide_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,21 +128,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IntroSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divide_conquer.search_sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.IntroSortTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntroSortTest.singleInsertionSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divide_conquer.search_sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.IntroSortTest" />
+      <option name="METHOD_NAME" value="singleInsertionSortTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.All" />
       <item itemvalue="JUnit.InsertionSortTest" />
-      <item itemvalue="JUnit.InsertionSortTest.middleNotInOrder" />
-      <item itemvalue="JUnit.InsertionSortTest.reverseElements" />
       <item itemvalue="JUnit.InsertionSortTest.testTwoElements" />
       <item itemvalue="JUnit.InsertionSortTest.random" />
+      <item itemvalue="JUnit.IntroSortTest" />
+      <item itemvalue="JUnit.IntroSortTest.singleInsertionSortTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IntroSortTest.singleInsertionSortTest" />
+        <item itemvalue="JUnit.IntroSortTest" />
         <item itemvalue="JUnit.InsertionSortTest.random" />
         <item itemvalue="JUnit.InsertionSortTest" />
         <item itemvalue="JUnit.InsertionSortTest.testTwoElements" />
-        <item itemvalue="JUnit.InsertionSortTest.reverseElements" />
-        <item itemvalue="JUnit.InsertionSortTest.middleNotInOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -201,17 +202,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/uebungen$QuickSortTest.ic" NAME="QuickSortTest Coverage Results" MODIFIED="1573057483042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

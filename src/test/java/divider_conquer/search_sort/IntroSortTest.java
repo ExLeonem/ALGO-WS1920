@@ -28,9 +28,9 @@ public class IntroSortTest {
     void singleInsertionSortTest() {
         int[] items = new int[]{4, 5, 2, 1};
         int[] actual = intro.sort(items);
-        int[] expetected = new int[]{1, 2, 4, 5};
+        int[] expected = new int[]{1, 2, 4, 5};
 
-        assertArrayEquals(expetected, actual);
+        assertArrayEquals(expected, actual);
     }
 
 
@@ -38,20 +38,26 @@ public class IntroSortTest {
     void testHeapSort() {
 
         PriorityQueue<Integer> sortedValues = new PriorityQueue<Integer>();
-        final int itemsLength = 150;
-        int[] items = new int[itemsLength];
+
+        Random rand = new Random();
+        final int ARRAY_LENGTH = 150;
+        int arrayLength = rand.nextInt(ARRAY_LENGTH) + 5;
+        int[] items = new int[arrayLength];
         final int MAX_VALUE = 200;
         final int MIN_VALUE = 200;
 
-        Random rand = new Random();
-        for (int i = 0; i < itemsLength; i++) {
+        for (int i = 0; i < arrayLength; i++) {
             int randomValue = rand.nextInt(MAX_VALUE + MIN_VALUE) - MIN_VALUE;
             sortedValues.add(randomValue);
             items[i] = randomValue;
         }
 
         int[] actual = intro.sort(items);
-        int[] expected = sortedValues.stream().mapToInt(Number::intValue).toArray();
+
+        int[] expected = new int[items.length];
+        for (int i = 0; i < items.length; i++) {
+            expected[i] = sortedValues.poll();
+        }
 
         assertArrayEquals(expected, actual);
     }
