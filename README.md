@@ -45,7 +45,7 @@ Verschiedene implementierungen von algorithmen.
     - [ ] Quick-Sort with median of three (needs also median-of-3-killer)
     - [x] Merge-Sort
     - [x] Binary-Search
-    - [ ] Intro-Sort
+    - [x] Intro-Sort
 - [ ]  Trivials
     - [x] Count none-negatives in array
     - [x] Summe der Beträge (nicht-negativ)

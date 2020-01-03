@@ -20,6 +20,7 @@ public class IntroSort<T extends Comparable> {
 
 
     private InsertionSort insertion;
+    private HeapSort heap;
     private int depthLimit;
     private int partitionSize; // For switching to Insertion-sort
     private int nextPivotIndx; //
@@ -29,12 +30,12 @@ public class IntroSort<T extends Comparable> {
     public IntroSort() {
         this.partitionSize = 16;
         this.insertion = new InsertionSort();
+        this.heap = new HeapSort();
     }
 
     // ----------------------------------
     // Sort-Integer-Arrays
     // ----------------------------------
-
 
     public int[] sort(int[] items) {
 
@@ -67,9 +68,22 @@ public class IntroSort<T extends Comparable> {
         // Depth Limit reached, switch to HeapSort
         if (depthLimit == 0) {
 
+            // Copy array slice into new array
+            int tempArrayLength = right - left;
+            int[] temp =  new int[tempArrayLength];
+            for (int i = left; i < right; i++) {
+                temp[i%left] = items[i];
+            }
 
+            // Perform Heap-Sort on array slice
+            HeapSort heap = this.getHeap();
+            heap.sort(temp);
 
-
+            // Copy sorted values back into main array
+            for (int i = left; i < right; i++) {
+                items[i] = temp[i%left];
+            }
+            return;
         }
 
 
@@ -98,41 +112,7 @@ public class IntroSort<T extends Comparable> {
         // Partition item values
         for (int i = left; i < right; i++) {
 
-
-
         }
-    }
-
-
-    /**
-     * Sort a sub-array in-place with insertion-sort.
-     *
-     * @param items - items to sort
-     * @param left - left border of items to sort
-     * @param right - right border of items to sort
-     */
-    private void insertionSort(int[] items, int left, int right) {
-
-
-        for (int i = left; i < items.length; i++) {
-
-            // Sort items till this position
-            for (int j = left; j >= 0; j--) {
-
-            }
-        }
-    }
-
-
-    /**
-     * Shift items
-     *
-     * @param items
-     * @param afterIndx
-     * @param tillIndx
-     */
-    private void shiftAfter(int[] items,  int afterIndx, int tillIndx) {
-
     }
 
 
@@ -148,6 +128,7 @@ public class IntroSort<T extends Comparable> {
         items[from] = items[to];
         items[to] = temp;
     }
+
 
 
     // ---------------------------------
@@ -204,18 +185,7 @@ public class IntroSort<T extends Comparable> {
     }
 
 
-    /**
-     * Perform an heap-sort on a set of items.
-     *
-     * @param items - items to be sorted
-     */
-    private void heapSort(T[] items) {
-
-    }
-
-
-
-    private void swapItems(T[] items, int from, int to) {
+    private void swap(T[] items, int from, int to) {
         T tmp = items[to];
         items[to] = items[from];
         items[from] = tmp;
@@ -238,9 +208,12 @@ public class IntroSort<T extends Comparable> {
         this.nextPivotIndx = nextPivotIndx;
     }
 
-
     private InsertionSort getInsertion() {
         return this.insertion;
+    }
+
+    private HeapSort getHeap() {
+        return this.heap;
     }
 
     private int getDepthLimit() {

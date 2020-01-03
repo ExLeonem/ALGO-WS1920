@@ -1,106 +1,111 @@
 package supplementary.structures.trees;
 
+
 import java.util.Arrays;
 
 /**
- * MaxHeap structure.
+ * A Max-Heap.
  *
+ * @author Maksim Sandybekov
  * @date 2020-1-3
  */
-public class MaxHeap {
+public class MaxHeap extends Heap {
 
-    private int[] heap;
-    private int size;
-    private int maxSize;
+
+    public MaxHeap() {
+        super();
+    }
 
     public MaxHeap(int maxSize) {
-        this.maxSize = maxSize;
-        this.size = 0;
-        this.heap = new int[maxSize+1];
-        this.heap[0] = Integer.MAX_VALUE;
+        super(maxSize);
     }
 
     public MaxHeap(int[] elements) {
-        this.maxSize = elements.length;
-        this.size = elements.length;
-        this.heap = Arrays.copyOf(elements , elements.length);
+        super(elements);
     }
 
 
 
-    // -----------------------
-    // Traverse operations
-    // -----------------------
+    // -------------------------
+    // Heap-Operations
+    // -------------------------
 
     /**
-     * Request position of parent.
+     * Insert a new element into the heap.
      *
-     * @param pos - parent of node at this position
-     * @return - parent position
+     * @param element - the element to insert into the heap
      */
-    private int parent(int pos) {
-        return pos / 2;
-    }
-
-
-    /**
-     * Request position of left child.
-     *
-     * @param pos - child position
-     * @return
-     */
-    private int leftChild(int pos) {
-        return pos * 2;
-    }
-
-
-    /**
-     * Request position of right child.
-     *
-     * @param pos - child position
-     * @return
-     */
-    private int rightChild(int pos) {
-        return (pos * 2) + 1;
-    }
-
-
-    /**
-     * Check if node at given position is a leaf of the binary tree.
-     *
-     * @param pos - position of the element to check
-     * @return true if node is leaf else false
-     */
-    private boolean isLeaf(int pos) {
-        return  pos >= (size / 2) && pos <= size;
-    }
-
-
-
-    // ----------------------
-    // Operations
-    // ----------------------
-
-    /**
-     * Swap values at positions of the heap.
-     *
-     * @param fpos - from position
-     * @param tpos - to position
-     */
-    private void swap(int fpos, int tpos) {
+    @Override
+    public void insert(int element) {
+        int size = this.getSize() + 1;
+        int maxSize = this.getMaxSize();
         int[] heap = this.getHeap();
-        int temp = heap[fpos];
-        heap[fpos] = heap[tpos];
-        heap[tpos] = temp;
+
+        if (size < maxSize) {
+            heap[size] = element;
+            this.setSize(size);
+            return;
+        }
+
+        int[] biggerHeap = Arrays.copyOf(heap, heap.length + 1);
+        this.setHeap(biggerHeap);
+        this.setMaxSize(++maxSize);
+        this.insert(element);
     }
 
 
     /**
-     * Recursive function. Max-heapifies the tree.
+     * Deletes an element from the heap.
+     *
+     * @param element - the element to delete from the heap
+     */
+    @Override
+    public void delete(int element) {
+
+    }
+
+
+    /**
+     * Search and return the max element of the tree.
+     *
+     * @return max element of the tree
+     */
+    public int max() {
+        int[] heap = this.getHeap();
+        int size = this.getSize() -1;
+
+        int popped = heap[1];
+        heap[1] = heap[size];
+        heapify(1);
+
+        this.setSize(size);
+
+        return popped;
+    }
+
+
+    /**
+     * Searches and return the min element of the heap. No deletion of element.
+     *
+     * @return the min element of the tree
+     */
+    @Override
+    public int min() {
+        return 2;
+    }
+
+
+
+    // -----------------------
+    // Utilities
+    // -----------------------
+
+    /**
+     * Max-Heapiefy the binary tree.
      *
      * @param pos - position from where to start to heapify from
      */
-    private void maxHeapify(int pos) {
+    protected void heapify(int pos) {
 
         if (this.isLeaf(pos)) {
             return;
@@ -114,108 +119,13 @@ public class MaxHeap {
             if (leftChild > rightChild) {
                 int indx = this.leftChild(pos);
                 this.swap(pos, indx);
-                this.maxHeapify(indx);
+                this.heapify(indx);
             } else {
                 int indx = this.rightChild(pos);
                 this.swap(pos, indx);
-                this.maxHeapify(indx);
+                this.heapify(indx);
             }
         }
 
     }
-
-
-    /**
-     * Insert a new element into the heap.
-     *
-     * @param element - elment to insert into the heap
-     */
-    public void insert(int element) {
-
-        int size = this.getSize() + 1;
-        int maxSize = this.getMaxSize();
-        int[] heap = this.getHeap();
-
-        if (size < maxSize) {
-            heap[size] = element;
-            this.setSize(size);
-            return;
-        }
-
-        int[] biggerHeap = Arrays.copyOf(heap, heap.length+1);
-        this.setHeap(biggerHeap);
-        this.setMaxSize(++maxSize);
-        this.insert(element);
-
-        
-    }
-
-
-    /**
-     * Remove and return the max-element from the heap.
-     * @return
-     */
-    public int extractMax() {
-        int[] heap = this.getHeap();
-        int size = this.getSize() -1;
-
-        int popped = heap[1];
-        heap[1] = heap[size];
-        maxHeapify(1);
-
-        this.setSize(size);
-
-        return popped;
-    }
-
-
-    // -------------------------
-    // Utilties
-    // -------------------------
-
-    /**
-     * Print the max heap to the terminal
-     */
-    public void print() {
-
-        int[] heap = this.getHeap();
-        for (int i = 0; i <= size / 2; i++) {
-            System.out.println("Parent: " + heap[i] +
-                    "\n (Child) Left: " + heap[i*2] +
-                    "\n (Child) Right: " + heap[i*2+1] +
-                    "----------------------------------");
-        }
-    }
-
-
-
-    // -------------------------
-    // Setter-/Getter
-    // -------------------------
-
-    private void setHeap(int[] heap) {
-        this.heap = heap;
-    }
-
-    private void setMaxSize(int maxSize) {
-        this.maxSize = maxSize;
-    }
-
-    private void setSize(int size) {
-        this.size = size;
-    }
-
-
-    public int[] getHeap() {
-        return heap;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public int getMaxSize() {
-        return maxSize;
-    }
 }
-

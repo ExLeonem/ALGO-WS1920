@@ -12,6 +12,7 @@ public class InsertionSort {
     private Order order;
 
 
+
     public InsertionSort(Order order) {
         this.order = order;
     }

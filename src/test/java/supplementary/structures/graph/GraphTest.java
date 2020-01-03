@@ -1,4 +1,4 @@
-package supplementary.graph;
+package supplementary.structures.graph;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

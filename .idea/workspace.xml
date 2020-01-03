@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/Heap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MinHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/HeapSortTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/InsertionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IntroSortTest.singleInsertionSortTest">
+  <component name="RunManager" selected="JUnit.supplementary.structures.trees in uebungen">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -76,16 +84,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertionSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeapSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divide_conquer.search_sort.*" />
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.InsertionSortTest" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.HeapSortTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,22 +110,6 @@
       <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
       <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.InsertionSortTest" />
       <option name="METHOD_NAME" value="random" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InsertionSortTest.testTwoElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divide_conquer.search_sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.InsertionSortTest" />
-      <option name="METHOD_NAME" value="testTwoElements" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,21 +146,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="supplementary.structures.trees in uebungen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="supplementary.structures.trees.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.InsertionSortTest" />
-      <item itemvalue="JUnit.InsertionSortTest.testTwoElements" />
       <item itemvalue="JUnit.InsertionSortTest.random" />
       <item itemvalue="JUnit.IntroSortTest" />
       <item itemvalue="JUnit.IntroSortTest.singleInsertionSortTest" />
+      <item itemvalue="JUnit.HeapSortTest" />
+      <item itemvalue="JUnit.supplementary.structures.trees in uebungen" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.supplementary.structures.trees in uebungen" />
+        <item itemvalue="JUnit.HeapSortTest" />
         <item itemvalue="JUnit.IntroSortTest.singleInsertionSortTest" />
         <item itemvalue="JUnit.IntroSortTest" />
         <item itemvalue="JUnit.InsertionSortTest.random" />
-        <item itemvalue="JUnit.InsertionSortTest" />
-        <item itemvalue="JUnit.InsertionSortTest.testTwoElements" />
       </list>
     </recent_temporary>
   </component>
