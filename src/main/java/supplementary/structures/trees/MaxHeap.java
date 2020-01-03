@@ -37,19 +37,22 @@ public class MaxHeap extends Heap {
      */
     @Override
     public void insert(int element) {
-        int size = this.getSize() + 1;
+        int size = this.getSize();
         int maxSize = this.getMaxSize();
         int[] heap = this.getHeap();
 
+        // There's stil space in the heap
         if (size < maxSize) {
             heap[size] = element;
-            this.setSize(size);
+            this.heapifyUp(size);
+            this.setSize(size + 1);
             return;
         }
 
-        int[] biggerHeap = Arrays.copyOf(heap, heap.length + 1);
-        this.setHeap(biggerHeap);
-        this.setMaxSize(++maxSize);
+        // Create a bigger heap. There's no more space for elements in the heap.
+        int[] extendedHeap = Arrays.copyOf(heap, heap.length + 1);
+        this.setHeap(extendedHeap);
+        this.setMaxSize(extendedHeap.length);
         this.insert(element);
     }
 
@@ -72,15 +75,7 @@ public class MaxHeap extends Heap {
      */
     public int max() {
         int[] heap = this.getHeap();
-        int size = this.getSize() -1;
-
-        int popped = heap[1];
-        heap[1] = heap[size];
-        heapify(1);
-
-        this.setSize(size);
-
-        return popped;
+        return heap[0];
     }
 
 
@@ -91,7 +86,27 @@ public class MaxHeap extends Heap {
      */
     @Override
     public int min() {
-        return 2;
+
+        int[] heap = this.getHeap();
+        int size = this.getSize();
+        int min = heap[0];
+
+        int leftChild = this.leftChild(0);
+        int rightChild = this.rightChild(0);
+        while ((this.posInRange(leftChild)& leftChild <= size) || (this.posInRange(rightChild) && rightChild <= size)) {
+
+            if (heap[leftChild] < heap[rightChild]) {
+                // left Child is smaller
+            }
+
+
+            if (heap[leftChild] > heap[rightChild]) {
+                // right child is smaller
+            }
+        }
+
+
+        return min;
     }
 
 
@@ -100,12 +115,8 @@ public class MaxHeap extends Heap {
     // Utilities
     // -----------------------
 
-    /**
-     * Max-Heapiefy the binary tree.
-     *
-     * @param pos - position from where to start to heapify from
-     */
-    protected void heapify(int pos) {
+    @Override
+    protected void heapifyDown(int pos) {
 
         if (this.isLeaf(pos)) {
             return;
@@ -119,13 +130,30 @@ public class MaxHeap extends Heap {
             if (leftChild > rightChild) {
                 int indx = this.leftChild(pos);
                 this.swap(pos, indx);
-                this.heapify(indx);
+                this.heapifyDown(indx);
             } else {
                 int indx = this.rightChild(pos);
                 this.swap(pos, indx);
-                this.heapify(indx);
+                this.heapifyDown(indx);
             }
         }
-
     }
+
+
+    @Override
+    protected void heapifyUp(int pos) {
+
+        // At the root of elements
+        int currentParent = this.parent(pos);
+        if (currentParent == -1) {
+            return;
+        }
+
+        int[] heap = this.getHeap();
+        if (heap[currentParent] < heap[pos]) {
+            this.swap(currentParent, pos);
+            this.heapifyUp(currentParent);
+        }
+    }
+
 }

@@ -64,7 +64,16 @@ public class MinHeap extends Heap {
      */
     @Override
     public int max() {
-        return 0;
+
+        int[] heap = this.getHeap();
+        int size = this.getSize();
+        int max = heap[0];
+
+        int leftChild = this.leftChild(0);
+        int rightChild = this.rightChild(0);
+
+
+        return 1;
     }
 
 
@@ -74,7 +83,8 @@ public class MinHeap extends Heap {
      */
     @Override
     public int min() {
-        return 0;
+        int[] heap = this.getHeap();
+        return heap[0];
     }
 
 
@@ -82,13 +92,14 @@ public class MinHeap extends Heap {
     // Utilities
     // ----------------------
 
-    /**
-     * Min-Heapiefs the tree.
-     *
-     * @param pos - position from where to start to heapify from
-     */
     @Override
-    protected void heapify(int pos) {
+    protected void heapifyDown(int pos) {
+
+    }
+
+
+    @Override
+    protected void heapifyUp(int pos) {
 
     }
 

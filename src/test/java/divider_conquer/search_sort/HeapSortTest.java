@@ -2,11 +2,8 @@ package divider_conquer.search_sort;
 
 import divide_conquer.search_sort.HeapSort;
 import org.junit.jupiter.api.Test;
-
-import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 
