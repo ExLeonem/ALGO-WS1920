@@ -8,6 +8,10 @@ package divide_conquer.search_sort;
 public class HeapSort {
 
 
+    public HeapSort(int[] elements) {
+
+    }
+
 
     public int[] sort(int[] items) {
 

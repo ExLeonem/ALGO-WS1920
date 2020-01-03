@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/InsertionSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/InsertionSortTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/IntroSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/IntroSortTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
