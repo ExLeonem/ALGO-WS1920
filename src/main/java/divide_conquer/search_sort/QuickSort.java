@@ -1,7 +1,5 @@
 package divide_conquer.search_sort;
 
-import java.util.Random;
-
 /**
  * Inplace quicksort for different elements.
  *

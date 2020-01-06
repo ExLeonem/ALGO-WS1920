@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest$MaxHeap.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest$MinHeap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/select/MedianFinding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/select/QuickSelectTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/Heap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MinHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MinHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/HeapSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/HeapSortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MaxHeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MaxHeapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MinHeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MinHeapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/HeapSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/HeapSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/Heap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/Heap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MaxHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MaxHeap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MinHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MinHeap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MaxHeapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MaxHeapTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MinHeapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MinHeapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/IntroSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/QuickSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/QuickSort.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IntroSortTest.quickSortMedianTest">
+  <component name="RunManager" selected="JUnit.QuickSelectTest.nonWorkingSample">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -92,98 +81,101 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeapSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSelectTest.multipleOutterRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divider_conquer.select.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.HeapSortTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntroSortTest.quickSortMedianTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.IntroSortTest" />
-      <option name="METHOD_NAME" value="quickSortMedianTest" />
+      <option name="PACKAGE_NAME" value="divider_conquer.select" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.select.QuickSelectTest" />
+      <option name="METHOD_NAME" value="multipleOutterRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntroSortTest.testHeapSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSelectTest.nonWorkingSample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="PATTERN" value="divider_conquer.select.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
-      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.IntroSortTest" />
-      <option name="METHOD_NAME" value="testHeapSort" />
+      <option name="PACKAGE_NAME" value="divider_conquer.select" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.select.QuickSelectTest" />
+      <option name="METHOD_NAME" value="nonWorkingSample" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxHeapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSelectTest.numbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="supplementary.structures.trees.*" />
+          <option name="PATTERN" value="divider_conquer.select.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MaxHeapTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="divider_conquer.select" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.select.QuickSelectTest" />
+      <option name="METHOD_NAME" value="numbers" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinHeapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuickSelectTest.random" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="supplementary.structures.trees.*" />
+          <option name="PATTERN" value="divider_conquer.select.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MinHeapTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="divider_conquer.select" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.select.QuickSelectTest" />
+      <option name="METHOD_NAME" value="random" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuickSelectTest.testStackOverflowSituation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.select.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.select" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.select.QuickSelectTest" />
+      <option name="METHOD_NAME" value="testStackOverflowSituation" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.MinHeapTest" />
-      <item itemvalue="JUnit.MaxHeapTest" />
-      <item itemvalue="JUnit.HeapSortTest" />
-      <item itemvalue="JUnit.IntroSortTest.quickSortMedianTest" />
-      <item itemvalue="JUnit.IntroSortTest.testHeapSort" />
+      <item itemvalue="JUnit.QuickSelectTest.multipleOutterRight" />
+      <item itemvalue="JUnit.QuickSelectTest.random" />
+      <item itemvalue="JUnit.QuickSelectTest.numbers" />
+      <item itemvalue="JUnit.QuickSelectTest.testStackOverflowSituation" />
+      <item itemvalue="JUnit.QuickSelectTest.nonWorkingSample" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IntroSortTest.quickSortMedianTest" />
-        <item itemvalue="JUnit.IntroSortTest.testHeapSort" />
-        <item itemvalue="JUnit.HeapSortTest" />
-        <item itemvalue="JUnit.MaxHeapTest" />
-        <item itemvalue="JUnit.MinHeapTest" />
+        <item itemvalue="JUnit.QuickSelectTest.nonWorkingSample" />
+        <item itemvalue="JUnit.QuickSelectTest.random" />
+        <item itemvalue="JUnit.QuickSelectTest.testStackOverflowSituation" />
+        <item itemvalue="JUnit.QuickSelectTest.numbers" />
+        <item itemvalue="JUnit.QuickSelectTest.multipleOutterRight" />
       </list>
     </recent_temporary>
   </component>
@@ -217,9 +209,64 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/ClosestPoinPair.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="53" />
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/select/QuickSelect.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
