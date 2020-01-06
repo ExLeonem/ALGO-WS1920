@@ -17,7 +17,30 @@ public class ConvexHull {
      * @param points - a set of points
      * @return
      */
-    public int[] calculate(Point[] points) {
+    public Point[] calculate(Point[] points) {
+
+        // Can't calculate a hull for less than 3 points.
+        if (points.length < 3) {
+            return null;
+        }
+
+        QuickSort<Point> quick = new QuickSort<Point>();
+
+
+        Point[] convexHull = this.recurse(points, 0, points.length);
+        return convexHull;
+    }
+
+
+    private Point[] recurse(Point[] points, int left, int right) {
+
+
+        return null;
+    }
+
+
+    private Point[] merge() {
+
 
         return null;
     }
