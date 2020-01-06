@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author Maksim Sandybekov
  * @date 2019-20-11
  */
-public class Point {
+public class Point implements Comparable<Point> {
 
     private double[] coordinates;
     private int dim; // Point dimensions
@@ -94,11 +94,14 @@ public class Point {
         this.coordinates = coordinates;
     }
 
-
-
     // --------------------------
     // Equal/Hashcode
     // -------------------------
+
+    @Override
+    public int compareTo(Point o) {
+        return 0;
+    }
 
     @Override
     public boolean equals(Object o) {

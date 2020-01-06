@@ -2,6 +2,8 @@ package divide_conquer;
 
 /**
  * Search the k-th biggest element in an array of integers.
+ *
+ * @author Maksim Sandybekov
  */
 
 public class KBiggestElement {

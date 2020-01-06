@@ -1,5 +1,9 @@
 package divide_conquer;
 
+/**
+ *
+ * @author Maksim Sandybekov
+ */
 public class TuermeHanoi {
 
     private int towers;

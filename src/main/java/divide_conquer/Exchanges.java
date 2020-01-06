@@ -4,6 +4,8 @@ import java.util.Random;
 
 /**
  * Zählen der Anzahl der Vertauschungen in unsortierter liste.
+ *
+ * @author Maksim Sandybekov
  */
 public class Exchanges {
 

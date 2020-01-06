@@ -51,6 +51,7 @@ public class Skyline {
             return this.genCornerCoordinates(input[left]);
         }
 
+
         // Divide
         int center = (left + right) / 2;
         int[][] leftSubProblem = this.recurse(input, left, center);
@@ -98,7 +99,8 @@ public class Skyline {
         int[] previouslyAdd;
         int[] coordToAdd;
         int toAddIndx;
-        boolean leftSmaller; // which side was taken? left: true, right: false
+        boolean leftSmaller; // which side was taken  ? left: true, right: false
+
 
         while (leftIndx < leftSub.length && rightIndx < rightSub.length) {
 
@@ -126,7 +128,6 @@ public class Skyline {
             }
 
             previouslyAdd = skylineCoords.peek(); // previous coordinate
-
         }
 
         return this.listToArray(skylineCoords);
@@ -140,6 +141,7 @@ public class Skyline {
      * @return
      */
     private int[][] listToArray(LinkedList<int[]> elements) {
+
         // Copy collected elements into an array
         int listLength = elements.size();
         int[][] arrayElements = new int[listLength][2];
