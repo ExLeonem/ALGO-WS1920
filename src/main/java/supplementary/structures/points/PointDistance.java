@@ -1,6 +1,9 @@
 package supplementary.structures.points;
 
 /**
+ * TODO: Implementing additional distances
+ * - Wasserstein-Distance/Vaserstein-Metrik/Earth-Mover's-Metrik
+ * - Levensthein-Distance/Editorial-Distance
  *
  * @author Maksim Sandybekov
  * @date 2019-20-11

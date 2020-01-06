@@ -99,7 +99,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Breadth-first-search
 
 ### Dynamic Programming
-- [ ] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
+- [x] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
 - [ ] Ähnliche Summe
 - [ ] Alle kürzeste Wege (Floyd)
 - [ ] Approximation von Pi mit n-gon
@@ -127,6 +127,25 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Additionals
     - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
     - [ ] Längster gemeinsamer Teilstring
+
+
+#### Pseudo Code
+
+##### KnapSack
+`
+    1. initialize 2D-matrix to save items (height = amount of items, width = space needed for biggest item)
+    2. 
+`
+
+Alternativ 
+
+`
+    1. Matrix *A* initializieren zum speichern der Ergebnisse (\[*j*\] Höhe = Anzahl der Elemente, \[*i*\] Breite = Größe des Rucksacks)
+    2. Über Matrix iterieren und ausfüllen
+        -  <sub> </sub>
+`
+
+
 
 ### Backtracking
 

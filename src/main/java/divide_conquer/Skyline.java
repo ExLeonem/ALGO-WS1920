@@ -100,16 +100,12 @@ public class Skyline {
         int toAddIndx;
         boolean leftSmaller; // which side was taken? left: true, right: false
 
-
         while (leftIndx < leftSub.length && rightIndx < rightSub.length) {
-
-
 
             if (leftSub[leftIndx][0] < rightSub[rightIndx][0]) {
                 leftSmaller = true;
                 coordToAdd = leftSub[leftIndx];
             }
-
 
             leftSmaller = leftSub[leftIndx][0] < rightSub[rightIndx][0]? true : false;
             coordToAdd = leftSmaller? leftSub[leftIndx] : rightSub[rightIndx];
@@ -131,11 +127,7 @@ public class Skyline {
 
             previouslyAdd = skylineCoords.peek(); // previous coordinate
 
-
-
         }
-
-
 
         return this.listToArray(skylineCoords);
     }
