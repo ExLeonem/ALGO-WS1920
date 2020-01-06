@@ -32,6 +32,21 @@ public class MaxHeapTest {
         assertEquals(expected, heap.get(actualLeft));
     }
 
+    @Test
+    void checkTwoElementTree() {
+        MaxHeap heap = new MaxHeap();
+        heap.insert(7);
+        heap.insert(3);
+
+        int left = heap.get(heap.leftChild(0));
+        int leftExpected = 3;
+        assertEquals(leftExpected, left);
+
+        int right = heap.get(heap.rightChild(0));
+        int rightExpected = 0;
+        assertEquals(rightExpected, right);
+    }
+
 
     @Test
     void checkChildrenRetention() {
@@ -60,6 +75,7 @@ public class MaxHeapTest {
 
         assertEquals(expected, actual);
     }
+
 
     @Test
     void multiInsert() {
@@ -114,17 +130,22 @@ public class MaxHeapTest {
 
 
     @Test
-    void testMaxRetention() {
+    void testMinMaxRetention() {
         MaxHeap heap = new MaxHeap();
         heap.insert(7);
         heap.insert(8);
         heap.insert(15);
         heap.insert(20);
 
+        // Check max retention
         int actual = heap.max();
         int expected = 20;
-
         assertEquals(expected, actual);
+
+        // Check min retention
+        int actualMin = heap.min();
+        int expectedMin = 7;
+        assertEquals(expectedMin, actualMin);
     }
 
 
@@ -138,6 +159,7 @@ public class MaxHeapTest {
 
         Random rand = new Random();
         int max = 0;
+        int min = 0;
 
         int[] heapValues = new int[rand.nextInt(HEAP_SIZE_MAX - HEAP_SIZE_MIN) + HEAP_SIZE_MIN];
         for (int i = 0; i < heapValues.length; i++) {
@@ -149,10 +171,24 @@ public class MaxHeapTest {
             if (max < nextInt) {
                 max = nextInt;
             }
+
+            if( min > nextInt) {
+                min = nextInt;
+            }
         }
 
-
+        // Compare max
         MaxHeap heap = new MaxHeap(heapValues);
-        assertEquals(max, heap.max());
+
+        int actualMax = heap.max();
+        assertEquals(max, actualMax);
+
+        // Copare min values
+        int actualMin = heap.min();
+        assertEquals(min, actualMin);
+
+        // Compare Sizes
+        int actualSize = heap.getSize();
+        assertEquals(heapValues.length, actualSize);
     }
 }

@@ -1,5 +1,7 @@
 package supplementary.structures.trees;
 
+import divide_conquer.search_sort.Order;
+
 import java.nio.channels.FileLockInterruptionException;
 import java.util.Arrays;
 
@@ -45,8 +47,13 @@ public abstract class Heap {
     public Heap(int[] elements) {
 
         this.maxSize = elements.length;
-        this.size = elements.length;
-        this.heap = Arrays.copyOf(elements, elements.length + DEFAULT_MAX_SIZE);
+        this.size = 0;
+
+        // Insert values into heap
+        this.heap = new int[elements.length];
+        for (int element: elements) {
+            this.insert(element);
+        }
     }
 
 
@@ -85,7 +92,7 @@ public abstract class Heap {
             return -1;
         }
 
-        return (pos + 1) * 1;
+        return (pos * 2) + 1;
     }
 
 
@@ -137,6 +144,38 @@ public abstract class Heap {
      */
     public abstract void delete(int element);
 
+
+    /**
+     * Performs an heap sort on the elements of the heap.
+     *
+     * @param order - the order of elements
+     */
+    protected int[] sort(Order order) {
+        int[] heap = Arrays.copyOf(this.getHeap(), this.getHeap().length);
+        if (heap.length <= 1) {
+            return heap;
+        }
+
+        // Iterate till first position (fp) >= last position (lp)
+        int lpos = this.getSize() - 1;
+        int fpos = 0;
+        while(fpos < lpos-1) {
+
+            this.swap(heap, fpos, lpos);
+            this.heapifyDown(order, heap, fpos, lpos);
+            lpos--;
+        }
+
+        if (!order.inOrder(heap[fpos], heap[lpos])) {
+            this.swap(heap, fpos, lpos);
+        }
+
+        return heap;
+    }
+
+    public abstract int[] sort();
+
+
     /**
      * Gets element at the specified position.
      *
@@ -184,6 +223,12 @@ public abstract class Heap {
     }
 
 
+    protected void swap(int[] elements, int fpos, int tpos) {
+        int temp = elements[fpos];
+        elements[fpos] = elements[tpos];
+        elements[tpos] = temp;
+    }
+
     /**
      * Checks wether position exists in the current tree.
      *
@@ -204,17 +249,64 @@ public abstract class Heap {
     /**
      * Recursivly heapify the element at given position down the tree.
      *
+     * @param heap - heap to perfom the heapify operation on
      * @param pos - position from where to start to heapify from
+     * @param maxDepth - the maxmium depth to which heapify the heap
      */
-    protected abstract void heapifyDown(int pos);
+    protected void heapifyDown(Order order, int heap[], int pos, int maxDepth) {
+        if (this.isLeaf(pos) || pos >= maxDepth) {
+            return;
+        }
+
+        int leftIndx = this.leftChild(pos);
+        int rightIndx = this.rightChild(pos);
+
+        if (this.posInRange(leftIndx) && this.posInRange(rightIndx) && leftIndx < maxDepth && rightIndx < maxDepth) {
+
+            int leftChild = heap[leftIndx];
+            int rightChild = heap[rightIndx];
+            if (order.inOrder(heap[pos], leftChild) || order.inOrder(heap[pos], rightChild)) {
+
+                if (!order.inOrder(leftChild, rightChild)) {
+                    this.swap(heap, pos, leftIndx);
+                    this.heapifyDown(order, heap, leftIndx, maxDepth);
+
+                } else {
+                    this.swap(heap, pos, rightIndx);
+                    this.heapifyDown(order, heap, rightIndx, maxDepth);
+                }
+            }
+
+        } else if (this.posInRange(leftIndx) && order.inOrder(heap[pos], heap[leftIndx]) && leftIndx < maxDepth) {
+            this.swap(heap, pos, leftIndx);
+            this.heapifyDown(order, heap, leftIndx, maxDepth);
+
+        } else if (this.posInRange(rightIndx) && order.inOrder(heap[pos], heap[rightIndx]) && rightIndx < maxDepth) {
+            this.swap(heap, pos, rightIndx);
+            this.heapifyDown(order, heap, rightIndx, maxDepth);
+        }
+    }
 
 
     /**
      * Recursivly heapify the element at given position up.
      *
+     * @param heap - elements to perform heapify operation on
      * @param pos - element position
      */
-    protected abstract void heapifyUp(int pos);
+    protected void heapifyUp(Order order, int[] heap, int pos) {
+        // At the root of elements
+        int currentParent = this.parent(pos);
+        if (currentParent == -1) {
+            return;
+        }
+
+
+        if (order.inOrder(heap[currentParent], heap[pos])) {
+            this.swap(currentParent, pos);
+            this.heapifyUp(order, heap, currentParent);
+        }
+    }
 
 
     /**
@@ -228,18 +320,18 @@ public abstract class Heap {
 
         System.out.println("++++++++++++++++++\nSize: " + size + "\nMax-Size: " + maxSize + "\n++++++++++++++++++++++++++");
 
-        for (int i = 0; i <= size / 2; i++) {
+        for (int i = 0; i < size; i++) {
 
             String toPrint = "Parent: " + heap[i];
 
             int leftChild = this.leftChild(i);
-            if (this.posInRange(leftChild)) {
-                toPrint += "\n(Child) Left: " + heap[leftChild];
+            if (this.posInRange(leftChild) && leftChild < size) {
+                toPrint += "\n(" + leftChild + ") Left: " + heap[leftChild];
             }
 
             int rightChild = this.rightChild(i);
-            if (this.posInRange(rightChild)) {
-                toPrint += "\n(Child) Right: " + heap[rightChild];
+            if (this.posInRange(rightChild) && rightChild < size) {
+                toPrint += "\n(" + rightChild + ") Right: " + heap[rightChild];
             }
 
             System.out.println(toPrint + "\n-------------------");

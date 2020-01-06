@@ -1,6 +1,8 @@
 package supplementary.structures.trees;
 
 
+import divide_conquer.search_sort.Order;
+
 import java.util.Arrays;
 
 /**
@@ -30,11 +32,6 @@ public class MaxHeap extends Heap {
     // Heap-Operations
     // -------------------------
 
-    /**
-     * Insert a new element into the heap.
-     *
-     * @param element - the element to insert into the heap
-     */
     @Override
     public void insert(int element) {
         int size = this.getSize();
@@ -44,8 +41,8 @@ public class MaxHeap extends Heap {
         // There's stil space in the heap
         if (size < maxSize) {
             heap[size] = element;
-            this.heapifyUp(size);
-            this.setSize(size + 1);
+            this.heapifyUp(Order.ASC, heap, size);
+            this.setSize(size+1);
             return;
         }
 
@@ -57,103 +54,44 @@ public class MaxHeap extends Heap {
     }
 
 
-    /**
-     * Deletes an element from the heap.
-     *
-     * @param element - the element to delete from the heap
-     */
     @Override
     public void delete(int element) {
-
+        // TODO: Implement
     }
 
 
-    /**
-     * Search and return the max element of the tree.
-     *
-     * @return max element of the tree
-     */
+    @Override
+    public int[] sort() {
+        return this.sort(Order.ASC);
+    }
+
+
+    @Override
     public int max() {
         int[] heap = this.getHeap();
         return heap[0];
     }
 
 
-    /**
-     * Searches and return the min element of the heap. No deletion of element.
-     *
-     * @return the min element of the tree
-     */
     @Override
     public int min() {
 
         int[] heap = this.getHeap();
-        int size = this.getSize();
-        int min = heap[0];
+        int height = this.getSize() / 2;
 
-        int leftChild = this.leftChild(0);
-        int rightChild = this.rightChild(0);
-        while ((this.posInRange(leftChild)& leftChild <= size) || (this.posInRange(rightChild) && rightChild <= size)) {
-
-            if (heap[leftChild] < heap[rightChild]) {
-                // left Child is smaller
-            }
-
-
-            if (heap[leftChild] > heap[rightChild]) {
-                // right child is smaller
-            }
+        // Single element in heap return instantly
+        if (heap.length == 1) {
+            return heap[0];
         }
 
+        int min = heap[0];
+        int elementsToCheck = (int) (Math.pow(2, height) + Math.pow(2, height-1));
+        for (int i = 0; i < elementsToCheck && (this.getSize() - (i+1)) >= 0; i++) {
+            if (min > heap[this.getSize()- (i+1)]) {
+                min = heap[this.getSize() - (i+1)];
+            }
+        }
 
         return min;
     }
-
-
-
-    // -----------------------
-    // Utilities
-    // -----------------------
-
-    @Override
-    protected void heapifyDown(int pos) {
-
-        if (this.isLeaf(pos)) {
-            return;
-        }
-
-        int[] heap = this.getHeap();
-        int leftChild = heap[this.leftChild(pos)];
-        int rightChild = heap[this.rightChild(pos)];
-        if (heap[pos] < leftChild || heap[pos] < rightChild) {
-
-            if (leftChild > rightChild) {
-                int indx = this.leftChild(pos);
-                this.swap(pos, indx);
-                this.heapifyDown(indx);
-            } else {
-                int indx = this.rightChild(pos);
-                this.swap(pos, indx);
-                this.heapifyDown(indx);
-            }
-        }
-    }
-
-
-    @Override
-    protected void heapifyUp(int pos) {
-
-        // At the root of elements
-        int currentParent = this.parent(pos);
-        if (currentParent == -1) {
-            return;
-        }
-
-        int[] heap = this.getHeap();
-        if (heap[currentParent] < heap[pos]) {
-            this.swap(currentParent, pos);
-            this.heapifyUp(currentParent);
-        }
-    }
-
 }

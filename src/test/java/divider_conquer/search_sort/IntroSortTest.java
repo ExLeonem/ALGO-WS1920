@@ -2,6 +2,7 @@ package divider_conquer.search_sort;
 
 import divide_conquer.search_sort.IntroSort;
 import org.junit.jupiter.api.Test;
+import supplementary.utils.ArrayUtils;
 
 import java.util.PriorityQueue;
 import java.util.Random;
@@ -18,7 +19,9 @@ public class IntroSortTest {
     void quickSortMedianTest() {
         int[] items = new int[]{5, 1, 4, 3, 11, 12, 6, 37, 6, 10, 18, 199, 200, 160, 75, 66, 97, 12, 17, 22};
         int[] actual = intro.sort(items);
-        int[] expected = new int[]{1, 3, 4, 5, 6, 6, 10, 11, 12, 17, 18, 22, 37, 160, 199, 200, 66, 75, 97};
+        int[] expected = new int[]{1, 3, 4, 5, 6, 6, 10, 11, 12, 17, 18, 22, 37, 66, 75, 97, 160, 199, 200, 3};
+
+        ArrayUtils.printHorizontal(actual);
 
         assertArrayEquals(expected, actual);
     }

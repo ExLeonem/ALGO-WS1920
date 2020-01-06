@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5ac6bc1-94dc-4781-b067-447c922db72c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest$MaxHeap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest$MinHeap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/HeapSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/divide_conquer/search_sort/IntroSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/Heap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MaxHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MinHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supplementary/structures/trees/MinHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/HeapSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/HeapSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/divider_conquer/search_sort/IntroSortTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MaxHeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MaxHeapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MinHeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/supplementary/structures/trees/MinHeapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/HeapSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/divide_conquer/search_sort/HeapSort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/Heap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/Heap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MaxHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MaxHeap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MinHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/supplementary/structures/trees/MinHeap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/divider_conquer/search_sort/HeapSortTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MaxHeapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MaxHeapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MinHeapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/supplementary/structures/trees/MinHeapTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MaxHeapTest.random">
+  <component name="RunManager" selected="JUnit.IntroSortTest.quickSortMedianTest">
     <configuration name="All" type="JUnit" factoryName="JUnit">
       <module name="uebungen" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -83,39 +92,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxHeapTest.insertOversize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeapSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="supplementary.structures.trees.*" />
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MaxHeapTest" />
-      <option name="METHOD_NAME" value="insertOversize" />
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.HeapSortTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntroSortTest.quickSortMedianTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uebungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.IntroSortTest" />
+      <option name="METHOD_NAME" value="quickSortMedianTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxHeapTest.random" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntroSortTest.testHeapSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="supplementary.structures.trees.*" />
+          <option name="PATTERN" value="divider_conquer.search_sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MaxHeapTest" />
-      <option name="METHOD_NAME" value="random" />
+      <option name="PACKAGE_NAME" value="divider_conquer.search_sort" />
+      <option name="MAIN_CLASS_NAME" value="divider_conquer.search_sort.IntroSortTest" />
+      <option name="METHOD_NAME" value="testHeapSort" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxHeapTest.singleInsertion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MaxHeapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -125,13 +149,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
       <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MaxHeapTest" />
-      <option name="METHOD_NAME" value="singleInsertion" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxHeapTest.testHeapifyOfElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MinHeapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uebungen" />
       <extension name="coverage">
         <pattern>
@@ -140,44 +163,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MaxHeapTest" />
-      <option name="METHOD_NAME" value="testHeapifyOfElements" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaxHeapTest.testMaxRetention" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uebungen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="supplementary.structures.trees.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="supplementary.structures.trees" />
-      <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MaxHeapTest" />
-      <option name="METHOD_NAME" value="testMaxRetention" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="supplementary.structures.trees.MinHeapTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="JUnit.All" />
-      <item itemvalue="JUnit.MaxHeapTest.singleInsertion" />
-      <item itemvalue="JUnit.MaxHeapTest.insertOversize" />
-      <item itemvalue="JUnit.MaxHeapTest.testHeapifyOfElements" />
-      <item itemvalue="JUnit.MaxHeapTest.testMaxRetention" />
-      <item itemvalue="JUnit.MaxHeapTest.random" />
+      <item itemvalue="JUnit.MinHeapTest" />
+      <item itemvalue="JUnit.MaxHeapTest" />
+      <item itemvalue="JUnit.HeapSortTest" />
+      <item itemvalue="JUnit.IntroSortTest.quickSortMedianTest" />
+      <item itemvalue="JUnit.IntroSortTest.testHeapSort" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MaxHeapTest.random" />
-        <item itemvalue="JUnit.MaxHeapTest.testMaxRetention" />
-        <item itemvalue="JUnit.MaxHeapTest.testHeapifyOfElements" />
-        <item itemvalue="JUnit.MaxHeapTest.insertOversize" />
-        <item itemvalue="JUnit.MaxHeapTest.singleInsertion" />
+        <item itemvalue="JUnit.IntroSortTest.quickSortMedianTest" />
+        <item itemvalue="JUnit.IntroSortTest.testHeapSort" />
+        <item itemvalue="JUnit.HeapSortTest" />
+        <item itemvalue="JUnit.MaxHeapTest" />
+        <item itemvalue="JUnit.MinHeapTest" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +212,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/divide_conquer/ClosestPoinPair.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/uebungen$QuickSortTest.ic" NAME="QuickSortTest Coverage Results" MODIFIED="1573057483042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

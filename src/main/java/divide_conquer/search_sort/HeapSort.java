@@ -1,18 +1,21 @@
 package divide_conquer.search_sort;
 
 import supplementary.structures.trees.Heap;
+import supplementary.structures.trees.MaxHeap;
+import supplementary.structures.trees.MinHeap;
 
-import java.util.Arrays;
 
 /**
+ * HeapSort:
+ * Uses a max-heap for ascending order and a min-heap for descending order of element values.
  *
  * @author Maksim Sandybekov
  * @date 2019-12-16
  */
 public class HeapSort {
 
-    private Heap heap;
     private Order order;
+    private Heap heap;
 
 
     public HeapSort() {
@@ -41,30 +44,30 @@ public class HeapSort {
             return items;
         }
 
-        this.sort(items, 0, items.length);
-        return items;
+        // Build the heap
+        if (this.getOrder() == Order.ASC) {
+            this.heap = new MaxHeap(items);
+        } else {
+            this.heap = new MinHeap(items);
+        }
+
+        return this.heap.sort();
     }
-
-
-    private void sort(int[] items, int left, int right) {
-
-    }
-
 
 
     // --------------------
     // Setter-/Getter
     // --------------------
 
-    private void setMaxHeap(Heap heap) {
-        this.heap = heap;
-    }
-
-    public void setOrder(Order order) {
+    private void setOrder(Order order) {
         this.order = order;
     }
 
-    public Order getOrder() {
+    private Order getOrder() {
         return this.order;
+    }
+
+    public int[] getHeap() {
+        return this.heap.getHeap();
     }
 }

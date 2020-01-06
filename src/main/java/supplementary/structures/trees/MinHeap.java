@@ -1,5 +1,7 @@
 package supplementary.structures.trees;
 
+import divide_conquer.search_sort.Order;
+
 import java.util.Arrays;
 
 public class MinHeap extends Heap {
@@ -23,84 +25,61 @@ public class MinHeap extends Heap {
     // Operations
     // ------------------------
 
-    /**
-     * Insert a new element into the heap
-     *
-     * @param element - elment to insert into the heap
-     */
+    @Override
     public void insert(int element) {
 
-        int size = this.getSize() + 1;
+        int size = this.getSize();
         int maxSize = this.getMaxSize();
         int[] heap = this.getHeap();
 
         if (size < maxSize) {
             heap[size] = element;
-            this.setSize(size);
+            this.heapifyUp(Order.DESC, heap, size);
+            this.setSize(size + 1);
             return;
         }
 
-        int[] biggerHeap = Arrays.copyOf(heap, heap.length+1);
+        int[] biggerHeap = Arrays.copyOf(heap, heap.length + 1);
         this.setHeap(biggerHeap);
         this.setMaxSize(++maxSize);
         this.insert(element);
     }
 
 
-    /**
-     * Delete an element from the heap.
-     *
-     * @param element - the element to delete from the heap
-     */
     @Override
     public void delete(int element) {
-
+        // TODO: Impelement
     }
 
 
-    /**
-     *
-     * @return
-     */
+    @Override
+    public int[] sort() {
+        return this.sort(Order.DESC);
+    }
+
+
     @Override
     public int max() {
 
         int[] heap = this.getHeap();
-        int size = this.getSize();
+        int height = this.getSize() / 2;
+
+        int elementsToCheck = (int) (Math.pow(2, height) + Math.pow(2, height-1));
         int max = heap[0];
+        for (int i = 0; i < elementsToCheck && (this.getSize() - (i+1) >= 0); i++) {
 
-        int leftChild = this.leftChild(0);
-        int rightChild = this.rightChild(0);
+            if (heap[this.getSize() - (i+1)] > max) {
+                max = heap[this.getSize() - (i+1)];
+            }
+        }
 
-
-        return 1;
+        return max;
     }
 
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int min() {
         int[] heap = this.getHeap();
         return heap[0];
     }
-
-
-    // ----------------------
-    // Utilities
-    // ----------------------
-
-    @Override
-    protected void heapifyDown(int pos) {
-
-    }
-
-
-    @Override
-    protected void heapifyUp(int pos) {
-
-    }
-
 }

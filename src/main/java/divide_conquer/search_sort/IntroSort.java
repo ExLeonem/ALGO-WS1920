@@ -44,7 +44,7 @@ public class IntroSort<T extends Comparable> {
         }
 
         int depthLimit = (int) (2 * Math.log(items.length)); // Depth limit to switch to heap-sort
-        this.recurseIntegerSort(items, 0, items.length - 1, depthLimit);
+        this.recurseIntroSort(items, 0, items.length - 1, depthLimit);
         return items;
     }
 
@@ -56,7 +56,7 @@ public class IntroSort<T extends Comparable> {
      * @param left - left border.
      * @param right - right border
      */
-    private void recurseIntegerSort(int[] items, int left, int right, int depthLimit) {
+    private void recurseIntroSort(int[] items, int left, int right, int depthLimit) {
 
         // Switch to Insertion-Sort (less than 16-items in sub-problem)
         if ((right - left) <= this.getPartitionSize()) {
@@ -66,13 +66,14 @@ public class IntroSort<T extends Comparable> {
         }
 
         // Depth Limit reached, switch to HeapSort
-        if (depthLimit == 0) {
+        if (depthLimit <= 0) {
 
             // Copy array slice into new array
             int tempArrayLength = right - left;
             int[] temp =  new int[tempArrayLength];
+            int maxLeft = left == 0? 1 : left;
             for (int i = left; i < right; i++) {
-                temp[i%left] = items[i];
+                temp[i%maxLeft] = items[i];
             }
 
             // Perform Heap-Sort on array slice
@@ -81,7 +82,7 @@ public class IntroSort<T extends Comparable> {
 
             // Copy sorted values back into main array
             for (int i = left; i < right; i++) {
-                items[i] = temp[i%left];
+                items[i] = temp[i%maxLeft];
             }
             return;
         }
@@ -91,6 +92,11 @@ public class IntroSort<T extends Comparable> {
             return;
         }
 
+        // Recurse
+        System.out.println("Perfomr recursion");
+        int pivot = this.partition(items, left, right);
+        this.recurseIntroSort(items, left, pivot, --depthLimit);
+        this.recurseIntroSort(items, pivot, right, --depthLimit);
     }
 
 
@@ -101,7 +107,7 @@ public class IntroSort<T extends Comparable> {
      * @param left - left border from which to start the sorting
      * @param right - right border marks the point to which all elements should be partitioned
      */
-    private void partition(int[] items, int left, int right) {
+    private int partition(int[] items, int left, int right) {
 
         int pivotIndx = this.getNextPivotIndx();
         if (pivotIndx == -1) {
@@ -113,6 +119,10 @@ public class IntroSort<T extends Comparable> {
         for (int i = left; i < right; i++) {
 
         }
+
+
+
+        return pivotIndx;
     }
 
 
@@ -129,6 +139,18 @@ public class IntroSort<T extends Comparable> {
         items[to] = temp;
     }
 
+
+    /**
+     *
+     * @param items
+     * @param from
+     * @param to
+     */
+    private void medianOfMedians(int[] items, int from, int to) {
+
+
+
+    }
 
 
     // ---------------------------------
