@@ -30,6 +30,7 @@ public enum Order {
 
     };
 
+    
     public abstract boolean inOrder(int left, int right);
     public abstract boolean inOrder(int[] left, int right[], int checkIndx);
 }
