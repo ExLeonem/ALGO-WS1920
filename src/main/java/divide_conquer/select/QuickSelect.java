@@ -112,7 +112,8 @@ public class QuickSelect {
         }
 
         // Order & select center-median out of max. 3-medians
-        QuickSort.sort(threeMedian);
+        QuickSort qSort = new QuickSort();
+        qSort.sort(threeMedian);
         int center = threeMedian.length > 0? threeMedian.length / 2 : 0;
         return threeMedian[center][1];
 

@@ -21,7 +21,7 @@ public class BinaryTreeTest {
     @Test
     void searchTest() {
         BinaryTree<Integer> tree = new BinaryTree<Integer>(20);
-        tree.insert(20);
+        tree.insert(10);
         tree.insert(5);
         tree.insert(6);
 

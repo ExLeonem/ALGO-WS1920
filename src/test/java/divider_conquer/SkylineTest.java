@@ -2,11 +2,8 @@ package divider_conquer;
 
 import divide_conquer.Skyline;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import java.util.Random;
 import static org.junit.Assert.assertArrayEquals;
-
 
 public class SkylineTest {
 
@@ -16,13 +13,63 @@ public class SkylineTest {
     @Test
     @DisplayName("Single Building in the skyline")
     void singleBuilding() {
+        int[][] input = {{1, 4, 12}};
+        int[][] expected = {{1, 12}, {4, 0}};
+        int[][] actual = sky.calculate(input);
 
-        int[][] input = new int[][]{
-                {1, 4, 12}
-        };
+        assertArrayEquals(expected, actual);
+    }
 
-        int[][] expected = new int[][]{{1,3}, {2,2}};
-//        int[][] expected = new int[][]{{1, 0}, {1, 12}, {4, 12}, {4, 0}};
+
+    @Test
+    @DisplayName("Overlap, first one is higher")
+    void overlap() {
+        int[][] input = {{2, 6, 6}, {4, 7, 3}};
+        int[][] expected = {{2, 6}, {6,3}, {7,0}};
+        int[][] actual = sky.calculate(input);
+
+        assertArrayEquals(expected, actual);
+    }
+
+
+    @Test
+    @DisplayName("Overlap, second one is higher")
+    void overlapSec() {
+        int[][] input = {{2, 6, 3}, {4, 7, 7}};
+        int[][] expected = {{2,3}, {4, 7}, {7, 0}};
+        int[][] actual = sky.calculate(input);
+
+        assertArrayEquals(expected, actual);
+    }
+
+
+    @Test
+    @DisplayName("Non-Overlapping")
+    void nonOverlap() {
+        int[][] input = {{2, 6, 3}, {7, 10, 2}};
+        int[][] expected = {{2, 3}, {6, 0}, {7, 2}, {10, 0}};
+        int[][] actual = sky.calculate(input);
+
+        assertArrayEquals(expected, actual);
+    }
+
+
+    @Test
+    @DisplayName("Surrounded, outter is below inner")
+    void surrounderTop() {
+        int[][] input = {{2, 10, 2}, {5, 9, 6}};
+        int[][] expected = {{2,2}, {5, 6}, {9, 2}, {10, 0}};
+        int[][] actual = sky.calculate(input);
+
+        assertArrayEquals(expected, actual);
+    }
+
+
+    @Test
+    @DisplayName("Surrounded, inner below outter")
+    void surrounderInner() {
+        int[][] input = {{2, 10, 6}, {5, 9, 2}};
+        int[][] expected = {{2, 6}, {10, 0}};
         int[][] actual = sky.calculate(input);
 
         assertArrayEquals(expected, actual);
@@ -75,115 +122,4 @@ public class SkylineTest {
 //                }
 //            }
     }
-
-
-    @Nested
-    class GenerateShapeCorners {
-
-        @Test
-        void simpleTest() {
-            int[] shape = {2,2,10};
-            int[][] expected = {{2,10},{2,0}};
-            int[][] actual = sky.genCornerCoordinates(shape);
-
-            assertArrayEquals(expected, actual);
-        }
-
-
-        @Test
-        void randomTest() {
-
-            // Parameters for random number generation
-            final int MAX_X_ONE = 50;
-            final int MAX_X_TWO = 50;
-            final int MAX_Y = 50;
-
-            // Generate Random Values
-            Random rand = new Random();
-            int xOne = rand.nextInt(MAX_X_ONE);
-            int xTwo = rand.nextInt(MAX_X_TWO) + xOne;
-            int height = rand.nextInt(MAX_Y) + 1;
-
-            // Setup expected
-            int[] shape = {xOne, xTwo, height};
-            int[][] expected = new int[2][2];
-
-            expected[0][0] = shape[0];
-            expected[0][1] = shape[shape.length - 1];
-
-            expected[1][0] = shape[1];
-            expected[1][1] = 0;
-
-
-            // Verification
-            int[][] actual = sky.genCornerCoordinates(shape);
-            assertArrayEquals(expected, actual);
-        }
-    }
-
-
-    @Nested
-    @DisplayName("Test the merge routine for the conquer and divide algorithm")
-    class TestCoordinateMerge {
-
-        @Test
-        @DisplayName("Left upper corner of right and bottom right corner of left building are inside of each other")
-        void mergeFirstBaseCase() {
-            int[][] buildingShapeA = new int[][]{{2,5},{8,0}};
-            int[][] buildingShapeB = new int[][]{{3,2},{10,0}};
-
-            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
-            int[][] expected = new int[][]{{2,5},{8,5},{10,0}};
-
-            assertArrayEquals(expected, actual);
-        }
-
-
-        @Test
-        @DisplayName("Two distinc building shapes, no crossovers.")
-        void mergeSecondBaseCase() {
-            int[][] buildingShapeA = new int[][]{{1,10},{3,0}};
-            int[][] buildingShapeB = new int[][]{{4,2},{10,0}};
-
-            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
-            int[][] expected = new int[][]{{1,10},{3,0},{4,2},{10,0}};
-
-            assertArrayEquals(expected, actual);
-        }
-
-
-        @Test
-        @DisplayName("Only bottom right corner of left building inside the other")
-        void mergeThirdBaseCase() {
-            int[][] buildingShapeA = new int[][]{{0,5},{5,0}};
-            int[][] buildingShapeB = new int[][]{{3,10},{10,0}};
-
-            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
-            int[][] expected = new int[][]{{0,5},{3,10},{10,0}};
-
-            assertArrayEquals(expected, actual);
-        }
-
-
-        @Test
-        @DisplayName("Bottom right corner of right building shape inside the left one.")
-        void mergeFourthBaseCase() {
-            int[][] buildingShapeA = new int[][]{{2,9},{10,0}};
-            int[][] buildingShapeB = new int[][]{{4,20},{8,0}};
-
-            int[][] actual = sky.mergeCoordinates(buildingShapeA, buildingShapeB);
-            int[][] expected = new int[][]{{2,9},{3,10},{5,9},{10,0}};
-
-            assertArrayEquals(expected, actual);
-        }
-
-
-        @Test
-        void randomMerge() {
-
-
-        }
-
-    }
-
 }
