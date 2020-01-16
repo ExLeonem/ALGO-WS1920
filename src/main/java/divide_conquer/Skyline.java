@@ -105,25 +105,24 @@ public class Skyline {
             // Merge
             Point lastPoint = newOptim.peekFirst();
 
-            // Current point is higher than last, add
-            if (lastPoint.compareY(toAdd) >= 0 || (lastPoint.compareType(toAdd) && lastPoint.compareY(toAdd) == -1)) {
-                newOptim.add(toAdd);
-                this.updatePoints(toAdd, lastLeftPoint, lastRightPoint);
-                continue;
-            }
+//            boolean downgrade = lastLeftPoint != null && lastRightPoint != null && this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint);
 
             // Check if the current Point needs to be elevated
             if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
-                int yLeft = lastLeftPoint.getY();
-                newOptim.add(new Point('n', new int[]{toAdd.getX(), yLeft}));
+                int y = toAdd.getType() == 'r'? lastLeftPoint.getY() : lastRightPoint.getY();
+                newOptim.add(new Point('n', new int[]{toAdd.getX(), y}));
             }
 
-            if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
-                int yRight = lastRightPoint.getY();
-                newOptim.add(new Point('n', new int[]{toAdd.getX(), yRight}));
+            // Current point is higher than last, add
+            if (lastPoint.compareY(toAdd) >= 0 || this.downgradePoint(toAdd, lastLeftPoint, lastRightPoint)) {
+                newOptim.add(toAdd);
             }
 
-           this.updatePoints(toAdd, lastLeftPoint, lastRightPoint);
+            if (toAdd.getType() == 'r') {
+                lastRightPoint = toAdd.clone();
+            } else {
+                lastLeftPoint = toAdd.clone();
+            }
         }
 
         // Use up the remaining points from the right sub solution
@@ -131,6 +130,13 @@ public class Skyline {
 
             Point toAdd = new Point('r', rightSubSolution[j]);
             if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
+                newOptim.add(toAdd);
+                j++;
+                continue;
+            }
+
+            Point lastPoint = newOptim.peekFirst();
+            if (lastPoint.compareY(toAdd) >= 0  || lastPoint.compareX(toAdd) >= 0) {
                 newOptim.add(toAdd);
             }
 
@@ -142,6 +148,13 @@ public class Skyline {
 
             Point toAdd = new Point('l', leftSubSolution[i]);
             if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
+                newOptim.add(toAdd);
+                i++;
+                continue;
+            }
+
+            Point lastPoint = newOptim.peekFirst();
+            if (lastPoint.compareY(toAdd) >= 0 || lastPoint.compareX(toAdd) >= 0) {
                 newOptim.add(toAdd);
             }
 
@@ -166,7 +179,15 @@ public class Skyline {
             return lastLeftPoint != null && lastRightPoint != null && lastLeftPoint.compareY(lastRightPoint) == 1 && toAdd.compareY(lastLeftPoint) >= 0;
         }
 
-        return lastLeftPoint != null && lastRightPoint != null && lastRightPoint.compareY(lastLeftPoint) == 1 && toAdd.compareY(lastRightPoint) >= 1 && toAdd.getType() == 'l';
+        return lastLeftPoint != null && lastRightPoint != null && lastRightPoint.compareY(lastLeftPoint) == 1 && toAdd.compareY(lastRightPoint) >= 0;
+    }
+
+    private boolean downgradePoint(Point toAdd, Point lastLeftPoint, Point lastRightPoint) {
+        if (toAdd.getType() == 'r') {
+            return (lastLeftPoint == null || lastRightPoint != null && lastLeftPoint.compareY(lastRightPoint) > 0 && lastLeftPoint.compareY(toAdd) >= 0);
+        }
+
+        return (lastRightPoint == null || lastLeftPoint != null && lastRightPoint.compareY(lastLeftPoint) > 0 && lastRightPoint.compareY(toAdd) >= 0);
     }
 
 
@@ -179,11 +200,11 @@ public class Skyline {
     public void updatePoints(Point toAdd, Point lastLeft, Point lastRight) {
         if (toAdd.getType() == 'l') {
 
-            lastLeft = toAdd.clone();
+            lastLeft = toAdd;
             return;
         }
 
-        lastRight = toAdd.clone();
+        lastRight = toAdd;
     }
 
 

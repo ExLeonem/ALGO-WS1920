@@ -41,9 +41,6 @@ public class SkylineTest {
         int[][] expected = {{2,3}, {4, 7}, {7, 0}};
         int[][] actual = sky.calculate(input);
 
-        sky.print(actual);
-
-
         assertArrayEquals(expected, actual);
     }
 
@@ -55,8 +52,6 @@ public class SkylineTest {
         int[][] expected = {{2, 3}, {6, 0}, {7, 2}, {10, 0}};
         int[][] actual = sky.calculate(input);
 
-        sky.print(actual);
-
         assertArrayEquals(expected, actual);
     }
 
@@ -67,8 +62,6 @@ public class SkylineTest {
         int[][] input = {{2, 10, 2}, {5, 9, 6}};
         int[][] expected = {{2,2}, {5, 6}, {9, 2}, {10, 0}};
         int[][] actual = sky.calculate(input);
-
-        sky.print(actual);
 
         assertArrayEquals(expected, actual);
     }
@@ -102,7 +95,7 @@ public class SkylineTest {
     void multiBuildings() {
 
         int[][] input = new int[][]{{1, 12, 5}, {5, 8, 8}, {6, 15, 2}};
-        int[][] expected = new int[][]{{2, 2}, {5, 3}, {8, 3}, {12, 2}};
+        int[][] expected = new int[][]{{1, 5}, {5, 8}, {8, 5}, {12, 2}, {15, 0}};
         int[][] actual = sky.calculate(input);
 
         assertArrayEquals(expected, actual);
@@ -112,23 +105,6 @@ public class SkylineTest {
     @Test
     @DisplayName("Random towers")
     void randomBuildings() {
-        // Generates random buildings and track skyline.
-
-        // Test parameters
-//            final int MAX_SHAPES = 50;
-//            final int MAX_SIZE = 20;
-//            final int MIN_SIZE = 2;
-//            final int MAX_END = 10;
-
-        // Setup
-//            Random rand = new Random();
-//            int[][] shape = new int[rand.nextInt(MAX_SHAPES - 2) + 2][2];
-//            for (int i = 0; i < shape.length; i++) {
-//
-//
-//                for (int j = 0; j < shape[i].length; j++) {
-//
-//                }
-//            }
+      // TODO
     }
 }
