@@ -3,6 +3,8 @@ package divider_conquer;
 import divide_conquer.Skyline;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import supplementary.utils.ArrayUtils;
+
 import static org.junit.Assert.assertArrayEquals;
 
 public class SkylineTest {
@@ -39,6 +41,9 @@ public class SkylineTest {
         int[][] expected = {{2,3}, {4, 7}, {7, 0}};
         int[][] actual = sky.calculate(input);
 
+        sky.print(actual);
+
+
         assertArrayEquals(expected, actual);
     }
 
@@ -50,6 +55,8 @@ public class SkylineTest {
         int[][] expected = {{2, 3}, {6, 0}, {7, 2}, {10, 0}};
         int[][] actual = sky.calculate(input);
 
+        sky.print(actual);
+
         assertArrayEquals(expected, actual);
     }
 
@@ -60,6 +67,8 @@ public class SkylineTest {
         int[][] input = {{2, 10, 2}, {5, 9, 6}};
         int[][] expected = {{2,2}, {5, 6}, {9, 2}, {10, 0}};
         int[][] actual = sky.calculate(input);
+
+        sky.print(actual);
 
         assertArrayEquals(expected, actual);
     }

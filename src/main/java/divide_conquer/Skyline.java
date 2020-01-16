@@ -74,76 +74,116 @@ public class Skyline {
         int i = 0, j = 0;
 
         char firstElementType = this.whichTypeNext(i, leftSubSolution, j, rightSubSolution);
+        Point lastRightPoint = null;
+        Point lastLeftPoint = null;
         if (firstElementType == 'l') {
-            newOptim.add(new Point('l', leftSubSolution[i]));
+            Point lPoint = new Point('l', leftSubSolution[i]);
+            newOptim.add(lPoint);
+            lastLeftPoint = lPoint.clone();
             i++;
         } else {
-            newOptim.add(new Point('r', rightSubSolution[j]));
+            Point rPoint = new Point('r', rightSubSolution[j]);
+            newOptim.add(rPoint);
+            lastRightPoint = rPoint.clone();
             j++;
         }
 
         // Iterate over rest and merge
         while (i < leftSubSolution.length && j < rightSubSolution.length) {
 
-            Point toAdd;
-            Point nextPoint;
-
+            Point toAdd; // next point to add
             char type = this.whichTypeNext(i, leftSubSolution, j, rightSubSolution);
             if (type == 'l') {
-                
-            } else {
-
-            }
-
-
-            // Select the next point to add
-            if (leftSubSolution[i][0] == rightSubSolution[j][0]) {
-                if (leftSubSolution[i][1] > rightSubSolution[j][1]) {
-                    toAdd = new Point('l', leftSubSolution[i]);
-                    i++;
-                } else {
-                    toAdd = new Point('r', rightSubSolution[j]);
-                    j++;
-                }
-
-            } else if (leftSubSolution[i][0] < rightSubSolution[j][0]) {
                 toAdd = new Point('l', leftSubSolution[i]);
                 i++;
-
             } else {
                 toAdd = new Point('r', rightSubSolution[j]);
                 j++;
-
             }
+
 
             // Merge
             Point lastPoint = newOptim.peekFirst();
-            if (lastPoint.compareY(toAdd) >= 0) {
+
+            // Current point is higher than last, add
+            if (lastPoint.compareY(toAdd) >= 0 || (lastPoint.compareType(toAdd) && lastPoint.compareY(toAdd) == -1)) {
                 newOptim.add(toAdd);
+                this.updatePoints(toAdd, lastLeftPoint, lastRightPoint);
                 continue;
             }
 
-            // Different point types && both stop
-            if (toAdd.isStop() && lastPoint.isStop() && !lastPoint.compareType(toAdd)) {
-                lastPoint = newOptim.poll(); // Retrieve last element for comparison
-
-                // Search for point last inserted with other point
-
-
+            // Check if the current Point needs to be elevated
+            if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
+                int yLeft = lastLeftPoint.getY();
+                newOptim.add(new Point('n', new int[]{toAdd.getX(), yLeft}));
             }
 
-            // toAdd is below lastAdded point
+            if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
+                int yRight = lastRightPoint.getY();
+                newOptim.add(new Point('n', new int[]{toAdd.getX(), yRight}));
+            }
 
+           this.updatePoints(toAdd, lastLeftPoint, lastRightPoint);
         }
 
         // Use up the remaining points from the right sub solution
         while (j < rightSubSolution.length) {
-            newOptim.add(new Point('r', rightSubSolution[j]));
+
+            Point toAdd = new Point('r', rightSubSolution[j]);
+            if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
+                newOptim.add(toAdd);
+            }
+
             j++;
-            break;
+            lastRightPoint = toAdd.clone();
+        }
+
+        while (i < leftSubSolution.length) {
+
+            Point toAdd = new Point('l', leftSubSolution[i]);
+            if (this.elevatePoint(toAdd, lastLeftPoint, lastRightPoint)) {
+                newOptim.add(toAdd);
+            }
+
+            i++;
+            lastLeftPoint = toAdd.clone();
         }
 
         return this.listToArray(newOptim);
+    }
+
+
+    /**
+     * Checks if point needs to be elvated.
+     *
+     * @param toAdd
+     * @param lastLeftPoint
+     * @param lastRightPoint
+     * @return
+     */
+    private boolean elevatePoint(Point toAdd, Point lastLeftPoint, Point lastRightPoint) {
+        if (toAdd.getType() == 'r') {
+            return lastLeftPoint != null && lastRightPoint != null && lastLeftPoint.compareY(lastRightPoint) == 1 && toAdd.compareY(lastLeftPoint) >= 0;
+        }
+
+        return lastLeftPoint != null && lastRightPoint != null && lastRightPoint.compareY(lastLeftPoint) == 1 && toAdd.compareY(lastRightPoint) >= 1 && toAdd.getType() == 'l';
+    }
+
+
+    /**
+     * Updates all Points
+     * @param toAdd
+     * @param lastLeft
+     * @param lastRight
+     */
+    public void updatePoints(Point toAdd, Point lastLeft, Point lastRight) {
+        if (toAdd.getType() == 'l') {
+
+            lastLeft = toAdd.clone();
+            return;
+        }
+
+        lastRight = toAdd.clone();
     }
 
 
@@ -167,6 +207,14 @@ public class Skyline {
     }
 
 
+    /**
+     * Check of which type the next point is
+     * @param leftIndx
+     * @param pointsLeft
+     * @param rightIndx
+     * @param pointsRight
+     * @return type of next point 'l' (left point) or 'r' (right point)
+     */
     private char whichTypeNext(int leftIndx, int[][] pointsLeft, int rightIndx, int[][] pointsRight) {
 
         char type = 'l';
@@ -174,15 +222,40 @@ public class Skyline {
         if (pointsLeft[leftIndx][0] == pointsRight[rightIndx][0] && pointsLeft[leftIndx][1] < pointsRight[rightIndx][1]) {
             // Same x-coordinates and higher y-coordinate in right points
             type = 'r';
-
         } else if (pointsLeft[leftIndx][0] > pointsRight[rightIndx][0]) {
             // higher x-coordinate in right point
             type = 'r';
-
         }
 
         return type;
     }
+
+
+    /**
+     *
+     * @param leftIndx
+     * @param leftPoints
+     * @param rightIndx
+     * @param rightPoints
+     * @return
+     */
+    private Point peekNext(int leftIndx, int[][] leftPoints, int rightIndx, int[][] rightPoints) {
+
+        if (leftIndx < leftPoints.length && rightIndx < rightPoints.length) {
+
+            char type = this.whichTypeNext(leftIndx, leftPoints, rightIndx, rightPoints);
+            if (type == 'l') {
+                return new Point('l', leftPoints[leftIndx]);
+            }
+        }
+
+        if (leftIndx < leftPoints.length) {
+            return new Point('l', leftPoints[leftIndx]);
+        }
+
+        return new Point('r', rightPoints[rightIndx]);
+    }
+
 
     /**
      * Transform list of points from a skyline shape into
@@ -202,12 +275,33 @@ public class Skyline {
     }
 
 
+    /**
+     * Prints a given points.
+     *
+     * @param skylinePoints - points representing a skyline.
+     */
+    public void print(int[][] skylinePoints) {
+
+        for (int i = 0; i < skylinePoints.length; i++) {
+
+            Point point = new Point(skylinePoints[i]);
+            System.out.println("Point (" + i + "): " + point.toString());
+        }
+    }
+
+
 
     // Container class to save point into && compare
-    private class Point {
+    private class Point implements Cloneable {
 
         private char type; // Indicates if point is of left or right sub-solution
         private int[] coords;
+
+
+        public Point(int ...points) {
+            this.type = 'n';
+            this.coords = points;
+        }
 
 
         public Point(char type, int... points) {
@@ -297,6 +391,18 @@ public class Skyline {
 
 
         /**
+         * Copies the current object.
+         *
+         * @return copy of the current object
+         * @throws CloneNotSupportedException
+         */
+        @Override
+        protected Point clone() {
+            return new Point(this.getType(), this.getCoords());
+        }
+
+
+        /**
          * Check if the current point represents a stop point for a skyline shape (y-coordinate is zero)
          *
          * @return true | false
@@ -309,6 +415,12 @@ public class Skyline {
             }
 
             return false;
+        }
+
+
+        @Override
+        public String toString() {
+            return "X: " + this.getX() + " | Y: " + this.getY();
         }
 
 
