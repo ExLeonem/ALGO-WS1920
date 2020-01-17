@@ -18,18 +18,12 @@ public class Edge {
         this.fromVertex = fromVertex;
         this.toVertex = toVertex;
         this.value = 0;
-
-        fromVertex.addNeighbour(toVertex);
-        toVertex.addNeighbour(fromVertex);
     }
 
     public Edge(Vertex fromVertex, Vertex toVertex, double value) {
         this.fromVertex = fromVertex;
         this.toVertex = toVertex;
         this.value = value;
-
-        fromVertex.addNeighbour(toVertex);
-        toVertex.addNeighbour(fromVertex);
     }
 
 
@@ -66,6 +60,11 @@ public class Edge {
     // --------------------------
     // HashCode/-Equals
     // --------------------------
+
+    @Override
+    public String toString() {
+        return "(" + this.getValue() +"): " + this.getFromVertex().toString() + " -> " + this.getToVertex().toString();
+    }
 
     @Override
     public boolean equals(Object o) {

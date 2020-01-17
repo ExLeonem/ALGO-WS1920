@@ -1,6 +1,7 @@
 package supplementary.structures.graph;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Objects;
 
 /**
@@ -14,7 +15,7 @@ public class Vertex<T extends Comparable> {
 
     private T definition;
     private boolean visited;
-    private HashMap<Vertex, Vertex> neighbours;
+    private HashMap<Vertex, Vertex> neighbours; // in directional graph only the out-neighbours
 
     public Vertex(T definition) {
         this.definition = definition;

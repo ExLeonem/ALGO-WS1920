@@ -48,7 +48,7 @@ Eine Liste verschiedener Algorithmen. Liste √ºbernommen von Herr Umlauf und erg√
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
-- [ ] Skyline
+- [x] Skyline
 - [ ] Viterbi
 - [ ] Search and Sort
     - [x] Quick-Sort
