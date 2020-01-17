@@ -128,7 +128,7 @@ Eine Liste verschiedener Algorithmen. Liste 체bernommen von Herr Umlauf und erg�
 - [ ] Moore/Ford (alle k체rzesten wege von s aus, negative Gewichte)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
 - [ ] Graphs
-    - [ ] Dijkstra (all shortest-path, positive)
+    - [x] Dijkstra (all shortest-path, positive)
     - [ ] Prim (minimal aufspannener Baum)
     - [ ] Kruksal (minimal aufspannender Baum)
     - [ ] Fl체sse in Netzwerken (Ford/Fulkerson/Dinic)
@@ -144,6 +144,39 @@ Eine Liste verschiedener Algorithmen. Liste 체bernommen von Herr Umlauf und erg�
     - [x] Job-Scheduling
 - [ ]  Additional
     - [x] Breadth-first-search
+
+
+### Dijkstra
+
+```aidl
+    
+    def minDistanz(Graph graph, Vertex start, Vertex end) {
+        
+        // Elemente absteigend sortieren
+        PriorityQueue queue = H채lt die als n채chstes abzusuchenden Knoten, initial ist hier der Start knoten.
+        Map<Vertex, Value> knotenDistanz = Map gibt auskunft dar체ber ob knoten besucht und was die aktuelle distanz ist
+        
+        while (noch knoten in queue) {
+            
+            n채chster knoten = nehme den n채chsten knoten aus der queue (elemente absteigen sortiert durch priority queue)
+         
+            while (alle nachbarknoten des aktuellen knotesn durchlaufen) {
+                
+                if (nachbarknoten wurde noch nicht besucht) {
+                    F체ge nachbarknoten in die Map hinzu mit dem wert unendlich f체r die Strecke
+                    F체ge den Nachbarknoten in die PriorityQueue ein f체r als n채chstes zu besuchende knoten
+                }
+
+                neueDistanz = distanz zum aktuellen knoten + distanz zum nachbarknoten
+                if (neueDistanz < bisherige Distanz zum nachbarknoten) {
+                    update distanz zum nachbarknoten 
+                }
+            }
+        }
+
+    }
+```
+
 
 ### Dynamic Programming
 - [x] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
