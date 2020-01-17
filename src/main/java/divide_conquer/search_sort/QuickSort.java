@@ -48,6 +48,7 @@ public class QuickSort<T extends Comparable> {
         return this.recurse(elements, 0, elements.length);
     }
 
+
     /**
      * Sort an nested array.
      *
@@ -82,6 +83,7 @@ public class QuickSort<T extends Comparable> {
     }
 
 
+
     /**
      * Divide and Conquer, QuickSort recursion.
      *
@@ -103,7 +105,6 @@ public class QuickSort<T extends Comparable> {
         return this.recurse(elements, center+1, right); // sort right side
     }
 
-
     private int[] recurse(int[] elements, int left, int right) {
 
         // Base case
@@ -117,7 +118,6 @@ public class QuickSort<T extends Comparable> {
         return this.recurse(elements, center+1, right); // sort right side
     }
 
-
     private T[][] recurse(T[][] elements, int left, int right, int checkIndx) {
 
         // Base (single element dosent need to be sorted
@@ -129,8 +129,7 @@ public class QuickSort<T extends Comparable> {
         int center = this.partition(elements, left, right, checkIndx);
         this.recurse(elements, left, center, checkIndx);
         return this.recurse(elements, center+1, right, checkIndx);
-    };
-
+    }
 
     private int[][] recurse(int[][] elements, int left, int right, int checkIndx) {
 
@@ -143,7 +142,7 @@ public class QuickSort<T extends Comparable> {
         int center = this.partition(elements, left, right, checkIndx);
         this.recurse(elements, left, center, checkIndx);
         return this.recurse(elements, center+1, right, checkIndx);
-    };
+    }
 
 
 

@@ -18,7 +18,8 @@ public class MinHeapTest {
         assertEquals(expectedMax, actualMax);
 
         // Check min-value
-        int actualMin = heap.min();
+        int actualMin =
+                heap.min();
         int expectedMin = 0;
         assertEquals(expectedMin, actualMin);
     }

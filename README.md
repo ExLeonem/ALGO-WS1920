@@ -48,7 +48,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
-- [ ] Skyline
+- [x] Skyline
 - [ ] Viterbi
 - [ ] Search and Sort
     - [x] Quick-Sort
@@ -68,6 +68,53 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Factorial (verschiedene lösungsansätze)
 
 
+#### Pseudo Code
+
+##### Skyline
+
+```aidl
+    
+    def berechneSkyline(Gebäude Punkte, links, rechts) {
+
+
+        if (ein Gebäude) {
+            Berechne und gib die Key-Points eines Gebäudes zurück.
+        }
+        
+        Teile die Menge alle Gebäude in linke & rechte hälfte.
+        Löse dise Rekursiv
+        
+        Merge die Teillösungen
+    }
+    
+    def merge(linke teillösung, rechte teillösung) {
+
+        Liste nOptim = Neue optimale liste
+        while (i < anzahl key punkte links && j < anzahl key punkte rechts) {
+            
+            if (nOptim ist leer) {
+                Füge den Punkt mit kleinerer x-koordinate der liste hinzu
+                inkrementieren des zählers der entsprechenden teilmenge
+                continue;
+            }
+
+            vergleiche aktuell kleinsten Punkt mit dem zuletzt hinzugefügten Punkt
+
+            if (aktueller Punkt größer in y-richtung als zuletzt hinzugefügter) {
+                
+                Falls Punkt gleich in x-richtung wie zuletzt hinzugefügter, dann überschreibe zuletzt hinzugefügten
+                Füge aktuellen Punkt zur Liste hinzu
+                
+                springe nach oben
+            }
+        
+            
+            inkrementiere zähler der entsprechenden teillösung
+        }
+    }
+```
+
+
 ### Greedy
 
 - [ ] A*-Algorithm
@@ -81,7 +128,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Moore/Ford (alle kürzesten wege von s aus, negative Gewichte)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
 - [ ] Graphs
-    - [ ] Dijkstra (all shortest-path, positive)
+    - [x] Dijkstra (all shortest-path, positive)
     - [ ] Prim (minimal aufspannener Baum)
     - [ ] Kruksal (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
@@ -97,6 +144,39 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Job-Scheduling
 - [ ]  Additional
     - [x] Breadth-first-search
+
+
+### Dijkstra
+
+```aidl
+    
+    def minDistanz(Graph graph, Vertex start, Vertex end) {
+        
+        // Elemente absteigend sortieren
+        PriorityQueue queue = Hält die als nächstes abzusuchenden Knoten, initial ist hier der Start knoten.
+        Map<Vertex, Value> knotenDistanz = Map gibt auskunft darüber ob knoten besucht und was die aktuelle distanz ist
+        
+        while (noch knoten in queue) {
+            
+            nächster knoten = nehme den nächsten knoten aus der queue (elemente absteigen sortiert durch priority queue)
+         
+            while (alle nachbarknoten des aktuellen knotesn durchlaufen) {
+                
+                if (nachbarknoten wurde noch nicht besucht) {
+                    Füge nachbarknoten in die Map hinzu mit dem wert unendlich für die Strecke
+                    Füge den Nachbarknoten in die PriorityQueue ein für als nächstes zu besuchende knoten
+                }
+
+                neueDistanz = distanz zum aktuellen knoten + distanz zum nachbarknoten
+                if (neueDistanz < bisherige Distanz zum nachbarknoten) {
+                    update distanz zum nachbarknoten 
+                }
+            }
+        }
+
+    }
+```
+
 
 ### Dynamic Programming
 - [x] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
@@ -127,6 +207,9 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Additionals
     - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
     - [ ] Längster gemeinsamer Teilstring
+
+
+
 
 
 #### Pseudo Code
