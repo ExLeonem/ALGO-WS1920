@@ -11,7 +11,7 @@ import java.util.Objects;
  * @author Maksim Sandykeov
  * @date 2019-11-25
  */
-public class Vertex<T extends Comparable> {
+public class Vertex<T extends Comparable> implements Cloneable {
 
     private T definition;
     private boolean visited;
@@ -56,11 +56,6 @@ public class Vertex<T extends Comparable> {
     }
 
 
-    @Override
-    public String toString() {
-        return this.definition.toString();
-    }
-
 
     // -----------------------------
     // Setter/-Getter
@@ -90,8 +85,19 @@ public class Vertex<T extends Comparable> {
 
 
     // -----------------------------
-    // hashCode and equals methods
+    // Override methods
     // -----------------------------
+
+    @Override
+    public Vertex clone() {
+
+        return new Vertex(this.definition);
+    }
+
+    @Override
+    public String toString() {
+        return this.definition.toString();
+    }
 
     @Override
     public boolean equals(Object o) {

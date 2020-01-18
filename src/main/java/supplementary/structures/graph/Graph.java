@@ -22,7 +22,9 @@ public class Graph {
     private double[][] adjacencyMatrix;
     private boolean directed; // is Graph directed, no loops?
     private boolean reGenerate; // adjacency matrix needs to be recalculated
+
     private int vertexCounter;
+    private int edgeCounter;
 
     private Vertex[] adjacencyAccessor; // After creation of adjacency matrix, index of column/row represents vertex at index in this array
 
@@ -33,6 +35,7 @@ public class Graph {
         this.reGenerate = true;
         this.vertexMap = new LinkedHashMap<Vertex, Integer>();
         this.vertexCounter = 0;
+        this.edgeCounter = 0;
     }
 
     public Graph(boolean directed) {
@@ -41,6 +44,7 @@ public class Graph {
         this.reGenerate = true;
         this.vertexMap = new LinkedHashMap<Vertex, Integer>();
         this.vertexCounter = 0;
+        this.edgeCounter = 0;
     }
 
 
@@ -142,6 +146,8 @@ public class Graph {
             Edge reversedEdge = new Edge(toVertex, fromVertex, value);
             toEdgeMap.put(reversedEdge, reversedEdge);
         }
+
+        this.edgeCounter += 1;
     }
 
     /**
@@ -237,7 +243,7 @@ public class Graph {
             }
         }
 
-        this.setAdjAccessor(adjAccessor);
+        this.adjacencyAccessor = adjAccessor;
         return adjMatrix;
     }
 
@@ -252,7 +258,7 @@ public class Graph {
         int vertexCounter = this.getVertexCounter();
         if (vertexMap.get(vertex) == null) {
             vertexMap.put(vertex, vertexCounter++);
-            this.setVertexCounter(vertexCounter);
+            this.vertexCounter = vertexCounter;
         }
     }
 
@@ -314,53 +320,19 @@ public class Graph {
         }
     }
 
+
+
     // ----------------------------------
     // Setter/-Getter
     // ----------------------------------
-
-
-    public void setGraphRepresentation(Hashtable<Vertex, HashMap<Edge, Edge>> graphRepresentation) {
-        this.graphRepresentation = graphRepresentation;
-    }
-
-    public void setAdjacencyMatrix(double[][] adjacencyMatrix) {
-        this.adjacencyMatrix = adjacencyMatrix;
-    }
-
-    public void setDirected(boolean directed) {
-        this.directed = directed;
-    }
-
-    public void setReGenerate(boolean reGenerate) {
-        this.reGenerate = reGenerate;
-    }
-
-    public void setVertexmap(LinkedHashMap<Vertex, Integer> vertexMap) {
-        this.vertexMap = vertexMap;
-    }
-
-    public void setVertexCounter(int vertexCounter) {
-        this.vertexCounter = vertexCounter;
-    }
-
-    public void setAdjAccessor(Vertex[] adjAccessor) {
-        this.adjacencyAccessor = adjAccessor;
-    }
 
     public Hashtable<Vertex, HashMap<Edge, Edge>> getGraphRepresentation() {
         return graphRepresentation;
     }
 
-    public double[][] getAdjacencyMatrix() {
-        return adjacencyMatrix;
-    }
 
     public boolean isDirected() {
         return directed;
-    }
-
-    public boolean isReGenerate() {
-        return reGenerate;
     }
 
     public Comparator<Edge> getDefaultComparator() {
@@ -384,7 +356,7 @@ public class Graph {
         return this.vertexCounter;
     }
 
-    public Vertex[] getAdjAccessor() {
-        return this.adjacencyAccessor;
+    public int getEdgeCounter() {
+        return this.edgeCounter;
     }
 }

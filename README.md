@@ -8,12 +8,7 @@
     1. [Divide & Conquer](#Divide-&-Conquer)
     2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
-    4. [Backtracking](#Backtracking)
 3. [Laufzeiten](#Laufzeiten)
-4. [Pseudo-Code](#Pseudo-Code)
-    1. Divide & Conquer
-        1. Huffmann
-5. [Datenstrukturen](#Datenstrukturen)
 
 
 
@@ -48,7 +43,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
-- [x] Skyline
+- [x] [Skyline](#Skyline)
 - [ ] Viterbi
 - [ ] Search and Sort
     - [x] Quick-Sort
@@ -71,6 +66,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 #### Pseudo Code
 
 ##### Skyline
+Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 
 ```aidl
     
@@ -121,16 +117,16 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Clustering (based-on MST)
 - [ ] Delaunay via Lawson
 - [ ] Horn-Formeln
-- [x] Huffmann-Coding
+- [x] [Huffmann-Coding](#Huffmann)
 - [ ] Kartenfärbung (finde Kartenfärbung mit u.U. nicht minimaler Farbenanzahl)
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
 - [ ] Moore/Ford (alle kürzesten wege von s aus, negative Gewichte)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
 - [ ] Graphs
-    - [x] Dijkstra (all shortest-path, positive)
-    - [ ] Prim (minimal aufspannener Baum)
-    - [ ] Kruksal (minimal aufspannender Baum)
+    - [x] [Dijkstra](#Dijkstra) (all shortest-path, positive)
+    - [ ] [Prim](#Prim) (minimal aufspannener Baum)
+    - [ ] [Kruksal](#Kruksal) (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
     - [x] Approximate bin packing
@@ -146,8 +142,41 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Breadth-first-search
 
 
-### Dijkstra
+#### Pseudo Code
 
+
+##### Huffmann
+
+```aidl
+    def bin_baum_erstellen():
+            1. Vorkommen von zeichen eines alphabetes in einem text zählen
+            2. Zeichen nach anzahl des vorkommens sortieren und diese als knoten annehmen
+    
+            while (mehr als >= 2 knote vorhanden):
+                
+                1. Die zwei Knoten auswählen die am wenigsten im text vorkommen // greedy condition
+                2. Knoten unter einem einem gemeinsamen knoten vereinen (sub-tree erstellen)
+                3. Neues gewicht des knotens berechen (Summe vorkommen linker und rechter knoten)
+    
+            
+            return binaer_baum
+    
+        // Rekursives zusammensetzten der kodierung
+        def encode(string, binärbaum):
+    
+            // Base case
+            if (nur noch 1 zeichen im string):
+                return suche im binärbaum
+    
+    
+            linkes teilproblem lösen
+            rechtes teilproblem lösen
+    
+            return zusammengefügte kodierung linke und rechte seite.
+
+```
+
+##### Dijkstra
 ```aidl
     
     def minDistanz(Graph graph, Vertex start, Vertex end) {
@@ -178,8 +207,50 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 ```
 
 
+##### Prim
+
+```aidl 
+
+    def berechneMST(Graph graph) {
+
+        Vertex root = Wähle eine zufällige wurzel für den Baum aus.
+        PriorityQueue<NextNode> nächsteKnoten zum Prüfen = initialie mit der root
+
+        while (!alle knoten im baum) {
+            Wähle Kante mit dem ***kleinesten gewicht*** die einen neuen Knoten an den Baum anfügt und keinen Zyklus erzeugt.
+            Füge Knoten der neuen Kante an den Baum.
+        }
+
+    }
+```
+
+
+##### Kruksal
+
+```aidl 
+
+    def berechneMST(Graph graph) {
+        
+        Set<Vertex> knotenMst = new Set<Vertex>()
+        PriorityQueue<Edge> edges = enthält alle kanten des graph in absteigender Folge (kleinste Kante am ende)
+        Graph mst = new Graph()
+        
+        while (noch kanten in der Queue) {
+            Edge nextEdge = edges.deque() // hole nächst kleinste kante
+
+            if (einer der beiden knoten der kante nicht im mst) {
+                Füge kante und knoten in den mst ein
+            }
+        }   
+
+        return mst;
+    }
+
+
+```
+
 ### Dynamic Programming
-- [x] 0-1-Rucksackproblem (np-complete, pseudo-polynomial)
+- [x] [0-1-Rucksackproblem](#KnapSack) (np-complete, pseudo-polynomial)
 - [ ] Ähnliche Summe
 - [ ] Alle kürzeste Wege (Floyd)
 - [ ] Approximation von Pi mit n-gon
@@ -230,9 +301,6 @@ Alternativ
 
 
 
-### Backtracking
-
-
 ## Laufzeiten
 
 ## Pseudo-Code
@@ -248,35 +316,6 @@ Füge die Objekte der Reihe nach ein,
  Falls in keinem der bereits geöffneten Behälter genügend Platz ist, öffne einen neuen.
 `
 
-### Huffmann
-    
-    `
-    def bin_baum_erstellen():
-        1. Vorkommen von zeichen eines alphabetes in einem text zählen
-        2. Zeichen nach anzahl des vorkommens sortieren und diese als knoten annehmen
-
-        while (mehr als >= 2 knote vorhanden):
-            
-            1. Die zwei Knoten auswählen die am wenigsten im text vorkommen // greedy condition
-            2. Knoten unter einem einem gemeinsamen knoten vereinen (sub-tree erstellen)
-            3. Neues gewicht des knotens berechen (Summe vorkommen linker und rechter knoten)
-
-        
-        return binaer_baum
-
-    // Rekursives zusammensetzten der kodierung
-    def encode(string, binärbaum):
-
-        // Base case
-        if (nur noch 1 zeichen im string):
-            return suche im binärbaum
-
-
-        linkes teilproblem lösen
-        rechtes teilproblem lösen
-
-        return zusammengefügte kodierung linke und rechte seite.
-    `
 
 
 
