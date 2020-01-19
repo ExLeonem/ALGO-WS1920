@@ -125,7 +125,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
 - [ ] Graphs
     - [x] [Dijkstra](#Dijkstra) (all shortest-path, positive)
-    - [ ] [Prim](#Prim) (minimal aufspannener Baum)
+    - [x] [Prim](#Prim) (minimal aufspannener Baum)
     - [ ] [Kruksal](#Kruksal) (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
@@ -231,19 +231,20 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 
     def berechneMST(Graph graph) {
         
-        Set<Vertex> knotenMst = new Set<Vertex>()
+        Set<Graph> wald = Wald von Bäumen mit nur einem Knoten
         PriorityQueue<Edge> edges = enthält alle kanten des graph in absteigender Folge (kleinste Kante am ende)
-        Graph mst = new Graph()
         
         while (noch kanten in der Queue) {
             Edge nextEdge = edges.deque() // hole nächst kleinste kante
 
             if (einer der beiden knoten der kante nicht im mst) {
-                Füge kante und knoten in den mst ein
+                Suche beide Bäume und führe vereinigung durch
+                Entferne beide Bäume aus dem Set
+                Füge den neu erstellten baum in das Set ein
             }
         }   
 
-        return mst;
+        return den übrig gebliebenen Baum
     }
 
 

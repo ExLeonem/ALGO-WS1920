@@ -58,7 +58,7 @@ public class Graph {
      * @param vertex - vertex to add.
      */
     public void addVertex(Vertex vertex) {
-        Hashtable<Vertex, HashMap<Edge, Edge>> graphRepresentation = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> graphRepresentation = this.graphRepresentation;
 
         // Exit method if vertex already exists
         boolean vertexAlreadyExists = graphRepresentation.containsKey(vertex);
@@ -86,6 +86,7 @@ public class Graph {
         }
     }
 
+
     /**
      * Adds an edge from/to given vertices.
      *
@@ -93,8 +94,6 @@ public class Graph {
      * @param to
      */
     public void addEdge(Vertex from, Vertex to, int weight) {
-
-        boolean isDirected = this.isDirected();
 
         // Add Edge
         Edge edge = new Edge(from, to, weight);
@@ -126,19 +125,12 @@ public class Graph {
         this.updateVertexSet(fromVertex);
         this.updateVertexSet(toVertex);
 
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
         HashMap<Edge, Edge> edgeSet = table.get(fromVertex);
         edgeSet.put(edge, edge);
-//        System.out.println(edge.toString());
 
         // Additional insertes for undirected graphs
         if (undirected) {
-            boolean toVerticeExists = table.contains(toVertex);
-
-            // Add non existing vertice
-            if (!toVerticeExists) {
-                table.put(toVertex, new HashMap<Edge, Edge>());
-            }
 
             // Append the reversed edge
             double value = edge.getValue();
@@ -149,6 +141,7 @@ public class Graph {
 
         this.edgeCounter += 1;
     }
+
 
     /**
      * Add multiple edges at onece. Interanlly calls the addEdge Method multiple times.
@@ -170,7 +163,7 @@ public class Graph {
      * @return - the edge between two vertices.
      */
     public double getEdge(Vertex fromVertex, Vertex toVertex) {
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
         HashMap<Edge, Edge> edgeMap = table.get(fromVertex);
 
         // Key not-existing
@@ -193,6 +186,23 @@ public class Graph {
     }
 
 
+    /**
+     * Check if the graph contains the specified Vertex.
+     *
+     * @param vertex
+     * @return
+     */
+    public boolean contains(Vertex vertex) {
+
+        Hashtable<Vertex, HashMap<Edge, Edge>> graphRep = this.graphRepresentation;
+        if (graphRep.containsKey(vertex)) {
+            return true;
+        }
+
+        return false;
+    }
+
+
     // --------------------------------
     // Utility functions
     // --------------------------------
@@ -210,7 +220,7 @@ public class Graph {
         double[][] adjMatrix = new double[numVertices][numVertices];
         Vertex[] adjAccessor = new Vertex[numVertices];
 
-        Hashtable<Vertex, HashMap<Edge, Edge>> graph = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> graph = this.graphRepresentation;
         Enumeration<Vertex> vertexEnum = graph.keys();
 
         // Fill adjacency matrix
@@ -267,7 +277,7 @@ public class Graph {
      * @return - An array of vertices used in the graph.
      */
     public Vertex[] getVertices() {
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
         Enumeration<Vertex> verticeEnum = table.keys();
         Iterator<Vertex> verticeIt = verticeEnum.asIterator();
 
@@ -287,7 +297,7 @@ public class Graph {
      * @return HashMap of Edges.
      */
     public HashMap<Edge, Edge> getEdgeMap(Vertex vertex) {
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
 
         if (table.contains(vertex)) {
             return table.get(vertex);

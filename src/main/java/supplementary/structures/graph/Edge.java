@@ -8,7 +8,7 @@ import java.util.Objects;
  * @author Maksim Sandybekov
  * @date 2019-11-25
  */
-public class Edge {
+public class Edge implements Comparable<Edge> {
 
     private Vertex toVertex;
     private Vertex fromVertex;
@@ -30,14 +30,6 @@ public class Edge {
     // --------------------------
     // Setter/-Getter
     // --------------------------
-
-    public void setToVertex(Vertex toVertex) {
-        this.toVertex = toVertex;
-    }
-
-    public void setFromVertex(Vertex fromVertex) {
-        this.fromVertex = fromVertex;
-    }
 
     public void setValue(double value) {
         this.value = value;
@@ -63,8 +55,25 @@ public class Edge {
 
     @Override
     public String toString() {
-        return "(" + this.getValue() +"): " + this.getFromVertex().toString() + " -> " + this.getToVertex().toString();
+        return "(" + this.value +"): " + this.fromVertex.toString() + " -> " + this.toVertex.toString();
     }
+
+
+    @Override
+    public int compareTo(Edge o) {
+
+        double currentDistance = this.value;
+        double otherDistance = o.getValue();
+
+        if (currentDistance == otherDistance) {
+            return 0;
+        } else if (currentDistance < otherDistance) {
+            return -1;
+        }
+
+        return 1;
+    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -29,7 +29,7 @@ public class Vertex<T extends Comparable> implements Cloneable {
      *
      * @param vertex - A vertex to add to the neighbours
      */
-    public void addNeighbour(Vertex vertex) {
+    protected void addNeighbour(Vertex vertex) {
 
         HashMap<Vertex, Vertex> currentNeighbours = this.getNeighbours();
         if (!currentNeighbours.containsKey(vertex)) {
@@ -44,7 +44,7 @@ public class Vertex<T extends Comparable> implements Cloneable {
      * @param vertex - A vertex to search for in neighbours.
      * @return Neighbour vertex
      */
-    public Vertex removeNeighbour(Vertex vertex) {
+    protected Vertex removeNeighbour(Vertex vertex) {
 
         HashMap<Vertex, Vertex> currentNeighbours = this.getNeighbours();
         Vertex neighbour = null;
