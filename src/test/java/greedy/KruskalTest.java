@@ -61,7 +61,7 @@ public class KruskalTest {
         graph.addEdge(third, sixth, 6);
         graph.addEdge(fourth, first, 2);
 
-        Graph mst = kruskal.getMST(graph, first);
+        Graph mst = kruskal.getMST(graph);
 
         double[][] actualAdj = mst.createAdjacencyMatrix();
         double[][] expectedAdj = {

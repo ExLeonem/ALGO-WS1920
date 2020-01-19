@@ -15,33 +15,18 @@ import java.util.*;
  */
 public class Kruskal {
 
-    /**
-     * Calculates the minimal spanning tree for a given graph.
-     *
-     * @param graph
-     * @return
-     */
-    public Graph getMST(Graph graph) {
-
-        Graph minSpannTree = new Graph();
-        HashSet<Vertex> nodesInUse = new HashSet<Vertex>();
-        PriorityQueue<Edge> spanningTreeEdges = new PriorityQueue<Edge>();
-
-
-
-        return null;
-    }
-
 
     /**
      * Calculate the minmal spanning tree for a given graph.
      * @param graph - the graph to extract a minimal spanning tree from
-     * @param vertex - the vertext to start the extraction from
      * @return the MST
      */
-    public Graph getMST(Graph graph, Vertex vertex) {
+    public Graph getMST(Graph graph) {
 
         HashSet<Graph> forest = this.createForest(graph);
+
+        HashSet<Vertex> nodesInUse = new HashSet<Vertex>();
+        PriorityQueue<Edge> spanningTreeEdges = new PriorityQueue<Edge>();
 
 
 

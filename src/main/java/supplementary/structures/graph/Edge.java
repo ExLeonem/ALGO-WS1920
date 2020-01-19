@@ -80,6 +80,7 @@ public class Edge implements Comparable<Edge> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Edge edge = (Edge) o;
+
         return Double.compare(edge.value, value) == 0 &&
                 toVertex.equals(edge.toVertex) &&
                 fromVertex.equals(edge.fromVertex);
@@ -87,6 +88,6 @@ public class Edge implements Comparable<Edge> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(toVertex, fromVertex, value);
+        return Objects.hash(toVertex.getDefinition(), fromVertex.getDefinition(), value);
     }
 }

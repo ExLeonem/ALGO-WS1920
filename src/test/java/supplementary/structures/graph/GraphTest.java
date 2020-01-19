@@ -1,6 +1,7 @@
 package supplementary.structures.graph;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -150,4 +151,123 @@ public class GraphTest {
     }
 
 
+    @Nested
+    class TestEqualityOfGraphs {
+
+        @Test
+        void equalGraphsNoEdges() {
+            Graph fGraph = new Graph();
+            Vertex first = new Vertex("1");
+            Vertex second = new Vertex("2");
+            fGraph.addVertices(first, second);
+
+
+            Graph sGraph = new Graph();
+            Vertex firstClone = new Vertex("1");
+            Vertex secondClone = new Vertex("2");
+            sGraph.addVertices(firstClone, secondClone);
+
+
+            assertEquals(fGraph, sGraph);
+        }
+
+
+        @Test
+        void unequalGraphNoEdges() {
+            Graph fGraph = new Graph();
+            Vertex first = new Vertex("1");
+            Vertex second = new Vertex("2");
+            fGraph.addVertices(first, second);
+
+            Graph sGraph = new Graph();
+            Vertex sFirst = new Vertex("5");
+            Vertex sSecond = new Vertex("3");
+            sGraph.addVertices(sFirst, sSecond);
+
+            assertNotEquals(fGraph, sGraph);
+        }
+
+
+        @Test
+        void equalNodesDifferentEdges() {
+            Vertex first = new Vertex("1");
+            Vertex second = new Vertex("2");
+            Vertex third = new Vertex("3");
+
+            Graph fGraph = new Graph();
+            fGraph.addEdge(first, second, 5);
+            fGraph.addEdge(first, third, 5);
+
+            Graph sGraph = new Graph();
+            fGraph.addEdge(first, second, 5);
+            fGraph.addEdge(second, third, 5);
+
+            assertNotEquals(fGraph, sGraph);
+        }
+
+
+        @Test
+        void  equalNodesSameEdgesDifferentWeights() {
+            Vertex fFirst = new Vertex("1");
+            Vertex fSecond = new Vertex("2");
+            Vertex fThird = new Vertex("3");
+            Vertex fFourth = new Vertex("4");
+            Vertex fFifth = new Vertex("5");
+            Graph fGraph = new Graph();;
+            fGraph.addEdge(fFirst, fSecond, 5);
+            fGraph.addEdge(fSecond, fThird, 4);
+            fGraph.addEdge(fThird, fFourth, 2);
+            fGraph.addEdge(fFourth, fFifth, 5);
+            fGraph.addEdge(fFirst, fFifth, 1);
+
+
+            Vertex first = new Vertex("1");
+            Vertex second = new Vertex("2");
+            Vertex third = new Vertex("3");
+            Vertex fourth = new Vertex("4");
+            Vertex fifth = new Vertex("5");
+            Graph graph = new Graph();
+            graph.addEdge(first, second, 5);
+            graph.addEdge(second, third, 4);
+            graph.addEdge(third, fourth, 2);
+            graph.addEdge(fourth, fifth, 5);
+            graph.addEdge(first, fifth, 5);
+
+            assertNotEquals(fGraph, graph);
+        }
+
+
+        @Test
+        void  equalNodesSameEdgesEqualWeights() {
+            Vertex fFirst = new Vertex("1");
+            Vertex fSecond = new Vertex("2");
+            Vertex fThird = new Vertex("3");
+            Vertex fFourth = new Vertex("4");
+            Vertex fFifth = new Vertex("5");
+            Graph fGraph = new Graph();;
+            fGraph.addEdge(fFirst, fSecond, 5);
+            fGraph.addEdge(fSecond, fThird, 4);
+            fGraph.addEdge(fThird, fFourth, 2);
+            fGraph.addEdge(fFourth, fFifth, 5);
+            fGraph.addEdge(fFirst, fFifth, 1);
+
+
+            Vertex first = new Vertex("1");
+            Vertex second = new Vertex("2");
+            Vertex third = new Vertex("3");
+            Vertex fourth = new Vertex("4");
+            Vertex fifth = new Vertex("5");
+            Graph graph = new Graph();
+            graph.addEdge(first, second, 5);
+            graph.addEdge(second, third, 4);
+            graph.addEdge(third, fourth, 2);
+            graph.addEdge(fourth, fifth, 5);
+            graph.addEdge(first, fifth, 1);
+
+
+            assertEquals(fGraph, graph);
+        }
+
+
+    }
 }

@@ -8,7 +8,6 @@
     1. [Divide & Conquer](#Divide-&-Conquer)
     2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
-3. [Laufzeiten](#Laufzeiten)
 
 
 
@@ -23,7 +22,7 @@
 6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
 
 ## Algorithmenliste
-Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere algorithmen/datenstrukten.
+Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere Algorithmen/Datenstrukten.
 
 
 ### Divide & Conquer
@@ -126,7 +125,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Graphs
     - [x] [Dijkstra](#Dijkstra) (all shortest-path, positive)
     - [x] [Prim](#Prim) (minimal aufspannener Baum)
-    - [ ] [Kruksal](#Kruksal) (minimal aufspannender Baum)
+    - [x] [Kruksal](#Kruksal) (minimal aufspannender Baum)
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
     - [x] Approximate bin packing
@@ -139,7 +138,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
     - [x] Knapsack Problem
     - [x] Job-Scheduling
 - [ ]  Additional
-    - [x] Breadth-first-search
+    - [x] [Breadth-first-search](#Breadth-First-Search)
 
 
 #### Pseudo Code
@@ -246,8 +245,28 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 
         return den übrig gebliebenen Baum
     }
+```
 
 
+##### Breadth-First-Search
+
+```aidl
+
+    def search(Tree tree, Node searchFor) {
+
+        Verwalte eine Kandidatenliste in der die nächsten zu besuchenden Knoten gespeichert sind.
+        Füge die root als ersten Knoten in die Kandidatenliste ein.
+
+        while (Kandidatenliste nicht leer) {
+
+            Node next = wähle nächsten knoten aus der Kandidatenliste
+            if (next == searchFor) {
+                return true; // Beenden, Knoten wurde gefunden
+            }
+        }
+
+        return false; // Knoten konte nicht gefunden werden
+    }
 ```
 
 ### Dynamic Programming

@@ -203,6 +203,23 @@ public class Graph {
     }
 
 
+    /**
+     * Merges all vertices and edges of the given graph in the current one.
+     *
+     * @param o - the other graph to use for the merge
+     */
+    public void mergeWith(Graph o) {
+
+        Hashtable<Vertex, HashMap<Edge, Edge>> oGraphRep = o.getGraphRepresentation();
+
+        Iterator<Vertex> oIterator = oGraphRep.keys().asIterator();
+        while (oIterator.hasNext()) {
+
+        }
+    }
+
+
+
     // --------------------------------
     // Utility functions
     // --------------------------------
@@ -272,8 +289,9 @@ public class Graph {
         }
     }
 
+
     /**
-     *
+     * Get all vertices of the graph
      * @return - An array of vertices used in the graph.
      */
     public Vertex[] getVertices() {
@@ -333,6 +351,65 @@ public class Graph {
 
 
     // ----------------------------------
+    // Override Methods
+    // ----------------------------------
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+
+        Graph graph = (Graph) o;
+        Hashtable<Vertex, HashMap<Edge, Edge>> oGraphRep = graph.getGraphRepresentation();
+        if (oGraphRep.size() != this.graphRepresentation.size()) {
+            return false;
+        }
+
+        Vertex[] otherVertices = graph.getVertices();
+        for (int i = 0; i < otherVertices.length; i++) {
+
+            Vertex currentVertex = otherVertices[i];
+
+            boolean containsVertex = this.graphRepresentation.containsKey(currentVertex);
+
+            // Vertex not contained in other graph
+            if (!this.graphRepresentation.containsKey(currentVertex)) {
+                return false;
+            }
+
+            // Check Edges of the Graph match in both graphs
+            HashMap<Edge, Edge> oGraphEdges = oGraphRep.get(currentVertex);
+            HashMap<Edge, Edge> thisEdges = this.graphRepresentation.get(currentVertex);
+            if (thisEdges.size() != oGraphEdges.size()) {
+                return false;
+            }
+
+            Iterator<Edge> edgeIterator = oGraphEdges.keySet().iterator();
+            while (edgeIterator.hasNext()) {
+
+                Edge nextEdge = edgeIterator.next();
+                if (!thisEdges.containsKey(nextEdge)) {
+                    return false;
+                }
+            }
+        }
+
+
+        return true;
+    }
+
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(graphRepresentation, vertexMap, directed, reGenerate, vertexCounter, edgeCounter);
+        result = 31 * result + Arrays.hashCode(adjacencyAccessor);
+        return result;
+    }
+
+
+
+    // ----------------------------------
     // Setter/-Getter
     // ----------------------------------
 
@@ -345,18 +422,6 @@ public class Graph {
         return directed;
     }
 
-    public Comparator<Edge> getDefaultComparator() {
-        return new Comparator<Edge>(){
-            @Override
-            public int compare(Edge first, Edge second) {
-
-                double firstValue = first.getValue();
-                double secondValue = second.getValue();
-
-                return firstValue < secondValue? -1 : 1;
-            }
-        };
-    }
 
     public LinkedHashMap<Vertex, Integer> getVertexMap() {
         return this.vertexMap;
