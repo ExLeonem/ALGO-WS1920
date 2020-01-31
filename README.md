@@ -24,22 +24,22 @@
 
 ## Master Theorem
 
-1. f(n) = O(n<super>\alpha - \epsilon<super>)
+1. f(n) = O(n<sup>$\alpha$ - $\epsilon$</sup>)
 
 ### Aufgaben
 
-1. T(n) = 3T (n/2) + n<super>2<super>
-2. T(n) = 4T (n/2) + n<super>2<super>
-3. T(n) = T(n/2) + n<super>2<super>
-4. T(n) = 2 n T(n/2) + n<super>n<super>
+1. T(n) = 3T (n/2) + n<sup>2</sup>
+2. T(n) = 4T (n/2) + n<sup>2</sup>
+3. T(n) = T(n/2) + n<sup>2</sup>
+4. T(n) = 2 n T(n/2) + n<sup>n</sup>
 5. T(n) = 16T(n/4) + n
 6. T(n) = 2T(n/2) + nlogn
 7. T(n) = 2T(n/2) + n/logn
-8. T(n) = 2T (n/4) + n<super>0,51<super>
+8. T(n) = 2T (n/4) + n<sup>0,51</sup>
 9. T(n) = 0.5T(n/2) + 1/n
-10. T (n) = 6T(n/3)+ n<super>2<super>logn
-11. T(n) = 64T(n/8) – n<super>2<super>logn
-12. T(n) = 7T(n/3) + n<super>2<super>
+10. T (n) = 6T(n/3)+ n<sup>2</sup>logn
+11. T(n) = 64T(n/8) – n<sup>2</sup>logn
+12. T(n) = 7T(n/3) + n<sup>2</sup>
 13. T(n) = 4T(n/2) + logn
 14. T(n) = 16T (n/4) + n!
 15. T(n) = sqrt(2)T(n/2) + logn
@@ -51,24 +51,24 @@
 
 ### Lösungen
 
-1. T(n)= Θ(n<super>2<super>)
-2. T(n) = Θ(n<super>2<super>logn)
-3. T(n) = Θ(n<super>2<super>)
+1. T(n)= Θ(n<sup>2</sup>)
+2. T(n) = Θ(n<sup>2</sup>logn)
+3. T(n) = Θ(n<sup>2</sup>)
 4. trifft nicht zu, a ist nicht konstant
-5. T(n) = Θ(n<super>2<super>)
-6. T(n) = Θ(n log<super>2<super>n)
+5. T(n) = Θ(n<sup>2</sup>)
+6. T(n) = Θ(n log<sup>2</sup>n)
 7. T(n) = Θ(nloglogn)
-8. T(n) = Θ(n<super>0.51<super>)
+8. T(n) = Θ(n<sup>0.51</sup>)
 9. trifft nicht zu, a ist kleiner als 1
-10. T(n) = Θ(n<super>2<super>logn)
+10. T(n) = Θ(n<sup>2</sup>logn)
 11. trifft nicht zu, funktion ist rekursiv
-12. T(n) = Θ(n<super>2<super>)
-13. T(n) = Θ(n<super>2<super>)
+12. T(n) = Θ(n<sup>2</sup>)
+13. T(n) = Θ(n<sup>2</sup>)
 14. T(n) = Θ(n!)
 15. T(n) = Θ(sqrt(n))
-16. T(n) = Θ(n<super>log3<super>)
+16. T(n) = Θ(n<sup>log3</sup>)
 17. T(n) = Θ(n)
-18. T(n) = Θ(n<super>2<super>)
+18. T(n) = Θ(n<sup>2</sup>)
 19. T(n) = Θ(nlogn)
 20. T(n) = Θ(nlogn)
 
