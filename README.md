@@ -2,9 +2,9 @@
 # Algorithmentechnik WS19/20 Wiederholungsklausur
 
 
-
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
-2. [Algorithmen](#Algorithmenlisten)
+2. [Master Theorem](#Master-Theorem)
+3. [Algorithmen](#Algorithmenlisten)
     1. [Divide & Conquer](#Divide-&-Conquer)
     2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
@@ -21,7 +21,59 @@
 5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
 6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
 
-## Algorithmenliste
+
+## Master Theorem
+
+1. f(n) = O(n<super>\alpha - \epsilon<super>)
+
+### Aufgaben
+
+1. T(n) = 3T (n/2) + n<super>2<super>
+2. T(n) = 4T (n/2) + n<super>2<super>
+3. T(n) = T(n/2) + n<super>2<super>
+4. T(n) = 2 n T(n/2) + n<super>n<super>
+5. T(n) = 16T(n/4) + n
+6. T(n) = 2T(n/2) + nlogn
+7. T(n) = 2T(n/2) + n/logn
+8. T(n) = 2T (n/4) + n<super>0,51<super>
+9. T(n) = 0.5T(n/2) + 1/n
+10. T (n) = 6T(n/3)+ n<super>2<super>logn
+11. T(n) = 64T(n/8) – n<super>2<super>logn
+12. T(n) = 7T(n/3) + n<super>2<super>
+13. T(n) = 4T(n/2) + logn
+14. T(n) = 16T (n/4) + n!
+15. T(n) = sqrt(2)T(n/2) + logn
+16. T(n) = 3T(n/2) + n
+17. T(n) = 3T(n/3) + sqrt(n)
+18. T(n) = 4T(n/2) + cn
+19. T(n) = 3T(n/4) + nlogn
+20. T (n) = 3T(n/3) + n/2
+
+### Lösungen
+
+1. T(n)= Θ(n<super>2<super>)
+2. T(n) = Θ(n<super>2<super>logn)
+3. T(n) = Θ(n<super>2<super>)
+4. trifft nicht zu, a ist nicht konstant
+5. T(n) = Θ(n<super>2<super>)
+6. T(n) = Θ(n log<super>2<super>n)
+7. T(n) = Θ(nloglogn)
+8. T(n) = Θ(n<super>0.51<super>)
+9. trifft nicht zu, a ist kleiner als 1
+10. T(n) = Θ(n<super>2<super>logn)
+11. trifft nicht zu, funktion ist rekursiv
+12. T(n) = Θ(n<super>2<super>)
+13. T(n) = Θ(n<super>2<super>)
+14. T(n) = Θ(n!)
+15. T(n) = Θ(sqrt(n))
+16. T(n) = Θ(n<super>log3<super>)
+17. T(n) = Θ(n)
+18. T(n) = Θ(n<super>2<super>)
+19. T(n) = Θ(nlogn)
+20. T(n) = Θ(nlogn)
+
+
+## Algorithmen
 Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere Algorithmen/Datenstrukten.
 
 
