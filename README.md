@@ -24,7 +24,17 @@
 
 ## Master Theorem
 
-1. f(n) = O(n<sup>$\alpha$ - $\epsilon$</sup>)
+Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
+
+1. f(n) = O(n<sup>&#9082; - &#949;</sup>) für &#949; > 0 
+    1. T(n) = Θ(n<sup>&#9082;</sup>)
+2. f(n) = Θ(n<sup>&#9082;</sup>log<sup>&#948;</sup>n)
+    1. &#948; = 0, dann T(n) = Θ(n<sup>&#9082;</sup>log n)
+    2. &#948; > -1, dann T(n) = Θ(n<sup>&#9082;</sup>log<sup>&#948;+1</sup> n)
+    3. &#948; = -1, dann T(n) = Θ(n<sup>&#9082;</sup>log log n)
+    4. &#948; < -1, dann T(n) = Θ(n<sup>&#9082;)
+3. f(n) = &#937;(n<sup>&#9082; + &#949;</sup>) für &#949; > 0
+    1. T(n) = Θ(f(n))
 
 ### Aufgaben
 
@@ -80,7 +90,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 ### Divide & Conquer
 
 - [x] GGT multi values
-- [x] Closest Point Pair
+- [x] [Closest Point Pair](#Closest-Point-Pair)
 - [ ] Fast-Furier-Transformation (FFT)
 - [ ] Strasse
 - [ ] K-th biggest Element
@@ -115,6 +125,23 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 
 
 #### Pseudo Code
+
+
+##### Closest Point Pair
+
+```aidl
+
+    def calculate(Punkte) {
+
+        // Base-Case
+
+        // Divide
+
+        // Conquer (Merge)
+
+    }
+
+```
 
 ##### Skyline
 Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
