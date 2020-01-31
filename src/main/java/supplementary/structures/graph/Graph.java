@@ -22,7 +22,9 @@ public class Graph {
     private double[][] adjacencyMatrix;
     private boolean directed; // is Graph directed, no loops?
     private boolean reGenerate; // adjacency matrix needs to be recalculated
+
     private int vertexCounter;
+    private int edgeCounter;
 
     private Vertex[] adjacencyAccessor; // After creation of adjacency matrix, index of column/row represents vertex at index in this array
 
@@ -33,6 +35,7 @@ public class Graph {
         this.reGenerate = true;
         this.vertexMap = new LinkedHashMap<Vertex, Integer>();
         this.vertexCounter = 0;
+        this.edgeCounter = 0;
     }
 
     public Graph(boolean directed) {
@@ -41,6 +44,7 @@ public class Graph {
         this.reGenerate = true;
         this.vertexMap = new LinkedHashMap<Vertex, Integer>();
         this.vertexCounter = 0;
+        this.edgeCounter = 0;
     }
 
 
@@ -54,7 +58,7 @@ public class Graph {
      * @param vertex - vertex to add.
      */
     public void addVertex(Vertex vertex) {
-        Hashtable<Vertex, HashMap<Edge, Edge>> graphRepresentation = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> graphRepresentation = this.graphRepresentation;
 
         // Exit method if vertex already exists
         boolean vertexAlreadyExists = graphRepresentation.containsKey(vertex);
@@ -82,6 +86,7 @@ public class Graph {
         }
     }
 
+
     /**
      * Adds an edge from/to given vertices.
      *
@@ -89,8 +94,6 @@ public class Graph {
      * @param to
      */
     public void addEdge(Vertex from, Vertex to, int weight) {
-
-        boolean isDirected = this.isDirected();
 
         // Add Edge
         Edge edge = new Edge(from, to, weight);
@@ -122,19 +125,12 @@ public class Graph {
         this.updateVertexSet(fromVertex);
         this.updateVertexSet(toVertex);
 
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
         HashMap<Edge, Edge> edgeSet = table.get(fromVertex);
         edgeSet.put(edge, edge);
-//        System.out.println(edge.toString());
 
         // Additional insertes for undirected graphs
         if (undirected) {
-            boolean toVerticeExists = table.contains(toVertex);
-
-            // Add non existing vertice
-            if (!toVerticeExists) {
-                table.put(toVertex, new HashMap<Edge, Edge>());
-            }
 
             // Append the reversed edge
             double value = edge.getValue();
@@ -142,7 +138,10 @@ public class Graph {
             Edge reversedEdge = new Edge(toVertex, fromVertex, value);
             toEdgeMap.put(reversedEdge, reversedEdge);
         }
+
+        this.edgeCounter += 1;
     }
+
 
     /**
      * Add multiple edges at onece. Interanlly calls the addEdge Method multiple times.
@@ -164,7 +163,7 @@ public class Graph {
      * @return - the edge between two vertices.
      */
     public double getEdge(Vertex fromVertex, Vertex toVertex) {
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
         HashMap<Edge, Edge> edgeMap = table.get(fromVertex);
 
         // Key not-existing
@@ -187,6 +186,40 @@ public class Graph {
     }
 
 
+    /**
+     * Check if the graph contains the specified Vertex.
+     *
+     * @param vertex
+     * @return
+     */
+    public boolean contains(Vertex vertex) {
+
+        Hashtable<Vertex, HashMap<Edge, Edge>> graphRep = this.graphRepresentation;
+        if (graphRep.containsKey(vertex)) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Merges all vertices and edges of the given graph in the current one.
+     *
+     * @param o - the other graph to use for the merge
+     */
+    public void mergeWith(Graph o) {
+
+        Hashtable<Vertex, HashMap<Edge, Edge>> oGraphRep = o.getGraphRepresentation();
+
+        Iterator<Vertex> oIterator = oGraphRep.keys().asIterator();
+        while (oIterator.hasNext()) {
+
+        }
+    }
+
+
+
     // --------------------------------
     // Utility functions
     // --------------------------------
@@ -204,7 +237,7 @@ public class Graph {
         double[][] adjMatrix = new double[numVertices][numVertices];
         Vertex[] adjAccessor = new Vertex[numVertices];
 
-        Hashtable<Vertex, HashMap<Edge, Edge>> graph = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> graph = this.graphRepresentation;
         Enumeration<Vertex> vertexEnum = graph.keys();
 
         // Fill adjacency matrix
@@ -237,7 +270,7 @@ public class Graph {
             }
         }
 
-        this.setAdjAccessor(adjAccessor);
+        this.adjacencyAccessor = adjAccessor;
         return adjMatrix;
     }
 
@@ -252,16 +285,17 @@ public class Graph {
         int vertexCounter = this.getVertexCounter();
         if (vertexMap.get(vertex) == null) {
             vertexMap.put(vertex, vertexCounter++);
-            this.setVertexCounter(vertexCounter);
+            this.vertexCounter = vertexCounter;
         }
     }
 
+
     /**
-     *
+     * Get all vertices of the graph
      * @return - An array of vertices used in the graph.
      */
     public Vertex[] getVertices() {
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
         Enumeration<Vertex> verticeEnum = table.keys();
         Iterator<Vertex> verticeIt = verticeEnum.asIterator();
 
@@ -281,7 +315,7 @@ public class Graph {
      * @return HashMap of Edges.
      */
     public HashMap<Edge, Edge> getEdgeMap(Vertex vertex) {
-        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.getGraphRepresentation();
+        Hashtable<Vertex, HashMap<Edge, Edge>> table = this.graphRepresentation;
 
         if (table.contains(vertex)) {
             return table.get(vertex);
@@ -314,67 +348,80 @@ public class Graph {
         }
     }
 
+
+
+    // ----------------------------------
+    // Override Methods
+    // ----------------------------------
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+
+        Graph graph = (Graph) o;
+        Hashtable<Vertex, HashMap<Edge, Edge>> oGraphRep = graph.getGraphRepresentation();
+        if (oGraphRep.size() != this.graphRepresentation.size()) {
+            return false;
+        }
+
+        Vertex[] otherVertices = graph.getVertices();
+        for (int i = 0; i < otherVertices.length; i++) {
+
+            Vertex currentVertex = otherVertices[i];
+
+            boolean containsVertex = this.graphRepresentation.containsKey(currentVertex);
+
+            // Vertex not contained in other graph
+            if (!this.graphRepresentation.containsKey(currentVertex)) {
+                return false;
+            }
+
+            // Check Edges of the Graph match in both graphs
+            HashMap<Edge, Edge> oGraphEdges = oGraphRep.get(currentVertex);
+            HashMap<Edge, Edge> thisEdges = this.graphRepresentation.get(currentVertex);
+            if (thisEdges.size() != oGraphEdges.size()) {
+                return false;
+            }
+
+            Iterator<Edge> edgeIterator = oGraphEdges.keySet().iterator();
+            while (edgeIterator.hasNext()) {
+
+                Edge nextEdge = edgeIterator.next();
+                if (!thisEdges.containsKey(nextEdge)) {
+                    return false;
+                }
+            }
+        }
+
+
+        return true;
+    }
+
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(graphRepresentation, vertexMap, directed, reGenerate, vertexCounter, edgeCounter);
+        result = 31 * result + Arrays.hashCode(adjacencyAccessor);
+        return result;
+    }
+
+
+
     // ----------------------------------
     // Setter/-Getter
     // ----------------------------------
-
-
-    public void setGraphRepresentation(Hashtable<Vertex, HashMap<Edge, Edge>> graphRepresentation) {
-        this.graphRepresentation = graphRepresentation;
-    }
-
-    public void setAdjacencyMatrix(double[][] adjacencyMatrix) {
-        this.adjacencyMatrix = adjacencyMatrix;
-    }
-
-    public void setDirected(boolean directed) {
-        this.directed = directed;
-    }
-
-    public void setReGenerate(boolean reGenerate) {
-        this.reGenerate = reGenerate;
-    }
-
-    public void setVertexmap(LinkedHashMap<Vertex, Integer> vertexMap) {
-        this.vertexMap = vertexMap;
-    }
-
-    public void setVertexCounter(int vertexCounter) {
-        this.vertexCounter = vertexCounter;
-    }
-
-    public void setAdjAccessor(Vertex[] adjAccessor) {
-        this.adjacencyAccessor = adjAccessor;
-    }
 
     public Hashtable<Vertex, HashMap<Edge, Edge>> getGraphRepresentation() {
         return graphRepresentation;
     }
 
-    public double[][] getAdjacencyMatrix() {
-        return adjacencyMatrix;
-    }
 
     public boolean isDirected() {
         return directed;
     }
 
-    public boolean isReGenerate() {
-        return reGenerate;
-    }
-
-    public Comparator<Edge> getDefaultComparator() {
-        return new Comparator<Edge>(){
-            @Override
-            public int compare(Edge first, Edge second) {
-
-                double firstValue = first.getValue();
-                double secondValue = second.getValue();
-
-                return firstValue < secondValue? -1 : 1;
-            }
-        };
-    }
 
     public LinkedHashMap<Vertex, Integer> getVertexMap() {
         return this.vertexMap;
@@ -384,7 +431,7 @@ public class Graph {
         return this.vertexCounter;
     }
 
-    public Vertex[] getAdjAccessor() {
-        return this.adjacencyAccessor;
+    public int getEdgeCounter() {
+        return this.edgeCounter;
     }
 }
