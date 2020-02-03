@@ -353,13 +353,13 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Ähnliche Summe
 - [ ] Alle kürzeste Wege (Floyd)
 - [ ] Approximation von Pi mit n-gon
-- [ ] Binomialkoeffizienten
-- [ ] Catalan-Zahlen
+- [ ] [Binomialkoeffizienten](#Binomialkoeffizienten)
+- [ ] [Catalan-Zahlen](#Catalan-Zahlen)
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
 - [ ] deCastljau
 - [ ] Editierabstand (Levenshtein-Distance)
-- [ ] Fibonacci-Zahlen
+- [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
 - [ ] Kürzester Weg eines Springers
@@ -373,13 +373,10 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Partition problem of list (np-complete und pseudo polynomial -> greedy)
 - [ ] Subset-sum (np-complete, pseudo-polynomial)
 - [ ] Summe von Produkten
-- [ ] Zahlen-Dreieck
+- [ ] [Zahlen-Dreieck](#Zahlen-Dreieck)
 - [ ] Additionals
     - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
     - [ ] Längster gemeinsamer Teilstring
-
-
-
 
 
 #### Pseudo Code
@@ -398,11 +395,129 @@ Alternativ
         -  <sub> </sub>
 `
 
+##### Binomialkoeffizienten
+
+````aidl
+    
+    def binom_coff(int n, int k) {
+    
+        int higherIndex = n > k? n : k;
+        int[][] feld = new int[higherIndx][higherIndx];
+        
+        // Initialisiere elemente in der ersten spalte und die hauptdiagonale
+        for (int i = 0; i < feld.length; i++) {
+            feld[i][i] = 1;
+            feld[i][0] = 1;
+        }
+        
+        
+        // Berechne die Teillösungen
+        for (int i = 1; i < feld.length; i++) {
+            for (int j = 1; j <  i; j++) {
+                feld[i][j] = feld[i-1][j-1] + feld[i-1][j];
+            }
+        }
+    
+        return feld[n][k];
+    }
+````
 
 
-## Laufzeiten
+##### Catalan-Zahlen
 
-## Pseudo-Code
+````aidl
+    
+    def catalan_zahlen(int nth) {
+        // Berechne nth-cataln zahl
+        
+        // Falsche eingabe abdecken
+        nth -= 1;
+        if (nth < 1) raise error;
+        
+        // Speicher anlegen
+        int[] catalan_cache = new int[nth]; // halte bereits berehnete catalan zahlen, alle werte sind mit 0 initialisiert
+        for (int i = 1; i < cataln_cache.length; i++) {
+            int num_calculations = math.round(i / 2); // Speicher für einzigartige berechnungen
+            
+            // Neue Cataln zahl berechnen
+            for (int j = 0, k = i-1; j < num_calculations; j++, k--) {
+                
+                int value_to_sum = (catalan_cache[j] * catalan_cache[k]);
+                catalan_cache[i] += wenn anzahl nötiger berechnungen gerade dann (value_to_sum * 2) ansonsten (value_to_sum);     
+            } 
+        }
+        
+        return cataln_cache[nth];
+    }
+````
+
+##### Fibonacci-Zahlen
+
+````aidl
+    int dynamic_fibonaci(int nth) {
+        // Berechne nth Fibonacci Zahl
+        
+        nth = nth -1;
+        
+        if (nth < 0) raise error;
+        if (nth < 1) return 1;
+        
+        int[] cached_values = new int[nth];
+        cached_values[0] = 1;
+        cached_values[1] = 1;
+        
+        for (int i = 2; i < cached_values.length; i++) {
+            cached_vales[i] = cached_values[i-1] + cached_values[i-2];
+        }
+    
+        return cached_values[nth];
+    }
+````
+
+##### Zahlen-Dreieck
+
+
+````aidl
+
+    // Vorraussetzung Pfadkosten immer > 0
+    // Berechne pfad mit maximalen kosten
+    int[] berechne_pfad(feld mit kosten) {
+    
+        int[][] sub_loesungen = lege kopie des feldes an mit allen werten == 0 außer startwert in erster Zeile
+    
+        for (int i = zeilen index 2 zeile; alle zeilen des feld;) {
+            for (int j = aktuelle spalte; alle spalten der aktuellen zeile;) {
+                // Berechne aktuell lösung mithilfe der vorher berechneten
+                sub_loesungen[i][j] = feld_kosten[i][j] + sub_loesungen[zeile darüber][spalte mit größerem wert i-1 || i]
+            }
+        }
+        
+        
+        // Pfad rückwärts berechnen
+        int[] pfadIndices = new int[höhe des feldes];
+        int pfadIndx = pfadIndices.length; // Pfad is maximal so lang wie feld hoch
+               
+        int startIndx = -1; int maxValue = 0;
+        for (int i = letzte spalte; alle spalten, rückwärts durchgehen;) {
+        
+            // Startindex ermiteln
+            if (startIndx == -1) {
+                for (int j = aktuelle spalte; alle spalten aktuelle zele;) {
+                    startIndx = maxValue < aktuelle zellen wert? j : startIndx;
+                    maxValue = maxValue < aktueller zellen wert? zellen wert : maxValue;
+                }
+                pfadIndices[pfadIndx--] = startIndx;
+                continue; // eine iteraton überspringen um in drüberliegende zeile zu kommens
+            }
+            
+            
+            // Lösung bilden
+            pfadIndices[pfadIndx--] =  Spalten index der spalte mit größerem wert (direkt über oder darüber links) ausgehend vom letzten Eintrag im Array der Pfad indices.
+        }
+    }
+
+````
+
 
 ### Approximation Bin-Packing
 
@@ -414,9 +529,3 @@ Füge die Objekte der Reihe nach ein,
  sodass jedes in den ersten Behälter gegeben wird, in dem noch genug Platz ist.
  Falls in keinem der bereits geöffneten Behälter genügend Platz ist, öffne einen neuen.
 `
-
-
-
-
-
-## Datenstrukturen
