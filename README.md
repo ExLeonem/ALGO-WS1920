@@ -327,7 +327,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Alle kürzeste Wege (Floyd)
 - [ ] Approximation von Pi mit n-gon
 - [ ] [Binomialkoeffizienten](#Binomialkoeffizienten)
-- [ ] Catalan-Zahlen
+- [ ] [Catalan-Zahlen](#Catalan-Zahlen)
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
 - [ ] deCastljau
@@ -368,7 +368,7 @@ Alternativ
         -  <sub> </sub>
 `
 
-#### Binomialkoeffizienten
+##### Binomialkoeffizienten
 
 ````aidl
     
@@ -395,6 +395,34 @@ Alternativ
     }
 ````
 
+
+##### Catalan-Zahlen
+
+````aidl
+    
+    def catalan_zahlen(int nth) {
+        // Berechne nth-cataln zahl
+        
+        // Falsche eingabe abdecken
+        nth -= 1;
+        if (nth < 1) raise error;
+        
+        // Speicher anlegen
+        int[] catalan_cache = new int[nth]; // halte bereits berehnete catalan zahlen, alle werte sind mit 0 initialisiert
+        for (int i = 1; i < cataln_cache.length; i++) {
+            int num_calculations = math.round(i / 2); // Speicher für einzigartige berechnungen
+            
+            // Neue Cataln zahl berechnen
+            for (int j = 0, k = i-1; j < num_calculations; j++, k--) {
+                
+                int value_to_sum = (catalan_cache[j] * catalan_cache[k]);
+                catalan_cache[i] += wenn anzahl nötiger berechnungen gerade dann (value_to_sum * 2) ansonsten (value_to_sum);     
+            } 
+        }
+        
+        return cataln_cache[nth];
+    }
+````
 
 ##### Fibonacci-Zahlen
 
