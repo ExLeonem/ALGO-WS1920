@@ -326,13 +326,13 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Ähnliche Summe
 - [ ] Alle kürzeste Wege (Floyd)
 - [ ] Approximation von Pi mit n-gon
-- [ ] Binomialkoeffizienten
+- [ ] [Binomialkoeffizienten](#Binomialkoeffizienten)
 - [ ] Catalan-Zahlen
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
 - [ ] deCastljau
 - [ ] Editierabstand (Levenshtein-Distance)
-- [ ] Fibonacci-Zahlen
+- [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
 - [ ] Kürzester Weg eines Springers
@@ -367,6 +367,57 @@ Alternativ
     2. Über Matrix iterieren und ausfüllen
         -  <sub> </sub>
 `
+
+#### Binomialkoeffizienten
+
+````aidl
+    
+    def binom_coff(int n, int k) {
+    
+        int higherIndex = n > k? n : k;
+        int[][] feld = new int[higherIndx][higherIndx];
+        
+        // Initialisiere elemente in der ersten spalte und die hauptdiagonale
+        for (int i = 0; i < feld.length; i++) {
+            feld[i][i] = 1;
+            feld[i][0] = 1;
+        }
+        
+        
+        // Berechne die Teillösungen
+        for (int i = 1; i < feld.length; i++) {
+            for (int j = 1; j <  i; j++) {
+                feld[i][j] = feld[i-1][j-1] + feld[i-1][j];
+            }
+        }
+    
+        return feld[n][k];
+    }
+````
+
+
+##### Fibonacci-Zahlen
+
+````aidl
+    int dynamic_fibonaci(int nth) {
+        // Berechne nth Fibonacci Zahl
+        
+        nth = nth -1;
+        
+        if (nth < 0) raise error;
+        if (nth < 1) return 1;
+        
+        int[] cached_values = new int[nth];
+        cached_values[0] = 1;
+        cached_values[1] = 1;
+        
+        for (int i = 2; i < cached_values.length; i++) {
+            cached_vales[i] = cached_values[i-1] + cached_values[i-2];
+        }
+    
+        return cached_values[nth];
+    }
+````
 
 ##### Zahlen-Dreieck
 
