@@ -346,13 +346,10 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Partition problem of list (np-complete und pseudo polynomial -> greedy)
 - [ ] Subset-sum (np-complete, pseudo-polynomial)
 - [ ] Summe von Produkten
-- [ ] Zahlen-Dreieck
+- [ ] [Zahlen-Dreieck](#Zahlen-Dreieck)
 - [ ] Additionals
     - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
     - [ ] Längster gemeinsamer Teilstring
-
-
-
 
 
 #### Pseudo Code
@@ -371,11 +368,50 @@ Alternativ
         -  <sub> </sub>
 `
 
+##### Zahlen-Dreieck
 
 
-## Laufzeiten
+````aidl
 
-## Pseudo-Code
+    // Vorraussetzung Pfadkosten immer > 0
+    // Berechne pfad mit maximalen kosten
+    int[] berechne_pfad(feld mit kosten) {
+    
+        int[][] sub_loesungen = lege kopie des feldes an mit allen werten == 0 außer startwert in erster Zeile
+    
+        for (int i = zeilen index 2 zeile; alle zeilen des feld;) {
+            for (int j = aktuelle spalte; alle spalten der aktuellen zeile;) {
+                // Berechne aktuell lösung mithilfe der vorher berechneten
+                sub_loesungen[i][j] = feld_kosten[i][j] + sub_loesungen[zeile darüber][spalte mit größerem wert i-1 || i]
+            }
+        }
+        
+        
+        // Pfad rückwärts berechnen
+        int[] pfadIndices = new int[höhe des feldes];
+        int pfadIndx = pfadIndices.length; // Pfad is maximal so lang wie feld hoch
+               
+        int startIndx = -1; int maxValue = 0;
+        for (int i = letzte spalte; alle spalten, rückwärts durchgehen;) {
+        
+            // Startindex ermiteln
+            if (startIndx == -1) {
+                for (int j = aktuelle spalte; alle spalten aktuelle zele;) {
+                    startIndx = maxValue < aktuelle zellen wert? j : startIndx;
+                    maxValue = maxValue < aktueller zellen wert? zellen wert : maxValue;
+                }
+                pfadIndices[pfadIndx--] = startIndx;
+                continue; // eine iteraton überspringen um in drüberliegende zeile zu kommens
+            }
+            
+            
+            // Lösung bilden
+            pfadIndices[pfadIndx--] =  Spalten index der spalte mit größerem wert (direkt über oder darüber links) ausgehend vom letzten Eintrag im Array der Pfad indices.
+        }
+    }
+
+````
+
 
 ### Approximation Bin-Packing
 
@@ -387,9 +423,3 @@ Füge die Objekte der Reihe nach ein,
  sodass jedes in den ersten Behälter gegeben wird, in dem noch genug Platz ist.
  Falls in keinem der bereits geöffneten Behälter genügend Platz ist, öffne einen neuen.
 `
-
-
-
-
-
-## Datenstrukturen
