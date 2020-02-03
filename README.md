@@ -358,7 +358,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
 - [ ] deCastljau
-- [ ] Editierabstand (Levenshtein-Distance)
+- [ ] [Editierabstand (Levenshtein-Distance)](#Editierabstand)
 - [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
@@ -449,6 +449,21 @@ Alternativ
         
         return cataln_cache[nth];
     }
+````
+
+
+##### Editierabstand
+
+````aidl
+    
+    def levensthein(string a, string b) do
+    
+        int[][] operationen_cache = new int[a.length][b.length]; // Speicher für die bereits berechneten sub-optima
+        
+        for (int i = 0; i < operationen_cache.length
+        
+    
+    end
 ````
 
 ##### Fibonacci-Zahlen
