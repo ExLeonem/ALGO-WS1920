@@ -43,44 +43,44 @@ Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 3. T(n) = T(n/2) + n<sup>2</sup>
 4. T(n) = 2 n T(n/2) + n<sup>n</sup>
 5. T(n) = 16T(n/4) + n
-6. T(n) = 2T(n/2) + nlogn
-7. T(n) = 2T(n/2) + n/logn
+6. T(n) = 2T(n/2) + n log n
+7. T(n) = 2T(n/2) + n/ log n 
 8. T(n) = 2T (n/4) + n<sup>0,51</sup>
 9. T(n) = 0.5T(n/2) + 1/n
-10. T (n) = 6T(n/3)+ n<sup>2</sup>logn
-11. T(n) = 64T(n/8) – n<sup>2</sup>logn
+10. T (n) = 6T(n/3)+ n<sup>2</sup>log n
+11. T(n) = 64T(n/8) – n<sup>2</sup>log n
 12. T(n) = 7T(n/3) + n<sup>2</sup>
-13. T(n) = 4T(n/2) + logn
+13. T(n) = 4T(n/2) + log n
 14. T(n) = 16T (n/4) + n!
-15. T(n) = sqrt(2)T(n/2) + logn
+15. T(n) = sqrt(2)T(n/2) + log n
 16. T(n) = 3T(n/2) + n
 17. T(n) = 3T(n/3) + sqrt(n)
 18. T(n) = 4T(n/2) + cn
-19. T(n) = 3T(n/4) + nlogn
+19. T(n) = 3T(n/4) + n log n
 20. T (n) = 3T(n/3) + n/2
 
 ### Lösungen
 
 1. T(n)= Θ(n<sup>2</sup>)
-2. T(n) = Θ(n<sup>2</sup>logn)
+2. T(n) = Θ(n<sup>2</sup>log n)
 3. T(n) = Θ(n<sup>2</sup>)
 4. trifft nicht zu, a ist nicht konstant
 5. T(n) = Θ(n<sup>2</sup>)
 6. T(n) = Θ(n log<sup>2</sup>n)
-7. T(n) = Θ(nloglogn)
+7. T(n) = Θ(n log log n)
 8. T(n) = Θ(n<sup>0.51</sup>)
 9. trifft nicht zu, a ist kleiner als 1
 10. T(n) = Θ(n<sup>2</sup>logn)
-11. trifft nicht zu, funktion ist rekursiv
+11. trifft nicht zu, merge funktion ist negativ
 12. T(n) = Θ(n<sup>2</sup>)
 13. T(n) = Θ(n<sup>2</sup>)
 14. T(n) = Θ(n!)
 15. T(n) = Θ(sqrt(n))
-16. T(n) = Θ(n<sup>log3</sup>)
+16. T(n) = Θ(n<sup>log 3</sup>)
 17. T(n) = Θ(n)
 18. T(n) = Θ(n<sup>2</sup>)
-19. T(n) = Θ(nlogn)
-20. T(n) = Θ(nlogn)
+19. T(n) = Θ(n log n)
+20. T(n) = Θ(n log n)
 
 
 ## Algorithmen
@@ -92,7 +92,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [x] GGT multi values
 - [x] [Closest Point Pair](#Closest-Point-Pair)
 - [ ] Fast-Furier-Transformation (FFT)
-- [ ] Strasse
+- [ ] Strassen
 - [ ] K-th biggest Element
 - [ ] Integration Trapetzregel
 - [ ] Binärdarstellung
@@ -368,7 +368,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Minimale Triangulierung eines konvexen Vielecks
 - [ ] Minimum weight triangulation of simple polygon (MWT)
 - [ ] Neville-Aitken-Verfahren
-- [ ] Newton-Interpolation
+- [ ] [Newton-Interpolation](#Newton-Interpolation)
 - [ ] Optimale binäre Suchbäume (suche mit wahrscheinlichkeiten)
 - [ ] Partition problem of list (np-complete und pseudo polynomial -> greedy)
 - [ ] Subset-sum (np-complete, pseudo-polynomial)
@@ -488,6 +488,56 @@ Alternativ
         return cached_values[nth];
     }
 ````
+
+##### Newton-Interpolation
+
+
+```aidl
+
+    N: Stuetstellen des Polynoms N[i][0] -> x<sub>i</sub>-koordinate, N[i][1] -> y<sub>i</sub>-koordinate
+    x: x-koordinate zu der y-Wert zu berechnen ist
+
+    // Interpoliere N-Stuetzstellen mit polynom N-ten grades. Gibt Funktion zurück mit der Werte berechnet
+    def interpolate(N) {
+
+        double[][] sub_solutions = Feld anlegen zum speichern der zwischen lösungen (Zeile entspricht einem polynom-glied und spalte jeweils den faktoren der einzelnen polynom-glieder)
+
+        for (int i = 0; alle zeilen) sub_solutions[i][0] = 1 // basisfälle initialisieren (erster faktor der polynome immer 1)
+
+        // Sub-loesungen berechnen
+        for (int i = 1; alle zeilen) {
+            for (int j = 1; spalten bis i-1) {
+                
+                sub_solutions[i][j] = sub_solutions[i][j-1] * (N_stuetzstellen[i] - N_stuetzstellen[j]); // Aktuelle lösung aus vorgeriger berechnen
+            }
+        }
+
+        double[] c_solutino_vec = Vorwaertseinsetzten um lösung für das LGS (Pc = y) zu erhalten
+
+
+        // Funktion zum berechnen eines interpolationspunktes
+        return def interpolant(x) {
+            
+            double[] sub_solutions = array enthaelt sub-loesungen;
+            sub_solutions[0] = 1;
+
+            // Lösung berechnen
+            double y_coord = 0;
+            for (int i = 0; i < c_solutino_vec.length; i++) {
+                
+                // Berechne aktuelle lösung aus vorherigen
+                if (i > 0 ) {
+                    sub_solutions[i] = sub_solutions[i-1] * N[i];
+                }
+
+                y_coord += c_solutino_vec[i] * sub_solutions[i];
+            }
+
+            return y_coord;
+        }
+    }
+
+```
 
 ##### Zahlen-Dreieck
 
