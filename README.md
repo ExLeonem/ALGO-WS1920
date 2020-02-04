@@ -399,10 +399,10 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Optimale binäre Suchbäume (suche mit wahrscheinlichkeiten)
 - [ ] Partition problem of list (np-complete und pseudo polynomial -> greedy)
 - [ ] [Subset-sum Problem/Teilsummenproblem (np-complete, pseudo-polynomial)](#Teilsummenproblem)
-- [ ] [Summe von Produkten (Summe der Teiler einer Zahl)](#Summe-von-Produkten)
+- [ ] Summe von Produkten (Summe der Teiler einer Zahl)
 - [ ] [Zahlen-Dreieck](#Zahlen-Dreieck)
 - [ ] Additionals
-    - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
+    - [ ] [Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)](#Reiseplannung)
     - [ ] Längster gemeinsamer Teilstring
 
 
@@ -605,12 +605,6 @@ Alternativ
     }
 
 ```
-
-
-##### Summe von Produkten
-
-
-
 ##### Zahlen-Dreieck
 
 
@@ -654,7 +648,34 @@ Alternativ
     }
 
 ````
+##### Reiseplannung
 
+
+```aidl
+
+    A: Attraktionen Liste aus tupeln Z<sub>i</sub>-Zeit für die Attraktion, S<sub>i</sub>-Wertigkeit der Sehenswürdigkeit.
+    Ziel: Maximiere Wertigkeit der Sehenswürdigkeiten.
+
+    def reiseplannung(A, Zeit die gesamt zur Verfügung steht) {
+
+        teillösungen[][] = spalte größe des teilproblems, zeile die attraktion. Speichere die Attraktionen in den indices
+
+
+        for (alle zeilen) {
+
+            for (alle spalten) {
+
+                Ist genügend Zeit für die aktuelle Attraktion? Dann ist teillösung[i][j]:                
+                    1. Attraktionen teillösung[i-1][restliche Zeit] + aktuelle Attraktion
+                    2. Attraktionen teillösung[i-1][j]
+                
+                Je nach dem welche Attraktionen summiert eine größere Sehenswürdigkeit haben und zeitlich passen.
+            }
+        }
+
+        return Optimale Attraktionen die zu besichtigen sind in der letzten Zeile/Spalte
+    }
+```
 
 ### Approximation Bin-Packing
 
