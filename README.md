@@ -21,6 +21,7 @@
 5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
 6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
 7. Wie detailiert muss der Pseudo code sein (Dynamisches Programmieren), Bspws. beim berechnen der aktuellen aus Teillösung siehe sum sub-set problem (Sonderfall vorherige Teillösung ist noch nicht existent. Muss das angegeben werden?)
+8. Kann bei Graphenalgorithmen eine Adjazenzmatrix als gegeben angenommen werden, falls diese nötig ist? (Aufwandsberechnung)
 
 
 ## Master Theorem
@@ -378,14 +379,16 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 ### Dynamic Programming
 - [x] [0-1-Rucksackproblem](#KnapSack) (np-complete, pseudo-polynomial)
 - [ ] Ähnliche Summe
-- [ ] Alle kürzeste Wege (Floyd)
+- [ ] [Alle kürzeste Wege (Floyd)](#Floyd)
+- [ ] [Warshall](#Warshall)
+- [ ] [Tripel-Algorithmus (Floyd-Warshall)](#Tripel-Algorithmus)
 - [ ] Approximation von Pi mit n-gon
 - [ ] [Binomialkoeffizienten](#Binomialkoeffizienten)
 - [ ] [Catalan-Zahlen](#Catalan-Zahlen)
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
 - [ ] deCastljau
-- [ ] [Editierabstand (Levenshtein-Distance)](#Editierabstand)
+- [ ] Editierabstand (Levenshtein-Distance)
 - [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
@@ -403,7 +406,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] [Zahlen-Dreieck](#Zahlen-Dreieck)
 - [ ] Additionals
     - [ ] [Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)](#Reiseplannung)
-    - [ ] Längster gemeinsamer Teilstring
+    - [ ] [Längster gemeinsamer Teilstring](#Längster-gemeinsamer-Teilstring-Dynamisches-Programm)
 
 
 #### Pseudo Code
@@ -421,6 +424,93 @@ Alternativ
     2. Über Matrix iterieren und ausfüllen
         -  <sub> </sub>
 `
+
+
+##### Floyd
+
+
+```aidl
+
+    // Kürzester Weg zwischen Knotenpaaren
+    def floyd(Graph) {
+        
+        // Initialisiere Gewichtsmatrix 
+        g[][] = lege gewichtsmatrix an. Zellenwerte entsprechen Kantengewichten. Falls keine Kante existent ist gewicht unendlich.
+
+        for (k: alle knoten) {
+
+            // Alle knotenpaare prüfen (vor allem nötig wenn graph gerichtet)
+            for (i: ale knoten) {
+                for (j: alle knoten) {
+                    
+                    // Weg über transitknoten ist kleiner als aktueller weg
+                    if (g[i][j] > g[i][k] + g[k][j]) {
+                        g[i][j] = g[i][k] + g[k][j]; // aktualisiere weg
+                    }
+                }
+            }
+        }
+
+        return g; 
+    }
+```
+
+#### Warshall
+
+```aidl
+
+    // Fragestellung: Existiert eine Verbindung zwischen Knoten A und B (wenn auch nur eine indirekte)?
+    def warshall() {
+
+        g[][] = Adjazenzmatrix. Anzahl Zeilen, Anzahl Spalten = Anzahl Knoten. Existiert eine Verbindung ist zellenwert = 1, sonst 0
+
+
+        for (k: alle knoten) {
+            
+            // Alle Knotenpaare durchgehen (nötig vor allem wen graph gerichtet)
+            for (i: alle knoten) {
+                for (j: alle knoten) {
+
+                    // Falls keine Verbindung, prüfe ob über Transitknoten möglich
+                    if (g[i][j] == 0) {
+                        g[i][j] = g[i][k] * g[k][j]; // wird zu 1 wenn jeweils verbindung von/zu transitknoten bestehen
+                    }
+                }
+            }
+        }
+
+        return g;
+    }
+```
+
+##### Tripel Algorithmus
+
+```aidl
+
+    def tripel_algorithmus(Graph) {
+
+        g[][] = Adjazenzmatrix. Anzahl Spalten, Zeilen = Anzahl Knoten. Zellenwerte Kantengewicht der Verbindung Knoten[i] -> Knoten[j]
+        F[][] = Wege Matrix. Gibt den Vorgängerknoten an von dem aus der aktuelle Knoten erreicht wird. 
+
+        for (transit knoten: alle Knoten) {
+
+            // Alle Knotenpaare durchgehen
+            for (i: alle Knoten) {
+                for (j: alle Knoten) {
+
+                    // Es existiert kürzere Strecke über Transitknoten
+                    if (g[i][j] > g[i][transit knoten] + g[transit knoten][j]) {
+                        g[i][j] = g[i][transit knoten] + g[transit knoten][j];
+                        F[i][j] = k; // Neuer Vorgängerknoten ist transitknoten
+                    }
+                }
+            }
+        }
+
+        return F; // Matrix mit kürzesten Wegen zwischen Knoten
+    }
+```
+
 
 ##### Binomialkoeffizienten
 
@@ -676,6 +766,47 @@ Alternativ
         return Optimale Attraktionen die zu besichtigen sind in der letzten Zeile/Spalte
     }
 ```
+
+
+##### Längster gemeinsamer Teilstring Dynamisches Programm
+
+```aidl
+
+    A: String, länge > 0 
+    B: String, länge > 0 
+    
+    def längster_teilstring(A, B) {
+
+        // Speichere Teillösungen
+        teillösungen = Spalten = Länge String A, Zeilen = Länge String B, Zelle = Anzahl der bisher übereinstimmenden Character (Annahme alle Zellenwerte mit 0 initialisiert)
+
+        // Base-Case (Setzte werte in der ersten spalte)
+        int max = 0;
+        for (spalten der ersten Zeile) {
+            teillösung[0][spalte] = A[spalte] == B[0]? 1 : 0;
+            falls übereinstimmt max = 1;
+        }
+
+        for (int i = 1; alle zeilen) {
+            for (alle spalten) {
+
+                if (A[j] == B[i]) {
+
+                    Falls vorherige Teillösung existiert:
+                        teillösung[i][j] = 1 + teillösung[i-1][j-1] 
+                        neue länge > max? dann max aktualisieren.
+                    Sonst:
+                        teillösung[i][j] = 1
+
+                }
+            }
+        }
+
+        return max;
+    }
+
+```
+
 
 ### Approximation Bin-Packing
 
