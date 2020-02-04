@@ -5,7 +5,7 @@
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
 2. [Master Theorem](#Master-Theorem)
 3. [Algorithmen](#Algorithmenlisten)
-    1. [Divide & Conquer](#Divide-&-Conquer)
+    1. [Divide & Conquer](#Divide-and-Conquer)
     2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
 
@@ -20,6 +20,7 @@
 4. Wie viele informationen werden uns zu den spezifischen Algorithmen gegeben
 5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
 6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
+7. Wie detailiert muss der Pseudo code sein (Dynamisches Programmieren), Bspws. beim berechnen der aktuellen aus Teillösung siehe sum sub-set problem (Sonderfall vorherige Teillösung ist noch nicht existent. Muss das angegeben werden?)
 
 
 ## Master Theorem
@@ -87,7 +88,7 @@ Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere Algorithmen/Datenstrukten.
 
 
-### Divide & Conquer
+### Divide and Conquer
 
 - [x] GGT multi values
 - [x] [Closest Point Pair](#Closest-Point-Pair)
@@ -116,6 +117,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Count none-negatives in array
     - [x] Summe der Beträge (nicht-negativ)
     - [x] Summe der Einträge
+    - [ ] [Teilsummenproblem](#Teilsummenproblem-Rekursiv)
     - [x] GGT
     - [x] Maximum value
     - [x] Potenzieren
@@ -187,7 +189,32 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
         }
     }
 ```
+##### Teilsummenproblem Rekursiv
 
+    Gegeben:
+        I: Menge an positiven zahlen I = {w<sub>1</sub>, ..., w<sub>i</sub>}
+        s: Schranke
+
+    Gesucht: 
+        S = {w<sub>1</sub>,... , w<sub>i</sub>} dessen Summe == Schranke
+
+```aidl
+
+    def ssp(I, n, sum, schranke, Indice Set) {
+
+        // Base
+        if (sum == schranke) return Indice Set
+        if (n < 0) null
+
+        // Divide
+        leftSolution = ssp(I, n-1, sum + I[n], schranke, [Indice Set, n]);
+        rightSolution = ssp(I, n-1, sum - I[n], schranke, Indice Set);
+        
+        // Merge
+        return loesung die != null;
+    } 
+
+```
 
 ### Greedy
 
@@ -371,8 +398,8 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] [Newton-Interpolation](#Newton-Interpolation)
 - [ ] Optimale binäre Suchbäume (suche mit wahrscheinlichkeiten)
 - [ ] Partition problem of list (np-complete und pseudo polynomial -> greedy)
-- [ ] Subset-sum (np-complete, pseudo-polynomial)
-- [ ] Summe von Produkten
+- [ ] [Subset-sum Problem/Teilsummenproblem (np-complete, pseudo-polynomial)](#Teilsummenproblem)
+- [ ] [Summe von Produkten (Summe der Teiler einer Zahl)](#Summe-von-Produkten)
 - [ ] [Zahlen-Dreieck](#Zahlen-Dreieck)
 - [ ] Additionals
     - [ ] Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
@@ -538,6 +565,51 @@ Alternativ
     }
 
 ```
+
+
+##### Teilsummenproblem
+
+```aidl
+
+    def ssp_dynamic(I, s) {
+
+        // In jeder Zelle indices der lösung gespeichert oder -1 falls keine lösung
+        int[][] sub_solutions = Feld zum speichern der Teillösungen. Zeile entspricht aktueller zahl an index j, Spalte die Größe der Teillösung.
+
+        for (int i = 0; alle zeilen; i++) {
+
+            for (int j = 0; alle spalten; j++) {
+
+                aktuelleZahl = I[i];
+                subproblem_größe = (j+1);
+
+                if (aktuelle Zahl entspricht aktueller subproblem größe) {
+                    teillösung[i][j] = I[i];
+                    continue;
+                }
+
+                if (Teillösung eine Spalte darüber existiert und ist ungleich -1) {
+                    teillösung[i][j] = teillösung[i-1][j];
+                    continue;
+                }
+
+                // Prüfe ob teillösung für aktuelle problemgröße - aktuelle zahl vorhanden ist.
+                if (subproblem_größe == aktuelle Zahl + teillösung[i-1][subproblem-größe - aktuelle Zahl]) {
+                    teillösung[i][j] = [teillösung[i][subproblem_größe - aktuelle Zahl], aktuelle zahl];
+                }
+            }
+        }
+
+
+        return lösung in der letzten zeile & spalte;
+    }
+
+```
+
+
+##### Summe von Produkten
+
+
 
 ##### Zahlen-Dreieck
 
