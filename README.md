@@ -22,6 +22,11 @@
 6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
 7. Wie detailiert muss der Pseudo code sein (Dynamisches Programmieren), Bspws. beim berechnen der aktuellen aus Teillösung siehe sum sub-set problem (Sonderfall vorherige Teillösung ist noch nicht existent. Muss das angegeben werden?)
 8. Kann bei Graphenalgorithmen eine Adjazenzmatrix als gegeben angenommen werden, falls diese nötig ist? (Aufwandsberechnung)
+9. Master Theorem: Wie ist das mit Logarithmen bei denen eine Gleitkommazahl rauskommt (Aufrunden, Abrunden)? Bspws. log<sub>2</sub>3 
+10. Wie ist das mit den Rückgabewerten. Kann ein Rückgabewert angenommen werden oder wie ist das? Bspws. Es kann ja gefragt sein ob eine Menge Teilbar ist oder aber die Menge an Indices der einen Menge gefragt sein.
+11. Berechnung der Komplexität von Teile & Hersche Verfahren der Form T(n) = a T(n-b) + f(n) werden nicht gefragt? (Spezielleres Master, prüfen ob das alternativ i.wie gelöst werden kann)
+12. 
+
 
 
 ## Master Theorem
@@ -108,6 +113,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Quad-Trees
 - [x] [Skyline](#Skyline)
 - [ ] Viterbi
+- [ ] [Partitionsproblem](#Partitionsproblem-Rekursiv)
 - [ ] Search and Sort
     - [x] Quick-Sort
     - [ ] Quick-Sort with median of three (needs also median-of-3-killer)
@@ -190,6 +196,36 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
         }
     }
 ```
+
+#### Partitionsproblem Rekursiv
+
+```aidl
+    
+    Fragestellung: Kann eine Menge an Zahlen S={w1, ..., wi} in zwei Mengen S1, S2 aufgeteilt werden so das summe der Zahlen in Mengen gleich sind?
+
+    // Gibt boolean zurück 
+    def partition(S, aktuellerIndex, S1, S2) {
+
+        // Base Case
+        if (S1 == S2) {
+            return true;
+        }
+
+        if (i < 0) {
+            return false;
+        }
+
+        // Divide
+        aktuelleZahl = S[aktuellerIndex++];
+        return partition(S, aktuellerIndex, S1 + aktuelleZahl, S2) || partition(S, aktuellerIndex, S1, S2 + aktuelleZahl);
+    }
+
+    // Initialier Aufruf
+    partition(S, Länge S - 1, 0, 0);
+```
+
+
+
 ##### Teilsummenproblem Rekursiv
 
     Gegeben:
@@ -379,7 +415,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 ### Dynamic Programming
 - [x] [0-1-Rucksackproblem](#KnapSack) (np-complete, pseudo-polynomial)
 - [ ] Ähnliche Summe
-- [ ] [Alle kürzeste Wege (Floyd)](#Floyd)
+- [ ] [Floyd](#Floyd) (Alle kürzeste Wege)
 - [ ] [Warshall](#Warshall)
 - [ ] [Tripel-Algorithmus (Floyd-Warshall)](#Tripel-Algorithmus)
 - [ ] Approximation von Pi mit n-gon
@@ -393,20 +429,20 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
 - [ ] Kürzester Weg eines Springers
-- [ ] Längste aufsteigende Teilfolge
-- [ ] Längste gemeinsame Teilfolge
+- [ ] [Längste aufsteigende Teilfolge](#Längste-aufsteigende-teilfolge)
+- [ ] [Längste gemeinsame Teilfolge](#Längste-gemeinsame-Teilfolge)
 - [ ] Minimale Triangulierung eines konvexen Vielecks
 - [ ] Minimum weight triangulation of simple polygon (MWT)
 - [ ] Neville-Aitken-Verfahren
 - [ ] [Newton-Interpolation](#Newton-Interpolation)
 - [ ] Optimale binäre Suchbäume (suche mit wahrscheinlichkeiten)
-- [ ] Partition problem of list (np-complete und pseudo polynomial -> greedy)
+- [ ] [Partition problem of list (np-complete und pseudo polynomial -> greedy)](#Partition-Problem)
 - [ ] [Subset-sum Problem/Teilsummenproblem (np-complete, pseudo-polynomial)](#Teilsummenproblem)
 - [ ] Summe von Produkten (Summe der Teiler einer Zahl)
 - [ ] [Zahlen-Dreieck](#Zahlen-Dreieck)
-- [ ] Additionals
-    - [ ] [Reiseplannung (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)](#Reiseplannung)
+- [ ] [Reiseplannung](#Reiseplannung) (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
     - [ ] [Längster gemeinsamer Teilstring](#Längster-gemeinsamer-Teilstring-Dynamisches-Programm)
+    
 
 
 #### Pseudo Code
@@ -606,12 +642,80 @@ Alternativ
     }
 ````
 
+#### Längste aufsteigende Teilfolge
+
+```aidl
+
+    // Liefert die größe der längsten aufsteigenden Teilfolge
+    def aufsteigende_teilfolge(S) {
+
+        if (Länge von S < 1) {
+            return 0;
+        }
+
+        // Speicher für zwischenlösungen, einfaches Array, in Zelle jeweils die Länge des bisherigen Teilstrings
+        speicher[Anzahl elemente in S]; 
+        speicher[0] = 1;
+
+        max = 1;
+        for (i = 1...alle Zellen des Speichers) {
+
+            speicher[i] = 1;
+            if (S[i] > S[i-1]) {
+                speicher[i] = speicher[i-1] + 1;
+                max updaten falls speicher[i] größer als aktuelles max;
+            }
+        }
+
+        return max;
+    }
+
+
+    // Alternativer Ansatz Feld zum ermitteln der Indices.
+    def aufsteigende_teilfolge(S) {
+
+        if (Länge von S < 1) {
+            return 0;
+        }
+        
+
+        // Zelle jeweils der index des vorgänger elements
+        speicher[Anzahl element S];
+        speicher[0] = 0; // Basisfall
+
+
+        max = 0;
+        maxIndex = 0; // letzer index der maximalen Teilfolge
+        letzer index = 0;
+        for (int i = 1...alle zellen) {
+
+            if ()
+
+        }
+
+
+        return 
+    }
+
+```
+
+
+#### Längste gemeinsame Teilfolge
+
+```aidl
+
+    def gemeinsame_teilfolge(S1, S2) {
+
+    }
+```
+
+
 ##### Newton-Interpolation
 
 
 ```aidl
 
-    N: Stuetstellen des Polynoms N[i][0] -> x<sub>i</sub>-koordinate, N[i][1] -> y<sub>i</sub>-koordinate
+    N: Stuetstellen des Polynoms N[i][0] -> x[i]-koordinate, N[i][1] -> y[i]-koordinate
     x: x-koordinate zu der y-Wert zu berechnen ist
 
     // Interpoliere N-Stuetzstellen mit polynom N-ten grades. Gibt Funktion zurück mit der Werte berechnet
@@ -654,6 +758,46 @@ Alternativ
         }
     }
 
+```
+#### Partition-Problem
+
+Spezielle Ausprägung des Sub-Set Problems. Im Prinzip selber Algorithmus aufrufbar und suche nach Menge an Zahlen die gleich der Hälfte der Summe der im Array enthaltenen Zahlen.
+
+```aidl
+
+    S: Liste mit Zahlen {z1, ..., zn}
+
+    // Fragestellung: Kann die Liste S in zwei Listen S<sub>1</sub> und S<sub>2</sub> geteilt werden so das die Summe der Zahlen in beiden Listen gleich ist.
+
+    def partition(S) {
+
+
+        summe = berechne Summe der aus S;
+        
+        if (summe nicht durch zwei teilbar) {
+            return false;
+        }
+
+        // Speicher für zwischenlösungen anlegen
+        feld[summe/2 + 1][Anzahl Zahlen + 1] = speichere booleans in den Zellen falls Sub-Problem durch hinzunahme de Zahl 
+
+        // Basisfälle abdecken 
+        feld[i][0] = Alle Werte auf False setzten
+        feld[0][1] = Alle Werte auf True setzten, erste Zeile Repräsentiert leere Menge 
+
+        // Intuition:
+        // Teillösung erste Zeile wird geprüft falls Subproblem - Zahl == 0 (Teilproblem direkt durch zahl gelöst wird)
+
+        for (int i = 1; alle zeilen) {
+            for (int j = 1; alle spalten) {
+
+                feld[i][j] = feld[i][j-1]; // Teillösung des letzten Feldes übernehmen
+                if (Größe aktuelles Teilproblem >= Zahl S[j-1]) {
+                    feld[i][j] = true falls feld[Größe Teilproblem - aktuelle Zahl][j-1] true ansonsten false
+                }
+            }
+        }
+    }
 ```
 
 
