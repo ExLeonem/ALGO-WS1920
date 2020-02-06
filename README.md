@@ -487,7 +487,7 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 - [ ] [Catalan-Zahlen](#Catalan-Zahlen)
 - [ ] Context-Free Language Recognition (CYK-algo)
 - [ ] deBoor
-- [ ] deCastljau
+- [ ] [deCastljau](#deCastljau)
 - [ ] Editierabstand (Levenshtein-Distance)
 - [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
 - [ ] Independent sets in trees
@@ -668,6 +668,46 @@ Alternativ
     }
 ````
 
+##### deCastljau
+
+Im wesentlichen berechnung einer Interpolanten. Gute Erklärung in Springer Buch Kurven und Flächen von Computer Aided Geometric Design.
+
+Gegeben: Punkte b<sub>0</sub>, b<sub>1</sub>, ..., b<sub>i</sub> und t &#8712; &#8477;
+
+r = 1, ..., n
+i = 0, ..., n-r
+
+b<sup>r</sup><sub>i</sub>(t) = (1-t) b<sup>r-1</sup><sub>i</sub>(t) + t*b<sup>r-1</sup><sub>i+1</sub>(t) 
+b<sup>0</sup><sub>i</sub>(t) = b<sub>i</sub>
+
+Das Bêzierpolynom: p(t) = Summe über b<sub>i</sub>B<sup>n</sup><sub>i</sub>(t)
+
+```aidl
+    def deCastljau() {
+
+        Fehler abfangen falls für den Grad des Polynoms nicht genügend Punkte vorhanden
+
+        // Speicher anlegen (Berechne Polynom vom Grad i aus den Punkten des Polynoms mit Grad i - 1)
+        speicher[Grad des Polynoms][Anzahl Kontrollpunkte] = Zeile entspricht sub-problem (kleiners Polynom), Spalte = Kontrollpunkte
+
+        // Basisfall
+        Alle Spalten i der ersten Zeile auf B[i] setzten (Polynom 0-th grades)
+
+
+        // Berechne Teillösungen
+        letzte lösung = 0;
+        for (i = 1; alle Zeilen) {
+            letzte lösung = 0;
+
+            for (j = 0; j < Anzahl Kontrollpunkte - i) {
+                speicher[i][j] = (1-t) * speicher[i-1][j] + (t * speicher[i-1][j+1])
+                letzte lösung += B[j] * speicher[i][j] // Die letzte Lösung behalten
+            }
+        }
+
+        return letzte lösung
+    }
+```
 
 ##### Editierabstand
 
