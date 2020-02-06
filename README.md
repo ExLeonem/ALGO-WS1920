@@ -349,13 +349,37 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 
 ```aidl 
 
-    G: Graph, Kanten können auch negativ sein. Jedoch ausschluss von Zyklen negativen gewichts die vom Startknoten aus erreichbar sind.
+    // Kanten können auch negativ sein. Jedoch ausschluss von Zyklen negativen gewichts die vom Startknoten aus erreichbar sind.
+    def moore_ford(Graph, Start Knoten) {
 
-    def moore_ford(G) {
 
+        G2 = Kopie des Graphen anlegen (Knoten speichert den Vorgängerknoten und die Distanz zum aktuellen Knoten)
+        Setzte alle Distanzen der Knoten auf unendlich.
+        G2[start knoten] Distanz = 0;
 
+        // Berechne lösungen
+        for (anzahl der knoten - 1) {
+
+            for (Kante (u, v): alle Kanten) {
+
+                // Greedy Bedingung
+                if (Distanz von u + Gewicht der Kante < Distanz des Knotens v) {
+                    Distanz Knoten v = (Distanz zu u + Gewicht der Kante);
+                    aktualisiere den Vorgänger Knoten;
+                }
+            }
+        }
+
+        // Prüfe ob Negativer-Zyklus vorhanden
+        for (Kante (u, v) : alle Kanten im Graph) {
+
+            if ((Distanz zu u + Gewicht der Kante) < Distanz zu v) {
+                Werfe Fehler da negativer Zyklus vorhanden.
+            }
+        }
+
+        return G2;
     }
-
 ```
 
 ##### Dijkstra
