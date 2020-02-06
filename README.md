@@ -486,8 +486,8 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 - [ ] [Binomialkoeffizienten](#Binomialkoeffizienten)
 - [ ] [Catalan-Zahlen](#Catalan-Zahlen)
 - [ ] Context-Free Language Recognition (CYK-algo)
-- [ ] deBoor
-- [ ] [deCastljau](#deCastljau)
+- [ ] [deBoor](#deBoor)
+- [ ] [deCasteljau](#deCasteljau)
 - [ ] Editierabstand (Levenshtein-Distance)
 - [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
 - [ ] Independent sets in trees
@@ -668,7 +668,16 @@ Alternativ
     }
 ````
 
-##### deCastljau
+#### deBoor
+
+```aidl
+
+    def deBoor() {
+
+    }
+```
+
+##### deCasteljau
 
 Im wesentlichen berechnung einer Interpolanten. Gute Erklärung in Springer Buch Kurven und Flächen von Computer Aided Geometric Design.
 
@@ -695,17 +704,24 @@ Das Bêzierpolynom: p(t) = Summe über b<sub>i</sub>B<sup>n</sup><sub>i</sub>(t)
 
 
         // Berechne Teillösungen
-        letzte lösung = 0;
         for (i = 1; alle Zeilen) {
-            letzte lösung = 0;
-
             for (j = 0; j < Anzahl Kontrollpunkte - i) {
                 speicher[i][j] = (1-t) * speicher[i-1][j] + (t * speicher[i-1][j+1])
-                letzte lösung += B[j] * speicher[i][j] // Die letzte Lösung behalten
             }
         }
 
-        return letzte lösung
+        // Berechne die Lösung
+        lösung = 0;
+        for (i = 0; letzten Zeile, i < Anzahl Kontrollpunkte - Polynomgrad) {
+            lösung += speicher[letzte Zeile][i] * bernsteinpolynom(Anzahl Kontrollpunkte - Polynomgrad, i, t);
+        }
+
+        return lösung; 
+    }
+
+
+    def bernsteinpolynom(n, i, t) {
+        return (n über i ) * (1 - t)^(n-i) * t^i;
     }
 ```
 
