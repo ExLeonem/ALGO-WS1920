@@ -25,7 +25,7 @@
 9. Master Theorem: Wie ist das mit Logarithmen bei denen eine Gleitkommazahl rauskommt (Aufrunden, Abrunden)? Bspws. log<sub>2</sub>3 
 10. Wie ist das mit den Rückgabewerten. Kann ein Rückgabewert angenommen werden oder wie ist das? Bspws. Es kann ja gefragt sein ob eine Menge Teilbar ist oder aber die Menge an Indices der einen Menge gefragt sein.
 11. Berechnung der Komplexität von Teile & Hersche Verfahren der Form T(n) = a T(n-b) + f(n) werden nicht gefragt? (Spezielleres Master, prüfen ob das alternativ i.wie gelöst werden kann)
-12. 
+12. Primitive Operationen immer als konstant annehmen? (Multiplikation, Addition, Division, Subtraction) (Frage weil Karatsuba)
 
 
 
@@ -105,7 +105,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Binärdarstellung
 - [ ] Anzahl vertauschungen in unsortierter Liste
 - [ ] Eigenvalue algorithm
-- [ ] Karatsuba (Langazahl-Mult)
+- [ ] [Karatsuba (Langazahl-Mult)](#Karatsuba)
 - [ ] Konvex-Hüll (via common tangents)
 - [ ] Max. consecutive subarray
 - [ ] MinMax-Finding
@@ -150,6 +150,32 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 
     }
 
+```
+
+##### Karatsuba 
+
+```aidl
+    A, B: jeweils zwei Zahlen der Länge n
+
+    def karatsuba(A, B) {
+
+        // Base
+        if (A und B klein genug (hier wahrscheinlich länge = 2)) {
+            return A * B;
+        }
+
+        // Divide
+        w, x = Teile A in zwei gleich lange Zahlen auf mit jeweils der Länge n/2
+        y, z = Teile B in zwei gleich lange Zahlen auf mit jeweils der Länge n/2
+
+        // (w+x) * (y+z) = wy + (xy + zw) + zx 
+        q = karatsuba(w, y);
+        p = karatsuba(z, x);
+        r = karatsuba (w+x, y+z);
+        
+        // Merge
+        return (q * 10^n) + (r - q - p) * 10^(n/2) + p;
+    }
 ```
 
 ##### Skyline
@@ -263,7 +289,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Kartenfärbung (finde Kartenfärbung mit u.U. nicht minimaler Farbenanzahl)
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
-- [ ] Moore/Ford (alle kürzesten wege von s aus, negative Gewichte)
+- [ ] [Moore/Ford](#Moore-Ford) (alle kürzesten wege von s aus, negative Gewichte)
 - [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
 - [ ] Graphs
     - [x] [Dijkstra](#Dijkstra) (all shortest-path, positive)
@@ -315,6 +341,20 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
             rechtes teilproblem lösen
     
             return zusammengefügte kodierung linke und rechte seite.
+
+```
+
+##### Moore Ford
+Kann vorhandensein von Zyklen negativen Gewichts erkennen.
+
+```aidl 
+
+    G: Graph, Kanten können auch negativ sein. Jedoch ausschluss von Zyklen negativen gewichts die vom Startknoten aus erreichbar sind.
+
+    def moore_ford(G) {
+
+
+    }
 
 ```
 
@@ -441,7 +481,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Summe von Produkten (Summe der Teiler einer Zahl)
 - [ ] [Zahlen-Dreieck](#Zahlen-Dreieck)
 - [ ] [Reiseplannung](#Reiseplannung) (Sehenswürdigkeiten mit bewertung ~ Zeit die zur verfügung steht, in art Rucksackproblem)
-    - [ ] [Längster gemeinsamer Teilstring](#Längster-gemeinsamer-Teilstring-Dynamisches-Programm)
+- [ ] [Längster gemeinsamer Teilstring](#Längster-gemeinsamer-Teilstring-Dynamisches-Programm)
     
 
 
@@ -681,16 +721,24 @@ Alternativ
 
         // Zelle jeweils der index des vorgänger elements
         speicher[Anzahl element S];
-        speicher[0] = 0; // Basisfall
-
 
         max = 0;
         maxIndex = 0; // letzer index der maximalen Teilfolge
-        letzer index = 0;
+        startIndex = 0;
         for (int i = 1...alle zellen) {
 
-            if ()
+            if (S[i] > S[i-1]) {
+                S[i] = i-1;
 
+                if (i - startIndex) > max) {
+                    max update;
+                    maxIndex = i;
+                }
+                continue;
+            }
+
+            S[i] = i;
+            startIndex = i;
         }
 
 
@@ -700,11 +748,23 @@ Alternativ
 ```
 
 
-#### Längste gemeinsame Teilfolge
+##### Längste gemeinsame Teilfolge
 
 ```aidl
 
     def gemeinsame_teilfolge(S1, S2) {
+
+        speicher[][] = Feld anlegen das zwischenlösungen enthält
+
+        for (int i = 0: alle Zeilen) {
+            for (int j = 0: alle Spalten) {
+
+                if (Falls S1[i] == S[j]) {
+
+                }
+
+            }
+        }
 
     }
 ```
