@@ -99,7 +99,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Strassen
 - [ ] K-th biggest Element
 - [ ] Integration Trapetzregel
-- [ ] Binärdarstellung
+- [ ] [Binärdarstellung](#Binärdarstellung)
 - [ ] Anzahl vertauschungen in unsortierter Liste
 - [ ] Eigenvalue algorithm
 - [ ] [Karatsuba (Langazahl-Mult)](#Karatsuba)
@@ -123,7 +123,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Summe der Beträge (nicht-negativ)
     - [x] Summe der Einträge
     - [ ] [Teilsummenproblem](#Teilsummenproblem-Rekursiv)
-    - [x] GGT
+    - [x] [GGT](#GGT)
     - [x] Maximum value
     - [x] Potenzieren
     - [ ] Median
@@ -149,6 +149,25 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     }
 
 ```
+
+
+#### Binärdarstellung
+
+def bin(zahl) {
+
+    // Zahl direkt zurück geben da schon binärzahl
+    if (zahl == 0 || zahl == 1) {
+        return zahl;
+    }
+
+
+    stelle = bin(zahl / 2);
+
+    // String concatenation
+    return stelle + (zahl%2)
+
+
+}
 
 ##### Karatsuba 
 
@@ -310,6 +329,21 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
         return loesung die != null;
     } 
 
+```
+
+
+#### GGT
+
+```aidl
+
+    // A, B > 0
+    def ggt(A, B) {
+
+        if (A < B) return ggt(B, A);
+        if (A % B == 0) return B;
+
+        return ggt(A % B , B);
+    }
 ```
 
 ### Greedy
@@ -562,6 +596,7 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 - [ ] [deCasteljau](#deCasteljau)
 - [ ] Editierabstand (Levenshtein-Distance)
 - [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
+- [ ] [K-Bonacci](#K-Bonacci)
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
 - [ ] [Kürzester Weg eines Springers](#Kürzester-Weg-eines-Springers)
@@ -834,7 +869,40 @@ Das Bêzierpolynom: p(t) = Summe über b<sub>i</sub>B<sup>n</sup><sub>i</sub>(t)
     }
 ````
 
-#### Kürzester Weg eines Springers
+
+##### K-Bonacci Zahl
+
+```aidl
+
+    // n >= 0, k >= 2
+    def k_bonacci(n, k) {
+
+        // Speicher zum berechnen der k-thn k-bonacci zahl
+        k_dqueue = lege double ended queue an in der die k-bonacci zahlen gespeichert werden
+
+        current = 1; // aktuelle fib-zahl
+        prev = 1; // letzte fib_zahl
+        k_dqueue.insert(current), k_dqueue.insert(prev);
+        for (i = 2; i < k) {
+            summe = prev + current;
+            prev = current;
+            curent = summe;
+            k_dqueue.insert(current);
+        }
+
+        // prev ohne iteration == n0
+        prev = current + prev;
+        for (i = 1; i < n; i++) {
+            k_dqueue.insert(prev)
+            last = k_dqueue.pop()
+            prev = (prev - last) + prev)
+        }
+        return last;
+    }
+
+```
+
+##### Kürzester Weg eines Springers
 
 ```aidl
 
