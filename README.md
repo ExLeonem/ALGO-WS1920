@@ -184,8 +184,35 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 
 ````aidl
 
+    def springer_rek(aktuelle Position, feld, ecken des feldes, anzahl sprünge) {
+        
+
+        // Base-Case (Feld in der Startkoordinaten )
+        if (höhe <= 4 || breite <= 4) {
+            
+
+            
+            
+            return;
+        }
+
+        // Halbiere das Feld
+        höhe /= 2
+        breite /= 2
+
+        springer(aktuelle Position, feld, in linkes teilfeld, anzahl sprünge)
+
+        springer(aktuelle Position )
+
     
-```
+    }
+
+    
+    // Zählt sprünge hoch und gibt letzte position zurück
+    def springe() {
+
+    }
+````
 
 
 ##### Skyline
@@ -422,7 +449,10 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 
             neues X, Y = Minimale X, Y aus den beiden Arrays.
             füge alte X, Y koordinaten ans ende der liste vorheriger X, Y koordinaten.
+            sprünge++;
         }
+
+        return sprünge;
     }
 
 ```
