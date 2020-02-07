@@ -26,6 +26,7 @@
 10. Wie ist das mit den Rückgabewerten. Kann ein Rückgabewert angenommen werden oder wie ist das? Bspws. Es kann ja gefragt sein ob eine Menge Teilbar ist oder aber die Menge an Indices der einen Menge gefragt sein.
 11. Berechnung der Komplexität von Teile & Hersche Verfahren der Form T(n) = a T(n-b) + f(n) werden nicht gefragt? (Spezielleres Master, prüfen ob das alternativ i.wie gelöst werden kann)
 12. Primitive Operationen immer als konstant annehmen? (Multiplikation, Addition, Division, Subtraction) (Frage weil Karatsuba)
+13. Kann ein Problem dran kommen (Bswps. Greedy) bei dem es nur eine Approximative lösung gibt? (Bspws. Springerproblem, Fall: Sackgasse)
 
 
 
@@ -111,6 +112,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
+- [ ] [Springerproblem](#Springerproblem-Rekursiv)
 - [x] [Skyline](#Skyline)
 - [ ] Viterbi
 - [ ] [Partitionsproblem](#Partitionsproblem-Rekursiv)
@@ -177,6 +179,14 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
         return (q * 10^n) + (r - q - p) * 10^(n/2) + p;
     }
 ```
+
+##### Springerproblem Rekursiv
+
+````aidl
+
+    
+```
+
 
 ##### Skyline
 Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
@@ -290,7 +300,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
 - [ ] [Moore/Ford](#Moore-Ford) (alle kürzesten wege von s aus, negative Gewichte)
-- [ ] Springerproblem (finde einen Wege, der alle Felder betritt)
+- [ ] [Springerproblem](#Springerproblem) (finde einen Wege, der alle Felder betritt)
 - [ ] Graphs
     - [x] [Dijkstra](#Dijkstra) (all shortest-path, positive)
     - [x] [Prim](#Prim) (minimal aufspannener Baum)
@@ -381,6 +391,42 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
         return G2;
     }
 ```
+
+#### Springerproblem
+
+```aidl
+
+    // Kann in Sackgassen landen, womit nach alle Felder besucht werden
+    def springerproblem(start X, start Y, höhe, breite) {
+
+        // Spielfeld anlegen
+        feld[höhe][breite];
+
+        if (start koordinaten nicht im feld) {
+            gebe fehler zurück
+        }
+
+
+        sprünge = 0;
+        Vorherige X, Y;
+        while(Felder noch nicht besucht) {
+
+            X[], Y[] = Wähle nächster felder sortiert nach Aufsteigend sortiert nach Anzahl nichtbesuchter Folgefelder;
+
+            neues X, Y;
+            if (Falls 2 oder mehr Felder mit minimaler Anzahl an Folgefelder) {
+                neues X, Y = die letzten vorherigen X, Y;
+                entferne die letzten vorherigen X, Y;
+                continue;
+            }
+
+            neues X, Y = Minimale X, Y aus den beiden Arrays.
+            füge alte X, Y koordinaten ans ende der liste vorheriger X, Y koordinaten.
+        }
+    }
+
+```
+
 
 ##### Dijkstra
 ```aidl
@@ -492,7 +538,7 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 - [ ] [Fibonacci-Zahlen](#Fibonacci-Zahlen)
 - [ ] Independent sets in trees
 - [ ] Kettenmultiplikation von Matrizen
-- [ ] Kürzester Weg eines Springers
+- [ ] [Kürzester Weg eines Springers](#Kürzester-Weg-eines-Springers)
 - [ ] [Längste aufsteigende Teilfolge](#Längste-aufsteigende-teilfolge)
 - [ ] [Längste gemeinsame Teilfolge](#Längste-gemeinsame-Teilfolge)
 - [ ] Minimale Triangulierung eines konvexen Vielecks
@@ -761,6 +807,52 @@ Das Bêzierpolynom: p(t) = Summe über b<sub>i</sub>B<sup>n</sup><sub>i</sub>(t)
         return cached_values[nth];
     }
 ````
+
+#### Kürzester Weg eines Springers
+
+```aidl
+
+    // Feld wird ausgehend von startkoordinate sukzessiv befüllt. (Art breiten suche)
+    def kürzester_weg_springer(start, end, feld) {
+
+        if (start || end koordinaten nicht im feld) {
+            werfe Fehler
+        }
+
+        // Speichere die die Distanzen zu Feld x/y
+        speicher[][] = Gleich den feld dimensionen und alle Werte mit unendlich initialisiert;
+
+        K = Kandidatenliste mit den als nächstes zu besuchenden Feldern.
+        Füge start koordinaten zu K hinzu
+        Z = 1 // aktuell zu besuchende Koordinaten in tiefe n
+        N = 0 // Als nächstes zu besuchende in Tiefe n+1
+        tiefe = 0 // die distanz
+        while(K != leer) {
+
+            aktuelle x, y = nächster eintrag aus kandidatenliste
+
+            if (speicher[x][y] > tiefe) {
+                speicher[x][y] = tiefe; // aktualisiere die distanz zu diesem knoten
+
+                Berechne erreichbare Folgefelder
+                Füge erreichbare Folgefelder in die Kandidatenliste hinzu
+                N += Anzahl nächster zu besuchender Felder
+            }
+
+            Z--;
+
+            // Eine ebene weiter runter
+            if (Z == 0) {
+                Tiefe++;
+                Z = N;
+                N = 0;
+            }
+        }
+
+        return lösung für minimale distanz liegt im speicher an stelle der End-Feld kooridinaten.
+    }
+
+```
 
 #### Längste aufsteigende Teilfolge
 
