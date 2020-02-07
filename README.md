@@ -14,19 +14,15 @@
 
 ## Offene Fragestellungen
 
-1. Wird spezielles Master Theorem Abgefragt? (Probleme werden um Konstanten wert subtrahiert und nicht dividiert) Evtl. Proberechnung? 
+1. Berechnung der Komplexität von Teile & Hersche Verfahren der Form T(n) = a T(n-b) + f(n) werden nicht gefragt? (Spezielleres Master, prüfen ob das alternativ i.wie gelöst werden kann)
 2. Bei Algorithmen die eine sortierung benötigen, kann eine sortierung angenommen werden? (Diese muss/wird dann wohl entsprechend bei der Komplexitätsrechnung des Algorithmus mit betrachtet)
-3. Wie pseudo darf pseudo code sein. Beispiele von pseudo code zeigen.
-4. Wie viele informationen werden uns zu den spezifischen Algorithmen gegeben
-5. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
-6. Wie sollte ein algorithmus wie median-of-medians formuliert werden? (Man wüsste in dem Fall doch nicht das es nötig wäre das Problem in teilprobleme der größe 5 zu teilen)
-7. Wie detailiert muss der Pseudo code sein (Dynamisches Programmieren), Bspws. beim berechnen der aktuellen aus Teillösung siehe sum sub-set problem (Sonderfall vorherige Teillösung ist noch nicht existent. Muss das angegeben werden?)
-8. Kann bei Graphenalgorithmen eine Adjazenzmatrix als gegeben angenommen werden, falls diese nötig ist? (Aufwandsberechnung)
-9. Master Theorem: Wie ist das mit Logarithmen bei denen eine Gleitkommazahl rauskommt (Aufrunden, Abrunden)? Bspws. log<sub>2</sub>3 
-10. Wie ist das mit den Rückgabewerten. Kann ein Rückgabewert angenommen werden oder wie ist das? Bspws. Es kann ja gefragt sein ob eine Menge Teilbar ist oder aber die Menge an Indices der einen Menge gefragt sein.
-11. Berechnung der Komplexität von Teile & Hersche Verfahren der Form T(n) = a T(n-b) + f(n) werden nicht gefragt? (Spezielleres Master, prüfen ob das alternativ i.wie gelöst werden kann)
-12. Primitive Operationen immer als konstant annehmen? (Multiplikation, Addition, Division, Subtraction) (Frage weil Karatsuba)
-13. Kann ein Problem dran kommen (Bswps. Greedy) bei dem es nur eine Approximative lösung gibt? (Bspws. Springerproblem, Fall: Sackgasse)
+3. Wie pseudo darf pseudo code sein. Beispiele von pseudo code zeigen. (Bsp. Partitionsproblem /dyn)
+4. Herr Umlauf erinnern das SS19 Backtracking nicht behandelt wurde (=> nicht dran kommen sollte?)
+5. Kann bei Graphenalgorithmen eine Adjazenzmatrix als gegeben angenommen werden, falls diese nötig ist? (Aufwandsberechnung)
+6. Master Theorem: Wie ist das mit Logarithmen bei denen eine Gleitkommazahl rauskommt (Aufrunden, Abrunden)? Bspws. log<sub>2</sub>3 
+7. Wie ist das mit den Rückgabewerten. Kann ein Rückgabewert angenommen werden oder wie ist das? Bspws. Es kann ja gefragt sein ob eine Menge Teilbar ist oder aber die Menge an Indices der einen Menge gefragt sein. (sprich boolean oder liste for indices)
+8. Primitive Operationen immer als konstant annehmen? (Multiplikation, Addition, Division, Subtraction) (Frage weil Karatsuba)
+9. Kann ein Problem dran kommen (Bswps. Greedy) bei dem es nur eine Approximative lösung gibt? (Bspws. Springerproblem, Fall: Sackgasse)
 
 
 
@@ -191,7 +187,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
         if (höhe <= 4 || breite <= 4) {
             
 
-            
+
             
             return;
         }
@@ -1036,7 +1032,7 @@ Spezielle Ausprägung des Sub-Set Problems. Im Prinzip selber Algorithmus aufruf
 
         summe = berechne Summe der aus S;
         
-        if (summe nicht durch zwei teilbar) {
+        if (summe nicht sauber durch zwei teilbar) {
             return false;
         }
 
