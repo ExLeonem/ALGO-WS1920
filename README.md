@@ -104,11 +104,10 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Eigenvalue algorithm
 - [ ] [Karatsuba (Langazahl-Mult)](#Karatsuba)
 - [ ] [Convex-Hull](#Convex-Hull) (via common tangents)
-- [ ] Max. consecutive subarray
+- [ ] [Max. consecutive subarray](#Max-consecutive-subarray)
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
 - [ ] Quad-Trees
-- [ ] [Springerproblem](#Springerproblem-Rekursiv)
 - [x] [Skyline](#Skyline)
 - [ ] Viterbi
 - [ ] [Partitionsproblem](#Partitionsproblem-Rekursiv)
@@ -122,6 +121,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Count none-negatives in array
     - [x] Summe der Beträge (nicht-negativ)
     - [x] Summe der Einträge
+    - [ ] [Maximum Sub-Array Sum](#Max-Subarray-Sum)
     - [ ] [Teilsummenproblem](#Teilsummenproblem-Rekursiv)
     - [x] [GGT](#GGT)
     - [x] Maximum value
@@ -307,40 +307,37 @@ A, B: Matrizen mit Dimensionen n x n
 ```
 
 
-##### Springerproblem Rekursiv
+##### Max consecutive subarray
 
-````aidl
-
-    def springer_rek(aktuelle Position, feld, ecken des feldes, anzahl sprünge) {
-        
-
-        // Base-Case (Feld in der Startkoordinaten )
-        if (höhe <= 4 || breite <= 4) {
-            
+```aidl
 
 
-            
-            return;
+    // Idee: Teil menge an elementen. 
+    def max_con_subarray(P, left, right) {
+
+
+        // Base
+        max_steps = 1;
+        if (left >= right) {
+            return [left, left, 1]; // [start, end, max];
         }
 
-        // Halbiere das Feld
-        höhe /= 2
-        breite /= 2
+        // Divide
+        center = (left + right) / 2;
+        left max = max_con_subarray(P, left, center -1);
+        right max = max_con_subarray(P, center + 1, right);
 
-        springer(aktuelle Position, feld, in linkes teilfeld, anzahl sprünge)
+        // Merge
+        if (P[center] < P[center + 1]) {
+            
+            // Check next m elements
 
-        springer(aktuelle Position )
+        }
 
-    
-    }
-
-    
-    // Zählt sprünge hoch und gibt letzte position zurück
-    def springe() {
 
     }
-````
 
+```
 
 ##### Skyline
 Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
@@ -441,6 +438,57 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
         return loesung die != null;
     } 
 
+```
+
+
+#### Max Subarray Sum
+
+```aidl
+
+
+    def max_subarray(N, left, right) {
+
+
+        // Base
+        if (left >= right) {
+            return N[left];
+        }
+
+        // Divide
+        center = (left + right) / 2;
+        left max = max_subarray(N, left, center);
+        right max = max_subarray(N, center + 1, right);
+
+        // Ermittele maximum ausgehend von aktuellem index
+    
+        sum = 0;
+        sum left = -unendlich
+        // maximums von der linken seite ausgehend von der mitte
+        for (i = m; von der Mitte bis nach links aussen; i--) {
+            sum += N[i];
+
+            if (sum > sum left) {
+                sum left = sum;
+            }
+        }
+
+        sum = 0;
+        sum right = - unendlich;
+        // maximum der rechten seite ausgehend von der mitte
+        for (i = m; von der mitte bis nach rechts außen; i++) {
+            sum += N[i];
+
+            if (sum > sum right) {
+                sum right = sum;
+            }
+        }
+
+        current max = left sum + right sum;
+
+        
+        // Merge
+        return max(left max, right max, current max);
+    }
 ```
 
 
