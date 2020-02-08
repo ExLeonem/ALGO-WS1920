@@ -96,14 +96,14 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [x] GGT multi values
 - [x] [Closest Point Pair](#Closest-Point-Pair)
 - [ ] Fast-Furier-Transformation (FFT)
-- [ ] Strassen
+- [ ] [Strassen](#Strassen)
 - [ ] K-th biggest Element
 - [ ] Integration Trapetzregel
 - [ ] [Binärdarstellung](#Binärdarstellung)
 - [ ] Anzahl vertauschungen in unsortierter Liste
 - [ ] Eigenvalue algorithm
 - [ ] [Karatsuba (Langazahl-Mult)](#Karatsuba)
-- [ ] Konvex-Hüll (via common tangents)
+- [ ] [Convex-Hull](#Convex-Hull) (via common tangents)
 - [ ] Max. consecutive subarray
 - [ ] MinMax-Finding
 - [ ] Polynom-Multiplication
@@ -143,31 +143,93 @@ Naiiv:
 
     Problem : Es könnte Punktepaar geteilt werden das am nächsten ist.
 
-Idee (anderer Ansatz):
-    L1 = Sortierte Liste der Punkte nach y-koordinate
-    L2 = Sortierte Liste der Punkte nach x-koordinate
-
-
+    Idee: Sortiere Punkte vorher nach X-Koordinate
 
 ```aidl
 
-    // P: Array von Punkten
-    def calculate(L1, L2, left, right) {
+    // Annahme P sind 
+    def closest_pair(P, left, right) {
+
+        // Base
+        if (nur noch ein Punkt) {
+            return maximale distanz
+        }
+
+
+        center = (left + right) / 2;
+        distance_left = closest_pair(P, left, center);
+        distance_right = closest_pair(P, center + 1, right);
+
+        min_distanz = min(distance_left, distance_right)
+        // Ermittele Punkte am nächsten in strap, kann hier in O(1) ermittelt werden -> erster Punkt links/rechts ausgehend vom Median im Strap.
+        distance_strap = closest_in_strap(P, max(center - min_distance, 0), min(center + min_distance, P.length)) 
+
+        return min(distance_left, distance_right, distance_strap); // Gebe Punkte zurück die am nächsten liegen.
+    }
+
+
+    // P: Array von Punkten, 2-D, Sortiert nach x-koordinaten.
+    def closest_point_pair(P, left, right) {
 
         // Base-Case
-        if (Teilarray besitzt nur noch zwei Punkte) {
-            return diese zwei Punkte;
+        if (Nur noch ein Punkt übrig) {
+            return maximale distanz die möglich ist
         }
 
         // Divide
+        center = (left + right) / 2;
+        distance_left = closest_point_pair(P, left, center);
+        distance_right = closest_point_pair(P, center + 1, right);
+    
+        strap_size = mininmale distanz(p_left oder p_right)
+        // Effizient berechnbar durch Sortieren Punkte innerhalb des Straps 
+        // nach Y-Koordinate und ausgehend von einem Punkt müssen nur Punkte in 
+        // y-Richtung überprüft werden deren distanz in Y < minimal distanz ist (Die für den Strap verwendet wurde)  
+        distance_strap = minimale distanz im strap berechnen. 
 
-
-        // Conquer (Merge)
-
+        return min(distance_left, distance_right, distance_strap);
     }
-
 ```
 
+
+#### Strassen
+
+A, B: Matrizen mit Dimensionen n x n
+```aidl
+
+    def multiply(A, B) {
+
+        if (Matrix enthält nurnoch ein element) return A * B; // Matrix mit einem element
+
+        A11, A12, A21, A22 = Teile A in 4-Matrizen
+        B11, B12, B21, B22 = Teile B in 4-Matrizen
+
+        // Folgende primitive operationen sind Matrix operationen
+        M1 = multiply(A12 - A22, B21 + B22)
+        M2 = multiply(A11 + A22, B11 + B22)
+        M3 = multiply(A11 - A21, B11 + B12)
+        M4 = multiply(A11 + A12, B22)
+        M5 = multiply(A11, B12 - B22)
+        M6 = multiply(A22, B21 - B11)
+        M7 = multiply(A11 + A22, B11)
+
+        C[][] = // Ergebnis Matrix
+        C11 = M1 + M2 - M4 + M6
+        C12
+        C21 = M6 + M7
+        C22 = M2 - M3 + M5 - M7
+
+        return C
+    }
+
+    def sub(A, B) {
+        // Matrix division
+    }
+
+    def add(A, B) {
+        matrix addition
+    }
+```
 
 #### Binärdarstellung
 
@@ -215,6 +277,35 @@ Idee (anderer Ansatz):
         return (q * 10^n) + (r - q - p) * 10^(n/2) + p;
     }
 ```
+
+##### Convex-Hull
+
+```aidl
+
+    // P {Set of unique Points p1, p2, ..., pn}
+    // return clockwise sorted set of points, representing corners of convex hull
+    def convex_hull(Punkte, links, rechts) {
+        
+        // Base Case
+        if (drei oder weniger Punkte in der aktuellen Teilmenge) {
+            return Teilmenge als Liste;
+        }
+
+
+        // Divide
+        center = (left + right) / 2;
+        linke hull = convex_hull(P, left, center);
+        rechte hull = convex_hull(P, center + 1, right);
+
+        // Merge
+        obere Tangente = berechne obere Tangente (äußerste Punkte oben)
+        untere Tangente = berechne untere Tangente (äußerste PUnkte unten)
+
+        return merge beide teil hulls wobei Punkte die innerhalb des rechtecks das von den Punkten der Tangenten gebildet wird ausgelassen werden; 
+    }
+
+```
+
 
 ##### Springerproblem Rekursiv
 
