@@ -127,7 +127,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] Maximum value
     - [x] Potenzieren
     - [ ] Median
-    - [x] Max-search unimodal array
+    - [x] [Max-search unimodal array](#Max-Search-Unimodal-Array)
     - [x] Factorial (verschiedene lösungsansätze)
 
 
@@ -332,7 +332,7 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 ```
 
 
-#### GGT
+##### GGT
 
 ```aidl
 
@@ -345,6 +345,31 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
         return ggt(A % B , B);
     }
 ```
+
+
+##### Max Search Unimodal Array
+
+```aidl
+
+    def unimodal_max(array, left, right) {
+
+
+        if (left >= right) {
+            return left; 
+        }
+
+        // Je nachdem ob seite aufsteigend oder absteigend ist suchen.
+        center = (left + right) / 2;
+        if (array[left] > array[right]) {
+            return unimodal_max(array, left, center);
+        } else {
+            return unimodal_max(array, center + 1, right);
+        }
+    }
+
+```
+
+
 
 ### Greedy
 
