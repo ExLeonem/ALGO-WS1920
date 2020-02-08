@@ -97,7 +97,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [x] [Closest Point Pair](#Closest-Point-Pair)
 - [ ] Fast-Furier-Transformation (FFT)
 - [ ] [Strassen](#Strassen)
-- [ ] K-th biggest Element
+- [ ] [K-th biggest Element][#K-th-biggest-element]
 - [ ] Integration Trapetzregel
 - [ ] [Binärdarstellung](#Binärdarstellung)
 - [ ] Anzahl vertauschungen in unsortierter Liste
@@ -105,7 +105,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] [Karatsuba (Langazahl-Mult)](#Karatsuba)
 - [ ] [Convex-Hull](#Convex-Hull) (via common tangents)
 - [ ] [Max. consecutive subarray](#Max-consecutive-subarray)
-- [ ] [MinMax-Finding](#-Min-Max-Finding)
+- [ ] [Min-Max-Finding](#-Min-Max-Finding)
 - [ ] [Polynom-Multiplication](#Polynom-Multiplication)
 - [ ] Quad-Trees
 - [x] [Skyline](#Skyline)
@@ -215,7 +215,7 @@ A, B: Matrizen mit Dimensionen n x n
 
         C[][] = // Ergebnis Matrix
         C11 = M1 + M2 - M4 + M6
-        C12
+        C12 = M4 + M5
         C21 = M6 + M7
         C22 = M2 - M3 + M5 - M7
 
@@ -230,6 +230,42 @@ A, B: Matrizen mit Dimensionen n x n
         matrix addition
     }
 ```
+
+#### K-th-biggest-element
+
+Annahme: Elemente sind nicht sortiert
+Gegeben:
+    - N: Menge von Zahlen
+    - nth: das nth auszuwählende element, < N.length && >= 0
+
+Return: Wert des nth größten elements
+
+```aidl
+
+    def kth_biggest(N, nth, left, right) {
+
+        // Base case
+        if (left >= right) {
+            return N[left];
+        }
+
+        // Divide
+        pivot = (left + right) / 2; // wähle pivot element
+        führe partitionierung durch; // alle zahlen kleiner als die zahl im pivot index links davon, alle zahlen größer rechts davon
+        
+        if (Falls das pivot jetzt an der nth-Stelle steht) {
+            return N[pivot];
+        }
+
+        // Rechts oder Links nachsehen je nach dem wo pivot element nach der partitionierung steht
+        if (pivot < nth) {
+            return kth_biggest(N, nth, pivot+1, right);
+        } else {
+            return kth_biggest(N, nth, left, pivot-1);
+        }
+
+    }
+``` 
 
 #### Binärdarstellung
 
@@ -355,7 +391,7 @@ A, B: Matrizen mit Dimensionen n x n
 
 ```
 
-##### Min-Max Finding
+##### Min-Max-Finding
 
 Problemstellung: Find aus einer Menge von Zahlen das minimum und das maximum.
 
