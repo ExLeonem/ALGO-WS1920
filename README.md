@@ -125,10 +125,10 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [ ] [Teilsummenproblem](#Teilsummenproblem-Rekursiv)
     - [x] [GGT](#GGT)
     - [x] Maximum value
-    - [x] Potenzieren
+    - [x] [Potenzieren](#Potenzieren)
     - [ ] Median
     - [x] [Max-search unimodal array](#Max-Search-Unimodal-Array)
-    - [x] Factorial (verschiedene lösungsansätze)
+    - [x] [Factorial](#Factorial) (verschiedene lösungsansätze)
 
 
 #### Pseudo Code
@@ -136,13 +136,31 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 
 ##### Closest Point Pair
 
+Punkte sind jeweils paarweise verschieden P<sub>i</sub> != P<sub>j</sub>, i != j
+
+Naiiv: 
+    Teile reguläre Liste von Koordinaten jweils in der Mitte bis auf zwei Punkte. Prüfe Zwei Punkte , gebe gib jeweils die Punkte mit kleinster  zueinander zurück.
+
+    Problem : Es könnte Punktepaar geteilt werden das am nächsten ist.
+
+Idee (anderer Ansatz):
+    L1 = Sortierte Liste der Punkte nach y-koordinate
+    L2 = Sortierte Liste der Punkte nach x-koordinate
+
+
+
 ```aidl
 
-    def calculate(Punkte) {
+    // P: Array von Punkten
+    def calculate(L1, L2, left, right) {
 
         // Base-Case
+        if (Teilarray besitzt nur noch zwei Punkte) {
+            return diese zwei Punkte;
+        }
 
         // Divide
+
 
         // Conquer (Merge)
 
@@ -153,21 +171,24 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 
 #### Binärdarstellung
 
-def bin(zahl) {
+```aidl
 
-    // Zahl direkt zurück geben da schon binärzahl
-    if (zahl == 0 || zahl == 1) {
-        return zahl;
+    def bin(zahl) {
+
+        // Zahl direkt zurück geben da schon binärzahl
+        if (zahl == 0 || zahl == 1) {
+            return zahl;
+        }
+
+
+        stelle = bin(zahl / 2);
+
+        // String concatenation
+        return stelle + (zahl%2)
+
+
     }
-
-
-    stelle = bin(zahl / 2);
-
-    // String concatenation
-    return stelle + (zahl%2)
-
-
-}
+```
 
 ##### Karatsuba 
 
@@ -347,6 +368,32 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 ```
 
 
+##### Potenzieren
+
+```aidl
+
+    def power(base, exp) {
+
+        if (base == 0) {
+            return 1;
+        }
+
+        if (exp == 1) {
+            return base;
+        }
+
+        y = power(base, exp / 2);
+        result = y * y;
+
+        if (exp % 2 ) {
+            result *= base;
+        }
+
+        return result;
+    }
+```
+
+
 ##### Max Search Unimodal Array
 
 ```aidl
@@ -369,7 +416,31 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 
 ```
 
+##### Factorial
 
+Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
+
+```aidl
+
+    // Alternativ
+    def factorial(left, right) {
+
+        if (left >= right) {
+            return left;
+        }
+
+        center = (left + right) / 2;
+        if (center == 0) {
+            return 1;
+        }
+
+        // Produkt der Linken und rechten Zahlen berechnen
+        return factorial(left, center) * factorial(center + 1, * right);
+    }
+
+
+    // Idee: Teile die Menge der nötigen Zahlen in zwei hälften und verwende Zahlen aus ersterer Hälfte um Zahlen aus der zweiten damit zu konstruieren. Ist das möglich? (Anders problem dadurch: Primzahlen)
+```
 
 ### Greedy
 
