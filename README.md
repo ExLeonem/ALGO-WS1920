@@ -105,8 +105,8 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] [Karatsuba (Langazahl-Mult)](#Karatsuba)
 - [ ] [Convex-Hull](#Convex-Hull) (via common tangents)
 - [ ] [Max. consecutive subarray](#Max-consecutive-subarray)
-- [ ] MinMax-Finding
-- [ ] Polynom-Multiplication
+- [ ] [MinMax-Finding](#-Min-Max-Finding)
+- [ ] [Polynom-Multiplication](#Polynom-Multiplication)
 - [ ] Quad-Trees
 - [x] [Skyline](#Skyline)
 - [ ] Viterbi
@@ -311,33 +311,108 @@ A, B: Matrizen mit Dimensionen n x n
 
 ```aidl
 
-
     // Idee: Teil menge an elementen. 
     def max_con_subarray(P, left, right) {
 
-
-        // Base
-        max_steps = 1;
+        // Base Case
         if (left >= right) {
-            return [left, left, 1]; // [start, end, max];
+            return [1, 1, 1];
+        }
+
+        // Traverse down (Get first index of starting consecutive order)
+        center = (left + right) / 2;
+        firstIndex = center;        
+        for (int i = center-1; i >= 0; i++) {
+            
+            if (P[i] < P[i+1]) {
+                firstIndex = i;
+                continue;
+            }
+            break;
+        }
+
+        // Traverse up (Get last index of max. consecutive order)
+        lastIndex = center;
+        for (int i = center+1; i < right; i++) {
+            
+            if (P[i] > P[i-1]) {
+                lastIndix = i;
+                continue;
+            }
+            break;
         }
 
         // Divide
-        center = (left + right) / 2;
-        left max = max_con_subarray(P, left, center -1);
-        right max = max_con_subarray(P, center + 1, right);
+        left max = 1;
+        if ((m - l) > (lastIndex - firstIndex)) left max = max_con_subarray(P, left, center);
 
-        // Merge
-        if (P[center] < P[center + 1]) {
-            
-            // Check next m elements
+        right max = 1
+        if ((r - m) > (lastIndex - firstIndex)) right max = max_con_subarray(P, center + 1, right); 
 
-        }
-
-
+        // Ermittele ob ausgehend von aktueller Position 
+        return max(left max, right max, lastIndex - firstIndex); // Gebe länge des maximalen teilarrays zurück 
     }
 
 ```
+
+##### Min-Max Finding
+
+Problemstellung: Find aus einer Menge von Zahlen das minimum und das maximum.
+
+```aidl
+
+    def find_min_max(N, left, right) {
+
+        // Base Case
+        if (left > right) {
+            return [N[left], N[left]]; // Min-Max  are the same on the lowest level --> current number at index n
+        }        
+
+        // Divide
+        center = (left + right) / 2;
+        left_mm = find_min_max(N, left, center);
+        right_mm = find_min_max(N, center+1, right);
+
+        // Conquer
+        min_max[2];
+        min_max[0] = max(left_mm[0], right_mm[0]);
+        min_max[1] = min(left_mm[1], right_mm[1]);
+
+        return min_max;
+    }
+
+```
+
+##### Polynom-Multiplication
+
+Annahme: Annahme zwei Polynom P<sub>1</sub> und P<sub>2</sub> vom gleichen Grad.
+Idee: Teile die Polynome solange bis nur noch ein Polynomglied übrig. Führe Multiplikationen durch. 
+
+```aidl
+    def polym(P1, P2) {
+
+        // Base Case
+        if (Polynome haben jeweils nur noch ein glied) {
+            return P1 * P2;
+        }
+
+        // Divide
+        half_size = (P1.length + P2.lengt) / 2;
+        A[half_size] = P1[0 : half_size];
+        B[half_size] = P1[half_size+1 : -1];
+        C[half_size] = P2[0: half_size];
+        D[half_size] = P3[half_size + 1 : -1];
+
+        AC = polym(A, C)
+        AD = polym(A, D)
+        BC = polym(B, C)
+        BD = polym(B, D)
+
+        // Merge (Primitive Operationen unterhalb werden auf höheren ebenen auf arrays ausgeführt => schleifen)
+        return [AC, AD + BC, BD]
+    }
+```
+
 
 ##### Skyline
 Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
@@ -443,9 +518,9 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 
 #### Max Subarray Sum
 
+Fragestellung: Welches konsekutive sub-array bildet die maximale summe des arrays.
+
 ```aidl
-
-
     def max_subarray(N, left, right) {
 
 
@@ -698,26 +773,15 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
             gebe fehler zurück
         }
 
-
         sprünge = 0;
-        Vorherige X, Y;
         while(Felder noch nicht besucht) {
-
-            X[], Y[] = Wähle nächster felder sortiert nach Aufsteigend sortiert nach Anzahl nichtbesuchter Folgefelder;
-
-            neues X, Y;
-            if (Falls 2 oder mehr Felder mit minimaler Anzahl an Folgefelder) {
-                neues X, Y = die letzten vorherigen X, Y;
-                entferne die letzten vorherigen X, Y;
-                continue;
-            }
-
-            neues X, Y = Minimale X, Y aus den beiden Arrays.
-            füge alte X, Y koordinaten ans ende der liste vorheriger X, Y koordinaten.
+            
+            // Greedy condition
+            Wähle aus den anspringbaren Feldern das nächste noch nicht angesprungene aus (bzws. das feld das noch gewicht unendlich besitzt)
             sprünge++;
         }
 
-        return sprünge;
+        return sprünge == felder insgesamt; // Trifft bedingung zu wurden alle felder besucht
     }
 
 ```
@@ -1194,6 +1258,7 @@ Das Bêzierpolynom: p(t) = Summe über b<sub>i</sub>B<sup>n</sup><sub>i</sub>(t)
             return 0;
         }
 
+        // Speicher kann weiter reduziert werden auf (start, end index)
         // Speicher für zwischenlösungen, einfaches Array, in Zelle jeweils die Länge des bisherigen Teilstrings
         speicher[Anzahl elemente in S]; 
         speicher[0] = 1;
@@ -1212,7 +1277,7 @@ Das Bêzierpolynom: p(t) = Summe über b<sub>i</sub>B<sup>n</sup><sub>i</sub>(t)
     }
 
 
-    // Alternativer Ansatz Feld zum ermitteln der Indices.
+    // Kleinerer Speicher.
     def aufsteigende_teilfolge(S) {
 
         if (Länge von S < 1) {
@@ -1220,30 +1285,25 @@ Das Bêzierpolynom: p(t) = Summe über b<sub>i</sub>B<sup>n</sup><sub>i</sub>(t)
         }
         
 
-        // Zelle jeweils der index des vorgänger elements
-        speicher[Anzahl element S];
-
-        max = 0;
-        maxIndex = 0; // letzer index der maximalen Teilfolge
+        // Speicher aktuell maximale Teilfolge
+        speicher[2]; // Start und end index des maximums
         startIndex = 0;
         for (int i = 1...alle zellen) {
 
             if (S[i] > S[i-1]) {
                 S[i] = i-1;
 
-                if (i - startIndex) > max) {
-                    max update;
-                    maxIndex = i;
+                if (i - startIndex) > speicher[0] + speicher[1]) {
+                    speicher[0] = startIndex;
+                    speicher[1] = i;
                 }
                 continue;
             }
 
-            S[i] = i;
             startIndex = i;
         }
 
-
-        return 
+        return speicher[1] - speicher[0]; 
     }
 
 ```
