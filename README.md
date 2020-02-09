@@ -115,12 +115,12 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] [Quick-Sort](#Quick-Sort)
     - [ ] [Quick-Sort with median of three](#Quick-Sort-with-median-of-medians) (needs also median-of-3-killer)
     - [x] [Merge-Sort](#Merge-Sort)
-    - [x] Binary-Search
-    - [ ] Intro-Sort
+    - [x] [Binary-Search](#Binary-Search)
+    - [ ] [Intro-Sort](#Intro-Sort)
 - [ ]  Trivials
-    - [x] Count none-negatives in array
-    - [x] Summe der Beträge (nicht-negativ)
-    - [x] Summe der Einträge
+    - [x] [Count none-negatives in array](#Count-none-negative)
+    - [x] [Summe der Beträge](#Summe-der-Beträge) (nicht-negativ)
+    - [x] [Summe der Einträge](#Summe-der-Einträge)
     - [ ] [Maximum Sub-Array Sum](#Max-Subarray-Sum)
     - [ ] [Teilsummenproblem](#Teilsummenproblem-Rekursiv)
     - [x] [GGT](#GGT)
@@ -528,19 +528,58 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
 
     def quick_sort(N, left, right) {
 
+        // Base Case
+        if (left > right) {
+            return;
+        }
 
+        // Divide
+        pivot index = partitiion(N, left, right);
+        
+        quick_sort(N, left, pivot Index);
+        quick_sort(N, pivot Index, right);
+
+        return N;
     }
 
 
     // In place partition
     def partition(N, left, right) {
 
+        Wähle pivot element (Random oder rechts/links außen)
+        Alle elemente größer als pivot nach rechts davon, alle elemente kleiner links davon
+
+        return index des pivot elements nach der partitionierung
     }
 ```
 
 ##### Quick Sort with median of medians
 
+```aidl
 
+    def quick_sort(N, left, right) {
+
+        // Base
+        if (left >= right) {
+            return;
+        }
+
+        // Divide
+        pivot index = partition(N, left, rigt);
+        quick_sort(N, left, pivot Index);
+        quick_sort(N, pivot Index + 1, right);
+
+        return N;
+    }
+
+    def partition(N, left, right) {
+
+        pivot element wird durch den median of medians algorithmus ermittelt.
+        elemente größer als pivot nach rechts davon, elemente kleiner als pivot nach links davon
+
+        return pivot index nach partitionierung;
+    }
+```
 
 
 ##### Merge-Sort
@@ -593,6 +632,93 @@ Gegeben: Array N: {w<sub>1</sub>, w<sub>2</sub>, ..., w<sub>n</sub>}
         return center; 
     }
 ```
+
+##### Intro-Sort
+
+```aidl
+
+    def intro_sort(N, left, right) {
+
+        if (Anzahl elemente < 5) {
+            return insertion sort(N, left, right);
+        }
+
+        if (rekursionstiefe zu hoch) {
+            return heap sort(N, left, right);
+        }
+        
+        return quick_sort(N, left, right)
+    }
+
+```
+
+
+##### Count none negative
+
+```aidl
+
+    def count_none_negative(N, left, right, num) {
+        
+        // Base
+        if (left >= right) {
+            return N[left] >= 0? 1 : 0;
+        }
+
+        // Divide
+        center = (left + right) / 2;
+        left nn = count_none_negative(N, left, center);
+        right nn = count_none_negative(N, center + 1, right);
+
+        // Conquer
+        return left nn + right nn;
+    }
+
+```
+
+##### Summe der Beträge
+
+```aidl
+
+    def sum_of_non_negative(N, left, right) {
+
+        // Base
+        if (left >= right) {
+            return N[left] >= 0? N[left] : 0;
+        }
+
+        // Divide
+        center = (left + right) / 2;
+        left_sum = sum_of_non_negative(N, left, center);
+        right_sum = sum_of_non_negative(N, center + 1, right);
+
+        // Merge
+        return left_sum + right_sum;
+    }
+
+```
+
+##### Summe der Einträge
+
+```aidl
+
+    def summ_of_entries(N, left, right) {
+
+        // Base
+        if (left >= right) {
+            return N[left];
+        }
+
+        // Divide
+        center = (left + right) / 2;
+        left_sum = summ_of_entries(N, left, center);
+        right_sum = summ_of_entries(N, center + 1, right);
+
+
+        // Conquer
+        return (left_sum + right_sum);
+    }
+```
+
 
 ##### Teilsummenproblem Rekursiv
 
