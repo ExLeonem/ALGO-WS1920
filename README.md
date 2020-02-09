@@ -97,7 +97,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [x] [Closest Point Pair](#Closest-Point-Pair)
 - [ ] Fast-Furier-Transformation (FFT)
 - [ ] [Strassen](#Strassen)
-- [ ] [K-th biggest Element][#K-th-biggest-element]
+- [ ] [Quick-Select](#Quick-Select) (K-th biggest Element)
 - [ ] Integration Trapetzregel
 - [ ] [Binärdarstellung](#Binärdarstellung)
 - [ ] Anzahl vertauschungen in unsortierter Liste
@@ -126,7 +126,7 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
     - [x] [GGT](#GGT)
     - [x] Maximum value
     - [x] [Potenzieren](#Potenzieren)
-    - [ ] Median
+    - [ ] [Median](#Median)
     - [x] [Max-search unimodal array](#Max-Search-Unimodal-Array)
     - [x] [Factorial](#Factorial) (verschiedene lösungsansätze)
 
@@ -231,7 +231,7 @@ A, B: Matrizen mit Dimensionen n x n
     }
 ```
 
-#### K-th-biggest-element
+#### Quick-Select
 
 Annahme: Elemente sind nicht sortiert
 Gegeben:
@@ -640,6 +640,29 @@ Fragestellung: Welches konsekutive sub-array bildet die maximale summe des array
         }
 
         return result;
+    }
+```
+
+#### Median
+
+```aidl
+
+    // Pseudo-Code resembles the median-of-medians algorithm
+    def median_of_medians(N, left, right) {
+
+        // Less than five elements are in the sublist
+        if (right - left < 5) {
+            return sort sub-list and return median (floor length / 2 if even amount of elements);
+        }
+
+        // Divide List into sublists of size 5
+        medians[((right - left) / 2) + 1] // Speichere die sub-medians
+        for (kth = 0,i = left; i < N.length - 5 && kth < medians; i+=5, kth++) {
+            medians[kth] = median_of_medians(N, i, i+5);
+        }
+
+        // Recursivly call on already calculated median values
+        return median_of_medians(medians, 0, medians.length);
     }
 ```
 
