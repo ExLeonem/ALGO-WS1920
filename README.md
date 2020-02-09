@@ -954,13 +954,13 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
 - [ ] NP-Complete
     - [x] Approximate bin packing
     - [x] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
-    - [ ] Set cover (not optimal) (np-complete)
-    - [ ] Shortest common superstring (np-complete)
+    - [ ] [Set cover](#Set-Cover-Problem) (not optimal) (np-complete)
+    - [ ] [Shortest common superstring](#Shortest-Common-Superstring-Greedy) (np-complete)
     - [ ] Partition Problem (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
 - [ ] Trivia
-    - [x] Wechselgeld
-    - [x] Knapsack Problem
-    - [x] Job-Scheduling
+    - [x] [Wechselgeld](#Wechselgeld)
+    - [x] [Knapsack Problem](#Knappsack-Problem-Greedy)
+    - [x] [Job-Scheduling](#Job-Scheduling)
 - [ ]  Additional
     - [x] [Breadth-first-search](#Breadth-First-Search)
 
@@ -1138,6 +1138,125 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 ```
 
 
+##### Set Cover Problem
+
+Fragestellung: Wähle aus S = {S<sub>1</sub>, S<sub>2</sub>, ..., S<sub>i</sub>} <i>n</i> Teilmengen mit minimalen Kosten die zusammen die gegebene Menge <i>U</i> bilden.
+
+
+Gegeben:
+
+U = {u<sub>1<sub>, ..., u<sub>i</sub>}
+
+S = {S<sub>1</sub>, ..., S<sub>i</sub>}
+S<sub>i</sub> = {n-elementes which are from U}
+
+C = {C<sub>1</sub>, ..., S<sub>i</sub>} (Kosten zu jeder Teilmenge)
+
+Gesucht: Menge von Teilmengen S<sub>i</sub> die zusammen die Menge U bilden und minimale Kosten C haben.
+
+
+```aidl
+
+    def set_cover(U, S, C) {
+
+        Sortiere die Teilmengen Si aufsteigend nach kosten.
+
+        Set new_set
+        cost = 0;
+        while (Nicht alle Elemente von U in new_set) {
+            
+            next_subset = wähle nächste Teilmenge aus S bei der Verhältnis kosten und neu hinzuzufügender elemente am geringsten (Si.length / (S - new_set))
+            cost += Kosten dieser Teilmenge aufsummieren
+            newset = union(new_set, next_subset)
+        }
+
+        // Gebe new
+        return [cost, new_set];
+    }
+```
+
+##### Shortest Common Superstring Greedy
+
+Gegeben: Menge S = {S<sub>1</sub>, S<sub>2</sub>, ...S<sub>n</sub>} an Strings.
+Gesucht: String der sowohl alle Elemente aus S als Substrings enthält als auch die kürzeste länge besitzt.
+
+```aidl
+
+    def shortest_common_superstring(A, B) {
+
+        superstring_length = MAX_VALUE;
+
+
+    }
+```
+
+##### Wechselgeld
+
+```aidl
+
+    def min_wechselgeld(Betrag) {
+
+        wechselgeld[];
+        sum_wechselgeld = 0;
+
+        while (sum_wechselgeld != Betrag) {
+
+            next_unit = Wähle höchste Einheit Wechselgeld die kleiner ist als Betrag und noch zu sum_wechselgeld aufaddiert werden kann.
+            wechselgeld.append(next_unit);
+            sum_wechselgeld += next_unit;
+        }
+
+        return wechselgeld;
+    }
+```
+
+###### Knappsack Problem Greedy
+
+Gegeben: Menge von Gegenständen mit Wertigkeit und eine Rucksack größe.
+Fragestellung: Welche Gegenstände können mitgenommen wobei Wert der Gegenstände maximal sein soll.
+
+```aidl
+
+    def knappsack_problem(items, pack size) {
+
+        Sort items by ascending value
+
+        items_to_use[];
+        weight = 0;
+
+        while (there is still place in the backpack) {
+
+            next_item = select next item with maximal value that fits into backpack.
+            weight += next_item.weight
+            items_to_use.append(next_item)
+        }
+
+        return items_to_use;
+    }
+```
+
+##### Job-Scheduling
+
+Fragestellung: Verteilung von N-Jobs auf k-Threads.
+
+```aidl
+
+    def job_scheduling(n-Jobs, k-threads) {
+
+        sort jobs by time required.
+
+        threads[k];
+        while (there is still jobs to schedule) {
+
+            next_job = select next job with minimal time required.
+            add job to thrad that finishes first
+        }
+
+        return threads;
+    }
+
+```
+
 ##### Breadth-First-Search
 
 ```aidl
@@ -1168,7 +1287,7 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 - [ ] Approximation von Pi mit n-gon
 - [ ] [Binomialkoeffizienten](#Binomialkoeffizienten)
 - [ ] [Catalan-Zahlen](#Catalan-Zahlen)
-- [ ] Context-Free Language Recognition (CYK-algo)
+- [ ] [Context-Free Language Recognition](#Cocke-Younger-Kasami-Algorithmus) (CYK-algo)
 - [ ] [deBoor](#deBoor)
 - [ ] [deCasteljau](#deCasteljau)
 - [ ] Editierabstand (Levenshtein-Distance)
@@ -1352,7 +1471,17 @@ Alternativ
     }
 ````
 
-#### deBoor
+##### Cocke-Younger-Kasami-Algorithmus
+
+```aidl
+
+    def cyk() {
+
+    }
+``` 
+
+
+##### deBoor
 
 ```aidl
 
