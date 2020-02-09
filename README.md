@@ -124,7 +124,7 @@ Eine Liste verschiedener Algorithmen. Liste Ã¼bernommen von Herr Umlauf und ergÃ
     - [ ] [Maximum Sub-Array Sum](#Max-Subarray-Sum)
     - [ ] [Teilsummenproblem](#Teilsummenproblem-Rekursiv)
     - [x] [GGT](#GGT)
-    - [x] Maximum value
+    - [x] [Max. Value](#Max-Value)
     - [x] [Potenzieren](#Potenzieren)
     - [ ] [Median](#Median)
     - [x] [Max-search unimodal array](#Max-Search-Unimodal-Array)
@@ -615,6 +615,29 @@ Fragestellung: Welches konsekutive sub-array bildet die maximale summe des array
 
         return ggt(A % B , B);
     }
+```
+
+
+##### Max-Value
+
+```aidl
+
+    def max_value(N, left, right) {
+
+        // Base-Case (single element left)
+        if (left >= right) {
+            return N[left];
+        }
+
+        // Divide
+        center = (left + right) / 2;
+        left biggest = max_value(N, left, center);
+        right biggest = max_value(N, center + 1, right);
+
+        // Conquer
+        return max(left biggest, right biggest);
+    }
+
 ```
 
 
