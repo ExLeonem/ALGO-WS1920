@@ -112,9 +112,9 @@ Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und erg�
 - [ ] Viterbi
 - [ ] [Partitionsproblem](#Partitionsproblem-Rekursiv)
 - [ ] Search and Sort
-    - [x] Quick-Sort
-    - [ ] Quick-Sort with median of three (needs also median-of-3-killer)
-    - [x] Merge-Sort
+    - [x] [Quick-Sort](#Quick-Sort)
+    - [ ] [Quick-Sort with median of three](#Quick-Sort-with-median-of-medians) (needs also median-of-3-killer)
+    - [x] [Merge-Sort](#Merge-Sort)
     - [x] Binary-Search
     - [ ] Intro-Sort
 - [ ]  Trivials
@@ -522,7 +522,77 @@ Annahme: Liste der Gebäude-Formen sortiert nach x-koordinaten.
     partition(S, Länge S - 1, 0, 0);
 ```
 
+##### Quick-Sort
 
+```aidl
+
+    def quick_sort(N, left, right) {
+
+
+    }
+
+
+    // In place partition
+    def partition(N, left, right) {
+
+    }
+```
+
+##### Quick Sort with median of medians
+
+
+
+
+##### Merge-Sort
+
+```aidl
+
+    def merge_sort(N, left, right) {
+    
+        // Base
+        if (left > right) {
+            return [N[left]]; // Single elment in separat list
+        }
+
+        // Divide
+        center = (left + right) / 2;
+        left_sorted = merge_sort(N, left, center);
+        right_sorted = merge_sort(N, center + 1, right);
+
+        // Merge
+        merged[right - left] = Bilde liste die elemente in aufsteigender Reihenfolge enthält.
+        return merged;
+    }
+
+```
+
+
+##### Binary-Search
+
+Gegeben: Array N: {w<sub>1</sub>, w<sub>2</sub>, ..., w<sub>n</sub>}
+
+```aidl
+
+    // Return index of element else -1
+    def binary_search(N, element, left, right) {
+
+        // Base-Case
+        if (left > right) {
+            return N[left] == element? left : -1;
+        } 
+        
+        // Divide
+        center = (left + right) / 2;
+        if (N[center] > element) {
+            return binary_search(N, center + 1, right);
+        } else if (N[center] < element) {
+            return binary_search(N, left, center);
+        }
+
+        // Element is center
+        return center; 
+    }
+```
 
 ##### Teilsummenproblem Rekursiv
 
