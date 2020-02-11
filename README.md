@@ -938,10 +938,10 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
 
 - [ ] A*-Algorithm
 - [ ] Clustering (based-on MST)
-- [ ] Delaunay via Lawson
+- [ ] [Delaunay via Lawson](#Delaunay)
 - [ ] Horn-Formeln
 - [x] [Huffmann-Coding](#Huffmann)
-- [ ] Kartenfärbung (finde Kartenfärbung mit u.U. nicht minimaler Farbenanzahl)
+- [ ] [Kartenfärbung](#Kartenfärbung) (finde Kartenfärbung mit u.U. nicht minimaler Farbenanzahl)
 - [ ] Marching Algorithms (continuous)
 - [ ] Min-Cut (Max-Flow)
 - [ ] [Moore/Ford](#Moore-Ford) (alle kürzesten wege von s aus, negative Gewichte)
@@ -953,7 +953,7 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
     - [ ] Flüsse in Netzwerken (Ford/Fulkerson/Dinic)
 - [ ] NP-Complete
     - [x] Approximate bin packing
-    - [x] Fraktional Knappsackproblem (np-complete, pseudo-polynomial)
+    - [x] [Fraktional Knappsackproblem](#Fraktional-Knappsackproblem-Greedy) (np-complete, pseudo-polynomial)
     - [ ] [Set cover](#Set-Cover-Problem) (not optimal) (np-complete)
     - [ ] [Shortest common superstring](#Shortest-Common-Superstring-Greedy) (np-complete)
     - [ ] Partition Problem (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
@@ -967,6 +967,46 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
 
 #### Pseudo Code
 
+
+##### Delaunay
+
+Calculate a delaunay triangulation for given points.
+
+```aidl
+
+    def delaunay(P) {
+
+        sorted points P = sort points P by X-Coordinate; // Select points nearest in X-Direction -> Greedy Step
+        sweep_line[] = array representing sweep lines for each dimension;
+        triangulations = Set of triangulations;
+
+        point history = dequeue of previously added points
+        while (points in P) {
+
+            next Point = select from sorted Points P which is behind the sweep line
+
+            // Theres no points to use for triangulation
+            if (no points found in history) {
+                point history.insert(next Point);
+                continue;
+            }
+
+            new triangulations = List of new triangulations buildable from next point and history of points;
+            for (each triangulation) {
+
+                if (triangulation has a bad edge) {
+                    remove triangulation from set;
+                    perform lawson flip;
+                    add new triangulations to list of new triangulations;
+                } else {
+                    add triangulation to set of triangulations;
+                }
+            }
+        }
+
+        return triangulations;
+    }
+```
 
 ##### Huffmann
 
@@ -996,6 +1036,16 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
             rechtes teilproblem lösen
     
             return zusammengefügte kodierung linke und rechte seite.
+
+```
+
+##### Kartenfärbung
+
+```aidl
+
+    def map_paint() {
+
+    }
 
 ```
 
@@ -1135,6 +1185,39 @@ Kann vorhandensein von Zyklen negativen Gewichts erkennen.
 
         return den übrig gebliebenen Baum
     }
+```
+
+
+##### Fraktional Knappsackproblem Greedy
+
+Die Gegenstände können geteilt werden. Bzw. es kann auch nur ein Teil eines Gegenstandes mitgenommen werden.
+
+```aidl
+
+    def frak_knappsack(items, size) {
+
+        sort items by value in descending order;
+        total_value = 0;
+        knappsack = size;
+        while (still items left in list && stills space left in knappsack) {
+
+            select next item; // has maximal value
+
+            if (item fits in knappsack) {
+                update knappsack size;
+                update total value;
+
+            } else {
+                fraction = calculate fraction 
+                update total value;
+                update knappsack size;
+                break;
+            }
+        }
+
+        return total_value;
+    }
+
 ```
 
 
