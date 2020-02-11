@@ -1277,9 +1277,24 @@ Gesucht: String der sowohl alle Elemente aus S als Substrings enthält als auch 
 
     def shortest_common_superstring(A, B) {
 
+        superstring = "";
         superstring_length = MAX_VALUE;
+        Sort string of S descending by length;
+
+        for (i = 0; all strings; i++) {
+
+            // Greedy condition take next biggest string
+            next string = select next biggest string;
+
+            
+            // Schaue ob im aktuellen superstring der string enhalten ist
+            if (!superstring contains next String) {
+                superstring += next string;
+            }
+        }
 
 
+        return superstring;
     }
 ```
 
