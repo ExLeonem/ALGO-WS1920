@@ -936,7 +936,7 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
 
 ### Greedy
 
-- [ ] A*-Algorithm
+- [ ] [A*-Algorithm](#A*-Algorithm)
 - [ ] Clustering (based-on MST)
 - [ ] [Delaunay via Lawson](#Delaunay)
 - [ ] Horn-Formeln
@@ -956,7 +956,7 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
     - [x] [Fraktional Knappsackproblem](#Fraktional-Knappsackproblem-Greedy) (np-complete, pseudo-polynomial)
     - [ ] [Set cover](#Set-Cover-Problem) (not optimal) (np-complete)
     - [ ] [Shortest common superstring](#Shortest-Common-Superstring-Greedy) (np-complete)
-    - [ ] Partition Problem (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
+    - [ ] [Partition Problem](#Partition-Problem-Greedy) (not optimal) (np-complete, pseudo polynomial -> dyn. prog)
 - [ ] Trivia
     - [x] [Wechselgeld](#Wechselgeld)
     - [x] [Knapsack Problem](#Knappsack-Problem-Greedy)
@@ -966,6 +966,16 @@ Berechnen der Fakultät einer Zahl im Teile und Herrsche Verfahren.
 
 
 #### Pseudo Code
+
+##### A*-Algorithm
+
+```aidl
+
+    def a_star() {
+
+    }
+
+```
 
 
 ##### Delaunay
@@ -1270,6 +1280,42 @@ Gesucht: String der sowohl alle Elemente aus S als Substrings enthält als auch 
         superstring_length = MAX_VALUE;
 
 
+    }
+```
+
+
+##### Partition Problem Greedy
+
+Gegeben: 
+S = {s<sub>1</sub>, ..., s<sub>i</sub>}
+T = threshold, single value for which to partition
+
+Gesucht: Aufteilung der Menge S in zwei Mengen S<sub>1</sub> und S<sub>2</sub> so das differenz möglichst klein.
+
+```aidl
+
+    def partition_problem(S, T) {
+
+        S1 = list of values;
+        sum_s1 = 0;
+
+        S2 = list of values;
+        sum_s2 = 0;
+
+        Sort values in S in descending order
+        for (i = 0; alle values in S; i++) {
+            
+            // Greedy-Condition: Put into list where difference is getting minimal
+            if (| (S[i] + sum_s1) - sum_s2 | < | sum_s1 - (S[i] + sum_s2) ) {
+                sum_s1 += S[i];
+                S1.insert(S[i]);
+            } else {
+                sum_s2 += S[i];
+                S2.insert(S[i]);
+            }
+        }
+
+        return [S1, S2];
     }
 ```
 
