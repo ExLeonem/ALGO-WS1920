@@ -181,10 +181,9 @@ Problem 8:
 
 Problem 9:
 ```aidl
-    int i, j, n;
-    n = 100;
+    int i = 0, n = 100;
     while (i < n) {
-        b[i] = 0;
+        statements with O(1)
         i++;
     }
 ```
@@ -385,7 +384,7 @@ The solutions are only considering the worst-case complexity.
 6. O(N<sup>2</sup>)
 7. O(n log<sub>2</sub>(n))
 8. O(log n)
-9. 
+9. O(1)
 10. O(&#8730;n)
 11. O(log<sub>2</sub>(n))
 12. O(log<sub>2</sub>(n))
