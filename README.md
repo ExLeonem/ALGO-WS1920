@@ -72,7 +72,7 @@ Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 
 ---
 
-##### Solutions
+#### Solutions
 1. T(n)= Θ(n<sup>2</sup>)
 2. T(n) = Θ(n<sup>2</sup>log n)
 3. T(n) = Θ(n<sup>2</sup>)
@@ -320,12 +320,61 @@ Problem 22:
 
 Problem 23:
 ```aidl
+    int count = 0;
+    for (int i = N; i > 0; i /= 2) {
+        for (int j = 0; j < i; j++) {
+            count += 1;
+        }
+    }
+```
 
 
+Problem 24:
+```aidl
+    function findXYZ(n) {
+        const solutions = [];
+
+        for (x=0;  x < n; x++) {
+            for (y=0; y < n; y++) {
+                for (z = 0; z < n; z++) {
+                    solutions.push({x, y, z});
+                }
+            }
+        }
+
+        return solutions;
+    }
+```
+
+Problem 25:
+```aidl
+
+    float useless(A){
+        n = A.length;
+        if (n==1){
+            return A[0];
+        }
+        let A1,A2 be arrays of size n/2
+        for (i=0; i <= (n/2)-1; i++){
+            A1[i] = A[i];
+            A2[i] = A[n/2 + i];
+        }
+        for (i=0; i<=(n/2)-1; i++){
+            for (j=i+1; j<=(n/2)-1; j++){
+                if (A1[i] == A2[j])
+            A2[j] = 0;
+            }
+        }
+
+        b1 = useless(A1);
+        b2 = useless(A2);
+        return max(b1,b2);
+    }
 ```
  
+---
 
-##### Solutions
+#### Solutions
 The solutions are only considering the worst-case complexity.
 
 1. O(log log n) ?
@@ -350,7 +399,10 @@ The solutions are only considering the worst-case complexity.
 20. O(&#8730;n)
 21. O(n))
 22. O(n)
-23. 
+23. O(n log<sub>2</sub>(n))
+24. O(n<sup>3</sup>)
+25. O(n<sup>2</sup>)
+
 
 Remember following:
 | Loop Type | Complexity
@@ -365,7 +417,8 @@ Remember following:
 
 ### Asymptotic Behaviour
 
-Compare the asymptotic order of growth off the following pairs of functions. Tell if <i>f(n)</i> &#8712; &#920; , <i>f(n)</i> &#8712; <i>O(g(n))</i> or <i>f(n)</i> &#8712; &#937;<i>(g(n))</i>
+
+1. Compare the asymptotic order of growth off the following pairs of functions. Tell if <i>f(n)</i> &#8712; &#920; , <i>f(n)</i> &#8712; <i>O(g(n))</i> or <i>f(n)</i> &#8712; &#937;<i>(g(n))</i>
 
 |f(n)|g(n)
 |--- |---
@@ -377,6 +430,21 @@ Compare the asymptotic order of growth off the following pairs of functions. Tel
 | n2<sup>n</sup> | 3<sup>n</sup>
 | 2<sup>&#8730;log(n)</sup> | &#8730;n
 
+
+2. For each of the following pairs of functions T1(n) and T2(n) clearly answer the following 4 questions: Is T1(n) = O(T2(n))?, Is T1(n) = Omega(T2(n))?, Is T1(n) = Theta(T2(n))? If you were given two algorithms A1 with time complexity T1(n) and A2 with time complexity T2(n), which would you pick if your goal was to have the fastest algorithm? [to exercise](#https://www.cse.wustl.edu/~sg/CS241_FL99/hw1-practice.html)
+
+|T<sub>1</sub>(n)   | T<sub>2</sub>(n)
+|---    | ---
+| 6n<sup>2</sup>                | n<sup>2</sup> log(n)
+| (3/2) n<sup>2</sup> + 7n -4   | 8n<sup>2</sup>
+| n<sup>4</sup>                 | n<sup>3</sup>log(n)
+
+
+3. Prove whether or not each of the following statements are true. For those that you believe are false, prove this by giving a counterexample (i.e. particular functions for f(n) and g(n) for which the given statement is not true). For those that you believe are true, use the formal definitions of big-oh, big-Omega, and big-Theta to prove it. In all problems, you are given that for all n, f(n) >= 0 and g(n) >= 0. [to exercise](#https://www.cse.wustl.edu/~sg/CS241_FL99/hw1-practice.html)
+
+    1. If f(n) = O(g(n)) then g(n) = O(f(n)
+    2. f(n)+g(n) = O(max(f(n),g(n)))
+    3. f(n) = Omega(g(n)) then g(n) = O(f(n))
 
 
 ## Algorithmen
@@ -2432,5 +2500,5 @@ Füge die Objekte der Reihe nach ein,
 
 1. [Geeks for Geeks, diverse algorithms, exercises, examples and explanations](#https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 2. [Loyola Marymount University, Algorithm Analysis](#https://cs.lmu.edu/~ray/notes/alganalysis/)
-3. [Explanations on time complexity calculation on youtube, Abdul Bari](#https://www.youtube.com/watch?v=9TlHvipP5yA)
+3. [Examples with explanation on time complexity analysis, Abdul Bari](#https://www.youtube.com/watch?v=9TlHvipP5yA)
 <!-- 4. [](#) -->
