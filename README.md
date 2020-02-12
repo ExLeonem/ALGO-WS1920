@@ -87,6 +87,103 @@ Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 20. T(n) = Θ(n log n)
 
 
+## Runtimes
+
+Problem 1:
+```aidl
+    j = n;
+    while(j >= 2) {
+        j = j^(1/2)
+    }
+```
+
+Problem 2:
+```aidl
+    for i=1 to n {
+        n = n + n   
+    }
+    return n
+```
+
+Problem 3:
+```aidl
+    int a = 0, b = 0;    
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            a = a + j;
+        }
+    }
+    for (k = 0; k < N; k++) {
+        b = b + k;
+    } 
+```
+
+Problem 4:
+```aidl
+    int a = 0, i = N;
+    while (i > 0) {
+        a += i;
+        i /= 2;
+    }
+```
+
+Problem 5:
+```aidl
+
+    int a = 0, b = 0; 
+    for (i = 0; i < N; i++) { 
+        a = a + rand(); 
+    } 
+    for (j = 0; j < M; j++) { 
+        b = b + rand(); 
+    } 
+
+```
+
+
+Problem 6:
+```aidl
+    int a = 0; 
+    for (i = 0; i < N; i++) { 
+        for (j = N; j > i; j--) { 
+            a = a + i + j; 
+        } 
+    } 
+```
+
+Problem 7:
+```aidl
+    int i, j, k = 0; 
+    for (i = n / 2; i <= n; i++) { 
+        for (j = 2; j <= n; j = j * 2) { 
+            k = k + n / 2; 
+        } 
+    } 
+```
+
+Problem 8:
+```aidl
+
+    int a = 0, i = N; 
+    while (i > 0) { 
+        a += i; 
+        i /= 2; 
+    } 
+```
+
+
+### Solutions
+
+1. O(log log n) ?
+2. O(&#8730;n)
+3. O(N<sup>2</sup>)
+4. 
+5. O(N + M)
+6. O(N<sup>2</sup>)
+7. O(n log n)
+8. O(log n)
+9. 
+
 ## Algorithmen
 Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere Algorithmen/Datenstrukten.
 
@@ -1054,7 +1151,7 @@ Calculate a delaunay triangulation for given points.
 ```aidl
 
     def map_paint() {
-
+        
     }
 
 ```
