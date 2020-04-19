@@ -3,8 +3,9 @@
 
 
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
-2. [Master Theorem](#Master-Theorem)
-3. [Algorithmen](#Algorithmenlisten)
+2. [Runtimes](#Runtimes)
+3. [Master Theorem](#Master-Theorem)
+4. [Algorithmen](#Algorithmenlisten)
     1. [Divide & Conquer](#Divide-and-Conquer)
     2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
@@ -140,7 +141,6 @@ Problem 5:
 
 ```
 
-
 Problem 6:
 ```aidl
     int a = 0; 
@@ -183,6 +183,9 @@ Problem 8:
 7. O(n log n)
 8. O(log n)
 9. 
+
+
+
 
 ## Algorithmen
 Eine Liste verschiedener Algorithmen. Liste übernommen von Herr Umlauf und ergänzt um weitere Algorithmen/Datenstrukten.
