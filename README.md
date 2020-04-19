@@ -2,18 +2,29 @@
 # Algorithmentechnik WS19/20 Wiederholungsklausur
 
 
+<<<<<<< HEAD
 1. [Offene Fragestellungen](#Offene-Fragestellungen)
 2. [Runtimes](#Runtimes)
 3. [Master Theorem](#Master-Theorem)
 4. [Algorithmen](#Algorithmenlisten)
+=======
+<!-- 1. [Offene Fragestellungen](#Offene-Fragestellungen) -->
+1. [Algorithm Analysis](#Runtime-Analysis)
+    1. [Master Theorem](#Master-Theorem)
+    2. [Reccurences](#Reccurences)
+    3. [Code Complexity](#Code-Complexity)
+    4. [Asymptotic Behaviour](#Asymptotic-Behaviour)
+2. [Algorithmen](#Algorithmenlisten)
+>>>>>>> 8bf56636fde1d485885a4c828f4c9a2a852dfc95
     1. [Divide & Conquer](#Divide-and-Conquer)
     2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
+3. [Usefull Ressources](#Usefull-Ressources)
 
 
 
 
-## Offene Fragestellungen
+<!-- ## Offene Fragestellungen
 
 1. Berechnung der Komplexität von Teile & Hersche Verfahren der Form T(n) = a T(n-b) + f(n) werden nicht gefragt? (Spezielleres Master, prüfen ob das alternativ i.wie gelöst werden kann)
 2. Bei Algorithmen die eine sortierung benötigen, kann eine sortierung angenommen werden? (Diese muss/wird dann wohl entsprechend bei der Komplexitätsrechnung des Algorithmus mit betrachtet)
@@ -23,11 +34,13 @@
 6. Master Theorem: Wie ist das mit Logarithmen bei denen eine Gleitkommazahl rauskommt (Aufrunden, Abrunden)? Bspws. log<sub>2</sub>3 
 7. Wie ist das mit den Rückgabewerten. Kann ein Rückgabewert angenommen werden oder wie ist das? Bspws. Es kann ja gefragt sein ob eine Menge Teilbar ist oder aber die Menge an Indices der einen Menge gefragt sein. (sprich boolean oder liste for indices)
 8. Primitive Operationen immer als konstant annehmen? (Multiplikation, Addition, Division, Subtraction) (Frage weil Karatsuba)
-9. Kann ein Problem dran kommen (Bswps. Greedy) bei dem es nur eine Approximative lösung gibt? (Bspws. Springerproblem, Fall: Sackgasse)
+9. Kann ein Problem dran kommen (Bswps. Greedy) bei dem es nur eine Approximative lösung gibt? (Bspws. Springerproblem, Fall: Sackgasse) -->
 
 
+## Runtime Analysis
 
-## Master Theorem
+
+### Master Theorem
 
 Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 
@@ -41,7 +54,7 @@ Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 3. f(n) = &#937;(n<sup>&#9082; + &#949;</sup>) für &#949; > 0
     1. T(n) = Θ(f(n))
 
-### Aufgaben
+### Reccurences
 
 1. T(n) = 3T (n/2) + n<sup>2</sup>
 2. T(n) = 4T (n/2) + n<sup>2</sup>
@@ -64,8 +77,9 @@ Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 19. T(n) = 3T(n/4) + n log n
 20. T (n) = 3T(n/3) + n/2
 
-### Lösungen
+---
 
+#### Solutions
 1. T(n)= Θ(n<sup>2</sup>)
 2. T(n) = Θ(n<sup>2</sup>log n)
 3. T(n) = Θ(n<sup>2</sup>)
@@ -88,7 +102,7 @@ Gegeben eine rekurrente Gleichung der Form: **T(n) a T(n/b) + f(n)**
 20. T(n) = Θ(n log n)
 
 
-## Runtimes
+### Code-Complexity
 
 Problem 1:
 ```aidl
@@ -171,8 +185,202 @@ Problem 8:
     } 
 ```
 
+Problem 9:
+```aidl
+    int i = 0, n = 100;
+    while (i < n) {
+        statements with O(1)
+        i++;
+    }
+```
 
-### Solutions
+
+Problem 10:
+```aidl
+    for (i = 1; p <= n; i++) {
+        p = p + 1;
+    }
+```
+
+
+Problem 11:
+```aidl
+    for (i = 1; i < n; i = i*2) {
+        some statements with O(1)
+    }
+```
+
+Problem 12:
+```aidl
+    for (i = n; i >= 1; i=i/2) {
+        statements with O(1)
+    }
+```
+
+
+Problem 13:
+```aidl
+    for (i = 0; i*i < n; i++) {
+        statements with O(1)
+    }
+```
+
+Problem 14:
+```aidl
+    for (i = 0; i < n; i++) {
+        statements with O(1)
+    }
+
+    for (j = 0; j < n; j++) {
+        statements with O(1)
+    }
+
+```
+
+Problem 15:
+```aidl
+    p = 0;
+    for (i = 1; i < n; i*2) {
+        p++;
+    }
+
+    for (j = 1; j < P; j = j*2) {
+        statements with O(1)
+    }
+```
+
+Problem 16:
+```aidl
+    for (i = 0; i < n; i++) {
+        for (j = 1; j < n; j=j*2) {
+            statements with O(1)
+        }
+    }
+```
+
+Problem 17:
+```aidl
+    i = 0;
+    while (i < n) {
+        statements with O(1)
+        i++;
+    }
+```
+
+Problem 18:
+```aidl
+    a = 1;
+    while (a < b) {
+        statements with O(1)
+        a = a*2;
+    }
+```
+
+Problem 19:
+```aidl
+    i = n;
+    while (i > 1) {
+        statements with O(1)
+        i = i/2;
+    }
+```
+
+Problem 20:
+```aidl
+    i = 1;
+    k = 1;
+    while (k < n) {
+        statements with O(1)
+        k = k+i;
+        i++;
+    }
+```
+
+Problem 21:
+```aidl
+    while (m != n) {
+        
+        if (m > n) {
+            m = m - n;
+        } else {
+            n = n - m;
+        }
+    }
+```
+
+Problem 22:
+```aidl
+    function x(n) {
+
+        if (n < 5) {
+            statements with O(1)
+        } else {
+
+            for (i = 0; i < n; i++) {
+                statements with O(1)
+            }
+        }
+    }
+```
+
+Problem 23:
+```aidl
+    int count = 0;
+    for (int i = N; i > 0; i /= 2) {
+        for (int j = 0; j < i; j++) {
+            count += 1;
+        }
+    }
+```
+
+
+Problem 24:
+```aidl
+    function findXYZ(n) {
+        const solutions = [];
+
+        for (x=0;  x < n; x++) {
+            for (y=0; y < n; y++) {
+                for (z = 0; z < n; z++) {
+                    solutions.push({x, y, z});
+                }
+            }
+        }
+
+        return solutions;
+    }
+```
+
+Problem 25:
+```aidl
+
+    float useless(A){
+        n = A.length;
+        if (n==1){
+            return A[0];
+        }
+        let A1,A2 be arrays of size n/2
+        for (i=0; i <= (n/2)-1; i++){
+            A1[i] = A[i];
+            A2[i] = A[n/2 + i];
+        }
+        for (i=0; i<=(n/2)-1; i++){
+            for (j=i+1; j<=(n/2)-1; j++){
+                if (A1[i] == A2[j])
+            A2[j] = 0;
+            }
+        }
+
+        b1 = useless(A1);
+        b2 = useless(A2);
+        return max(b1,b2);
+    }
+```
+ 
+---
+
+#### Solutions
+The solutions are only considering the worst-case complexity.
 
 1. O(log log n) ?
 2. O(&#8730;n)
@@ -180,9 +388,69 @@ Problem 8:
 4. 
 5. O(N + M)
 6. O(N<sup>2</sup>)
-7. O(n log n)
+7. O(n log<sub>2</sub>(n))
 8. O(log n)
-9. 
+9. O(1)
+10. O(&#8730;n)
+11. O(log<sub>2</sub>(n))
+12. O(log<sub>2</sub>(n))
+13. O(&#8730;n)
+14. O(n)
+15. O(log log(n)) (p counted up in first, and is used in second loop)
+16. O(n log(n))
+17. O(n)
+18. O(log<sub>2</sub>(n))
+19. O(log<sub>2</sub>(n))
+20. O(&#8730;n)
+21. O(n))
+22. O(n)
+23. O(n log<sub>2</sub>(n))
+24. O(n<sup>3</sup>)
+25. O(n<sup>2</sup>)
+
+
+Remember following:
+| Loop Type | Complexity
+| ---       | ---
+| ```for(i=0; i < n; i++)```    | O(n)
+| ```for(i=0; i < n; i=i+2)```  | O(n/2) => O(n)
+| ```for(i=n; i > 1; i--)```    | O(n)
+| ```for(i=1; i < n; i=i*2)```  | O(log<sub>2</sub>(n))
+| ```for(i=n; i > 1; i=i/2)```  | O(log<sub>2</sub>(n))
+| ```for(i=1; i < n; i=i*3)```  | O(log<sub>3</sub>(n))
+
+
+### Asymptotic Behaviour
+
+
+1. Compare the asymptotic order of growth off the following pairs of functions. Tell if <i>f(n)</i> &#8712; &#920; , <i>f(n)</i> &#8712; <i>O(g(n))</i> or <i>f(n)</i> &#8712; &#937;<i>(g(n))</i>
+
+|f(n)|g(n)
+|--- |---
+| 100n + log(n) | n + (log n)<sup>2</sup>
+| log(n) | log (n)<sup>2</sup>
+| (n<sup>2</sup>/log(n)) | n(log(n))<sup>2</sup>
+| (log(n))<sup>log(n)</sup> | n/log(n)
+| &#8730;n | (log(n))<sup>5</sup>
+| n2<sup>n</sup> | 3<sup>n</sup>
+| 2<sup>&#8730;log(n)</sup> | &#8730;n
+
+
+2. For each of the following pairs of functions T1(n) and T2(n) clearly answer the following 4 questions: Is T1(n) = O(T2(n))?, Is T1(n) = Omega(T2(n))?, Is T1(n) = Theta(T2(n))? If you were given two algorithms A1 with time complexity T1(n) and A2 with time complexity T2(n), which would you pick if your goal was to have the fastest algorithm? [to exercise](#https://www.cse.wustl.edu/~sg/CS241_FL99/hw1-practice.html)
+
+|T<sub>1</sub>(n)   | T<sub>2</sub>(n)
+|---    | ---
+| 6n<sup>2</sup>                | n<sup>2</sup> log(n)
+| (3/2) n<sup>2</sup> + 7n -4   | 8n<sup>2</sup>
+| n<sup>4</sup>                 | n<sup>3</sup>log(n)
+
+
+3. Prove whether or not each of the following statements are true. For those that you believe are false, prove this by giving a counterexample (i.e. particular functions for f(n) and g(n) for which the given statement is not true). For those that you believe are true, use the formal definitions of big-oh, big-Omega, and big-Theta to prove it. In all problems, you are given that for all n, f(n) >= 0 and g(n) >= 0. [to exercise](#https://www.cse.wustl.edu/~sg/CS241_FL99/hw1-practice.html)
+
+    1. If f(n) = O(g(n)) then g(n) = O(f(n)
+    2. f(n)+g(n) = O(max(f(n),g(n)))
+    3. f(n) = Omega(g(n)) then g(n) = O(f(n))
+
 
 
 
@@ -2234,3 +2502,11 @@ Füge die Objekte der Reihe nach ein,
  sodass jedes in den ersten Behälter gegeben wird, in dem noch genug Platz ist.
  Falls in keinem der bereits geöffneten Behälter genügend Platz ist, öffne einen neuen.
 `
+
+
+## Usefull-Ressources
+
+1. [Geeks for Geeks, diverse algorithms, exercises, examples and explanations](#https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
+2. [Loyola Marymount University, Algorithm Analysis](#https://cs.lmu.edu/~ray/notes/alganalysis/)
+3. [Examples with explanation on time complexity analysis, Abdul Bari](#https://www.youtube.com/watch?v=9TlHvipP5yA)
+<!-- 4. [](#) -->
