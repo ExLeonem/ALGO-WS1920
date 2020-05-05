@@ -1,5 +1,5 @@
 
-# Algorithmentechnik WS19/20 Wiederholungsklausur
+# Algorithmentechnik WS19/20
 
 
 <!-- 1. [Offene Fragestellungen](#Offene-Fragestellungen) -->
