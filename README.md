@@ -108,7 +108,7 @@ Problem 1:
 Problem 2:
 ```aidl
     for i=1 to n {
-        n = n + n   
+        i += i   
     }
     return n
 ```
@@ -377,15 +377,15 @@ Problem 25:
 The solutions are only considering the worst-case complexity.
 
 1. O(log log n) ?
-2. O(&#8730;n)
+2. O(log(n))
 3. O(N<sup>2</sup>)
-4. 
+4. O(log(n))
 5. O(N + M)
 6. O(N<sup>2</sup>)
 7. O(n log<sub>2</sub>(n))
 8. O(log n)
 9. O(1)
-10. O(&#8730;n)
+10. O(n)
 11. O(log<sub>2</sub>(n))
 12. O(log<sub>2</sub>(n))
 13. O(&#8730;n)
