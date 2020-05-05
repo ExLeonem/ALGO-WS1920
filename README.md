@@ -2,12 +2,6 @@
 # Algorithmentechnik WS19/20 Wiederholungsklausur
 
 
-<<<<<<< HEAD
-1. [Offene Fragestellungen](#Offene-Fragestellungen)
-2. [Runtimes](#Runtimes)
-3. [Master Theorem](#Master-Theorem)
-4. [Algorithmen](#Algorithmenlisten)
-=======
 <!-- 1. [Offene Fragestellungen](#Offene-Fragestellungen) -->
 1. [Algorithm Analysis](#Runtime-Analysis)
     1. [Master Theorem](#Master-Theorem)
@@ -15,7 +9,6 @@
     3. [Code Complexity](#Code-Complexity)
     4. [Asymptotic Behaviour](#Asymptotic-Behaviour)
 2. [Algorithmen](#Algorithmenlisten)
->>>>>>> 8bf56636fde1d485885a4c828f4c9a2a852dfc95
     1. [Divide & Conquer](#Divide-and-Conquer)
     2. [Greedy](#Greedy)
     3. [Dynamic Programming](#Dynamic-Programming)
